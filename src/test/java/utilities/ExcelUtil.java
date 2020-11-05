@@ -1,12 +1,13 @@
 package utilities;
 import org.apache.poi.ss.usermodel.*;
-import org.testng.Assert;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 // We can use this excel utilities class to read and write excel files (for xls, xlsx files).
 // These are the reusable custom methods we can use in our test classes
 public class ExcelUtil {
@@ -22,8 +23,6 @@ public class ExcelUtil {
             workBook = WorkbookFactory.create(fileInputStream);
             //getting the worksheet
             workSheet = workBook.getSheet(sheetName);
-            //asserting if sheet has data or not
-            Assert.assertNotNull(workSheet, "Worksheet: \"" + sheetName + "\" was not found\n");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -35,7 +34,8 @@ public class ExcelUtil {
     }
     //===============how do you get the last row number?Index start at 0.====================
     public int rowCount() {
-        return workSheet.getLastRowNum() + 1; }//adding 1 to get the actual count
+        return workSheet.getLastRowNum() + 1;
+    }//adding 1 to get the actual count
     //==============When you enter row and column number, then you get the data==========
     public String getCellData(int rowNum, int colNum) {
         Cell cell;
@@ -87,7 +87,7 @@ public class ExcelUtil {
         }
         return columns;
     }
-    //=========When you enter the row and column number, returning the value============//
+    //=========When you enter the row and column number, returning the value===============//
     public void setCellData(String value, int rowNum, int colNum) {
         Cell cell;
         Row row;

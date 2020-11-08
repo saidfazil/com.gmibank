@@ -95,4 +95,43 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "There should be a View option where customer can be navigated to all customer info and see edit button there",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US12TC01"
+    },
+    {
+      "name": "@US12TC02"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click to View button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToViewButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "There should be Edit button.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.thereShouldBeEditButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
 });

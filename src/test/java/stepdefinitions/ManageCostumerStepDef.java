@@ -50,19 +50,29 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
         manageCostumerPage.myOperations.click();
         manageCostumerPage.manageCostumer.click();
     }
-    @Then("A Randomly selected customer should show up on manage customers module populating the account information of the customer.")
-    public void aRandomlySelectedCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer() { System.out.println(manageCostumerPage.rowList.size());
-
-       Assert.assertTrue(manageCostumerPage.headList.get(0).getText().contains("ID"));
-       Assert.assertTrue(manageCostumerPage.headList.get(1).getText().contains("First Name"));
-       Assert.assertTrue(manageCostumerPage.headList.get(2).getText().contains("Last Name"));
-       Assert.assertTrue(manageCostumerPage.headList.get(3).getText().contains("Middle Initial"));
-       Assert.assertTrue(manageCostumerPage.headList.get(4).getText().contains("Email"));
-       Assert.assertTrue(manageCostumerPage.headList.get(5).getText().contains("Mobile Phone Number"));
-       Assert.assertTrue(manageCostumerPage.headList.get(6).getText().contains("Phone Number"));
-       Assert.assertTrue(manageCostumerPage.headList.get(7).getText().contains("Address"));
-       Assert.assertTrue(manageCostumerPage.headList.get(8).getText().contains("Create Date"));
-       Assert.assertTrue(manageCostumerPage.rowList.size()==10);
+    @Then("A customer should show up at total nine head on account information of the customer")
+    public void aCustomerShouldShowUpAtTotalNineHeadOnAccountInformationOfTheCustomer() {
+        Assert.assertTrue(manageCostumerPage.headList.get(0).getText().contains("ID"));
+        Assert.assertTrue(manageCostumerPage.headList.get(1).getText().contains("First Name"));
+        Assert.assertTrue(manageCostumerPage.headList.get(2).getText().contains("Last Name"));
+        Assert.assertTrue(manageCostumerPage.headList.get(3).getText().contains("Middle Initial"));
+        Assert.assertTrue(manageCostumerPage.headList.get(4).getText().contains("Email"));
+        Assert.assertTrue(manageCostumerPage.headList.get(5).getText().contains("Mobile Phone Number"));
+        Assert.assertTrue(manageCostumerPage.headList.get(6).getText().contains("Phone Number"));
+        Assert.assertTrue(manageCostumerPage.headList.get(7).getText().contains("Address"));
+        Assert.assertTrue(manageCostumerPage.headList.get(8).getText().contains("Create Date"));
+        Assert.assertTrue(manageCostumerPage.rowList.size()==10);
     }
+
+    @And("Click to View button.")
+    public void clickToViewButton() {
+        manageCostumerPage.buttonWiew.click();
+    }
+
+    @Then("There should be Edit button.")
+    public void thereShouldBeEditButton() {
+        Assert.assertTrue(manageCostumerPage.ButtonViewEdit.isDisplayed());
+    }
+
 
 }

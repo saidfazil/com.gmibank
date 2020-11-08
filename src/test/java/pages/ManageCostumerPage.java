@@ -38,5 +38,17 @@ public class ManageCostumerPage {
     @FindBy(xpath = "//span[.='Sign in']")
     public WebElement accountSignIn;
 
+    @FindBy(xpath = "//span[text()='View']")
+    public  WebElement buttonWiew;
+
+    @FindBy(xpath = "//span[text()='Edit']")
+    public  WebElement buttonEdit;
+
+    @FindBy(xpath = "//span[text()='Delete']")
+    public  WebElement buttonDelete;
+
+    @FindBy(xpath = "//span[text()='Edit']")
+    public  WebElement ButtonViewEdit;
+
 
 }

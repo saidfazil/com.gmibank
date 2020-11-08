@@ -3,11 +3,11 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-11-08T11:18:14.992Z",
+        "start_timestamp": "2020-11-08T20:29:25.796Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 4000000,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,7 @@
         "after": [
           {
             "result": {
-              "duration": 431000000,
+              "duration": 838000000,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 19700000000,
+              "duration": 73225000000,
               "status": "passed"
             },
             "line": 6,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 1059000000,
+              "duration": 1802000000,
               "status": "passed"
             },
             "line": 7,
@@ -59,7 +59,7 @@
           },
           {
             "result": {
-              "duration": 291000000,
+              "duration": 1118000000,
               "status": "passed"
             },
             "line": 8,
@@ -71,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 369000000,
+              "duration": 486000000,
               "status": "passed"
             },
             "line": 9,
@@ -83,7 +83,7 @@
           },
           {
             "result": {
-              "duration": 199000000,
+              "duration": 448000000,
               "status": "passed"
             },
             "line": 10,
@@ -95,7 +95,7 @@
           },
           {
             "result": {
-              "duration": 868000000,
+              "duration": 1136000000,
               "status": "passed"
             },
             "line": 11,
@@ -107,7 +107,7 @@
           },
           {
             "result": {
-              "duration": 1059000000,
+              "duration": 1520000000,
               "status": "passed"
             },
             "line": 12,
@@ -123,6 +123,70 @@
             "name": "@US12TC01"
           }
         ]
+      },
+      {
+        "start_timestamp": "2020-11-08T20:30:47.008Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "There should be a View option where customer can be navigated to all customer info and see edit button there",
+        "description": "",
+        "id": "an-employee-can-manage-customer;there-should-be-a-view-option-where-customer-can-be-navigated-to-all-customer-info-and-see-edit-button-there",
+        "after": [
+          {
+            "result": {
+              "duration": 417000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 721000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Click to View button.",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.clickToViewButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 240000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "There should be Edit button.",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.thereShouldBeEditButton()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US12TC01"
+          },
+          {
+            "name": "@US12TC02"
+          }
+        ]
       }
     ],
     "name": "An Employee can manage Customer",
@@ -136,7 +200,7 @@
         "type": "Tag",
         "location": {
           "line": 1,
-          "column": 1
+          "column": 3
         }
       }
     ]

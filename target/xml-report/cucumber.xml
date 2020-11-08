@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="54.434">
-<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="53.448">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="25.502">
+<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="24.374">
 <system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
 And Click to User Account drop down menu and Click to Sign In...............passed
 And Enter the username with valid credentail................................passed

@@ -29,7 +29,7 @@ public class ManageCostumerPage {
     @FindBy(xpath = "//span[.='Manage Customers']")
     public WebElement manageCostumer;
 
-    @FindBy(xpath = "//tbody//tr/td")
+    @FindBy(xpath = "//tbody//tr[5]/td")
    public List<WebElement> rowList;
 
     @FindBy(xpath = "//thead//th")

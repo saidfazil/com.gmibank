@@ -1,0 +1,208 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "start_timestamp": "2020-11-08T20:29:25.796Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "All customers should show up on manage customers module populating the account information of the customer",
+        "description": "",
+        "id": "an-employee-can-manage-customer;all-customers-should-show-up-on-manage-customers-module-populating-the-account-information-of-the-customer",
+        "after": [
+          {
+            "result": {
+              "duration": 838000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 73225000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Go to gmibank.com home page",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.goToGmibankComHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1802000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click to User Account drop down menu and Click to Sign In",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.clickToUserAccountDropDownMenuAndClickToSignIn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1118000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Enter the username with valid credentail",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 486000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Enter the pasword with valid credentail",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 448000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click to Sign in button",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.clickToSignInButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1136000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click to My Operations drop down menu and Click to Manage Costumers",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.clickToMyOperationsDropDownMenuAndClickToManageCostumers()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1520000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "A Randomly selected customer should show up on manage customers module populating the account information of the customer.",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.aRandomlySelectedCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US12TC01"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-08T20:30:47.008Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "There should be a View option where customer can be navigated to all customer info and see edit button there",
+        "description": "",
+        "id": "an-employee-can-manage-customer;there-should-be-a-view-option-where-customer-can-be-navigated-to-all-customer-info-and-see-edit-button-there",
+        "after": [
+          {
+            "result": {
+              "duration": 417000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 721000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Click to View button.",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.clickToViewButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 240000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "There should be Edit button.",
+            "match": {
+              "location": "stepdefinitions.ManageCostumerStepDef.thereShouldBeEditButton()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US12TC01"
+          },
+          {
+            "name": "@US12TC02"
+          }
+        ]
+      }
+    ],
+    "name": "An Employee can manage Customer",
+    "description": "",
+    "id": "an-employee-can-manage-customer",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/manageCostumer.feature",
+    "tags": [
+      {
+        "name": "@US12TC01",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 3
+        }
+      }
+    ]
+  }
+]

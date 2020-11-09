@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="89.571">
-<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="81.094">
-<system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
-And Click to User Account drop down menu and Click to Sign In...............passed
-And Enter the username with valid credentail................................passed
-And Enter the pasword with valid credentail.................................passed
-And Click to Sign in button.................................................passed
-And Click to My Operations drop down menu and Click to Manage Costumers.....passed
-Then A Randomly selected customer should show up on manage customers module populating the account information of the customer..passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="21.703">
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="14.378">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 lowercase letter of at least 4 characters.......passed
+And Color line must be orange or green......................................passed
+Then Then I should not see the red massage under the box....................passed
 ]]></system-out>
 </testcase>
-<testcase classname="An Employee can manage Customer" name="There should be a View option where customer can be navigated to all customer info and see edit button there" time="1.383">
-<system-out><![CDATA[And Click to View button....................................................passed
-Then There should be Edit button............................................passed
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 uppercase char and see the level  chart change accordingly" time="1.816">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 uppercase letter of at least 4 characters.......passed
+And Color line must be orange or green......................................passed
+Then Then I should not see the red massage under the box....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 digit  and see the level  chart change accordingly" time="1.747">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 digit of at least 4 characters..................passed
+And Color line must be orange or green......................................passed
+Then Then I should not see the red massage under the box....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 special char and see the level bar change accordingly" time="1.703">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 special char of at least 4 characters...........passed
+And Color line must be orange or green......................................passed
+Then Then I should not see the red massage under the box....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 7 chars for a stronger password" time="1.768">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 7 chars...........................................passed
+And Color line must be orange or green......................................passed
+Then Then I should not see the red massage under the box....................passed
 ]]></system-out>
 </testcase>
 </testsuite>

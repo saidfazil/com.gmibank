@@ -1,21 +1,21 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/manageCostumer.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/date.feature");
 formatter.feature({
-  "name": "An Employee can manage Customer",
+  "name": "The date cannot be typed earlier, in the past, at the time of creation a customer US011",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US12TC01"
+      "name": "@US011TC05"
     }
   ]
 });
 formatter.scenario({
-  "name": "All customers should show up on manage customers module populating the account information of the customer",
+  "name": "Date Test",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US12TC01"
+      "name": "@US011TC05"
     }
   ]
 });
@@ -23,110 +23,121 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "Go to gmibank.com home page",
+  "name": "Go GMI Bank Adress",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.goToGmibankComHomePage()"
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to User Account drop down menu and Click to Sign In",
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.clickToUserAccountDropDownMenuAndClickToSignIn()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "Click UserName TextBox, Write Available UseName",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "Click Password TextBox, Write Available Password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to Sign in button",
+  "name": "Click SignIn Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.clickToSignInButton()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations drop down menu and Click to Manage Costumers",
+  "name": "Click My Operations Area",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.clickToMyOperationsDropDownMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "A Randomly selected customer should show up on manage customers module populating the account information of the customer.",
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "See Date TextBox",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.aRandomlySelectedCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "There should be a View option where customer can be navigated to all customer info and see edit button there",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US12TC01"
-    },
-    {
-      "name": "@US12TC02"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click to View button.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.clickToViewButton()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "There should be Edit button.",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.thereShouldBeEditButton()"
+  "location": "stepdefinitions.InformationCheckStepDef.seeDateTextBox()"
 });
 formatter.result({
   "status": "passed"

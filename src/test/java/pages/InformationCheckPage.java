@@ -9,6 +9,7 @@ import utilities.Driver;
 public class InformationCheckPage {
 
     public InformationCheckPage(){
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

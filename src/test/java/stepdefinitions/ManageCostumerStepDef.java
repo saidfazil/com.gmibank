@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import com.sun.tools.jxc.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,6 +19,7 @@ public class ManageCostumerStepDef {
 
     @Given("Go to gmibank.com home page")
     public void goToGmibankComHomePage() {
+
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
     @And("Click to User Account drop down menu and Click to Sign In")
@@ -28,22 +28,43 @@ public class ManageCostumerStepDef {
         manageCostumerPage.accountSignIn.click();
         //Select select = new Select(manageCostumerPage.dropDownAccount);
         //select.selectByIndex(0);
+
     }
 
     @And("Enter the username with valid credentail")
     public void enterTheUsernameWithValidCredentail() {
+
+
 manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername"));
+
     }
 
     @And("Enter the pasword with valid credentail")
     public void enterThePaswordWithValidCredentail() {
+
+
         manageCostumerPage.password.sendKeys(ConfigurationReader.getProperty("employeePassword"));
+
     }
 
     @And("Click to Sign in button")
     public void clickToSignInButton() {
+
+    }
+
+    @And("Click to My Operations drop down menu")
+    public void clickToMyOperationsDropDownMenu() {
+    }
+
+    @And("Click to Manage Costumers")
+    public void clickToManageCostumers() {
+    }
+
+    @Then("Random customer should show up on manage customers module populating the account information of the customer.")
+    public void randomCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer() {
         manageCostumerPage.buttonSignin.click();
     }
+
 
     @And("Click to My Operations drop down menu and Click to Manage Costumers")
     public void clickToMyOperationsDropDownMenuAndClickToManageCostumers() {
@@ -73,6 +94,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
     public void thereShouldBeEditButton() {
         Assert.assertTrue(manageCostumerPage.ButtonViewEdit.isDisplayed());
     }
+
 
 
 }

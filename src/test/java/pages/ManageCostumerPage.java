@@ -11,7 +11,8 @@ import java.util.List;
 public class ManageCostumerPage {
 
         public ManageCostumerPage() {
-            PageFactory.initElements(Driver.getDriver(), this);
+
+                PageFactory.initElements(Driver.getDriver(), this);
         }
 
         @FindBy(xpath = "//li[@id='account-menu']")

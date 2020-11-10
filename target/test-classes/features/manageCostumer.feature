@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @US12TC01
 
 Feature: A description
@@ -13,7 +13,7 @@ And Click to Sign in button
 And Click to My Operations drop down menu
 And Click to Manage Costumers
 Then Random customer should show up on manage customers module populating the account information of the customer.
-=======
+
   @US12TC01
 
 Feature: An Employee can manage Customer
@@ -30,4 +30,4 @@ Then A customer should show up at total nine head on account information of the 
   Scenario:There should be a View option where customer can be navigated to all customer info and see edit button there
     And Click to View button.
     Then There should be Edit button.
->>>>>>> master
+

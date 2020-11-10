@@ -19,6 +19,7 @@ public class ManageCostumerStepDef {
 
     @Given("Go to gmibank.com home page")
     public void goToGmibankComHomePage() {
+
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
     @And("Click to User Account drop down menu and Click to Sign In")

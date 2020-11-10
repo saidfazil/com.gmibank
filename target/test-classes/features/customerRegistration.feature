@@ -1,4 +1,4 @@
-@US_002
+
 @US02TC01
   Feature: US_002 Any field on the registration page should not be left blank
 
@@ -33,31 +33,31 @@
   Feature: US_002 SSN number cannot be of any chars nor spec chars except "-"
 
   Scenario: US02TC02 user must enter valid data into SSN TextBox using "-" character.
-    Given user is on "http://gmibank.com/" page
-    And user click on User button
-    And user clicks Registration tab
-    And click on SSN TextBox
-    And the user must type the character "-" when entering a number into the current SSN TextBox.
-    Then the user should not see the text "Your SSN is invalid"
+    Given TC02 user is on "http://gmibank.com/" page
+    And TC02 user click on User button
+    And TC02 user clicks Registration tab
+    And TC02 click on SSN TextBox
+    And TC02 the user must type the character "-" when entering a number into the current SSN TextBox.
+    Then TC02 the user should not see the text "Your SSN is invalid"
 
   @US02TC03
   Feature: US_002 Mobilephone number cannot be of any chars nor spec chars except "-"
 
   Scenario: US02TC03 user must enter valid data in Mobile Phone Number TextBox using "-" character.
-    Given user is on "http://gmibank.com/" page
-    And user click on User button
-    And user clicks Registration tab
-    And click on Mobile Phone Number TexttBox
-    And user must type the character "-" when entering a number into the valid Mobile Phone Number TextBox
-    Then the user should not see the text "Your mobile phone number is invalid".
+    Given TC03 user is on "http://gmibank.com/" page
+    And TC03 user click on User button
+    And TC03 user clicks Registration tab
+    And TC03 click on Mobile Phone Number TexttBox
+    And TC03 user must type the character "-" when entering a number into the valid Mobile Phone Number TextBox
+    Then TC03 the user should not see the text "Your mobile phone number is invalid".
 
   @US02TC04
   Feature: US_002 email id cannot be created without "@" sign and ".com" extension
 
   Scenario: US02TC04 user must enter valid data in Email TextBox using "@" character and ".com" expression
-    Given user is on "http://gmibank.com/" page
-    And user click on User button
-    And user clicks Registration tab
-    And click on Mobile Phone Number TextBox
-    And the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
-    Then the user should not see the text "This field is invalid"
+    Given TC04 user is on "http://gmibank.com/" page
+    And TC04 user click on User button
+    And TC04 user clicks Registration tab
+    And TC04 click on Mobile Phone Number TextBox
+    And TC04 the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
+    Then TC04 the user should not see the text "This field is invalid"

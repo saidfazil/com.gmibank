@@ -314,4 +314,19 @@ public class Driver {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command);
     }
+    public static String getNewSSN(String ssn){
+        String[] data ={"0","1","2","3","4","5","6","7","8","9" };
+        int indexOfHyphen = ssn.indexOf("-");
+        String ssnFirstPart = ssn.substring(3,indexOfHyphen);
+        String ssnSecontPart = ssn.substring(6,indexOfHyphen);
+        String ekSSN ="";
+        for(int i = 0; i < 3; i++ ){
+            int random = (int)(Math.random()*data.length);
+            ekSSN += data[random];
+
+        }
+        ssnFirstPart = ssnFirstPart+ ekSSN;
+        ssn = ssnFirstPart + ssnSecontPart;
+        return ssn;
+    }
 }

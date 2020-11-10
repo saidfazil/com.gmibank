@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="89.571">
-<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="81.094">
-<system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
-And Click to User Account drop down menu and Click to Sign In...............passed
-And Enter the username with valid credentail................................passed
-And Enter the pasword with valid credentail.................................passed
-And Click to Sign in button.................................................passed
-And Click to My Operations drop down menu and Click to Manage Costumers.....passed
-Then A Randomly selected customer should show up on manage customers module populating the account information of the customer..passed
-]]></system-out>
-</testcase>
-<testcase classname="An Employee can manage Customer" name="There should be a View option where customer can be navigated to all customer info and see edit button there" time="1.383">
-<system-out><![CDATA[And Click to View button....................................................passed
-Then There should be Edit button............................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="17.066">
+<testcase classname="The date cannot be typed earlier, in the past, at the time of creation a customer US011" name="Date Test" time="16.206">
+<system-out><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then See Date TextBox.......................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

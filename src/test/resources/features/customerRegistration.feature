@@ -33,6 +33,7 @@
   Feature: US_002 SSN number cannot be of any chars nor spec chars except "-"
 
   Scenario: US02TC02 user must enter valid data into SSN TextBox using "-" character.
+
     Given SSN user is on "http://gmibank.com/" page
     And SSN user click on User button
     And SSN user clicks Registration tab
@@ -40,10 +41,13 @@
     And SSN the user must type the character "-" when entering a number into the current SSN TextBox.
     Then SSN the user should not see the text "Your SSN is invalid"
 
+
+
   @US02TC03
   Feature: US_002 Mobilephone number cannot be of any chars nor spec chars except "-"
 
   Scenario: US02TC03 user must enter valid data in Mobile Phone Number TextBox using "-" character.
+
     Given MPhone user is on "http://gmibank.com/" page
     And MPhone user click on User button
     And MPhone user clicks Registration tab
@@ -55,9 +59,11 @@
   Feature: US_002 email id cannot be created without "@" sign and ".com" extension
 
   Scenario: US02TC04 user must enter valid data in Email TextBox using "@" character and ".com" expression
+
     Given Email user is on "http://gmibank.com/" page
     And Email user click on User button
     And Email user clicks Registration tab
     And Email click on Email TextBox
     And Email the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
     Then Email the user should not see the text "This field is invalid".
+

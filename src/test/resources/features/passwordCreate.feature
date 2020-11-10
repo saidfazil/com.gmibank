@@ -1,4 +1,4 @@
-@US03 @first
+@US03
 
 Feature: Registration page should restrict password usage to a secure and high level passcode
 
@@ -12,28 +12,33 @@ Feature: Registration page should restrict password usage to a secure and high l
   Scenario: There should be at least 1 lowercase char for stronger password and see the level chart change accordingly
     And Enter a password with 1 lowercase letter of at least 4 characters
     And Color line must be orange or green
-    Then Then I should not see the red massage under the box
+    And Click on password confirmation textbox
+    Then Enter to second textbox with 1 lowercase letter of at least 4 characters
 
   @US03TC02
   Scenario: There should be at least 1 uppercase char and see the level  chart change accordingly
     And Enter a password with 1 uppercase letter of at least 4 characters
     And Color line must be orange or green
-    Then Then I should not see the red massage under the box
+    And Click on password confirmation textbox
+    Then Enter to second textbox with 1 uppercase letter of at least 4 characters
 
   @US03TC03
   Scenario: There should be at least 1 digit  and see the level  chart change accordingly
     And Enter a password with 1 digit of at least 4 characters
     And Color line must be orange or green
-    Then Then I should not see the red massage under the box
+    And Click on password confirmation textbox
+    Then Enter to second textbox with 1 digit of at least 4 characters
 
   @US03TC04
   Scenario: There should be at least 1 special char and see the level bar change accordingly
     And Enter a password with 1 special char of at least 4 characters
     And Color line must be orange or green
-    Then Then I should not see the red massage under the box
+    And Click on password confirmation textbox
+    Then Enter to second textbox with 1 special char of at least 4 characters
 
   @US03TC05
   Scenario: There should be at least 7 chars for a stronger password
     And Enter a password with 7 chars
     And Color line must be orange or green
-    Then Then I should not see the red massage under the box
+    And Click on password confirmation textbox
+    Then Enter to second textbox a password with 7 chars

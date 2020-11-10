@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.283"/>
+=======
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="17.066">
+<testcase classname="The date cannot be typed earlier, in the past, at the time of creation a customer US011" name="Date Test" time="16.206">
+<system-out><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then See Date TextBox.......................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
+>>>>>>> master

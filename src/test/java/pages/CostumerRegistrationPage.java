@@ -76,33 +76,33 @@ public class CostumerRegistrationPage {
     @FindBy(id = "register-submit")
     public WebElement Register_button;
 
-    @FindBy()
-    public WebElement Message;
+    @FindBy(xpath = "//*[.='Registration saved!']")
+    public WebElement SavedMessage;
 
 //    @US02TC02
 
-    @FindBy()
+    @FindBy(id = "ssn")
     public WebElement charecter_SSN_TextBox;
 
-    @FindBy()
+    @FindBy(xpath = "translation-not-found[Your SSN is required]")
     public WebElement No_SSN_message;
 
 //    @US02TC03
 
-    @FindBy()
+    @FindBy(id = "mobilephone")
     public WebElement charecter_Mobile_Phone_TextBox;
 
-    @FindBy()
+    @FindBy(xpath = "//*[.='Your mobile phone number is invalid']")
     public WebElement no_see_mobile_phone_number_invalid;
 
 //    @US02TC04
 
-    @FindBy()
+    @FindBy(id = "email")
     public WebElement charecter_Email_TextBox;
 
-    @FindBy()
+    @FindBy(xpath = "//*[.='This field is invalid']")
     public WebElement no_See_Email_Invalid_Message;
 
 
-
 }
+

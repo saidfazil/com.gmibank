@@ -157,121 +157,124 @@ public class CostumerRegistrationStepDef {
 
     @Then("the user should see the message {string}")
     public void the_user_should_see_the_message(String string) {
+        costRegPage.SavedMessage.isDisplayed();
 
     }
 
 //    @US02TC02
 
-    @Given("TC02 user is on {string} page")
-    public void TC02_user_is_on_page(String string) {
+    @Given("SSN user is on {string} page")
+    public void SSN_user_is_on_page(String string) {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
 
     }
 
-    @Given("TC02 user click on User button")
-    public void TC02_user_click_on_User_button() {
+    @Given("SSN user click on User button")
+    public void SSN_user_click_on_User_button() {
         costRegPage.user_button.click();
 
     }
 
-    @Given("TC02 user clicks Registration tab")
-    public void TC02_user_clicks_Registration_tab() {
+    @Given("SSN user clicks Registration tab")
+    public void SSN_user_clicks_Registration_tab() {
         costRegPage.registration_button.click();
 
     }
 
-    @Given("TC02 click on SSN TextBox")
-    public void TC02_click_on_SSN_TextBox() {
+    @Given("SSN click on SSN TextBox")
+    public void SSN_click_on_SSN_TextBox() {
         costRegPage.SSN_TextBox.click();
 
     }
-    @Given("TC02 the user must type the character {string} when entering a number into the current SSN TextBox.")
-    public void TC02_the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
+    @Given("SSN the user must type the character {string} when entering a number into the current SSN TextBox.")
+    public void SSN_the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
         String ssn = ConfigurationReader.getProperty("SSN");
         String newSSN = Driver.getNewSSN(ssn);
         costRegPage.charecter_SSN_TextBox.sendKeys(newSSN);
 
     }
 
-    @Then("TC02 the user should not see the text {string}")
-    public void TC02_the_user_should_not_see_the_text(String string) {
+    @Then("SSN the user should not see the text {string}")
+    public void SSN_the_user_should_not_see_the_text(String string) {
+        costRegPage.No_SSN_message.isDisplayed();
 
     }
 
-//    @US02TC03
-@Given("TC03 user is on {string} page")
-public void TC03_user_is_on_page(String string) {
-    Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
+    //    @US02TC03
+    @Given("MPhone user is on {string} page")
+    public void MPhone_user_is_on_page(String string) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
 
-}
+    }
 
-    @Given("TC03 user click on User button")
-    public void TC03_user_click_on_User_button() {
+    @Given("MPhone user click on User button")
+    public void MPhone_user_click_on_User_button() {
         costRegPage.user_button.click();
 
     }
 
-    @Given("TC03 user clicks Registration tab")
-    public void TC03_user_clicks_Registration_tab() {
+    @Given("MPhone user clicks Registration tab")
+    public void MPhone_user_clicks_Registration_tab() {
         costRegPage.registration_button.click();
 
     }
 
-    @And("TC03 click on Mobile Phone Number TexttBox")
-    public void TC03clickOnMobilePhoneNumberTexttBox() {
+    @And("MPhone click on Mobile Phone Number TexttBox")
+    public void MPhone_clickOnMobilePhoneNumberTexttBox() {
+
         costRegPage.Mobile_Phone_Number_TextBox.click();
     }
 
-    @And("TC03 user must type the character {string} when entering a number into the valid Mobile Phone Number TextBox")
-    public void TC03userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String arg0) {
+    @And("MPhone user must type the character {string} when entering a number into the valid Mobile Phone Number TextBox")
+    public void MPhone_userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String arg0) {
         String Hypen = "-";
         costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
 
     }
 
-    @Then("TC03 the user should not see the text {string}.")
-    public void TC03theUserShouldNotSeeTheText(String arg0) {
-
-   }
-//    @US02TC04
-@Given("TC04 user is on {string} page")
-public void TC04_user_is_on_page(String string) {
-    Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
+    @Then("MPhone the user should not see the text {string}.")
+    public void MPhone_theUserShouldNotSeeTheText(String arg0) {
+        costRegPage.no_see_mobile_phone_number_invalid.isDisplayed();
 
 
-}
+    }
+    //    @US02TC04
+    @Given("Email user is on {string} page")
+    public void Email_user_is_on_page(String string) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
-    @Given("TC04 user click on User button")
-    public void TC04_user_click_on_User_button() {
+
+    }
+
+    @Given("Email user click on User button")
+    public void Email_user_click_on_User_button() {
         costRegPage.user_button.click();
 
     }
 
-    @Given("TC04 user clicks Registration tab")
-    public void TC04_user_clicks_Registration_tab() {
+    @Given("Email user clicks Registration tab")
+    public void Email_user_clicks_Registration_tab() {
         costRegPage.registration_button.click();
 
     }
-
-    @And("TC04 the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
-    public void TC04theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String arg0, String arg1){
-
-    }
-    @Then("TC04 the user should not see the text {string}.")
-    public void TC04theUserShouldNotSeeTheText(String arg0) {
+    @Given("Email click on Email TextBox")
+    public void Email_click_on_Email_TextBox() {
+        costRegPage.charecter_Email_TextBox.click();
 
     }
+    @And("Email the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
+    public void Email_theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String arg0, String arg1){
 
+    }
+    @Then("Email the user should not see the text {string}.")
+    public void Email_theUserShouldNotSeeTheText(String arg0) {
+        costRegPage.no_See_Email_Invalid_Message.isDisplayed();
 
-    @And("TC04 click on Mobile Phone Number TextBox")
-    public void tc04ClickOnMobilePhoneNumberTextBox() {
 
     }
 
-    @Then("TC04 the user should not see the text {string}")
-    public void tc04TheUserShouldNotSeeTheText(String arg0) {
-    }
 }
+
 

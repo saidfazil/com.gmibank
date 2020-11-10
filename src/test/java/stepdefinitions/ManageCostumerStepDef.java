@@ -75,4 +75,55 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
     }
 
 
+    @And("go back to manage costumers page")
+    public void goBackToManageCostumersPage() {
+        Driver.getDriver().navigate().back();
+    }
+
+    @Then("There should be Edit button where all customer")
+    public void thereShouldBeEditButtonWhereAllCustomer() {
+        Assert.assertTrue(manageCostumerPage.buttonEdit.isDisplayed());
+    }
+
+    @And("Click to Edit button")
+    public void clickToEditButton() {
+       manageCostumerPage.buttonEdit.click();
+    }
+
+    @And("City textbox is updated")
+    public void cityTextboxIsUpdated() {
+        manageCostumerPage.cityUpdate.clear();
+        manageCostumerPage.cityUpdate.sendKeys(ConfigurationReader.getProperty("cityName"));
+    }
+
+    @And("Click to Save button")
+    public void clickToSaveButton() {
+        manageCostumerPage.ButtonEditSave.click();
+    }
+
+    @Then("The Edit portal can allow user to update the user info")
+    public void theEditPortalCanAllowUserToUpdateTheUserInfo() {
+        Driver.getDriver().navigate().back();
+    Assert.assertTrue(manageCostumerPage.alertUpdate.isDisplayed());
+    }
+    @And("Confirming that a customer is registered with ID number")
+    public void confirmingThatACustomerIsRegisteredWithIDNumber() {
+        Assert.assertTrue(manageCostumerPage.user2551.isDisplayed());
+    }
+
+    @And("Click to Delete button")
+    public void clickToDeleteButton() {
+        manageCostumerPage.buttonDelete.click();
+    }
+
+    @And("seeing a message if the user is sure about deletion")
+    public void seeingAMessageIfTheUserIsSureAboutDeletion() {
+        Assert.assertTrue(manageCostumerPage.alertDeleteQuestion.isDisplayed());
+    }
+
+    @Then("User can delete a customer")
+    public void userCanDeleteACustomer() {
+        manageCostumerPage.alertDeleteButton.click();
+        Assert.assertFalse(manageCostumerPage.user2551.isDisplayed());
+    }
 }

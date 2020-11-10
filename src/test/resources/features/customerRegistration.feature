@@ -58,6 +58,6 @@
     Given Email user is on "http://gmibank.com/" page
     And Email user click on User button
     And Email user clicks Registration tab
-    And Email click on Mobile Phone Number TextBox
+    And Email click on Email TextBox
     And Email the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
     Then Email the user should not see the text "This field is invalid".

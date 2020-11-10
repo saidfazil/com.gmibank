@@ -41,14 +41,32 @@ public class ManageCostumerPage {
     @FindBy(xpath = "//span[text()='View']")
     public  WebElement buttonWiew;
 
-    @FindBy(xpath = "//span[text()='Edit']")
+    @FindBy(xpath = "(//span[text()='Edit'])[10]")
     public  WebElement buttonEdit;
 
-    @FindBy(xpath = "//span[text()='Delete']")
+    @FindBy(xpath = "//*[contains(@href,'2563/delete')]")
     public  WebElement buttonDelete;
 
     @FindBy(xpath = "//span[text()='Edit']")
     public  WebElement ButtonViewEdit;
+
+    @FindBy(id = "tp-customer-city")
+    public  WebElement cityUpdate;
+
+    @FindBy(xpath = "//span[text()='Save']")
+    public  WebElement ButtonEditSave;
+
+    @FindBy(xpath = "//div[contains(text(),'updated')]")
+    public WebElement alertUpdate;
+
+    @FindBy(className ="modal-body")
+    public WebElement alertDeleteQuestion;
+
+    @FindBy(linkText = "2563")
+    public  WebElement user2551;
+
+    @FindBy(id = "jhi-confirm-delete-tPCustomer")
+    public WebElement alertDeleteButton;
 
 
 }

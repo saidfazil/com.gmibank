@@ -1,106 +1,532 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/@US005signinLogin.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US3passwordCreate.feature");
 formatter.feature({
-  "name": "User cannot login with invalid username validating the error message",
+  "name": "Registration page should restrict password usage to a secure and high level passcode",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US005"
+      "name": "@US03"
     }
   ]
 });
 formatter.background({
-  "name": "User is the GmiBank login page",
+  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
   "description": "",
   "keyword": "Background"
 });
 formatter.before({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "user is on “https://gmibank.com/login” page.",
+  "name": "User go to the GMi Bank home page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on user button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "You should navigate to registration page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on Password textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "US005TC03 User wants to login with invalid username on Sign In.",
+  "name": "There should be at least 1 lowercase char for stronger password and see the level chart change accordingly",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US005"
+      "name": "@US03"
     },
     {
-      "name": "@US005TC03"
+      "name": "@US03TC01"
     }
   ]
 });
 formatter.step({
-  "name": "the user clicks on Username.",
+  "name": "Enter a password with 1 lowercase letter of at least 7 characters",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Username()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the user enters the wrong Username",
+  "name": "Color line must be orange or green",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()"
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the user clicks on Password..",
+  "name": "Click on password confirmation textbox",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Password()"
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the user enters the wrong Password.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the user clicks on Sign in .",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Sign_in()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the error message on the screen is confirmed.",
+  "name": "Enter to second textbox with 1 lowercase letter of at least 7 characters",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.after({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.background({
+  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User go to the GMi Bank home page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on user button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "You should navigate to registration page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on Password textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be at least 1 uppercase char and see the level  chart change accordingly",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US03"
+    },
+    {
+      "name": "@US03TC02"
+    }
+  ]
+});
+formatter.step({
+  "name": "Enter a password with 1 uppercase letter of at least 7 characters",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Color line must be orange or green",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 uppercase letter of at least 7 characters",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User go to the GMi Bank home page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on user button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "You should navigate to registration page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on Password textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be at least 1 digit  and see the level  chart change accordingly",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US03"
+    },
+    {
+      "name": "@US03TC03"
+    }
+  ]
+});
+formatter.step({
+  "name": "Enter a password with 1 digit of at least 7 characters",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Color line must be orange or green",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 digit of at least 7 characters",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithDigitOfAtLeastCharacters()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User go to the GMi Bank home page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on user button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "You should navigate to registration page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on Password textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be at least 1 special char and see the level bar change accordingly",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US03"
+    },
+    {
+      "name": "@US03TC04"
+    }
+  ]
+});
+formatter.step({
+  "name": "Enter a password with 1 special char of at least 7 characters",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Color line must be orange or green",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 special char of at least 7 characters",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithSpecialCharOfAtLeastCharacters()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User go to the GMi Bank home page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on user button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "You should navigate to registration page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on Password textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be at least 7 chars for a stronger password",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US03"
+    },
+    {
+      "name": "@US03TC05"
+    }
+  ]
+});
+formatter.step({
+  "name": "Enter a password with 7 chars",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithChars()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Color line must be orange or green",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox a password with 7 chars",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxAPasswordWithChars()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
 });
 });

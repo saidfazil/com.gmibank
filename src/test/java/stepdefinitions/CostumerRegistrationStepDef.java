@@ -163,114 +163,63 @@ public class CostumerRegistrationStepDef {
 
 //    @US02TC02
 
-    @Given("SSN user is on {string} page")
-    public void SSN_user_is_on_page(String string) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
-    }
 
-    @Given("SSN user click on User button")
-    public void SSN_user_click_on_User_button() {
-        costRegPage.user_button.click();
-
-    }
-
-    @Given("SSN user clicks Registration tab")
-    public void SSN_user_clicks_Registration_tab() {
-        costRegPage.registration_button.click();
-
-    }
-
-    @Given("SSN click on SSN TextBox")
-    public void SSN_click_on_SSN_TextBox() {
+    @Given("click on SSN TextBox")
+    public void Click_on_SSN_TextBox() {
         costRegPage.SSN_TextBox.click();
 
     }
-    @Given("SSN the user must type the character {string} when entering a number into the current SSN TextBox.")
-    public void SSN_the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
+    @Given("the user must type the character {string} when entering a number into the current SSN TextBox.")
+    public void the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
         String ssn = ConfigurationReader.getProperty("SSN");
 
 
     }
 
-    @Then("SSN the user should not see the text {string}")
-    public void SSN_the_user_should_not_see_the_text(String string) {
+    @Then("the user should not see the text {string}")
+    public void the_user_should_not_see_the_text(String string) {
         costRegPage.No_SSN_message.isDisplayed();
 
     }
 
     //    @US02TC03
-    @Given("MPhone user is on {string} page")
-    public void MPhone_user_is_on_page(String string) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
-
-    }
-
-    @Given("MPhone user click on User button")
-    public void MPhone_user_click_on_User_button() {
-        costRegPage.user_button.click();
-
-    }
-
-    @Given("MPhone user clicks Registration tab")
-    public void MPhone_user_clicks_Registration_tab() {
-        costRegPage.registration_button.click();
-
-    }
-
-    @And("MPhone click on Mobile Phone Number TexttBox")
-    public void MPhone_clickOnMobilePhoneNumberTexttBox() {
+    @And("click on Mobile Phone Number TexttBox")
+    public void clickOnMobilePhoneNumberTexttBox() {
 
         costRegPage.Mobile_Phone_Number_TextBox.click();
     }
 
-    @And("MPhone user must type the character {string} when entering a number into the valid Mobile Phone Number TextBox")
-    public void MPhone_userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String arg0) {
+    @And("user must type the character {string} when entering a number into the valid Mobile Phone Number TextBox")
+    public void userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String arg0) {
         String Hypen = "-";
         costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
 
     }
 
-    @Then("MPhone the user should not see the text {string}.")
-    public void MPhone_theUserShouldNotSeeTheText(String arg0) {
+    @Then("the user should not see the text {string}.")
+    public void theUserShouldNotSeeTheText(String arg0) {
         costRegPage.no_see_mobile_phone_number_invalid.isDisplayed();
 
 
     }
     //    @US02TC04
-    @Given("Email user is on {string} page")
-    public void Email_user_is_on_page(String string) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
-
-    }
-
-    @Given("Email user click on User button")
-    public void Email_user_click_on_User_button() {
-        costRegPage.user_button.click();
-
-    }
-
-    @Given("Email user clicks Registration tab")
-    public void Email_user_clicks_Registration_tab() {
-        costRegPage.registration_button.click();
-
-    }
-    @Given("Email click on Email TextBox")
-    public void Email_click_on_Email_TextBox() {
+    @Given("click on Email TextBox")
+    public void Click_on_Email_TextBox() {
         costRegPage.charecter_Email_TextBox.click();
 
     }
-    @And("Email the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
-    public void Email_theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String string, String string1){
+    @And("the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
+    public void theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String string, String string1){
         costRegPage.charecter_Email_TextBox.sendKeys(ConfigurationReader.getProperty("Email"));
         String charecter = costRegPage.charecter_Email_TextBox.getText();
         Assert.assertFalse(charecter.contains(string));
         Assert.assertFalse(charecter.contains(string1));
     }
-    @Then("Email the user should not see the text {string}.")
-    public void Email_theUserShouldNotSeeTheText(String string) {
+    @Then("the user should not see the text {string}.")
+    public void TheUserShouldNotSeeTheText(String string) {
 
 
         Assert.assertFalse(costRegPage.no_See_Email_Invalid_Message.isDisplayed());

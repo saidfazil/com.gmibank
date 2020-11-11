@@ -84,7 +84,7 @@ public class CostumerRegistrationPage {
     @FindBy(id = "ssn")
     public WebElement charecter_SSN_TextBox;
 
-    @FindBy(xpath = "translation-not-found[Your SSN is required]")
+    @FindBy(xpath = "//*[contains(text(),'Your SSN is invalid')]")
     public WebElement No_SSN_message;
 
 //    @US02TC03

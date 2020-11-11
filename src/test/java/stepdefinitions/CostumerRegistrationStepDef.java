@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
+import org.openqa.selenium.support.Color;
 import pages.CostumerRegistrationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -19,7 +20,6 @@ public class CostumerRegistrationStepDef {
     @Given("user is on {string} page")
     public void user_is_on_page(String string) {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
-
 
     }
 
@@ -167,7 +167,6 @@ public class CostumerRegistrationStepDef {
     public void SSN_user_is_on_page(String string) {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
 
-
     }
 
     @Given("SSN user click on User button")
@@ -190,8 +189,7 @@ public class CostumerRegistrationStepDef {
     @Given("SSN the user must type the character {string} when entering a number into the current SSN TextBox.")
     public void SSN_the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
         String ssn = ConfigurationReader.getProperty("SSN");
-        String newSSN = Driver.getNewSSN(ssn);
-        costRegPage.charecter_SSN_TextBox.sendKeys(newSSN);
+
 
     }
 
@@ -265,12 +263,17 @@ public class CostumerRegistrationStepDef {
 
     }
     @And("Email the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
-    public void Email_theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String arg0, String arg1){
-
+    public void Email_theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String string, String string1){
+        costRegPage.charecter_Email_TextBox.sendKeys(ConfigurationReader.getProperty("Email"));
+        String charecter = costRegPage.charecter_Email_TextBox.getText();
+        Assert.assertFalse(charecter.contains(string));
+        Assert.assertFalse(charecter.contains(string1));
     }
     @Then("Email the user should not see the text {string}.")
-    public void Email_theUserShouldNotSeeTheText(String arg0) {
-        costRegPage.no_See_Email_Invalid_Message.isDisplayed();
+    public void Email_theUserShouldNotSeeTheText(String string) {
+
+
+        Assert.assertFalse(costRegPage.no_See_Email_Invalid_Message.isDisplayed());
 
 
     }

@@ -1,0 +1,3137 @@
+Index: target/test-classes/features/@US005signinLogin.feature
+===================================================================
+--- target/test-classes/features/@US005signinLogin.feature	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ target/test-classes/features/@US005signinLogin.feature	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
+@@ -1,30 +0,0 @@
+-@US005
+-  Feature: User cannot login with invalid username validating the error message
+-    Background: User is the GmiBank login page
+-      Given user is on “https://gmibank.com/login” page.
+-@US005TC01
+-  Scenario: US005TC01 User wants to login with invalid username on Sign In.
+-
+-    And the user clicks on Username.
+-    And the user enters the wrong Username
+-    And the user clicks on Password..
+-    And the user enters the correct Password.
+-    And the user clicks on Sign in .
+-    Then the error message on the screen is confirmed.
+-    @US005TC02
+-    Scenario: US005TC02 User wants to login with invalid username on Sign In.
+-
+-      And the user clicks on Username.
+-      And the user enters the correct Username
+-      And the user clicks on Password..
+-      And the user enters the wrong Password.
+-      And the user clicks on Sign in .
+-      Then the error message on the screen is confirmed.
+-@US005TC03
+-    Scenario: US005TC03 User wants to login with invalid username on Sign In.
+-      And the user clicks on Username.
+-      And the user enters the wrong Username
+-      And the user clicks on Password..
+-      And the user enters the wrong Password.
+-      And the user clicks on Sign in .
+-      Then the error message on the screen is confirmed.
+\ No newline at end of file
+Index: src/test/java/utilities/ReusableMethods.java
+===================================================================
+--- src/test/java/utilities/ReusableMethods.java	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ src/test/java/utilities/ReusableMethods.java	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
+@@ -1,269 +0,0 @@
+-package utilities;
+-
+-import com.google.common.base.Function;
+-import org.junit.Assert;
+-import org.openqa.selenium.*;
+-import org.openqa.selenium.interactions.Actions;
+-import org.openqa.selenium.support.ui.*;
+-
+-import java.time.Duration;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.Random;
+-
+-import static org.junit.Assert.assertFalse;
+-import static org.junit.Assert.assertTrue;
+-
+-public class ReusableMethods {
+-    public static void wait(int secs) {
+-        try {
+-            Thread.sleep(1000 * secs);
+-        } catch (InterruptedException e) {
+-            e.printStackTrace();
+-        }
+-    }
+-    /*
+-     * switches to new window by the exact title
+-     * returns to original window if windows with given title not found
+-     */
+-    public static void switchToWindow(String targetTitle) {
+-        String origin = Driver.getDriver().getWindowHandle();
+-        for (String handle : Driver.getDriver().getWindowHandles()) {
+-            Driver.getDriver().switchTo().window(handle);
+-            if (Driver.getDriver().getTitle().equals(targetTitle)) {
+-                return;
+-            }
+-        }
+-        Driver.getDriver().switchTo().window(origin);
+-    }
+-    public static void hover(WebElement element) {
+-        Actions actions = new Actions(Driver.getDriver());
+-        actions.moveToElement(element).perform();
+-    }
+-    /**
+-     * return a list of string from a list of elements ignores any element with no
+-     * text
+-     *
+-     * @param list
+-     * @return
+-     */
+-    public static List<String> getElementsText(List<WebElement> list) {
+-        List<String> elemTexts = new ArrayList<>();
+-        for (WebElement el : list) {
+-            elemTexts.add(el.getText());
+-        }
+-        return elemTexts;
+-    }
+-    public static List<String> getElementsText(By locator) {
+-        List<WebElement> elems = Driver.getDriver().findElements(locator);
+-        List<String> elemTexts = new ArrayList<>();
+-        for (WebElement el : elems) {
+-            elemTexts.add(el.getText());
+-        }
+-        return elemTexts;
+-    }
+-    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
+-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
+-        return wait.until(ExpectedConditions.visibilityOf(element));
+-    }
+-    public static WebElement waitForVisibility(By locator, int timeout) {
+-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+-    }
+-    public static Boolean waitForInVisibility(By locator, int timeout) {
+-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+-        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+-    }
+-    public static WebElement waitForClickablility(WebElement element, int timeout) {
+-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+-        return wait.until(ExpectedConditions.elementToBeClickable(element));
+-    }
+-    public static WebElement waitForClickablility(By locator, int timeout) {
+-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+-    }
+-    public static void waitForPageToLoad(long timeOutInSeconds) {
+-        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+-            public Boolean apply(WebDriver driver) {
+-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+-            }
+-        };
+-        try {
+-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
+-            wait.until(expectation);
+-        } catch (Exception error) {
+-            error.printStackTrace();
+-        }
+-    }
+-    public static WebElement fluentWait(final WebElement webElement, int timeinsec) {
+-        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
+-                .withTimeout(Duration.ofSeconds(timeinsec))
+-                .pollingEvery(Duration.ofMillis(500))
+-                .ignoring(NoSuchElementException.class);
+-        WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+-            public WebElement apply(WebDriver driver) {
+-                return webElement;
+-            }
+-        });
+-        return element;
+-    }
+-    /**
+-     * Verifies whether the element matching the provided locator is displayed on page
+-     * fails if the element matching the provided locator is not found or not displayed
+-     *
+-     * @param by
+-     */
+-    public static void verifyElementDisplayed(By by) {
+-        try {
+-            assertTrue("Element not visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
+-        } catch (NoSuchElementException e) {
+-            Assert.fail("Element not found: " + by);
+-        }
+-    }
+-    /**
+-     * Verifies whether the element matching the provided locator is NOT displayed on page
+-     * fails if the element matching the provided locator is not found or not displayed
+-     *
+-     * @param by
+-     */
+-    public static void verifyElementNotDisplayed(By by) {
+-        try {
+-            assertFalse("Element should not be visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
+-        } catch (NoSuchElementException e) {
+-            e.printStackTrace();
+-        }
+-    }
+-    /**
+-     * Verifies whether the element is displayed on page
+-     * fails if the element is not found or not displayed
+-     *
+-     * @param element
+-     */
+-    public static void verifyElementDisplayed(WebElement element) {
+-        try {
+-            assertTrue("Element not visible: " + element, element.isDisplayed());
+-        } catch (NoSuchElementException e) {
+-            Assert.fail("Element not found: " + element);
+-        }
+-    }
+-    /**
+-     * Waits for element to be not stale
+-     *
+-     * @param element
+-     */
+-    public void waitForStaleElement(WebElement element) {
+-        int y = 0;
+-        while (y <= 15) {
+-            if (y == 1)
+-                try {
+-                    element.isDisplayed();
+-                    break;
+-                } catch (StaleElementReferenceException st) {
+-                    y++;
+-                    try {
+-                        Thread.sleep(300);
+-                    } catch (InterruptedException e) {
+-                        e.printStackTrace();
+-                    }
+-                } catch (WebDriverException we) {
+-                    y++;
+-                    try {
+-                        Thread.sleep(300);
+-                    } catch (InterruptedException e) {
+-                        e.printStackTrace();
+-                    }
+-                }
+-        }
+-    }
+-    /**
+-     * Selects a random value from a dropdown list and returns the selected Web Element
+-     *
+-     * @param select
+-     * @return
+-     */
+-    public static WebElement selectRandomTextFromDropdown(Select select) {
+-        Random random = new Random();
+-        List<WebElement> weblist = select.getOptions();
+-        int optionIndex = 1 + random.nextInt(weblist.size() - 1);
+-        select.selectByIndex(optionIndex);
+-        return select.getFirstSelectedOption();
+-    }
+-    /**
+-     * Clicks on an element using JavaScript
+-     *
+-     * @param element
+-     */
+-    public static void clickWithJS(WebElement element) {
+-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+-    }
+-    /**
+-     * Scrolls down to an element using JavaScript
+-     *
+-     * @param element
+-     */
+-    public static void scrollToElement(WebElement element) {
+-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+-    }
+-    /**
+-     * Performs double click action on an element
+-     *
+-     * @param element
+-     */
+-    public static void doubleClick(WebElement element) {
+-        new Actions(Driver.getDriver()).doubleClick(element).build().perform();
+-    }
+-    /**
+-     * Changes the HTML attribute of a Web Element to the given value using JavaScript
+-     *
+-     * @param element
+-     * @param attributeName
+-     * @param attributeValue
+-     */
+-    public static void setAttribute(WebElement element, String attributeName, String attributeValue) {
+-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
+-    }
+-    /**
+-     * @param element
+-     * @param check
+-     */
+-    public static void selectCheckBox(WebElement element, boolean check) {
+-        if (check) {
+-            if (!element.isSelected()) {
+-                element.click();
+-            }
+-        } else {
+-            if (element.isSelected()) {
+-                element.click();
+-            }
+-        }
+-    }
+-    public static void clickWithTimeOut(WebElement element, int timeout) {
+-        for (int i = 0; i < timeout; i++) {
+-            try {
+-                element.click();
+-                return;
+-            } catch (WebDriverException e) {
+-                wait(1);
+-            }
+-        }
+-    }
+-    /**
+-     * executes the given JavaScript command on given web element
+-     *
+-     * @param element
+-     */
+-    public static void executeJScommand(WebElement element, String command) {
+-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+-        jse.executeScript(command, element);
+-    }
+-    /**
+-     * executes the given JavaScript command on given web element
+-     *
+-     * @param command
+-     */
+-    public static void executeJScommand(String command) {
+-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+-        jse.executeScript(command);
+-    }
+-}
+\ No newline at end of file
+Index: src/test/java/pages/UserSettingsPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/UserSettingsPage.java	(date 1605129457017)
++++ src/test/java/pages/UserSettingsPage.java	(date 1605129457017)
+@@ -0,0 +1,51 @@
++package pages;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++public class UserSettingsPage {
++    public UserSettingsPage(){
++        PageFactory.initElements(Driver.getDriver(),this);}
++    @FindBy(name = "username" )
++    public WebElement username;
++
++    @FindBy(name = "password")
++    public WebElement password;
++
++    @FindBy(id="account-menu")
++    public WebElement userDropDown;
++
++    @FindBy(name = "firstName")
++    public WebElement firstName;
++
++    @FindBy(name="lastName")
++    public WebElement lastName;
++
++    @FindBy(id="email")
++    public WebElement eMail;
++
++    @FindBy(name="langKey")
++    public WebElement languageDropDown;
++
++    @FindBy(xpath = "//span[.='Save']")
++    public WebElement saveButton;
++
++    @FindBy(xpath = "//span[.='User Info']" )
++    public WebElement userInfo;
++
++    @FindBy(xpath = "//option[.='English']")
++    public WebElement langEnglish;
++
++    @FindBy(xpath = "//option[.='Türkçe']")
++    public WebElement langTurkish;
++
++    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div")
++    public WebElement saveAlert;
++
++
++
++
++
++}
+Index: src/test/java/pages/NegativeTestPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/NegativeTestPage.java	(date 1605129457017)
++++ src/test/java/pages/NegativeTestPage.java	(date 1605129457017)
+@@ -0,0 +1,21 @@
++package pages;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++public class NegativeTestPage {
++
++    public NegativeTestPage(){
++        PageFactory.initElements(Driver.getDriver(), this);
++
++    }
++
++    @FindBy(id = "save-entity")
++    public WebElement saveButton;
++
++    @FindBy(xpath = "//*[.='This field is required.']")
++    public WebElement alertCtiy;
++
++}
+Index: unnamed1.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- unnamed1.patch	(date 1605129457030)
++++ unnamed1.patch	(date 1605129457030)
+@@ -0,0 +1,19 @@
++Index: src/test/java/runners/Runner.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++--- src/test/java/runners/Runner.java	(revision 625803b998e2fe811331dacad2558ccc21c0c89c)
+++++ src/test/java/runners/Runner.java	(date 1605127342854)
++@@ -9,7 +9,7 @@
++                 "json:target/json-reports/cucumber.json",
++                 "junit:target/xml-report/cucumber.xml"
++         },
++-        features = "/Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US3passwordCreate.feature",
+++        features = "/Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature",
++         glue = "stepdefinitions",
++         tags = "@US03",
++         dryRun = false
++diff --git src/test/resources/features/US3passwordCreate.feature src/test/resources/features/US03passwordCreate.feature
++rename from src/test/resources/features/US3passwordCreate.feature
++rename to src/test/resources/features/US03passwordCreate.feature
+Index: src/test/java/pages/PasswordCreatePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/PasswordCreatePage.java	(date 1605129457017)
++++ src/test/java/pages/PasswordCreatePage.java	(date 1605129457017)
+@@ -0,0 +1,46 @@
++package pages;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++public class PasswordCreatePage {
++
++    public PasswordCreatePage(){
++        PageFactory.initElements(Driver.getDriver(), this);
++    }
++
++    @FindBy (id = "account-menu")
++    public WebElement userButton;
++
++    @FindBy (xpath = "//*[.='Register']")
++    public WebElement registerButton;
++
++    @FindBy (id = "firstPassword")
++    public WebElement firstPassBox;
++
++    @FindBy (xpath = "(//*[@class='invalid-feedback'])[1]")
++    public WebElement messageUnderTextBox;
++
++    @FindBy (id = "secondPassword")
++    public WebElement secondPassBox;
++
++    @FindBy (xpath = "(//li[@class='point'])[1]")
++    public WebElement line1;
++
++    @FindBy (xpath = "(//li[@class='point'])[2]")
++    public WebElement line2;
++
++    @FindBy (xpath = "(//li[@class='point'])[3]")
++    public WebElement line3;
++
++    @FindBy (xpath = "(//li[@class='point'])[4]")
++    public WebElement line4;
++
++    @FindBy (xpath = "(//li[@class='point'])[5]")
++    public WebElement line5;
++
++
++
++}
+Index: src/test/java/pages/CostumerRegistrationPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/CostumerRegistrationPage.java	(date 1605129457015)
++++ src/test/java/pages/CostumerRegistrationPage.java	(date 1605129457015)
+@@ -0,0 +1,108 @@
++package pages;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++public class CostumerRegistrationPage {
++    public CostumerRegistrationPage(){
++        PageFactory.initElements(Driver.getDriver(),this);
++
++    }
++    @FindBy(id= "account-menu")
++    public WebElement user_button;
++
++    @FindBy(xpath = "//a[@class='dropdown-item'][2]")
++    public WebElement registration_button;
++
++    @FindBy(id= "ssn")
++    public WebElement SSN_TextBox;
++
++    @FindBy(xpath = "//input[@name='ssn']")
++    public WebElement SSN_Number;
++
++    @FindBy(id = "firstname")
++    public WebElement First_Name_TextBox;
++
++    @FindBy(id = "firstname")
++    public WebElement First_Name;
++
++    @FindBy(id= "lastname")
++    public WebElement Last_Name_TextBox;
++
++    @FindBy(id= "lastname")
++    public WebElement Last_Name;
++
++    @FindBy(id = "address")
++    public WebElement Address_TextBox;
++
++    @FindBy(id = "address")
++    public WebElement Address;
++
++    @FindBy(id = "mobilephone")
++    public WebElement Mobile_Phone_Number_TextBox;
++
++    @FindBy(id = "mobilephone")
++    public WebElement Mobile_Phone_Number;
++
++    @FindBy(id = "username")
++    public WebElement Username_TextBox;
++
++    @FindBy(id = "username")
++    public WebElement Username;
++
++    @FindBy(id = "email")
++    public WebElement Email_TextBox;
++
++    @FindBy(id = "email")
++    public WebElement Email;
++
++    @FindBy(id = "firstPassword")
++    public WebElement New_password_TextBox;
++
++    @FindBy(id = "firstPassword")
++    public WebElement New_password;
++
++    @FindBy(xpath = "//li[@class='point'][5]")
++    public WebElement Password_strength;
++
++    @FindBy(id = "secondPassword")
++    public WebElement Password_Confirmation_TextBox;
++
++    @FindBy(id = "secondPassword")
++    public WebElement Password_Confirmation;
++
++    @FindBy(id = "register-submit")
++    public WebElement Register_button;
++
++    @FindBy(xpath = "//*[.='Registration saved!']")
++    public WebElement SavedMessage;
++
++//    @US02TC02
++
++    @FindBy(id = "ssn")
++    public WebElement charecter_SSN_TextBox;
++
++    @FindBy(xpath = "//*[contains(text(),'Your SSN is invalid')]")
++    public WebElement No_SSN_message;
++
++//    @US02TC03
++
++    @FindBy(id = "mobilephone")
++    public WebElement charecter_Mobile_Phone_TextBox;
++
++    @FindBy(xpath = "//*[.='Your mobile phone number is invalid']")
++    public WebElement no_see_mobile_phone_number_invalid;
++
++//    @US02TC04
++
++    @FindBy(id = "email")
++    public WebElement charecter_Email_TextBox;
++
++    @FindBy(xpath = "//*[.='This field is invalid']")
++    public WebElement no_See_Email_Invalid_Message;
++
++
++}
++
+Index: src/test/java/pages/InformationCheckPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/InformationCheckPage.java	(date 1605129457015)
++++ src/test/java/pages/InformationCheckPage.java	(date 1605129457015)
+@@ -0,0 +1,69 @@
++package pages;
++
++import net.bytebuddy.asm.Advice;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++public class InformationCheckPage {
++
++    public InformationCheckPage(){
++
++        PageFactory.initElements(Driver.getDriver(), this);
++    }
++
++
++    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
++    public WebElement firstSignIn;
++
++    @FindBy(xpath = "//*[.='Sign in']")
++    public WebElement signIn;
++
++    @FindBy(xpath = "//input[@name='username']")
++    public WebElement userName;
++
++    @FindBy(xpath = "//input[@name='password']")
++    public WebElement password;
++
++    @FindBy(xpath = "//button[@type='submit']")
++    public WebElement submitButton;
++
++    @FindBy(xpath = "//*[.='My Operations']")
++    public WebElement myOperations;
++
++    @FindBy(xpath = "//*[.='Manage Customers']")
++    public WebElement manageCustomers;
++
++    @FindBy(id = "jh-create-entity")
++    public WebElement createNewCustomer;
++
++    @FindBy(id = "search-ssn")
++    public WebElement ssn;
++
++    @FindBy(xpath = "//button[@class='btn btn-secondary']")
++    public WebElement searchButton;
++
++    @FindBy(xpath = "//input[@name='firstName']")
++    public WebElement firstName;
++
++    @FindBy(xpath = "//input[@name='lastName']")
++    public WebElement lastName;
++
++    @FindBy(xpath = "//input[@name='email']")
++    public WebElement email;
++
++    @FindBy(id = "tp-customer-country")
++    public WebElement country;
++
++    @FindBy(id = "tp-customer-state")
++    public WebElement state;
++
++    @FindBy(id = "tp-customer-createDate")
++    public WebElement date;
++
++
++
++
++
++}
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\n        <outputRelativeToContentRoot value=\"true\" />\n        <module name=\"com.gmibank\" />\n      </profile>\n    </annotationProcessing>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ .idea/compiler.xml	(date 1605129457014)
+@@ -7,6 +7,7 @@
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+         <module name="com.gmibank" />
++        <module name="glbtrader.com" />
+       </profile>
+     </annotationProcessing>
+   </component>
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Default ignored files\n/workspace.xml
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ .idea/.gitignore	(date 1605129457014)
+@@ -1,2 +1,3 @@
+ # Default ignored files
+-/workspace.xml
+\ No newline at end of file
++/workspace.xml
++/shelf/
+Index: target/default-cucumber-reports/report.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri(\"file:src/test/resources/features/@US005signinLogin.feature\");\nformatter.feature({\n  \"name\": \"User cannot login with invalid username validating the error message\",\n  \"description\": \"\",\n  \"keyword\": \"Feature\",\n  \"tags\": [\n    {\n      \"name\": \"@US005\"\n    }\n  ]\n});\nformatter.background({\n  \"name\": \"User is the GmiBank login page\",\n  \"description\": \"\",\n  \"keyword\": \"Background\"\n});\nformatter.before({\n  \"status\": \"skipped\"\n});\nformatter.step({\n  \"name\": \"user is on “https://gmibank.com/login” page.\",\n  \"keyword\": \"Given \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.scenario({\n  \"name\": \"US005TC03 User wants to login with invalid username on Sign In.\",\n  \"description\": \"\",\n  \"keyword\": \"Scenario\",\n  \"tags\": [\n    {\n      \"name\": \"@US005\"\n    },\n    {\n      \"name\": \"@US005TC03\"\n    }\n  ]\n});\nformatter.step({\n  \"name\": \"the user clicks on Username.\",\n  \"keyword\": \"And \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.the_user_clicks_on_Username()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.step({\n  \"name\": \"the user enters the wrong Username\",\n  \"keyword\": \"And \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.step({\n  \"name\": \"the user clicks on Password..\",\n  \"keyword\": \"And \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.the_user_clicks_on_Password()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.step({\n  \"name\": \"the user enters the wrong Password.\",\n  \"keyword\": \"And \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.step({\n  \"name\": \"the user clicks on Sign in .\",\n  \"keyword\": \"And \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.the_user_clicks_on_Sign_in()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.step({\n  \"name\": \"the error message on the screen is confirmed.\",\n  \"keyword\": \"Then \"\n});\nformatter.match({\n  \"location\": \"stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()\"\n});\nformatter.result({\n  \"status\": \"skipped\"\n});\nformatter.after({\n  \"status\": \"skipped\"\n});\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/default-cucumber-reports/report.js	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ target/default-cucumber-reports/report.js	(date 1605129806338)
+@@ -1,4 +1,4 @@
+-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/@US005signinLogin.feature");
++$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/signinLogin.feature");
+ formatter.feature({
+   "name": "User cannot login with invalid username validating the error message",
+   "description": "",
+@@ -9,13 +9,18 @@
+     }
+   ]
+ });
+-formatter.background({
+-  "name": "User is the GmiBank login page",
++formatter.scenario({
++  "name": "US005TC01 User wants to login with invalid username on Sign In.",
+   "description": "",
+-  "keyword": "Background"
++  "keyword": "Scenario",
++  "tags": [
++    {
++      "name": "@US005"
++    }
++  ]
+ });
+ formatter.before({
+-  "status": "skipped"
++  "status": "passed"
+ });
+ formatter.step({
+   "name": "user is on “https://gmibank.com/login” page.",
+@@ -25,20 +30,7 @@
+   "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+ });
+ formatter.result({
+-  "status": "skipped"
+-});
+-formatter.scenario({
+-  "name": "US005TC03 User wants to login with invalid username on Sign In.",
+-  "description": "",
+-  "keyword": "Scenario",
+-  "tags": [
+-    {
+-      "name": "@US005"
+-    },
+-    {
+-      "name": "@US005TC03"
+-    }
+-  ]
++  "status": "passed"
+ });
+ formatter.step({
+   "name": "the user clicks on Username.",
+@@ -48,7 +40,8 @@
+   "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Username()"
+ });
+ formatter.result({
+-  "status": "skipped"
++  "error_message": "io.cucumber.java.PendingException: TODO: implement me\n\tat stepdefinitions.SignInStepDef.the_user_clicks_on_Username(SignInStepDef.java:18)\n\tat ✽.the user clicks on Username.(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/signinLogin.feature:5)\n",
++  "status": "pending"
+ });
+ formatter.step({
+   "name": "the user enters the wrong Username",
+@@ -71,11 +64,11 @@
+   "status": "skipped"
+ });
+ formatter.step({
+-  "name": "the user enters the wrong Password.",
++  "name": "the user enters the correct Password.",
+   "keyword": "And "
+ });
+ formatter.match({
+-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()"
++  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_correct_Password()"
+ });
+ formatter.result({
+   "status": "skipped"
+@@ -101,6 +94,6 @@
+   "status": "skipped"
+ });
+ formatter.after({
+-  "status": "skipped"
++  "status": "passed"
+ });
+ });
+\ No newline at end of file
+Index: target/json-reports/cucumber.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[\n  {\n    \"line\": 2,\n    \"elements\": [\n      {\n        \"line\": 3,\n        \"name\": \"User is the GmiBank login page\",\n        \"description\": \"\",\n        \"type\": \"background\",\n        \"keyword\": \"Background\",\n        \"steps\": [\n          {\n            \"result\": {\n              \"duration\": 3000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 4,\n            \"name\": \"user is on “https://gmibank.com/login” page.\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()\"\n            },\n            \"keyword\": \"Given \"\n          }\n        ]\n      },\n      {\n        \"start_timestamp\": \"2020-11-11T20:18:39.076Z\",\n        \"before\": [\n          {\n            \"result\": {\n              \"duration\": 1000000,\n              \"status\": \"skipped\"\n            },\n            \"match\": {\n              \"location\": \"stepdefinitions.Hooks.setUp()\"\n            }\n          }\n        ],\n        \"line\": 24,\n        \"name\": \"US005TC03 User wants to login with invalid username on Sign In.\",\n        \"description\": \"\",\n        \"id\": \"user-cannot-login-with-invalid-username-validating-the-error-message;us005tc03-user-wants-to-login-with-invalid-username-on-sign-in.\",\n        \"after\": [\n          {\n            \"result\": {\n              \"duration\": 7000000,\n              \"status\": \"skipped\"\n            },\n            \"match\": {\n              \"location\": \"stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)\"\n            }\n          }\n        ],\n        \"type\": \"scenario\",\n        \"keyword\": \"Scenario\",\n        \"steps\": [\n          {\n            \"result\": {\n              \"duration\": 5000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 25,\n            \"name\": \"the user clicks on Username.\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.the_user_clicks_on_Username()\"\n            },\n            \"keyword\": \"And \"\n          },\n          {\n            \"result\": {\n              \"duration\": 1000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 26,\n            \"name\": \"the user enters the wrong Username\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()\"\n            },\n            \"keyword\": \"And \"\n          },\n          {\n            \"result\": {\n              \"duration\": 1000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 27,\n            \"name\": \"the user clicks on Password..\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.the_user_clicks_on_Password()\"\n            },\n            \"keyword\": \"And \"\n          },\n          {\n            \"result\": {\n              \"duration\": 8000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 28,\n            \"name\": \"the user enters the wrong Password.\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()\"\n            },\n            \"keyword\": \"And \"\n          },\n          {\n            \"result\": {\n              \"duration\": 1000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 29,\n            \"name\": \"the user clicks on Sign in .\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.the_user_clicks_on_Sign_in()\"\n            },\n            \"keyword\": \"And \"\n          },\n          {\n            \"result\": {\n              \"duration\": 1000000,\n              \"status\": \"skipped\"\n            },\n            \"line\": 30,\n            \"name\": \"the error message on the screen is confirmed.\",\n            \"match\": {\n              \"location\": \"stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()\"\n            },\n            \"keyword\": \"Then \"\n          }\n        ],\n        \"tags\": [\n          {\n            \"name\": \"@US005\"\n          },\n          {\n            \"name\": \"@US005TC03\"\n          }\n        ]\n      }\n    ],\n    \"name\": \"User cannot login with invalid username validating the error message\",\n    \"description\": \"\",\n    \"id\": \"user-cannot-login-with-invalid-username-validating-the-error-message\",\n    \"keyword\": \"Feature\",\n    \"uri\": \"file:src/test/resources/features/@US005signinLogin.feature\",\n    \"tags\": [\n      {\n        \"name\": \"@US005\",\n        \"type\": \"Tag\",\n        \"location\": {\n          \"line\": 1,\n          \"column\": 1\n        }\n      }\n    ]\n  }\n]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/json-reports/cucumber.json	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ target/json-reports/cucumber.json	(date 1605129806389)
+@@ -3,48 +3,27 @@
+     "line": 2,
+     "elements": [
+       {
+-        "line": 3,
+-        "name": "User is the GmiBank login page",
+-        "description": "",
+-        "type": "background",
+-        "keyword": "Background",
+-        "steps": [
+-          {
+-            "result": {
+-              "duration": 3000000,
+-              "status": "skipped"
+-            },
+-            "line": 4,
+-            "name": "user is on “https://gmibank.com/login” page.",
+-            "match": {
+-              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+-            },
+-            "keyword": "Given "
+-          }
+-        ]
+-      },
+-      {
+-        "start_timestamp": "2020-11-11T20:18:39.076Z",
++        "start_timestamp": "2020-11-11T21:23:13.673Z",
+         "before": [
+           {
+             "result": {
+               "duration": 1000000,
+-              "status": "skipped"
++              "status": "passed"
+             },
+             "match": {
+               "location": "stepdefinitions.Hooks.setUp()"
+             }
+           }
+         ],
+-        "line": 24,
+-        "name": "US005TC03 User wants to login with invalid username on Sign In.",
++        "line": 3,
++        "name": "US005TC01 User wants to login with invalid username on Sign In.",
+         "description": "",
+-        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;us005tc03-user-wants-to-login-with-invalid-username-on-sign-in.",
++        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;us005tc01-user-wants-to-login-with-invalid-username-on-sign-in.",
+         "after": [
+           {
+             "result": {
+-              "duration": 7000000,
+-              "status": "skipped"
++              "duration": 998000000,
++              "status": "passed"
+             },
+             "match": {
+               "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+@@ -56,10 +35,23 @@
+         "steps": [
+           {
+             "result": {
+-              "duration": 5000000,
+-              "status": "skipped"
++              "duration": 11083000000,
++              "status": "passed"
++            },
++            "line": 4,
++            "name": "user is on “https://gmibank.com/login” page.",
++            "match": {
++              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+             },
+-            "line": 25,
++            "keyword": "Given "
++          },
++          {
++            "result": {
++              "error_message": "io.cucumber.java.PendingException: TODO: implement me\n\tat stepdefinitions.SignInStepDef.the_user_clicks_on_Username(SignInStepDef.java:18)\n\tat ✽.the user clicks on Username.(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/signinLogin.feature:5)\n",
++              "duration": 8000000,
++              "status": "pending"
++            },
++            "line": 5,
+             "name": "the user clicks on Username.",
+             "match": {
+               "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Username()"
+@@ -68,10 +60,10 @@
+           },
+           {
+             "result": {
+-              "duration": 1000000,
++              "duration": 2000000,
+               "status": "skipped"
+             },
+-            "line": 26,
++            "line": 6,
+             "name": "the user enters the wrong Username",
+             "match": {
+               "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()"
+@@ -80,10 +72,10 @@
+           },
+           {
+             "result": {
+-              "duration": 1000000,
++              "duration": 2000000,
+               "status": "skipped"
+             },
+-            "line": 27,
++            "line": 7,
+             "name": "the user clicks on Password..",
+             "match": {
+               "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Password()"
+@@ -92,13 +84,13 @@
+           },
+           {
+             "result": {
+-              "duration": 8000000,
++              "duration": 1000000,
+               "status": "skipped"
+             },
+-            "line": 28,
+-            "name": "the user enters the wrong Password.",
++            "line": 8,
++            "name": "the user enters the correct Password.",
+             "match": {
+-              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()"
++              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_correct_Password()"
+             },
+             "keyword": "And "
+           },
+@@ -107,7 +99,7 @@
+               "duration": 1000000,
+               "status": "skipped"
+             },
+-            "line": 29,
++            "line": 9,
+             "name": "the user clicks on Sign in .",
+             "match": {
+               "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Sign_in()"
+@@ -119,7 +111,7 @@
+               "duration": 1000000,
+               "status": "skipped"
+             },
+-            "line": 30,
++            "line": 10,
+             "name": "the error message on the screen is confirmed.",
+             "match": {
+               "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()"
+@@ -130,9 +122,6 @@
+         "tags": [
+           {
+             "name": "@US005"
+-          },
+-          {
+-            "name": "@US005TC03"
+           }
+         ]
+       }
+@@ -141,7 +130,7 @@
+     "description": "",
+     "id": "user-cannot-login-with-invalid-username-validating-the-error-message",
+     "keyword": "Feature",
+-    "uri": "file:src/test/resources/features/@US005signinLogin.feature",
++    "uri": "file:src/test/resources/features/signinLogin.feature",
+     "tags": [
+       {
+         "name": "@US005",
+Index: configuration.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>browser = chrome\ntoken   = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTYwNDYxNzgyM30.6pYwvDKGECkHg6dx5Z__mYZofyHGutdyAw42IRaDNwiyxNtFWUmpTimfh1r3DklSrYqkXUaSVikcWH_ooBd5UA\napi_url = https://www.gmibank.com/api/tp-account-registrations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsignIn_Url = https://gmibank.com/login\nsignin_trueUsername = tataramazan\nsignin_falsePassword = Ramazan.1453\nsignin_truePassword  = Gmi.123\nsignin_falseUsername = ramazanBayram
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- configuration.properties	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ configuration.properties	(date 1605129763567)
+@@ -5,6 +5,15 @@
+ 
+ 
+ 
++gmi_url = https://gmibank.com/
++
++employeeUsername=globalemployee1
++employeePassword=Global.123
++cityName=Frankfurtt
++
++
++
++
+ 
+ 
+ 
+@@ -22,4 +31,166 @@
+ signin_trueUsername = tataramazan
+ signin_falsePassword = Ramazan.1453
+ signin_truePassword  = Gmi.123
+-signin_falseUsername = ramazanBayram
+\ No newline at end of file
++signin_falseUsername = ramazanBayram
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++employeeUsername3=globalemployee3
++employeePassword3=Global.123
++employeeEmail3=globalemployee3@gmail.com
++selectedLanguage=English
++selectedLanguage2=T�rk�e
++updateFirstName=updatedglobalemployee3
++saveAlertText=Settings saved!
++
++
++
++
++
++hb_id=GlobalEmployeeHb
++hb_password=13071990
++hb_SSN=190-19-1907
++hb_date=09.11.2020 11:11
++hb_country=1
++hb_state=New York
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++gmi_bank_url = http://gmibank.com/
++SSN = 690-45-9877
++First_Name = Celin
++Last_Name = White
++Address = 123 Rue de la Milles 45160 Orleans/France
++Mobile_Phone_Number = 980-678-4554
++Username = Celin45
++Email = celin_45@gmail.com
++New_password = Celin.w?45
++
++
+Index: target/xml-report/cucumber.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<testsuite errors=\"0\" failures=\"0\" name=\"io.cucumber.core.plugin.JUnitFormatter\" skipped=\"0\" tests=\"1\" time=\"0.568\">\n<testcase classname=\"User cannot login with invalid username validating the error message\" name=\"US005TC03 User wants to login with invalid username on Sign In.\" time=\"0.159\">\n<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................skipped\nAnd the user clicks on Username.............................................skipped\nAnd the user enters the wrong Username......................................skipped\nAnd the user clicks on Password.............................................skipped\nAnd the user enters the wrong Password......................................skipped\nAnd the user clicks on Sign in .............................................skipped\nThen the error message on the screen is confirmed...........................skipped\n]]></system-out>\n</testcase>\n</testsuite>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/xml-report/cucumber.xml	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ target/xml-report/cucumber.xml	(date 1605129806507)
+@@ -1,13 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.568">
+-<testcase classname="User cannot login with invalid username validating the error message" name="US005TC03 User wants to login with invalid username on Sign In." time="0.159">
+-<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................skipped
+-And the user clicks on Username.............................................skipped
++<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="1" time="13.542">
++<testcase classname="User cannot login with invalid username validating the error message" name="US005TC01 User wants to login with invalid username on Sign In." time="12.611">
++<skipped><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
++And the user clicks on Username.............................................pending
+ And the user enters the wrong Username......................................skipped
+ And the user clicks on Password.............................................skipped
+-And the user enters the wrong Password......................................skipped
++And the user enters the correct Password....................................skipped
+ And the user clicks on Sign in .............................................skipped
+ Then the error message on the screen is confirmed...........................skipped
+-]]></system-out>
++]]></skipped>
+ </testcase>
+ </testsuite>
+Index: target/test-classes/features/manageCostumer.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@US12TC01\n\nFeature: A description\n\n  Scenario: A scenario\nGiven Go to \"https://gmibank.com/\" link\nAnd Click to User drop down menu\nAnd Click to Sign in\nAnd Enter the username with valid credentail\nAnd Enter the pasword with valid credentail\nAnd Click to Sign in button\nAnd Click to My Operations drop down menu\nAnd Click to Manage Costumers\nThen Random customer should show up on manage customers module populating the account information of the customer.\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/manageCostumer.feature	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ target/test-classes/features/manageCostumer.feature	(date 1605129769283)
+@@ -1,14 +1,36 @@
+-@US12TC01
+-
+-Feature: A description
+-
+-  Scenario: A scenario
+-Given Go to "https://gmibank.com/" link
+-And Click to User drop down menu
+-And Click to Sign in
++  @US12
++Feature: An Employee can manage Customer
++
++  @US12TC01
++  Scenario:All customers should show up on manage customers module populating the account information of the customer
++Given Go to gmibank.com home page
++And Click to User Account drop down menu and Click to Sign In
+ And Enter the username with valid credentail
+ And Enter the pasword with valid credentail
+ And Click to Sign in button
+-And Click to My Operations drop down menu
+-And Click to Manage Costumers
+-Then Random customer should show up on manage customers module populating the account information of the customer.
++And Click to My Operations drop down menu and Click to Manage Costumers
++Then A customer should show up at total nine head on account information of the customer
++
++  @US12TC02
++  Scenario:There should be a View option where customer can be navigated to all customer info and see edit button there
++    And Click to View button.
++    Then There should be Edit button.
++
++  @US12TC03
++  Scenario:There should be an Edit button where all customer information can be populated
++    And go back to manage costumers page
++    Then There should be Edit button where all customer
++
++  @US12TC04
++  Scenario:There should be Edit button where all customerThe Edit portal can allow user to create or update the user info
++    And Click to Edit button
++    And City textbox is updated
++    And Click to Save button
++    Then The Edit portal can allow user to update the user info
++
++  @US12TC05
++  Scenario:User can delete a customer, but seeing a message if the user is sure about deletion
++    And Confirming that a customer is registered with ID number
++    And Click to Delete button
++    And seeing a message if the user is sure about deletion
++    Then User can delete a customer
+Index: target/test-classes/features/userSettings.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/userSettings.feature	(date 1605129769288)
++++ target/test-classes/features/userSettings.feature	(date 1605129769288)
+@@ -0,0 +1,34 @@
++Feature:User info segment (User Settings) should be editable on Homepage
++  @US06TC01
++  Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
++    Given Go to "https://gmibank.com/" link
++    And Click to User drop down menu
++    And Click to Sign in
++    And Enter the username with valid credentails
++    And Enter the password with valid credentails
++    And Click to Sign in button
++    And Click to User drop down menu
++    And Click to User info
++    And Assert that First Name is not empty.
++    And Assert that Last Name is not empty.
++    And Assert that Email is not empty.
++
++  @US06TC02
++  Scenario: There should be 2 languages available "English and Turkish"
++    And Assert that Language dropdown is have English.
++    And Assert that Language dropdown is have Türkçe.
++
++  @US06TC03
++  Scenario: There should be an option to update firstname
++    And Update to First Name
++    And Click to Save button
++    Then Assert that visible text saveAlertText.
++
++
++
++
++
++
++
++
++
+Index: src/test/java/stepdefinitions/CostumerRegistrationStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/CostumerRegistrationStepDef.java	(date 1605129457018)
++++ src/test/java/stepdefinitions/CostumerRegistrationStepDef.java	(date 1605129457018)
+@@ -0,0 +1,283 @@
++package stepdefinitions;
++
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import org.checkerframework.checker.units.qual.C;
++import org.junit.Assert;
++import org.openqa.selenium.support.Color;
++import pages.CostumerRegistrationPage;
++import utilities.ConfigurationReader;
++import utilities.Driver;
++
++public class CostumerRegistrationStepDef {
++
++    CostumerRegistrationPage costRegPage = new CostumerRegistrationPage();
++
++
++//    @US02TC01
++
++    @Given("user is on {string} page")
++    public void user_is_on_page(String string) {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
++
++    }
++
++    @Given("user click on User button")
++    public void user_click_on_User_button() {
++        costRegPage.user_button.click();
++
++    }
++
++    @Given("user clicks Registration tab")
++    public void user_clicks_Registration_tab() {
++        costRegPage.registration_button.click();
++
++    }
++
++    @Given("click on SSN TextBox")
++    public void click_on_SSN_TextBox() {
++        costRegPage.SSN_TextBox.click();
++
++    }
++
++    @Given("user enters a valid SSN number")
++    public void user_enters_a_valid_SSN_number() {
++        costRegPage.SSN_Number.sendKeys(ConfigurationReader.getProperty("SSN"));
++
++    }
++
++    @Given("click on First Name TextBox")
++    public void click_on_First_Name_TextBox() {
++        costRegPage.First_Name_TextBox.click();
++
++    }
++
++    @Given("user enters a valid First Name")
++    public void user_enters_a_valid_First_Name() {
++        costRegPage.First_Name.sendKeys(ConfigurationReader.getProperty("First_Name"));
++
++    }
++
++    @Given("click on Last Name TextBox")
++    public void click_on_Last_Name_TextBox() {
++        costRegPage.Last_Name_TextBox.click();
++
++    }
++
++    @Given("user enters a valid Last Name")
++    public void user_enters_a_valid_Last_Name() {
++        costRegPage.Last_Name.sendKeys(ConfigurationReader.getProperty("Last_Name"));
++
++    }
++
++    @Given("click on Address TextBox")
++    public void click_on_Address_TextBox() {
++        costRegPage.Address_TextBox.click();
++
++    }
++
++    @Given("user enters Valid Address")
++    public void user_enters_Valid_Address() {
++        costRegPage.Address.sendKeys(ConfigurationReader.getProperty("Address"));
++
++    }
++
++    @Given("click on Mobile Phone Number TextBox")
++    public void click_on_Mobile_Phone_Number_TextBox() {
++        costRegPage.Mobile_Phone_Number_TextBox.click();
++
++    }
++
++    @Given("user enters a valid Mobile Phone Number")
++    public void user_enters_a_valid_Mobile_Phone_Number() {
++        costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
++
++    }
++
++    @Given("click on Username TextBox")
++    public void click_on_Username_TextBox() {
++        costRegPage.Username_TextBox.click();
++
++    }
++
++    @Given("user enters Valid Username")
++    public void user_enters_Valid_Username() {
++        costRegPage.Username.sendKeys(ConfigurationReader.getProperty("Username"));
++
++    }
++
++    @Given("click on Email TextBox")
++    public void click_on_Email_TextBox() {
++        costRegPage.Email_TextBox.click();
++
++    }
++
++    @Given("user enters Valid Email")
++    public void user_enters_Valid_Email() {
++        costRegPage.Email.sendKeys(ConfigurationReader.getProperty("Email"));
++
++    }
++
++    @Given("click on New password TextBox")
++    public void click_on_New_password_TextBox() {
++        costRegPage.New_password_TextBox.click();
++
++    }
++
++    @Given("user enters valid New password")
++    public void user_enters_valid_New_password() {
++        costRegPage.New_password.sendKeys(ConfigurationReader.getProperty("New_password"));
++
++    }
++
++    @Given("Password strength level must be strong")
++    public void password_strength_level_must_be_strong() {
++        Assert.assertTrue(costRegPage.Password_strength.isDisplayed());
++
++    }
++
++    @Given("click on New password confirmation TextBox")
++    public void click_on_New_password_confirmation_TextBox() {
++        costRegPage.Password_Confirmation_TextBox.click();
++
++    }
++
++    @Given("user enters valid New password confirmation")
++    public void user_enters_valid_New_password_confirmation() {
++        costRegPage.Password_Confirmation.sendKeys(ConfigurationReader.getProperty("New_password"));
++
++    }
++
++    @Given("user clicks the Register button")
++    public void user_clicks_the_Register_button() {
++        costRegPage.Register_button.click();
++
++    }
++
++    @Then("the user should see the message {string}")
++    public void the_user_should_see_the_message(String string) {
++        costRegPage.SavedMessage.isDisplayed();
++
++    }
++
++//    @US02TC02
++
++    @Given("SSN user is on {string} page")
++    public void SSN_user_is_on_page(String string) {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
++
++    }
++
++    @Given("SSN user click on User button")
++    public void SSN_user_click_on_User_button() {
++        costRegPage.user_button.click();
++
++    }
++
++    @Given("SSN user clicks Registration tab")
++    public void SSN_user_clicks_Registration_tab() {
++        costRegPage.registration_button.click();
++
++    }
++
++    @Given("SSN click on SSN TextBox")
++    public void SSN_click_on_SSN_TextBox() {
++        costRegPage.SSN_TextBox.click();
++
++    }
++    @Given("SSN the user must type the character {string} when entering a number into the current SSN TextBox.")
++    public void SSN_the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
++        String ssn = ConfigurationReader.getProperty("SSN");
++
++
++    }
++
++    @Then("SSN the user should not see the text {string}")
++    public void SSN_the_user_should_not_see_the_text(String string) {
++        costRegPage.No_SSN_message.isDisplayed();
++
++    }
++
++    //    @US02TC03
++    @Given("MPhone user is on {string} page")
++    public void MPhone_user_is_on_page(String string) {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
++
++
++    }
++
++    @Given("MPhone user click on User button")
++    public void MPhone_user_click_on_User_button() {
++        costRegPage.user_button.click();
++
++    }
++
++    @Given("MPhone user clicks Registration tab")
++    public void MPhone_user_clicks_Registration_tab() {
++        costRegPage.registration_button.click();
++
++    }
++
++    @And("MPhone click on Mobile Phone Number TexttBox")
++    public void MPhone_clickOnMobilePhoneNumberTexttBox() {
++
++        costRegPage.Mobile_Phone_Number_TextBox.click();
++    }
++
++    @And("MPhone user must type the character {string} when entering a number into the valid Mobile Phone Number TextBox")
++    public void MPhone_userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String arg0) {
++        String Hypen = "-";
++        costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
++
++    }
++
++    @Then("MPhone the user should not see the text {string}.")
++    public void MPhone_theUserShouldNotSeeTheText(String arg0) {
++        costRegPage.no_see_mobile_phone_number_invalid.isDisplayed();
++
++
++    }
++    //    @US02TC04
++    @Given("Email user is on {string} page")
++    public void Email_user_is_on_page(String string) {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_bank_url"));
++
++
++    }
++
++    @Given("Email user click on User button")
++    public void Email_user_click_on_User_button() {
++        costRegPage.user_button.click();
++
++    }
++
++    @Given("Email user clicks Registration tab")
++    public void Email_user_clicks_Registration_tab() {
++        costRegPage.registration_button.click();
++
++    }
++    @Given("Email click on Email TextBox")
++    public void Email_click_on_Email_TextBox() {
++        costRegPage.charecter_Email_TextBox.click();
++
++    }
++    @And("Email the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
++    public void Email_theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String string, String string1){
++        costRegPage.charecter_Email_TextBox.sendKeys(ConfigurationReader.getProperty("Email"));
++        String charecter = costRegPage.charecter_Email_TextBox.getText();
++        Assert.assertFalse(charecter.contains(string));
++        Assert.assertFalse(charecter.contains(string1));
++    }
++    @Then("Email the user should not see the text {string}.")
++    public void Email_theUserShouldNotSeeTheText(String string) {
++
++
++        Assert.assertFalse(costRegPage.no_See_Email_Invalid_Message.isDisplayed());
++
++
++    }
++
++}
++
++
+Index: target/test-classes/features/negativeTest.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/negativeTest.feature	(date 1605129769288)
++++ target/test-classes/features/negativeTest.feature	(date 1605129769288)
+@@ -0,0 +1,17 @@
++@US010TC02
++Feature:City should be provided and cannot be left as blank US010
++  Scenario: Without City Test
++    Given Go GMI Bank Adress
++      When Click, SignIn Area
++      And Click, SignIn Entrace Button
++      And Click UserName TextBox, Write Available UseName
++      And Click Password TextBox, Write Available Password
++      And Click SignIn Button
++      And Click My Operations Area
++      And Click Manage Customers
++      And Click Create A New Customer
++      And Click SSN TextBox, Write Available SSN Number
++      And Click Search Button
++      And Click Save Button
++    Then See This field is required.
++
+Index: src/test/java/stepdefinitions/PasswordCreateStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/PasswordCreateStepDef.java	(date 1605129457018)
++++ src/test/java/stepdefinitions/PasswordCreateStepDef.java	(date 1605129457018)
+@@ -0,0 +1,112 @@
++package stepdefinitions;
++
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import org.junit.Assert;
++import org.openqa.selenium.support.Color;
++import pages.PasswordCreatePage;
++import utilities.ConfigurationReader;
++import utilities.Driver;
++
++public class PasswordCreateStepDef {
++    PasswordCreatePage passCreatePage = new PasswordCreatePage();
++
++
++    @Given("User go to the GMi Bank home page")
++    public void userGoToTheGMiBankHomePage() {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
++    }
++
++    @And("Click on user button")
++    public void clickOnUserButton() {
++        passCreatePage.userButton.click();
++    }
++
++    @And("You should navigate to registration page")
++    public void youShouldNavigateToRegistrationPage() {
++        passCreatePage.registerButton.click();
++    }
++
++    @And("Click on Password textbox")
++    public void clickOnPasswordTextbox() {
++        passCreatePage.firstPassBox.click();
++    }
++
++    @And("Enter a password with 1 lowercase letter of at least 7 characters")
++    public void enterAPasswordWithLowercaseLetterOfAtLeastCharacters() {
++        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("lower_case"));
++        String renk = passCreatePage.line1.getCssValue("background-color");
++        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
++        Driver.passwordReliability();
++    }
++
++
++
++    @And("Enter a password with 1 uppercase letter of at least 7 characters")
++    public void enterAPasswordWithUppercaseLetterOfAtLeastCharacters() {
++        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("upper_case"));
++        String renk = passCreatePage.line1.getCssValue("background-color");
++        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
++        Driver.passwordReliability();
++    }
++
++    @And("Enter a password with 1 digit of at least 7 characters")
++    public void enterAPasswordWithDigitOfAtLeastCharacters() {
++        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("digit"));
++        String renk = passCreatePage.line1.getCssValue("background-color");
++        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("red")));
++        Driver.passwordReliability();
++
++    }
++
++    @And("Enter a password with 1 special char of at least 7 characters")
++    public void enterAPasswordWithSpecialCharOfAtLeastCharacters() {
++        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("special_char"));
++        String renk = passCreatePage.line1.getCssValue("background-color");
++        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
++        Driver.passwordReliability();
++    }
++
++    @And("Enter a password with 7 chars")
++    public void enterAPasswordWithChars() {
++        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("full_pass"));
++        String renk = passCreatePage.line1.getCssValue("background-color");
++        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("dark_green")));
++        Driver.passwordReliability();
++    }
++
++    @And("Click on password confirmation textbox")
++    public void clickOnPasswordConfirmationTextbox() {
++        passCreatePage.secondPassBox.click();
++    }
++
++    @Then("Enter to second textbox with 1 lowercase letter of at least 7 characters")
++    public void enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters() {
++        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("lower_case"));
++    }
++
++    @Then("Enter to second textbox with 1 uppercase letter of at least 7 characters")
++    public void enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters() {
++        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("upper_case"));
++    }
++
++    @Then("Enter to second textbox with 1 digit of at least 7 characters")
++    public void enterToSecondTextboxWithDigitOfAtLeastCharacters() {
++        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("digit"));
++    }
++
++    @Then("Enter to second textbox with 1 special char of at least 7 characters")
++    public void enterToSecondTextboxWithSpecialCharOfAtLeastCharacters() {
++        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("special_char"));
++    }
++
++    @Then("Enter to second textbox a password with 7 chars")
++    public void enterToSecondTextboxAPasswordWithChars() {
++        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("full_pass"));
++    }
++
++    @And("Color line must be orange or green")
++    public void colorLineMustBeOrangeOrGreen() {
++    }
++}
+Index: target/test-classes/features/stateChoise.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/stateChoise.feature	(date 1605129769291)
++++ target/test-classes/features/stateChoise.feature	(date 1605129769291)
+@@ -0,0 +1,15 @@
++@US010TC04
++Feature: State should be provided as US state and cannot be blank US010
++  Scenario: State Test
++    Given Go GMI Bank Adress
++    When Click, SignIn Area
++    And Click, SignIn Entrace Button
++    And Click UserName TextBox, Write Available UseName
++    And Click Password TextBox, Write Available Password
++    And Click SignIn Button
++    And Click My Operations Area
++    And Click Manage Customers
++    And Click Create A New Customer
++    And Click SSN TextBox, Write Available SSN Number
++    And Click Search Button
++    Then Write a State.
+\ No newline at end of file
+Index: target/test-classes/features/date.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/date.feature	(date 1605129769290)
++++ target/test-classes/features/date.feature	(date 1605129769290)
+@@ -0,0 +1,15 @@
++@US011TC05
++Feature: The date cannot be typed earlier, in the past, at the time of creation a customer US011
++  Scenario: Date Test
++    Given Go GMI Bank Adress
++    When Click, SignIn Area
++    And Click, SignIn Entrace Button
++    And Click UserName TextBox, Write Available UseName
++    And Click Password TextBox, Write Available Password
++    And Click SignIn Button
++    And Click My Operations Area
++    And Click Manage Customers
++    And Click Create A New Customer
++    And Click SSN TextBox, Write Available SSN Number
++    And Click Search Button
++    Then See Date TextBox
+\ No newline at end of file
+Index: target/test-classes/features/informationCheck.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/informationCheck.feature	(date 1605129769289)
++++ target/test-classes/features/informationCheck.feature	(date 1605129769289)
+@@ -0,0 +1,17 @@
++@US009TC01
++  Feature: User can search for a new applicant by their SSN and see all their registration info populated US009
++    Scenario: User Information Ceheck Test
++      Given Go GMI Bank Adress
++        When Click, SignIn Area
++          And Click, SignIn Entrace Button
++          And Click UserName TextBox, Write Available UseName
++          And Click Password TextBox, Write Available Password
++          And Click SignIn Button
++          And Click My Operations Area
++          And Click Manage Customers
++          And Click Create A New Customer
++          And Click SSN TextBox, Write Available SSN Number
++          And Click Search Button
++          And See First Name
++          And See Last Name
++        Then See Mail Adress
+Index: src/test/resources/features/manageCostumer.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@US12TC01\n\nFeature: A description\n\n  Scenario: A scenario\nGiven Go to \"https://gmibank.com/\" link\nAnd Click to User drop down menu\nAnd Click to Sign in\nAnd Enter the username with valid credentail\nAnd Enter the pasword with valid credentail\nAnd Click to Sign in button\nAnd Click to My Operations drop down menu\nAnd Click to Manage Costumers\nThen Random customer should show up on manage customers module populating the account information of the customer.\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/manageCostumer.feature	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ src/test/resources/features/manageCostumer.feature	(date 1605129457020)
+@@ -1,14 +1,36 @@
+-@US12TC01
+-
+-Feature: A description
+-
+-  Scenario: A scenario
+-Given Go to "https://gmibank.com/" link
+-And Click to User drop down menu
+-And Click to Sign in
++  @US12
++Feature: An Employee can manage Customer
++
++  @US12TC01
++  Scenario:All customers should show up on manage customers module populating the account information of the customer
++Given Go to gmibank.com home page
++And Click to User Account drop down menu and Click to Sign In
+ And Enter the username with valid credentail
+ And Enter the pasword with valid credentail
+ And Click to Sign in button
+-And Click to My Operations drop down menu
+-And Click to Manage Costumers
+-Then Random customer should show up on manage customers module populating the account information of the customer.
++And Click to My Operations drop down menu and Click to Manage Costumers
++Then A customer should show up at total nine head on account information of the customer
++
++  @US12TC02
++  Scenario:There should be a View option where customer can be navigated to all customer info and see edit button there
++    And Click to View button.
++    Then There should be Edit button.
++
++  @US12TC03
++  Scenario:There should be an Edit button where all customer information can be populated
++    And go back to manage costumers page
++    Then There should be Edit button where all customer
++
++  @US12TC04
++  Scenario:There should be Edit button where all customerThe Edit portal can allow user to create or update the user info
++    And Click to Edit button
++    And City textbox is updated
++    And Click to Save button
++    Then The Edit portal can allow user to update the user info
++
++  @US12TC05
++  Scenario:User can delete a customer, but seeing a message if the user is sure about deletion
++    And Confirming that a customer is registered with ID number
++    And Click to Delete button
++    And seeing a message if the user is sure about deletion
++    Then User can delete a customer
+Index: target/test-classes/features/US3passwordCreate.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/US3passwordCreate.feature	(date 1605129457026)
++++ target/test-classes/features/US3passwordCreate.feature	(date 1605129457026)
+@@ -0,0 +1,44 @@
++@US03
++
++Feature: Registration page should restrict password usage to a secure and high level passcode
++
++  Background: User go to the GMi Bank home page (https://gmibank.com/)
++    Given User go to the GMi Bank home page
++    And Click on user button
++    And You should navigate to registration page
++    And Click on Password textbox
++
++  @US03TC01
++  Scenario: There should be at least 1 lowercase char for stronger password and see the level chart change accordingly
++    And Enter a password with 1 lowercase letter of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 lowercase letter of at least 7 characters
++
++  @US03TC02
++  Scenario: There should be at least 1 uppercase char and see the level  chart change accordingly
++    And Enter a password with 1 uppercase letter of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 uppercase letter of at least 7 characters
++
++  @US03TC03
++  Scenario: There should be at least 1 digit  and see the level  chart change accordingly
++    And Enter a password with 1 digit of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 digit of at least 7 characters
++
++  @US03TC04
++  Scenario: There should be at least 1 special char and see the level bar change accordingly
++    And Enter a password with 1 special char of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 special char of at least 7 characters
++
++  @US03TC05
++  Scenario: There should be at least 7 chars for a stronger password
++    And Enter a password with 7 chars
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox a password with 7 chars
+\ No newline at end of file
+Index: target/test-classes/features/countryChoise.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/countryChoise.feature	(date 1605129769286)
++++ target/test-classes/features/countryChoise.feature	(date 1605129769286)
+@@ -0,0 +1,15 @@
++@US010TC03
++Feature: Country should be typed and cannot be blank US010
++  Scenario: Country Test
++    Given Go GMI Bank Adress
++      When Click, SignIn Area
++      And Click, SignIn Entrace Button
++      And Click UserName TextBox, Write Available UseName
++      And Click Password TextBox, Write Available Password
++      And Click SignIn Button
++      And Click My Operations Area
++      And Click Manage Customers
++      And Click Create A New Customer
++      And Click SSN TextBox, Write Available SSN Number
++      And Click Search Button
++    Then Select Country.
+\ No newline at end of file
+Index: src/test/java/pages/ManageCostumerPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pages;\n\npublic class ManageCostumerPage {\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/ManageCostumerPage.java	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ src/test/java/pages/ManageCostumerPage.java	(date 1605129457016)
+@@ -1,4 +1,72 @@
+ package pages;
+ 
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++import java.util.List;
++
+ public class ManageCostumerPage {
++    public ManageCostumerPage(){
++        PageFactory.initElements(Driver.getDriver(), this);
++    }
++    @FindBy(xpath = "//li[@id='account-menu']")
++    public WebElement dropDownAccount;
++
++    @FindBy(name = "username")
++    public WebElement username;
++
++    @FindBy(name = "password")
++    public  WebElement password;
++
++    @FindBy(xpath = "//button[.='Sign in']")
++    public WebElement buttonSignin;
++
++    @FindBy(xpath = "//span[.='My Operations']")
++    public WebElement myOperations;
++
++    @FindBy(xpath = "//span[.='Manage Customers']")
++    public WebElement manageCostumer;
++
++    @FindBy(xpath = "//tbody//tr[5]/td")
++   public List<WebElement> rowList;
++
++    @FindBy(xpath = "//thead//th")
++    public List<WebElement> headList;
++
++    @FindBy(xpath = "//span[.='Sign in']")
++    public WebElement accountSignIn;
++
++    @FindBy(xpath = "//span[text()='View']")
++    public  WebElement buttonWiew;
++
++    @FindBy(xpath = "(//span[text()='Edit'])[10]")
++    public  WebElement buttonEdit;
++
++    @FindBy(xpath = "//*[contains(@href,'2563/delete')]")
++    public  WebElement buttonDelete;
++
++    @FindBy(xpath = "//span[text()='Edit']")
++    public  WebElement ButtonViewEdit;
++
++    @FindBy(id = "tp-customer-city")
++    public  WebElement cityUpdate;
++
++    @FindBy(xpath = "//span[text()='Save']")
++    public  WebElement ButtonEditSave;
++
++    @FindBy(xpath = "//div[contains(text(),'updated')]")
++    public WebElement alertUpdate;
++
++    @FindBy(className ="modal-body")
++    public WebElement alertDeleteQuestion;
++
++    @FindBy(linkText = "2563")
++    public  WebElement user2551;
++
++    @FindBy(id = "jhi-confirm-delete-tPCustomer")
++    public WebElement alertDeleteButton;
++
++
+ }
+Index: src/test/resources/features/stateChoise.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/stateChoise.feature	(date 1605129457020)
++++ src/test/resources/features/stateChoise.feature	(date 1605129457020)
+@@ -0,0 +1,15 @@
++@US010TC04
++Feature: State should be provided as US state and cannot be blank US010
++  Scenario: State Test
++    Given Go GMI Bank Adress
++    When Click, SignIn Area
++    And Click, SignIn Entrace Button
++    And Click UserName TextBox, Write Available UseName
++    And Click Password TextBox, Write Available Password
++    And Click SignIn Button
++    And Click My Operations Area
++    And Click Manage Customers
++    And Click Create A New Customer
++    And Click SSN TextBox, Write Available SSN Number
++    And Click Search Button
++    Then Write a State.
+\ No newline at end of file
+Index: src/test/java/stepdefinitions/NegativeTestStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/NegativeTestStepDef.java	(date 1605129457018)
++++ src/test/java/stepdefinitions/NegativeTestStepDef.java	(date 1605129457018)
+@@ -0,0 +1,25 @@
++package stepdefinitions;
++
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Then;
++import org.junit.Assert;
++import pages.NegativeTestPage;
++
++public class NegativeTestStepDef {
++
++    NegativeTestPage page = new NegativeTestPage();
++
++    @And("Click Save Button")
++    public void clickSaveButton() {
++
++        page.saveButton.click();
++
++    }
++
++    @Then("See This field is required.")
++    public void seeThisFieldIsRequired() {
++
++        Assert.assertTrue(page.alertCtiy.isDisplayed());
++
++    }
++}
+Index: target/test-classes/features/US02characterControl.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/US02characterControl.feature	(date 1605129769287)
++++ target/test-classes/features/US02characterControl.feature	(date 1605129769287)
+@@ -0,0 +1,30 @@
++
++Feature:US_002 SSN, Mobil Phone, Email Charecter Control test
++
++  @US02TC02
++  Scenario: US02TC02 user must enter valid data into SSN TextBox using "-" character.
++    Given SSN user is on "http://gmibank.com/" page
++    And SSN user click on User button
++    And SSN user clicks Registration tab
++    And SSN click on SSN TextBox
++    And SSN the user must type the character "-" when entering a number into the current SSN TextBox.
++    Then SSN the user should not see the text "Your SSN is invalid"
++
++
++  @US02TC03
++  Scenario: US02TC03 user must enter valid data in Mobile Phone Number TextBox using "-" character.
++    Given MPhone user is on "http://gmibank.com/" page
++    And MPhone user click on User button
++    And MPhone user clicks Registration tab
++    And MPhone click on Mobile Phone Number TexttBox
++    And MPhone user must type the character "-" when entering a number into the valid Mobile Phone Number TextBox
++    Then MPhone the user should not see the text "Your mobile phone number is invalid".
++
++  @US02TC04
++  Scenario: US02TC04 user must enter valid data in Email TextBox using "@" character and ".com" expression
++    Given Email user is on "http://gmibank.com/" page
++    And Email user click on User button
++    And Email user clicks Registration tab
++    And Email click on Email TextBox
++    And Email the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
++    Then Email the user should not see the text "This field is invalid".
+\ No newline at end of file
+Index: src/test/java/stepdefinitions/InformationCheckStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/InformationCheckStepDef.java	(date 1605129457018)
++++ src/test/java/stepdefinitions/InformationCheckStepDef.java	(date 1605129457018)
+@@ -0,0 +1,141 @@
++package stepdefinitions;
++
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++import org.junit.Assert;
++import org.openqa.selenium.support.ui.Select;
++import pages.InformationCheckPage;
++import utilities.ConfigurationReader;
++import utilities.Driver;
++
++public class InformationCheckStepDef {
++
++    InformationCheckPage page = new InformationCheckPage();
++
++
++    @Given("Go GMI Bank Adress")
++    public void goGMIBankAdress() {
++
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
++    }
++
++    @When("Click, SignIn Area")
++    public void clickSignInArea() {
++
++        page.firstSignIn.click();
++
++    }
++
++    @And("Click, SignIn Entrace Button")
++    public void clickSignInEntraceButton() {
++
++        page.signIn.click();
++
++    }
++
++    @And("Click UserName TextBox, Write Available UseName")
++    public void clickUserNameTextBoxWriteAvailableUseName() {
++
++        page.userName.sendKeys(ConfigurationReader.getProperty("hb_id"));
++
++    }
++
++    @And("Click Password TextBox, Write Available Password")
++    public void clickPasswordTextBoxWriteAvailablePassword() {
++
++        page.password.sendKeys(ConfigurationReader.getProperty("hb_password"));
++
++    }
++
++    @And("Click SignIn Button")
++    public void clickSignInButton() {
++
++        page.submitButton.click();
++
++    }
++
++    @And("Click My Operations Area")
++    public void clickMyOperationsArea() {
++
++        page.myOperations.click();
++
++    }
++
++    @And("Click Manage Customers")
++    public void clickManageCustomers() {
++
++        page.manageCustomers.click();
++
++    }
++
++    @And("Click Create A New Customer")
++    public void clickCreateANewCustomer() {
++
++        page.createNewCustomer.click();
++
++    }
++
++    @And("Click SSN TextBox, Write Available SSN Number")
++    public void clickSSNTextBoxWriteAvailableSSNNumber() {
++
++        page.ssn.sendKeys(ConfigurationReader.getProperty("hb_SSN"));
++
++    }
++
++    @And("Click Search Button")
++    public void clickSearchButton() {
++
++        page.searchButton.click();
++
++    }
++
++    @And("See First Name")
++    public void seeFirstName() {
++
++        Assert.assertTrue(page.firstName.isDisplayed());
++
++    }
++
++    @And("See Last Name")
++    public void seeLastName() {
++
++        Assert.assertTrue(page.lastName.isDisplayed());
++
++    }
++
++    @Then("See Mail Adress")
++    public void seeMailAdress() {
++
++        Assert.assertTrue(page.email.isDisplayed());
++
++    }
++
++    @Then("Select Country.")
++    public void selectCountry() {
++
++        Select select = new Select(page.country);
++
++        int country = Integer.parseInt(ConfigurationReader.getProperty("hb_country"));
++
++        select.selectByIndex(country);
++
++
++    }
++
++    @Then("Write a State.")
++    public void writeAState() {
++
++        page.state.sendKeys(ConfigurationReader.getProperty("hb_state"));
++
++
++    }
++
++    @Then("See Date TextBox")
++    public void seeDateTextBox() {
++
++        Assert.assertTrue(page.date.isDisplayed());
++
++    }
++}
+Index: src/test/java/stepdefinitions/ManageCostumerStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package stepdefinitions;\n\nimport com.sun.tools.jxc.ConfigReader;\nimport io.cucumber.java.en.And;\nimport io.cucumber.java.en.Given;\nimport io.cucumber.java.en.Then;\nimport utilities.ConfigurationReader;\nimport utilities.Driver;\n\npublic class ManageCostumerStepDef {\n\n    @Given(\"Go to {string} link\")\n    public void goToLink(String arg0) {\n        Driver.getDriver().get(ConfigurationReader.getProperty(\"gmi_url\"));\n    }\n\n    @And(\"Click to User drop down menu\")\n    public void clickToUserDropDownMenu() {\n    }\n\n    @And(\"Click to Sign in\")\n    public void clickToSignIn() {\n    }\n\n    @And(\"Enter the username with valid credentail\")\n    public void enterTheUsernameWithValidCredentail() {\n    }\n\n    @And(\"Enter the pasword with valid credentail\")\n    public void enterThePaswordWithValidCredentail() {\n    }\n\n    @And(\"Click to Sign in button\")\n    public void clickToSignInButton() {\n    }\n\n    @And(\"Click to My Operations drop down menu\")\n    public void clickToMyOperationsDropDownMenu() {\n    }\n\n    @And(\"Click to Manage Costumers\")\n    public void clickToManageCostumers() {\n    }\n\n    @Then(\"Random customer should show up on manage customers module populating the account information of the customer.\")\n    public void randomCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer() {\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/ManageCostumerStepDef.java	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ src/test/java/stepdefinitions/ManageCostumerStepDef.java	(date 1605129457018)
+@@ -4,45 +4,126 @@
+ import io.cucumber.java.en.And;
+ import io.cucumber.java.en.Given;
+ import io.cucumber.java.en.Then;
++import org.junit.Assert;
++import org.openqa.selenium.Keys;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.ui.Select;
++import pages.ManageCostumerPage;
+ import utilities.ConfigurationReader;
+ import utilities.Driver;
+ 
++import java.util.List;
++
+ public class ManageCostumerStepDef {
++    ManageCostumerPage manageCostumerPage= new ManageCostumerPage();
+ 
+-    @Given("Go to {string} link")
+-    public void goToLink(String arg0) {
++
++    @Given("Go to gmibank.com home page")
++    public void goToGmibankComHomePage() {
+         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
+     }
+-
+-    @And("Click to User drop down menu")
+-    public void clickToUserDropDownMenu() {
+-    }
+-
+-    @And("Click to Sign in")
+-    public void clickToSignIn() {
++    @And("Click to User Account drop down menu and Click to Sign In")
++    public void clickToUserAccountDropDownMenuAndClickToSignIn() {
++        manageCostumerPage.dropDownAccount.click();
++        manageCostumerPage.accountSignIn.click();
++        //Select select = new Select(manageCostumerPage.dropDownAccount);
++        //select.selectByIndex(0);
+     }
+ 
+     @And("Enter the username with valid credentail")
+     public void enterTheUsernameWithValidCredentail() {
++manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername"));
+     }
+ 
+     @And("Enter the pasword with valid credentail")
+     public void enterThePaswordWithValidCredentail() {
++        manageCostumerPage.password.sendKeys(ConfigurationReader.getProperty("employeePassword"));
+     }
+ 
+     @And("Click to Sign in button")
+     public void clickToSignInButton() {
++        manageCostumerPage.buttonSignin.click();
++    }
++
++    @And("Click to My Operations drop down menu and Click to Manage Costumers")
++    public void clickToMyOperationsDropDownMenuAndClickToManageCostumers() {
++        manageCostumerPage.myOperations.click();
++        manageCostumerPage.manageCostumer.click();
++    }
++    @Then("A customer should show up at total nine head on account information of the customer")
++    public void aCustomerShouldShowUpAtTotalNineHeadOnAccountInformationOfTheCustomer() {
++        Assert.assertTrue(manageCostumerPage.headList.get(0).getText().contains("ID"));
++        Assert.assertTrue(manageCostumerPage.headList.get(1).getText().contains("First Name"));
++        Assert.assertTrue(manageCostumerPage.headList.get(2).getText().contains("Last Name"));
++        Assert.assertTrue(manageCostumerPage.headList.get(3).getText().contains("Middle Initial"));
++        Assert.assertTrue(manageCostumerPage.headList.get(4).getText().contains("Email"));
++        Assert.assertTrue(manageCostumerPage.headList.get(5).getText().contains("Mobile Phone Number"));
++        Assert.assertTrue(manageCostumerPage.headList.get(6).getText().contains("Phone Number"));
++        Assert.assertTrue(manageCostumerPage.headList.get(7).getText().contains("Address"));
++        Assert.assertTrue(manageCostumerPage.headList.get(8).getText().contains("Create Date"));
++        Assert.assertTrue(manageCostumerPage.rowList.size()==10);
+     }
+ 
+-    @And("Click to My Operations drop down menu")
+-    public void clickToMyOperationsDropDownMenu() {
++    @And("Click to View button.")
++    public void clickToViewButton() {
++        manageCostumerPage.buttonWiew.click();
+     }
+ 
+-    @And("Click to Manage Costumers")
+-    public void clickToManageCostumers() {
++    @Then("There should be Edit button.")
++    public void thereShouldBeEditButton() {
++        Assert.assertTrue(manageCostumerPage.ButtonViewEdit.isDisplayed());
+     }
+ 
+-    @Then("Random customer should show up on manage customers module populating the account information of the customer.")
+-    public void randomCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer() {
++
++    @And("go back to manage costumers page")
++    public void goBackToManageCostumersPage() {
++        Driver.getDriver().navigate().back();
++    }
++
++    @Then("There should be Edit button where all customer")
++    public void thereShouldBeEditButtonWhereAllCustomer() {
++        Assert.assertTrue(manageCostumerPage.buttonEdit.isDisplayed());
++    }
++
++    @And("Click to Edit button")
++    public void clickToEditButton() {
++       manageCostumerPage.buttonEdit.click();
++    }
++
++    @And("City textbox is updated")
++    public void cityTextboxIsUpdated() {
++        manageCostumerPage.cityUpdate.clear();
++        manageCostumerPage.cityUpdate.sendKeys(ConfigurationReader.getProperty("cityName"));
++    }
++
++    @And("Click to Save button")
++    public void clickToSaveButton() {
++        manageCostumerPage.ButtonEditSave.click();
++    }
++
++    @Then("The Edit portal can allow user to update the user info")
++    public void theEditPortalCanAllowUserToUpdateTheUserInfo() {
++        Driver.getDriver().navigate().back();
++    Assert.assertTrue(manageCostumerPage.alertUpdate.isDisplayed());
++    }
++    @And("Confirming that a customer is registered with ID number")
++    public void confirmingThatACustomerIsRegisteredWithIDNumber() {
++        Assert.assertTrue(manageCostumerPage.user2551.isDisplayed());
++    }
++
++    @And("Click to Delete button")
++    public void clickToDeleteButton() {
++        manageCostumerPage.buttonDelete.click();
++    }
++
++    @And("seeing a message if the user is sure about deletion")
++    public void seeingAMessageIfTheUserIsSureAboutDeletion() {
++        Assert.assertTrue(manageCostumerPage.alertDeleteQuestion.isDisplayed());
++    }
++
++    @Then("User can delete a customer")
++    public void userCanDeleteACustomer() {
++        manageCostumerPage.alertDeleteButton.click();
++        Assert.assertFalse(manageCostumerPage.user2551.isDisplayed());
+     }
+ }
+Index: target/test-classes/features/US02customerRegistration.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/US02customerRegistration.feature	(date 1605129769286)
++++ target/test-classes/features/US02customerRegistration.feature	(date 1605129769286)
+@@ -0,0 +1,32 @@
++@US_002
++@US02TC01
++  Feature: US_002 Any field on the registration page should not be left blank
++
++  Scenario: US02TC01 user must be registered in Registration tab with current data.
++    Given user is on "http://gmibank.com/" page
++    And user click on User button
++    And user clicks Registration tab
++    And click on SSN TextBox
++    And user enters a valid SSN number
++    And click on First Name TextBox
++    And user enters a valid First Name
++    And click on Last Name TextBox
++    And user enters a valid Last Name
++    And click on Address TextBox
++    And user enters Valid Address
++    And click on Mobile Phone Number TextBox
++    And user enters a valid Mobile Phone Number
++    And click on Username TextBox
++    And user enters Valid Username
++    And click on Email TextBox
++    And user enters Valid Email
++    And click on New password TextBox
++    And user enters valid New password
++    And Password strength level must be strong
++    And click on New password confirmation TextBox
++    And user enters valid New password confirmation
++    And user clicks the Register button
++    Then the user should see the message "Registration saved!"
++
++
++
+Index: src/test/java/runners/Runner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package runners;\nimport io.cucumber.junit.Cucumber;\nimport io.cucumber.junit.CucumberOptions;\nimport org.junit.runner.RunWith;\n\n@RunWith(Cucumber.class)\n@CucumberOptions(\n        plugin = {\"html:target/default-cucumber-reports\",\n                \"json:target/json-reports/cucumber.json\",\n                \"junit:target/xml-report/cucumber.xml\"\n        },\n        features = \"src/test/resources/features\",\n        glue = \"stepdefinitions\",\n        tags = \"@US005\",\n        dryRun = false\n)\n\npublic class Runner {\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/runners/Runner.java	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ src/test/java/runners/Runner.java	(date 1605129670777)
+@@ -9,7 +9,7 @@
+                 "json:target/json-reports/cucumber.json",
+                 "junit:target/xml-report/cucumber.xml"
+         },
+-        features = "src/test/resources/features",
++        features = "src/test/resources/features/signinLogin.feature",
+         glue = "stepdefinitions",
+         tags = "@US005",
+         dryRun = false
+Index: src/test/resources/features/userSettings.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/userSettings.feature	(date 1605129457021)
++++ src/test/resources/features/userSettings.feature	(date 1605129457021)
+@@ -0,0 +1,34 @@
++Feature:User info segment (User Settings) should be editable on Homepage
++  @US06TC01
++  Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
++    Given Go to "https://gmibank.com/" link
++    And Click to User drop down menu
++    And Click to Sign in
++    And Enter the username with valid credentails
++    And Enter the password with valid credentails
++    And Click to Sign in button
++    And Click to User drop down menu
++    And Click to User info
++    And Assert that First Name is not empty.
++    And Assert that Last Name is not empty.
++    And Assert that Email is not empty.
++
++  @US06TC02
++  Scenario: There should be 2 languages available "English and Turkish"
++    And Assert that Language dropdown is have English.
++    And Assert that Language dropdown is have Türkçe.
++
++  @US06TC03
++  Scenario: There should be an option to update firstname
++    And Update to First Name
++    And Click to Save button
++    Then Assert that visible text saveAlertText.
++
++
++
++
++
++
++
++
++
+Index: src/test/resources/features/countryChoise.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/countryChoise.feature	(date 1605129457019)
++++ src/test/resources/features/countryChoise.feature	(date 1605129457019)
+@@ -0,0 +1,15 @@
++@US010TC03
++Feature: Country should be typed and cannot be blank US010
++  Scenario: Country Test
++    Given Go GMI Bank Adress
++      When Click, SignIn Area
++      And Click, SignIn Entrace Button
++      And Click UserName TextBox, Write Available UseName
++      And Click Password TextBox, Write Available Password
++      And Click SignIn Button
++      And Click My Operations Area
++      And Click Manage Customers
++      And Click Create A New Customer
++      And Click SSN TextBox, Write Available SSN Number
++      And Click Search Button
++    Then Select Country.
+\ No newline at end of file
+Index: src/test/resources/features/US02customerRegistration.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/US02customerRegistration.feature	(date 1605129457019)
++++ src/test/resources/features/US02customerRegistration.feature	(date 1605129457019)
+@@ -0,0 +1,32 @@
++@US_002
++@US02TC01
++  Feature: US_002 Any field on the registration page should not be left blank
++
++  Scenario: US02TC01 user must be registered in Registration tab with current data.
++    Given user is on "http://gmibank.com/" page
++    And user click on User button
++    And user clicks Registration tab
++    And click on SSN TextBox
++    And user enters a valid SSN number
++    And click on First Name TextBox
++    And user enters a valid First Name
++    And click on Last Name TextBox
++    And user enters a valid Last Name
++    And click on Address TextBox
++    And user enters Valid Address
++    And click on Mobile Phone Number TextBox
++    And user enters a valid Mobile Phone Number
++    And click on Username TextBox
++    And user enters Valid Username
++    And click on Email TextBox
++    And user enters Valid Email
++    And click on New password TextBox
++    And user enters valid New password
++    And Password strength level must be strong
++    And click on New password confirmation TextBox
++    And user enters valid New password confirmation
++    And user clicks the Register button
++    Then the user should see the message "Registration saved!"
++
++
++
+Index: src/test/resources/features/US03passwordCreate.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/US03passwordCreate.feature	(date 1605129457019)
++++ src/test/resources/features/US03passwordCreate.feature	(date 1605129457019)
+@@ -0,0 +1,44 @@
++@US03
++
++Feature: Registration page should restrict password usage to a secure and high level passcode
++
++  Background: User go to the GMi Bank home page (https://gmibank.com/)
++    Given User go to the GMi Bank home page
++    And Click on user button
++    And You should navigate to registration page
++    And Click on Password textbox
++
++  @US03TC01
++  Scenario: There should be at least 1 lowercase char for stronger password and see the level chart change accordingly
++    And Enter a password with 1 lowercase letter of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 lowercase letter of at least 7 characters
++
++  @US03TC02
++  Scenario: There should be at least 1 uppercase char and see the level  chart change accordingly
++    And Enter a password with 1 uppercase letter of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 uppercase letter of at least 7 characters
++
++  @US03TC03
++  Scenario: There should be at least 1 digit  and see the level  chart change accordingly
++    And Enter a password with 1 digit of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 digit of at least 7 characters
++
++  @US03TC04
++  Scenario: There should be at least 1 special char and see the level bar change accordingly
++    And Enter a password with 1 special char of at least 7 characters
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox with 1 special char of at least 7 characters
++
++  @US03TC05
++  Scenario: There should be at least 7 chars for a stronger password
++    And Enter a password with 7 chars
++    And Color line must be orange or green
++    And Click on password confirmation textbox
++    Then Enter to second textbox a password with 7 chars
+\ No newline at end of file
+Index: src/test/resources/features/informationCheck.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/informationCheck.feature	(date 1605129457020)
++++ src/test/resources/features/informationCheck.feature	(date 1605129457020)
+@@ -0,0 +1,17 @@
++@US009TC01
++  Feature: User can search for a new applicant by their SSN and see all their registration info populated US009
++    Scenario: User Information Ceheck Test
++      Given Go GMI Bank Adress
++        When Click, SignIn Area
++          And Click, SignIn Entrace Button
++          And Click UserName TextBox, Write Available UseName
++          And Click Password TextBox, Write Available Password
++          And Click SignIn Button
++          And Click My Operations Area
++          And Click Manage Customers
++          And Click Create A New Customer
++          And Click SSN TextBox, Write Available SSN Number
++          And Click Search Button
++          And See First Name
++          And See Last Name
++        Then See Mail Adress
+Index: src/test/resources/features/US02characterControl.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/US02characterControl.feature	(date 1605129457019)
++++ src/test/resources/features/US02characterControl.feature	(date 1605129457019)
+@@ -0,0 +1,30 @@
++
++Feature:US_002 SSN, Mobil Phone, Email Charecter Control test
++
++  @US02TC02
++  Scenario: US02TC02 user must enter valid data into SSN TextBox using "-" character.
++    Given SSN user is on "http://gmibank.com/" page
++    And SSN user click on User button
++    And SSN user clicks Registration tab
++    And SSN click on SSN TextBox
++    And SSN the user must type the character "-" when entering a number into the current SSN TextBox.
++    Then SSN the user should not see the text "Your SSN is invalid"
++
++
++  @US02TC03
++  Scenario: US02TC03 user must enter valid data in Mobile Phone Number TextBox using "-" character.
++    Given MPhone user is on "http://gmibank.com/" page
++    And MPhone user click on User button
++    And MPhone user clicks Registration tab
++    And MPhone click on Mobile Phone Number TexttBox
++    And MPhone user must type the character "-" when entering a number into the valid Mobile Phone Number TextBox
++    Then MPhone the user should not see the text "Your mobile phone number is invalid".
++
++  @US02TC04
++  Scenario: US02TC04 user must enter valid data in Email TextBox using "@" character and ".com" expression
++    Given Email user is on "http://gmibank.com/" page
++    And Email user click on User button
++    And Email user clicks Registration tab
++    And Email click on Email TextBox
++    And Email the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
++    Then Email the user should not see the text "This field is invalid".
+\ No newline at end of file
+Index: src/test/resources/features/date.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/date.feature	(date 1605129457020)
++++ src/test/resources/features/date.feature	(date 1605129457020)
+@@ -0,0 +1,15 @@
++@US011TC05
++Feature: The date cannot be typed earlier, in the past, at the time of creation a customer US011
++  Scenario: Date Test
++    Given Go GMI Bank Adress
++    When Click, SignIn Area
++    And Click, SignIn Entrace Button
++    And Click UserName TextBox, Write Available UseName
++    And Click Password TextBox, Write Available Password
++    And Click SignIn Button
++    And Click My Operations Area
++    And Click Manage Customers
++    And Click Create A New Customer
++    And Click SSN TextBox, Write Available SSN Number
++    And Click Search Button
++    Then See Date TextBox
+\ No newline at end of file
+Index: src/test/resources/features/negativeTest.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/negativeTest.feature	(date 1605129457020)
++++ src/test/resources/features/negativeTest.feature	(date 1605129457020)
+@@ -0,0 +1,17 @@
++@US010TC02
++Feature:City should be provided and cannot be left as blank US010
++  Scenario: Without City Test
++    Given Go GMI Bank Adress
++      When Click, SignIn Area
++      And Click, SignIn Entrace Button
++      And Click UserName TextBox, Write Available UseName
++      And Click Password TextBox, Write Available Password
++      And Click SignIn Button
++      And Click My Operations Area
++      And Click Manage Customers
++      And Click Create A New Customer
++      And Click SSN TextBox, Write Available SSN Number
++      And Click Search Button
++      And Click Save Button
++    Then See This field is required.
++
+Index: debug.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- debug.log	(date 1605129457014)
++++ debug.log	(date 1605129457014)
+@@ -0,0 +1,48 @@
++[1109/173612.338:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1109/174711.030:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1109/175505.597:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/115711.175:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/131942.757:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/132201.724:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/132401.361:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/132525.465:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/133706.425:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/144159.848:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/144528.837:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/152938.082:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/153359.205:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/160515.360:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/165834.433:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/171401.110:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/181111.370:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/182535.706:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/185037.152:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/191459.655:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/192825.817:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/193213.126:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/200059.641:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/200227.008:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/200812.175:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/115711.175:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/131942.757:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/132201.724:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/132401.361:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/132525.465:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/133706.425:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/144159.848:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/144528.837:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/152938.082:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/153359.205:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/160515.360:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/165834.433:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/171401.110:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/181111.370:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/182535.706:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/185037.152:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/191459.655:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/192825.817:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/193213.126:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/200059.641:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/200227.008:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/200812.175:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1110/215349.418:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Index: unnamed.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- unnamed.patch	(date 1605129457030)
++++ unnamed.patch	(date 1605129457030)
+@@ -0,0 +1,19 @@
++Index: src/test/java/runners/Runner.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++--- src/test/java/runners/Runner.java	(revision 625803b998e2fe811331dacad2558ccc21c0c89c)
+++++ src/test/java/runners/Runner.java	(date 1605127342854)
++@@ -9,7 +9,7 @@
++                 "json:target/json-reports/cucumber.json",
++                 "junit:target/xml-report/cucumber.xml"
++         },
++-        features = "/Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US3passwordCreate.feature",
+++        features = "/Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature",
++         glue = "stepdefinitions",
++         tags = "@US03",
++         dryRun = false
++diff --git src/test/resources/features/US3passwordCreate.feature src/test/resources/features/US03passwordCreate.feature
++rename from src/test/resources/features/US3passwordCreate.feature
++rename to src/test/resources/features/US03passwordCreate.feature
+Index: src/test/java/utilities/Driver.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package utilities;\n\nimport io.github.bonigarcia.wdm.WebDriverManager;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.chrome.ChromeDriver;\nimport org.openqa.selenium.chrome.ChromeOptions;\nimport org.openqa.selenium.firefox.FirefoxDriver;\nimport org.openqa.selenium.ie.InternetExplorerDriver;\nimport org.openqa.selenium.safari.SafariDriver;\n\nimport java.util.concurrent.TimeUnit;\n\npublic class Driver {\n\n    private Driver(){\n\n    }\n    static WebDriver driver;\n    public static WebDriver getDriver(){\n        if(driver==null){\n            switch (ConfigurationReader.getProperty(\"browser\")){\n                case \"chrome\":\n                    WebDriverManager.chromedriver().setup();;\n                    driver = new ChromeDriver();\n                    break;\n\n                case  \"firefox\":\n                    WebDriverManager.firefoxdriver().setup();\n                    driver = new FirefoxDriver();\n                    break;\n                case \"ie\":\n                    WebDriverManager.iedriver().setup();\n                    driver = new InternetExplorerDriver();\n                    break;\n                case \"safari\":\n                    WebDriverManager.getInstance(SafariDriver.class).setup();\n                    driver = new SafariDriver();\n                    break;\n                case \"handless=chrome\":\n                    WebDriverManager.chromedriver().setup();\n                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));\n                    break;\n            }\n        }\n        driver.manage().window().maximize();\n        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);\n        return  driver;\n    }\n    public static void closeDriver(){\n        if (driver!=null){\n            driver.quit();\n            driver=null;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/utilities/Driver.java	(revision d698c84dcf3cb31ba0e26c1089a342d243a94647)
++++ src/test/java/utilities/Driver.java	(date 1605129457019)
+@@ -1,15 +1,27 @@
+ package utilities;
+ 
++import com.google.common.base.Function;
+ import io.github.bonigarcia.wdm.WebDriverManager;
+-import org.openqa.selenium.WebDriver;
++import org.junit.Assert;
++import org.openqa.selenium.*;
+ import org.openqa.selenium.chrome.ChromeDriver;
+ import org.openqa.selenium.chrome.ChromeOptions;
+ import org.openqa.selenium.firefox.FirefoxDriver;
+ import org.openqa.selenium.ie.InternetExplorerDriver;
++import org.openqa.selenium.interactions.Actions;
+ import org.openqa.selenium.safari.SafariDriver;
++import org.openqa.selenium.support.ui.*;
++import pages.PasswordCreatePage;
+ 
++import java.time.Duration;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Random;
+ import java.util.concurrent.TimeUnit;
+ 
++import static org.junit.Assert.assertFalse;
++import static org.junit.Assert.assertTrue;
++
+ public class Driver {
+ 
+     private Driver(){
+@@ -52,4 +64,271 @@
+             driver=null;
+         }
+     }
++    public static void wait(int secs) {
++        try {
++            Thread.sleep(1000 * secs);
++        } catch (InterruptedException e) {
++            e.printStackTrace();
++        }
++    }
++    /*
++     * switches to new window by the exact title
++     * returns to original window if windows with given title not found
++     */
++    public static void switchToWindow(String targetTitle) {
++        String origin = Driver.getDriver().getWindowHandle();
++        for (String handle : Driver.getDriver().getWindowHandles()) {
++            Driver.getDriver().switchTo().window(handle);
++            if (Driver.getDriver().getTitle().equals(targetTitle)) {
++                return;
++            }
++        }
++        Driver.getDriver().switchTo().window(origin);
++    }
++    public static void hover(WebElement element) {
++        Actions actions = new Actions(Driver.getDriver());
++        actions.moveToElement(element).perform();
++    }
++    /**
++     * return a list of string from a list of elements ignores any element with no
++     * text
++     *
++     * @param list
++     * @return
++     */
++    public static List<String> getElementsText(List<WebElement> list) {
++        List<String> elemTexts = new ArrayList<>();
++        for (WebElement el : list) {
++            elemTexts.add(el.getText());
++        }
++        return elemTexts;
++    }
++    public static List<String> getElementsText(By locator) {
++        List<WebElement> elems = Driver.getDriver().findElements(locator);
++        List<String> elemTexts = new ArrayList<>();
++        for (WebElement el : elems) {
++            elemTexts.add(el.getText());
++        }
++        return elemTexts;
++    }
++    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
++        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
++        return wait.until(ExpectedConditions.visibilityOf(element));
++    }
++    public static WebElement waitForVisibility(By locator, int timeout) {
++        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
++        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
++    }
++    public static Boolean waitForInVisibility(By locator, int timeout) {
++        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
++        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
++    }
++    public static WebElement waitForClickablility(WebElement element, int timeout) {
++        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
++        return wait.until(ExpectedConditions.elementToBeClickable(element));
++    }
++    public static WebElement waitForClickablility(By locator, int timeout) {
++        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
++        return wait.until(ExpectedConditions.elementToBeClickable(locator));
++    }
++    public static void waitForPageToLoad(long timeOutInSeconds) {
++        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
++            public Boolean apply(WebDriver driver) {
++                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
++            }
++        };
++        try {
++            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
++            wait.until(expectation);
++        } catch (Exception error) {
++            error.printStackTrace();
++        }
++    }
++    public static WebElement fluentWait(final WebElement webElement, int timeinsec) {
++        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
++                .withTimeout(Duration.ofSeconds(timeinsec))
++                .pollingEvery(Duration.ofMillis(500))
++                .ignoring(NoSuchElementException.class);
++        WebElement element = wait.until(new Function<WebDriver, WebElement>() {
++            public WebElement apply(WebDriver driver) {
++                return webElement;
++            }
++        });
++        return element;
++    }
++    /**
++     * Verifies whether the element matching the provided locator is displayed on page
++     * fails if the element matching the provided locator is not found or not displayed
++     *
++     * @param by
++     */
++    public static void verifyElementDisplayed(By by) {
++        try {
++            assertTrue("Element not visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
++        } catch (NoSuchElementException e) {
++            Assert.fail("Element not found: " + by);
++        }
++    }
++    /**
++     * Verifies whether the element matching the provided locator is NOT displayed on page
++     * fails if the element matching the provided locator is not found or not displayed
++     *
++     * @param by
++     */
++    public static void verifyElementNotDisplayed(By by) {
++        try {
++            assertFalse("Element should not be visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
++        } catch (NoSuchElementException e) {
++            e.printStackTrace();
++        }
++    }
++    /**
++     * Verifies whether the element is displayed on page
++     * fails if the element is not found or not displayed
++     *
++     * @param element
++     */
++    public static void verifyElementDisplayed(WebElement element) {
++        try {
++            assertTrue("Element not visible: " + element, element.isDisplayed());
++        } catch (NoSuchElementException e) {
++            Assert.fail("Element not found: " + element);
++        }
++    }
++    /**
++     * Waits for element to be not stale
++     *
++     * @param element
++     */
++    public void waitForStaleElement(WebElement element) {
++        int y = 0;
++        while (y <= 15) {
++            if (y == 1)
++                try {
++                    element.isDisplayed();
++                    break;
++                } catch (StaleElementReferenceException st) {
++                    y++;
++                    try {
++                        Thread.sleep(300);
++                    } catch (InterruptedException e) {
++                        e.printStackTrace();
++                    }
++                } catch (WebDriverException we) {
++                    y++;
++                    try {
++                        Thread.sleep(300);
++                    } catch (InterruptedException e) {
++                        e.printStackTrace();
++                    }
++                }
++        }
++    }
++    /**
++     * Selects a random value from a dropdown list and returns the selected Web Element
++     *
++     * @param select
++     * @return
++     */
++    public static WebElement selectRandomTextFromDropdown(Select select) {
++        Random random = new Random();
++        List<WebElement> weblist = select.getOptions();
++        int optionIndex = 1 + random.nextInt(weblist.size() - 1);
++        select.selectByIndex(optionIndex);
++        return select.getFirstSelectedOption();
++    }
++    /**
++     * Clicks on an element using JavaScript
++     *
++     * @param element
++     */
++    public static void clickWithJS(WebElement element) {
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
++    }
++    /**
++     * Scrolls down to an element using JavaScript
++     *
++     * @param element
++     */
++    public static void scrollToElement(WebElement element) {
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
++    }
++    /**
++     * Performs double click action on an element
++     *
++     * @param element
++     */
++    public static void doubleClick(WebElement element) {
++        new Actions(Driver.getDriver()).doubleClick(element).build().perform();
++    }
++    /**
++     * Changes the HTML attribute of a Web Element to the given value using JavaScript
++     *
++     * @param element
++     * @param attributeName
++     * @param attributeValue
++     */
++    public static void setAttribute(WebElement element, String attributeName, String attributeValue) {
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
++    }
++    /**
++     * @param element
++     * @param check
++     */
++    public static void selectCheckBox(WebElement element, boolean check) {
++        if (check) {
++            if (!element.isSelected()) {
++                element.click();
++            }
++        } else {
++            if (element.isSelected()) {
++                element.click();
++            }
++        }
++    }
++    public static void clickWithTimeOut(WebElement element, int timeout) {
++        for (int i = 0; i < timeout; i++) {
++            try {
++                element.click();
++                return;
++            } catch (WebDriverException e) {
++                wait(1);
++            }
++        }
++    }
++    /**
++     * executes the given JavaScript command on given web element
++     *
++     * @param element
++     */
++    public static void executeJScommand(WebElement element, String command) {
++        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
++        jse.executeScript(command, element);
++    }
++    /**
++     * executes the given JavaScript command on given web element
++     *
++     * @param command
++     */
++    public static void executeJScommand(String command) {
++        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
++        jse.executeScript(command);
++    }
++
++    public static void passwordReliability(){
++        PasswordCreatePage passCreatePage = new PasswordCreatePage();
++        String renk = passCreatePage.line1.getCssValue("background-color");
++        if(renk.contains(ConfigurationReader.getProperty("red"))){
++            System.out.println("Password is Very Weak...");
++        }else if(renk.contains(ConfigurationReader.getProperty("orange"))){
++            System.out.println("Password is Fair...");
++        }else if(renk.contains(ConfigurationReader.getProperty("yellow"))){
++            System.out.println("Password is Weak...");
++        }else if(renk.contains(ConfigurationReader.getProperty("green"))){
++            System.out.println("Password is Good...");
++        }else if(renk.contains(ConfigurationReader.getProperty("dark_green"))){
++            System.out.println("Password is Strong...");
++        }
++    }
+ }

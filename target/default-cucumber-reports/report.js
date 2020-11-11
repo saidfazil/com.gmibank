@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/passwordCreate.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US3passwordCreate.feature");
 formatter.feature({
   "name": "Registration page should restrict password usage to a secure and high level passcode",
   "description": "",
@@ -6,9 +6,6 @@ formatter.feature({
   "tags": [
     {
       "name": "@US03"
-    },
-    {
-      "name": "@first"
     }
   ]
 });
@@ -69,15 +66,12 @@ formatter.scenario({
       "name": "@US03"
     },
     {
-      "name": "@first"
-    },
-    {
       "name": "@US03TC01"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 lowercase letter of at least 4 characters",
+  "name": "Enter a password with 1 lowercase letter of at least 7 characters",
   "keyword": "And "
 });
 formatter.match({
@@ -97,11 +91,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Then I should not see the red massage under the box",
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 lowercase letter of at least 7 characters",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.thenIShouldNotSeeTheRedMassageUnderTheBox()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
   "status": "passed"
@@ -166,15 +170,12 @@ formatter.scenario({
       "name": "@US03"
     },
     {
-      "name": "@first"
-    },
-    {
       "name": "@US03TC02"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 uppercase letter of at least 4 characters",
+  "name": "Enter a password with 1 uppercase letter of at least 7 characters",
   "keyword": "And "
 });
 formatter.match({
@@ -194,11 +195,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Then I should not see the red massage under the box",
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 uppercase letter of at least 7 characters",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.thenIShouldNotSeeTheRedMassageUnderTheBox()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
   "status": "passed"
@@ -263,15 +274,12 @@ formatter.scenario({
       "name": "@US03"
     },
     {
-      "name": "@first"
-    },
-    {
       "name": "@US03TC03"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 digit of at least 4 characters",
+  "name": "Enter a password with 1 digit of at least 7 characters",
   "keyword": "And "
 });
 formatter.match({
@@ -291,11 +299,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Then I should not see the red massage under the box",
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 digit of at least 7 characters",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.thenIShouldNotSeeTheRedMassageUnderTheBox()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithDigitOfAtLeastCharacters()"
 });
 formatter.result({
   "status": "passed"
@@ -360,15 +378,12 @@ formatter.scenario({
       "name": "@US03"
     },
     {
-      "name": "@first"
-    },
-    {
       "name": "@US03TC04"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 special char of at least 4 characters",
+  "name": "Enter a password with 1 special char of at least 7 characters",
   "keyword": "And "
 });
 formatter.match({
@@ -388,11 +403,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Then I should not see the red massage under the box",
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox with 1 special char of at least 7 characters",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.thenIShouldNotSeeTheRedMassageUnderTheBox()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithSpecialCharOfAtLeastCharacters()"
 });
 formatter.result({
   "status": "passed"
@@ -457,9 +482,6 @@ formatter.scenario({
       "name": "@US03"
     },
     {
-      "name": "@first"
-    },
-    {
       "name": "@US03TC05"
     }
   ]
@@ -485,11 +507,21 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Then I should not see the red massage under the box",
+  "name": "Click on password confirmation textbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Enter to second textbox a password with 7 chars",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.thenIShouldNotSeeTheRedMassageUnderTheBox()"
+  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxAPasswordWithChars()"
 });
 formatter.result({
   "status": "passed"

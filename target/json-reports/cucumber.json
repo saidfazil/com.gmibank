@@ -1,13 +1,70 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-11-09T17:21:24.065Z",
+        "line": 5,
+        "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 37454000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User go to the GMi Bank home page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 464000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on user button",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 426000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You should navigate to registration page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 309000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Password textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-11T19:35:30.644Z",
         "before": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -15,14 +72,14 @@
             }
           }
         ],
-        "line": 3,
-        "name": "Date Test",
+        "line": 12,
+        "name": "There should be at least 1 lowercase char for stronger password and see the level chart change accordingly",
         "description": "",
-        "id": "the-date-cannot-be-typed-earlier--in-the-past--at-the-time-of-creation-a-customer-us011;date-test",
+        "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode;there-should-be-at-least-1-lowercase-char-for-stronger-password-and-see-the-level-chart-change-accordingly",
         "after": [
           {
             "result": {
-              "duration": 619000000,
+              "duration": 723000000,
               "status": "passed"
             },
             "match": {
@@ -35,49 +92,539 @@
         "steps": [
           {
             "result": {
-              "duration": 12385000000,
+              "duration": 794000000,
               "status": "passed"
             },
-            "line": 4,
-            "name": "Go GMI Bank Adress",
+            "line": 13,
+            "name": "Enter a password with 1 lowercase letter of at least 7 characters",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
+              "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Color line must be orange or green",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 161000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Click on password confirmation textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 233000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Enter to second textbox with 1 lowercase letter of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US03"
+          },
+          {
+            "name": "@US03TC01"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1866000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User go to the GMi Bank home page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 191000000,
+              "duration": 222000000,
               "status": "passed"
             },
-            "line": 5,
-            "name": "Click, SignIn Area",
+            "line": 7,
+            "name": "Click on user button",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
             },
-            "keyword": "When "
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 443000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You should navigate to registration page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 313000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Password textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-11T19:36:11.826Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "There should be at least 1 uppercase char and see the level  chart change accordingly",
+        "description": "",
+        "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode;there-should-be-at-least-1-uppercase-char-and-see-the-level--chart-change-accordingly",
+        "after": [
+          {
+            "result": {
+              "duration": 707000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 628000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Enter a password with 1 uppercase letter of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Color line must be orange or green",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 178000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Click on password confirmation textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 258000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Enter to second textbox with 1 uppercase letter of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US03"
+          },
+          {
+            "name": "@US03TC02"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1504000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User go to the GMi Bank home page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+            },
+            "keyword": "Given "
           },
           {
             "result": {
               "duration": 270000000,
               "status": "passed"
             },
-            "line": 6,
-            "name": "Click, SignIn Entrace Button",
+            "line": 7,
+            "name": "Click on user button",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 282000000,
+              "duration": 373000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You should navigate to registration page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 166000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Password textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-11T19:36:16.500Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 26,
+        "name": "There should be at least 1 digit  and see the level  chart change accordingly",
+        "description": "",
+        "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode;there-should-be-at-least-1-digit--and-see-the-level--chart-change-accordingly",
+        "after": [
+          {
+            "result": {
+              "duration": 668000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 643000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Enter a password with 1 digit of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Color line must be orange or green",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 228000000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Click on password confirmation textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 231000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Enter to second textbox with 1 digit of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithDigitOfAtLeastCharacters()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US03"
+          },
+          {
+            "name": "@US03TC03"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1622000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User go to the GMi Bank home page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 273000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "Click UserName TextBox, Write Available UseName",
+            "name": "Click on user button",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 368000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You should navigate to registration page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 303000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Password textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-11T19:36:20.620Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "There should be at least 1 special char and see the level bar change accordingly",
+        "description": "",
+        "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode;there-should-be-at-least-1-special-char-and-see-the-level-bar-change-accordingly",
+        "after": [
+          {
+            "result": {
+              "duration": 671000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 505000000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Enter a password with 1 special char of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Color line must be orange or green",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 218000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "Click on password confirmation textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 266000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Enter to second textbox with 1 special char of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithSpecialCharOfAtLeastCharacters()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US03"
+          },
+          {
+            "name": "@US03TC04"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1451000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User go to the GMi Bank home page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 349000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on user button",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 359000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You should navigate to registration page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
             },
             "keyword": "And "
           },
@@ -86,113 +633,112 @@
               "duration": 236000000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "Click Password TextBox, Write Available Password",
-            "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 157000000,
-              "status": "passed"
-            },
             "line": 9,
-            "name": "Click SignIn Button",
+            "name": "Click on Password textbox",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-11T19:36:24.875Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 40,
+        "name": "There should be at least 7 chars for a stronger password",
+        "description": "",
+        "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode;there-should-be-at-least-7-chars-for-a-stronger-password",
+        "after": [
+          {
+            "result": {
+              "duration": 633000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 476000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "Enter a password with 7 chars",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithChars()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 578000000,
+              "duration": 1000000,
               "status": "passed"
             },
-            "line": 10,
-            "name": "Click My Operations Area",
+            "line": 42,
+            "name": "Color line must be orange or green",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+              "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 148000000,
+              "duration": 231000000,
               "status": "passed"
             },
-            "line": 11,
-            "name": "Click Manage Customers",
+            "line": 43,
+            "name": "Click on password confirmation textbox",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 331000000,
+              "duration": 275000000,
               "status": "passed"
             },
-            "line": 12,
-            "name": "Click Create A New Customer",
+            "line": 44,
+            "name": "Enter to second textbox a password with 7 chars",
             "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 438000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "Click SSN TextBox, Write Available SSN Number",
-            "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 124000000,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "Click Search Button",
-            "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 207000000,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "See Date TextBox",
-            "match": {
-              "location": "stepdefinitions.InformationCheckStepDef.seeDateTextBox()"
+              "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxAPasswordWithChars()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@US011TC05"
+            "name": "@US03"
+          },
+          {
+            "name": "@US03TC05"
           }
         ]
       }
     ],
-    "name": "The date cannot be typed earlier, in the past, at the time of creation a customer US011",
+    "name": "Registration page should restrict password usage to a secure and high level passcode",
     "description": "",
-    "id": "the-date-cannot-be-typed-earlier--in-the-past--at-the-time-of-creation-a-customer-us011",
+    "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/date.feature",
+    "uri": "file:src/test/resources/features/US3passwordCreate.feature",
     "tags": [
       {
-        "name": "@US011TC05",
+        "name": "@US03",
         "type": "Tag",
         "location": {
           "line": 1,

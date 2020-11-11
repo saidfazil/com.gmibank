@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"
         },
-        features = "src/test/resources/features",
+        features = "/Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US3passwordCreate.feature",
         glue = "stepdefinitions",
-        tags = "@US12",
+        tags = "@US03",
         dryRun = false
 )
 

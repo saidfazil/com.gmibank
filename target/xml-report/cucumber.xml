@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="17.066">
-<testcase classname="The date cannot be typed earlier, in the past, at the time of creation a customer US011" name="Date Test" time="16.206">
-<system-out><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................passed
-And Click Password TextBox, Write Available Password........................passed
-And Click SignIn Button.....................................................passed
-And Click My Operations Area................................................passed
-And Click Manage Customers..................................................passed
-And Click Create A New Customer.............................................passed
-And Click SSN TextBox, Write Available SSN Number...........................passed
-And Click Search Button.....................................................passed
-Then See Date TextBox.......................................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="59.093">
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="41.121">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 lowercase letter of at least 7 characters.......passed
+And Color line must be orange or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox with 1 lowercase letter of at least 7 characters.passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 uppercase char and see the level  chart change accordingly" time="4.636">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 uppercase letter of at least 7 characters.......passed
+And Color line must be orange or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox with 1 uppercase letter of at least 7 characters.passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 digit  and see the level  chart change accordingly" time="4.099">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 digit of at least 7 characters..................passed
+And Color line must be orange or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox with 1 digit of at least 7 characters..........passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 special char and see the level bar change accordingly" time="4.245">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 special char of at least 7 characters...........passed
+And Color line must be orange or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox with 1 special char of at least 7 characters...passed
+]]></system-out>
+</testcase>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 7 chars for a stronger password" time="4.024">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 7 chars...........................................passed
+And Color line must be orange or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox a password with 7 chars........................passed
 ]]></system-out>
 </testcase>
 </testsuite>

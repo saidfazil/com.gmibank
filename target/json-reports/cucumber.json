@@ -1,0 +1,156 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 3,
+        "name": "User is the GmiBank login page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "skipped"
+            },
+            "line": 4,
+            "name": "user is on “https://gmibank.com/login” page.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-11T20:18:39.076Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "US005TC03 User wants to login with invalid username on Sign In.",
+        "description": "",
+        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;us005tc03-user-wants-to-login-with-invalid-username-on-sign-in.",
+        "after": [
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "skipped"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "the user clicks on Username.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "the user enters the wrong Username",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "the user clicks on Password..",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "the user enters the wrong Password.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "the user clicks on Sign in .",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Sign_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "the error message on the screen is confirmed.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US005"
+          },
+          {
+            "name": "@US005TC03"
+          }
+        ]
+      }
+    ],
+    "name": "User cannot login with invalid username validating the error message",
+    "description": "",
+    "id": "user-cannot-login-with-invalid-username-validating-the-error-message",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/@US005signinLogin.feature",
+    "tags": [
+      {
+        "name": "@US005",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

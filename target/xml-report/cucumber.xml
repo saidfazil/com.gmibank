@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.568">
+<testcase classname="User cannot login with invalid username validating the error message" name="US005TC03 User wants to login with invalid username on Sign In." time="0.159">
+<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................skipped
+And the user clicks on Username.............................................skipped
+And the user enters the wrong Username......................................skipped
+And the user clicks on Password.............................................skipped
+And the user enters the wrong Password......................................skipped
+And the user clicks on Sign in .............................................skipped
+Then the error message on the screen is confirmed...........................skipped
+]]></system-out>
+</testcase>
+</testsuite>

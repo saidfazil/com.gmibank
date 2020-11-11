@@ -11,6 +11,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
+import pages.PasswordCreatePage;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -315,4 +316,19 @@ public class Driver {
         jse.executeScript(command);
     }
 
+    public static void passwordReliability(){
+        PasswordCreatePage passCreatePage = new PasswordCreatePage();
+        String renk = passCreatePage.line1.getCssValue("background-color");
+        if(renk.contains(ConfigurationReader.getProperty("red"))){
+            System.out.println("Password is Very Weak...");
+        }else if(renk.contains(ConfigurationReader.getProperty("orange"))){
+            System.out.println("Password is Fair...");
+        }else if(renk.contains(ConfigurationReader.getProperty("yellow"))){
+            System.out.println("Password is Weak...");
+        }else if(renk.contains(ConfigurationReader.getProperty("green"))){
+            System.out.println("Password is Good...");
+        }else if(renk.contains(ConfigurationReader.getProperty("dark_green"))){
+            System.out.println("Password is Strong...");
+        }
+    }
 }

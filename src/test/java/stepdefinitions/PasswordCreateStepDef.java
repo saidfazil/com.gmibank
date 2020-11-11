@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.support.Color;
 import pages.PasswordCreatePage;
+import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class PasswordCreateStepDef {
@@ -14,7 +15,7 @@ public class PasswordCreateStepDef {
 
     @Given("User go to the GMi Bank home page")
     public void userGoToTheGMiBankHomePage() {
-        Driver.getDriver().get("https://gmibank.com/");
+        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
 
     @And("Click on user button")
@@ -32,56 +33,47 @@ public class PasswordCreateStepDef {
         passCreatePage.firstPassBox.click();
     }
 
-    @And("Enter a password with 1 lowercase letter of at least 4 characters")
+    @And("Enter a password with 1 lowercase letter of at least 7 characters")
     public void enterAPasswordWithLowercaseLetterOfAtLeastCharacters() {
-        passCreatePage.firstPassBox.sendKeys("123k");
+        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("lower_case"));
         String renk = passCreatePage.line1.getCssValue("background-color");
-        System.out.println(renk);
-        Assert.assertTrue(renk.contains("rgba(255, 0, 0, 1)"));
+        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
+        Driver.passwordReliability();
     }
 
-    @And("Color line must be orange or green")
-    public void colorLineMustBeOrangeOrGreen() {
-        String renk = passCreatePage.line1.getCssValue("background-color");
-        System.out.println(renk);
-    }
 
-    @Then("Then I should not see the red massage under the box")
-    public void thenIShouldNotSeeTheRedMassageUnderTheBox() {
-        //Assert.assertFalse(passCreatePage.messageUnderTextBox.isDisplayed());
-    }
 
-    @And("Enter a password with 1 uppercase letter of at least 4 characters")
+    @And("Enter a password with 1 uppercase letter of at least 7 characters")
     public void enterAPasswordWithUppercaseLetterOfAtLeastCharacters() {
-        passCreatePage.firstPassBox.sendKeys("123G");
-        String renk = passCreatePage.line2.getCssValue("background-color");
-        System.out.println(renk);
-        Assert.assertTrue(renk.contains("rgba(255, 153, 0, 1)"));
+        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("upper_case"));
+        String renk = passCreatePage.line1.getCssValue("background-color");
+        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
+        Driver.passwordReliability();
     }
 
-    @And("Enter a password with 1 digit of at least 4 characters")
+    @And("Enter a password with 1 digit of at least 7 characters")
     public void enterAPasswordWithDigitOfAtLeastCharacters() {
-        passCreatePage.firstPassBox.sendKeys("1234");
-        String renk = passCreatePage.line2.getCssValue("background-color");
-        System.out.println(renk);
-        Assert.assertTrue(renk.contains("rgba(255, 153, 0, 1)"));
+        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("digit"));
+        String renk = passCreatePage.line1.getCssValue("background-color");
+        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("red")));
+        Driver.passwordReliability();
 
     }
 
-    @And("Enter a password with 1 special char of at least 4 characters")
+    @And("Enter a password with 1 special char of at least 7 characters")
     public void enterAPasswordWithSpecialCharOfAtLeastCharacters() {
-        passCreatePage.firstPassBox.sendKeys("123$");
-        String renk = passCreatePage.line2.getCssValue("background-color");
-        System.out.println(renk);
-        Assert.assertTrue(renk.contains("rgba(255, 153, 0, 1)"));
+        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("special_char"));
+        String renk = passCreatePage.line1.getCssValue("background-color");
+        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
+        Driver.passwordReliability();
     }
 
     @And("Enter a password with 7 chars")
     public void enterAPasswordWithChars() {
-        passCreatePage.firstPassBox.sendKeys("123gMi$");
-        String renk = passCreatePage.line5.getCssValue("background-color");
-        System.out.println(renk);
-        Assert.assertTrue(renk.contains("rgba(0, 255, 0, 1)"));
+        passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("full_pass"));
+        String renk = passCreatePage.line1.getCssValue("background-color");
+        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("dark_green")));
+        Driver.passwordReliability();
     }
 
     @And("Click on password confirmation textbox")
@@ -89,28 +81,32 @@ public class PasswordCreateStepDef {
         passCreatePage.secondPassBox.click();
     }
 
-    @Then("Enter to second textbox with 1 lowercase letter of at least 4 characters")
+    @Then("Enter to second textbox with 1 lowercase letter of at least 7 characters")
     public void enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters() {
-        passCreatePage.secondPassBox.sendKeys("123k");
+        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("lower_case"));
     }
 
-    @Then("Enter to second textbox with 1 uppercase letter of at least 4 characters")
+    @Then("Enter to second textbox with 1 uppercase letter of at least 7 characters")
     public void enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters() {
-        passCreatePage.secondPassBox.sendKeys("123G");
+        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("upper_case"));
     }
 
-    @Then("Enter to second textbox with 1 digit of at least 4 characters")
+    @Then("Enter to second textbox with 1 digit of at least 7 characters")
     public void enterToSecondTextboxWithDigitOfAtLeastCharacters() {
-        passCreatePage.secondPassBox.sendKeys("1234");
+        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("digit"));
     }
 
-    @Then("Enter to second textbox with 1 special char of at least 4 characters")
+    @Then("Enter to second textbox with 1 special char of at least 7 characters")
     public void enterToSecondTextboxWithSpecialCharOfAtLeastCharacters() {
-        passCreatePage.secondPassBox.sendKeys("123$");
+        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("special_char"));
     }
 
     @Then("Enter to second textbox a password with 7 chars")
     public void enterToSecondTextboxAPasswordWithChars() {
-        passCreatePage.secondPassBox.sendKeys("123gMi$");
+        passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("full_pass"));
+    }
+
+    @And("Color line must be orange or green")
+    public void colorLineMustBeOrangeOrGreen() {
     }
 }

@@ -1,0 +1,180 @@
+Index: src/test/java/pages/SigninPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/SigninPage.java	(revision 6002ed9bb1988c565e3a1301833ed7ec92c5c919)
++++ src/test/java/pages/SigninPage.java	(date 1605103563761)
+@@ -1,4 +1,24 @@
+ package pages;
+ 
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++import java.util.WeakHashMap;
++
+ public class SigninPage {
++    public SigninPage(){
++        PageFactory.initElements (Driver.getDriver (),this);
++    }
++    @FindBy(id="username")
++    public WebElement username;
++
++    @FindBy(id="password")
++    public WebElement password;
++    @FindBy(xpath = "//button[@class='btn btn-primary']")
++    public WebElement signButton;
++    @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[2]/div[1]/div[1]/div/span/strong")
++    public WebElement errorAlert;
++
+ }
+Index: src/test/java/runners/Runner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/runners/Runner.java	(revision 6002ed9bb1988c565e3a1301833ed7ec92c5c919)
++++ src/test/java/runners/Runner.java	(date 1605126391338)
+@@ -11,7 +11,7 @@
+         },
+         features = "src/test/resources/features",
+         glue = "stepdefinitions",
+-        tags = "@US005",
++        tags = "@US005TC03",
+         dryRun = false
+ )
+ 
+Index: src/test/java/stepdefinitions/SignInStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/SignInStepDef.java	(revision 6002ed9bb1988c565e3a1301833ed7ec92c5c919)
++++ src/test/java/stepdefinitions/SignInStepDef.java	(date 1605126391331)
+@@ -3,10 +3,16 @@
+ import io.cucumber.java.en.And;
+ import io.cucumber.java.en.Given;
+ import io.cucumber.java.en.Then;
++import org.junit.Assert;
++import org.openqa.selenium.Keys;
++import pages.SigninPage;
+ import utilities.ConfigurationReader;
+ import utilities.Driver;
+ 
+ public class SignInStepDef {
++
++    SigninPage signinPage= new SigninPage ();
++
+     @Given("user is on “https:\\/\\/gmibank.com\\/login” page.")
+     public void user_is_on_https_gmibank_com_login_page() {
+        Driver.getDriver ().get (ConfigurationReader.getProperty ("signIn_Url"));
+@@ -14,39 +20,49 @@
+ 
+     @Given("the user clicks on Username.")
+     public void the_user_clicks_on_Username() {
+-        // Write code here that turns the phrase above into concrete actions
+-        throw new io.cucumber.java.PendingException();
++        signinPage.username.click ();
++
+     }
+ 
+     @Given("the user enters the wrong Username")
+     public void the_user_enters_the_wrong_Username() {
+-        // Write code here that turns the phrase above into concrete actions
+-        throw new io.cucumber.java.PendingException();
++       signinPage.username.sendKeys (ConfigurationReader.getProperty ("signin_falseUsername"));
+     }
+ 
+     @Given("the user clicks on Password..")
+     public void the_user_clicks_on_Password() {
+-        // Write code here that turns the phrase above into concrete actions
+-        throw new io.cucumber.java.PendingException();
++      signinPage.password.click ();
+     }
+ 
+     @Given("the user enters the correct Password.")
+     public void the_user_enters_the_correct_Password() {
+-        // Write code here that turns the phrase above into concrete actions
+-        throw new io.cucumber.java.PendingException();
++       signinPage.password.sendKeys (ConfigurationReader.getProperty ("signin_truePassword"));
+     }
+ 
+     @Given("the user clicks on Sign in .")
+-    public void the_user_clicks_on_Sign_in() {
+-        // Write code here that turns the phrase above into concrete actions
+-        throw new io.cucumber.java.PendingException();
++    public void the_user_clicks_on_Sign_in() throws InterruptedException {
++     signinPage.signButton.click ();
++     Thread.sleep (10000);
+     }
+ 
+     @Then("the error message on the screen is confirmed.")
+     public void the_error_message_on_the_screen_is_confirmed() {
+-        // Write code here that turns the phrase above into concrete actions
+-        throw new io.cucumber.java.PendingException();
++        Assert.assertTrue (signinPage.errorAlert.isDisplayed ());
++//
++
++    }
++    @Given("the user enters the correct Username")
++    public void the_user_enters_the_correct_Username() {
++        signinPage.username.sendKeys (ConfigurationReader.getProperty ("signin_trueUsername"));
++
+     }
++
++    @Given("the user enters the wrong Password.")
++    public void the_user_enters_the_wrong_Password() {
++        signinPage.password.sendKeys (ConfigurationReader.getProperty ("signin_falsePassword"));
++
++    }
++
+ 
+ 
+ }
+Index: src/test/resources/features/signinLogin.feature
+===================================================================
+--- src/test/resources/features/signinLogin.feature	(revision 6002ed9bb1988c565e3a1301833ed7ec92c5c919)
++++ src/test/resources/features/@US005signinLogin.feature	(date 1605125913107)
+@@ -1,10 +1,30 @@
+ @US005
+   Feature: User cannot login with invalid username validating the error message
+-Scenario: US005TC01 User wants to login with invalid username on Sign In.
+-Given user is on “https://gmibank.com/login” page.
+-And the user clicks on Username.
+-And the user enters the wrong Username
+-And the user clicks on Password..
+-And the user enters the correct Password.
+-And the user clicks on Sign in .
+-Then the error message on the screen is confirmed.
+\ No newline at end of file
++    Background: User is the GmiBank login page
++      Given user is on “https://gmibank.com/login” page.
++@US005TC01
++  Scenario: US005TC01 User wants to login with invalid username on Sign In.
++
++    And the user clicks on Username.
++    And the user enters the wrong Username
++    And the user clicks on Password..
++    And the user enters the correct Password.
++    And the user clicks on Sign in .
++    Then the error message on the screen is confirmed.
++    @US005TC02
++    Scenario: US005TC02 User wants to login with invalid username on Sign In.
++
++      And the user clicks on Username.
++      And the user enters the correct Username
++      And the user clicks on Password..
++      And the user enters the wrong Password.
++      And the user clicks on Sign in .
++      Then the error message on the screen is confirmed.
++@US005TC03
++    Scenario: US005TC03 User wants to login with invalid username on Sign In.
++      And the user clicks on Username.
++      And the user enters the wrong Username
++      And the user clicks on Password..
++      And the user enters the wrong Password.
++      And the user clicks on Sign in .
++      Then the error message on the screen is confirmed.
+\ No newline at end of file

@@ -4,126 +4,45 @@ import com.sun.tools.jxc.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import pages.ManageCostumerPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import java.util.List;
-
 public class ManageCostumerStepDef {
-    ManageCostumerPage manageCostumerPage= new ManageCostumerPage();
 
-
-    @Given("Go to gmibank.com home page")
-    public void goToGmibankComHomePage() {
+    @Given("Go to {string} link")
+    public void goToLink(String arg0) {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
-    @And("Click to User Account drop down menu and Click to Sign In")
-    public void clickToUserAccountDropDownMenuAndClickToSignIn() {
-        manageCostumerPage.dropDownAccount.click();
-        manageCostumerPage.accountSignIn.click();
-        //Select select = new Select(manageCostumerPage.dropDownAccount);
-        //select.selectByIndex(0);
+
+    @And("Click to User drop down menu")
+    public void clickToUserDropDownMenu() {
+    }
+
+    @And("Click to Sign in")
+    public void clickToSignIn() {
     }
 
     @And("Enter the username with valid credentail")
     public void enterTheUsernameWithValidCredentail() {
-manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername"));
     }
 
     @And("Enter the pasword with valid credentail")
     public void enterThePaswordWithValidCredentail() {
-        manageCostumerPage.password.sendKeys(ConfigurationReader.getProperty("employeePassword"));
     }
 
     @And("Click to Sign in button")
     public void clickToSignInButton() {
-        manageCostumerPage.buttonSignin.click();
     }
 
-    @And("Click to My Operations drop down menu and Click to Manage Costumers")
-    public void clickToMyOperationsDropDownMenuAndClickToManageCostumers() {
-        manageCostumerPage.myOperations.click();
-        manageCostumerPage.manageCostumer.click();
-    }
-    @Then("A customer should show up at total nine head on account information of the customer")
-    public void aCustomerShouldShowUpAtTotalNineHeadOnAccountInformationOfTheCustomer() {
-        Assert.assertTrue(manageCostumerPage.headList.get(0).getText().contains("ID"));
-        Assert.assertTrue(manageCostumerPage.headList.get(1).getText().contains("First Name"));
-        Assert.assertTrue(manageCostumerPage.headList.get(2).getText().contains("Last Name"));
-        Assert.assertTrue(manageCostumerPage.headList.get(3).getText().contains("Middle Initial"));
-        Assert.assertTrue(manageCostumerPage.headList.get(4).getText().contains("Email"));
-        Assert.assertTrue(manageCostumerPage.headList.get(5).getText().contains("Mobile Phone Number"));
-        Assert.assertTrue(manageCostumerPage.headList.get(6).getText().contains("Phone Number"));
-        Assert.assertTrue(manageCostumerPage.headList.get(7).getText().contains("Address"));
-        Assert.assertTrue(manageCostumerPage.headList.get(8).getText().contains("Create Date"));
-        Assert.assertTrue(manageCostumerPage.rowList.size()==10);
+    @And("Click to My Operations drop down menu")
+    public void clickToMyOperationsDropDownMenu() {
     }
 
-    @And("Click to View button.")
-    public void clickToViewButton() {
-        manageCostumerPage.buttonWiew.click();
+    @And("Click to Manage Costumers")
+    public void clickToManageCostumers() {
     }
 
-    @Then("There should be Edit button.")
-    public void thereShouldBeEditButton() {
-        Assert.assertTrue(manageCostumerPage.ButtonViewEdit.isDisplayed());
-    }
-
-
-    @And("go back to manage costumers page")
-    public void goBackToManageCostumersPage() {
-        Driver.getDriver().navigate().back();
-    }
-
-    @Then("There should be Edit button where all customer")
-    public void thereShouldBeEditButtonWhereAllCustomer() {
-        Assert.assertTrue(manageCostumerPage.buttonEdit.isDisplayed());
-    }
-
-    @And("Click to Edit button")
-    public void clickToEditButton() {
-       manageCostumerPage.buttonEdit.click();
-    }
-
-    @And("City textbox is updated")
-    public void cityTextboxIsUpdated() {
-        manageCostumerPage.cityUpdate.clear();
-        manageCostumerPage.cityUpdate.sendKeys(ConfigurationReader.getProperty("cityName"));
-    }
-
-    @And("Click to Save button")
-    public void clickToSaveButton() {
-        manageCostumerPage.ButtonEditSave.click();
-    }
-
-    @Then("The Edit portal can allow user to update the user info")
-    public void theEditPortalCanAllowUserToUpdateTheUserInfo() {
-        Driver.getDriver().navigate().back();
-    Assert.assertTrue(manageCostumerPage.alertUpdate.isDisplayed());
-    }
-    @And("Confirming that a customer is registered with ID number")
-    public void confirmingThatACustomerIsRegisteredWithIDNumber() {
-        Assert.assertTrue(manageCostumerPage.user2551.isDisplayed());
-    }
-
-    @And("Click to Delete button")
-    public void clickToDeleteButton() {
-        manageCostumerPage.buttonDelete.click();
-    }
-
-    @And("seeing a message if the user is sure about deletion")
-    public void seeingAMessageIfTheUserIsSureAboutDeletion() {
-        Assert.assertTrue(manageCostumerPage.alertDeleteQuestion.isDisplayed());
-    }
-
-    @Then("User can delete a customer")
-    public void userCanDeleteACustomer() {
-        manageCostumerPage.alertDeleteButton.click();
-        Assert.assertFalse(manageCostumerPage.user2551.isDisplayed());
+    @Then("Random customer should show up on manage customers module populating the account information of the customer.")
+    public void randomCustomerShouldShowUpOnManageCustomersModulePopulatingTheAccountInformationOfTheCustomer() {
     }
 }

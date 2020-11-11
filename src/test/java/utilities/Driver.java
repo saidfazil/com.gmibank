@@ -314,4 +314,5 @@ public class Driver {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command);
     }
+
 }

@@ -17,6 +17,7 @@ public class InformationCheckStepDef {
 
     @Given("Go GMI Bank Adress")
     public void goGMIBankAdress() {
+
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
 

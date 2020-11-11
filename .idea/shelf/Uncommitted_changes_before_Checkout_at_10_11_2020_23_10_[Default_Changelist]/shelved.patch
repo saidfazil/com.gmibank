@@ -1,0 +1,103 @@
+Index: src/test/java/runners/Runner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package runners;\nimport io.cucumber.junit.Cucumber;\nimport io.cucumber.junit.CucumberOptions;\nimport org.junit.runner.RunWith;\n\n@RunWith(Cucumber.class)\n@CucumberOptions(\n        plugin = {\"html:target/default-cucumber-reports\",\n                \"json:target/json-reports/cucumber.json\",\n                \"junit:target/xml-report/cucumber.xml\"\n        },\n        features = \"/Users/buse/IdeaProjects/com.gmibank/src/test/resources/features/customerRegistration.feature\",\n        glue = \"stepdefinitions\",\n        tags = \"@US02TC01\",\n        dryRun = true\n)\n\npublic class Runner {\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/runners/Runner.java	(revision 2dc8a9e322802b1ad833645c9e8fc9c3662f613b)
++++ src/test/java/runners/Runner.java	(date 1605046088750)
+@@ -12,7 +12,7 @@
+         features = "/Users/buse/IdeaProjects/com.gmibank/src/test/resources/features/customerRegistration.feature",
+         glue = "stepdefinitions",
+         tags = "@US02TC01",
+-        dryRun = true
++        dryRun = false
+ )
+ 
+ public class Runner {
+Index: src/test/java/pages/CostumerRegistrationPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pages;\n\nimport org.openqa.selenium.WebElement;\nimport org.openqa.selenium.support.FindBy;\nimport org.openqa.selenium.support.PageFactory;\nimport utilities.Driver;\n\npublic class CostumerRegistrationPage {\n    public CostumerRegistrationPage(){\n        PageFactory.initElements(Driver.getDriver(),this);\n\n    }\n    @FindBy(id= \"account-menu\")\n    public WebElement user_button;\n\n    @FindBy(xpath = \"//a[@class='dropdown-item'][2]\")\n    public WebElement registration_button;\n\n    @FindBy(id= \"ssn\")\n    public WebElement SSN_TextBox;\n\n    @FindBy(xpath = \"//input[@name='ssn']\")\n    public WebElement SSN_Number;\n\n    @FindBy(id = \"firstname\")\n    public WebElement First_Name_TextBox;\n\n    @FindBy(id = \"firstname\")\n    public WebElement First_Name;\n\n    @FindBy(id= \"lastname\")\n    public WebElement Last_Name_TextBox;\n\n    @FindBy(id= \"lastname\")\n    public WebElement Last_Name;\n\n    @FindBy(id = \"address\")\n    public WebElement Address_TextBox;\n\n    @FindBy(id = \"address\")\n    public WebElement Address;\n\n    @FindBy(id = \"mobilephone\")\n    public WebElement Mobile_Phone_Number_TextBox;\n\n    @FindBy(id = \"mobilephone\")\n    public WebElement Mobile_Phone_Number;\n\n    @FindBy(id = \"username\")\n    public WebElement Username_TextBox;\n\n    @FindBy(id = \"username\")\n    public WebElement Username;\n\n    @FindBy(id = \"email\")\n    public WebElement Email_TextBox;\n\n    @FindBy(id = \"email\")\n    public WebElement Email;\n\n    @FindBy(id = \"firstPassword\")\n    public WebElement New_password_TextBox;\n\n    @FindBy(id = \"firstPassword\")\n    public WebElement New_password;\n\n    @FindBy(xpath = \"//li[@class='point'][5]\")\n    public WebElement Password_strength;\n\n    @FindBy(id = \"secondPassword\")\n    public WebElement Password_Confirmation_TextBox;\n\n    @FindBy(id = \"secondPassword\")\n    public WebElement Password_Confirmation;\n\n    @FindBy(id = \"register-submit\")\n    public WebElement Register_button;\n\n    @FindBy()\n    public WebElement Message;\n\n//    @US02TC02\n\n    @FindBy()\n    public WebElement charecter_SSN_TextBox;\n\n    @FindBy()\n    public WebElement No_SSN_message;\n\n//    @US02TC03\n\n    @FindBy()\n    public WebElement charecter_Mobile_Phone_TextBox;\n\n    @FindBy()\n    public WebElement no_see_mobile_phone_number_invalid;\n\n//    @US02TC04\n\n    @FindBy()\n    public WebElement charecter_Email_TextBox;\n\n    @FindBy()\n    public WebElement no_See_Email_Invalid_Message;\n\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/CostumerRegistrationPage.java	(revision 2dc8a9e322802b1ad833645c9e8fc9c3662f613b)
++++ src/test/java/pages/CostumerRegistrationPage.java	(date 1605046049935)
+@@ -76,33 +76,33 @@
+     @FindBy(id = "register-submit")
+     public WebElement Register_button;
+ 
+-    @FindBy()
++    @FindBy(xpath = "//*[.='Registration saved!']")
+     public WebElement Message;
+ 
+ //    @US02TC02
+ 
+-    @FindBy()
++    @FindBy(id = "ssn")
+     public WebElement charecter_SSN_TextBox;
+ 
+-    @FindBy()
++    @FindBy(xpath = "translation-not-found[Your SSN is required]")
+     public WebElement No_SSN_message;
+ 
+ //    @US02TC03
+ 
+-    @FindBy()
++    @FindBy(id = "mobilephone")
+     public WebElement charecter_Mobile_Phone_TextBox;
+ 
+-    @FindBy()
++    @FindBy(xpath = "//*[.='Your mobile phone number is invalid']")
+     public WebElement no_see_mobile_phone_number_invalid;
+ 
+ //    @US02TC04
+ 
+-    @FindBy()
++    @FindBy(id = "email")
+     public WebElement charecter_Email_TextBox;
+ 
+-    @FindBy()
++    @FindBy(xpath = "//*[.='This field is invalid']")
+     public WebElement no_See_Email_Invalid_Message;
+ 
+ 
+-
+ }
++
+Index: src/test/resources/features/customerRegistration.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n@US02TC01\n  Feature: US_002 Any field on the registration page should not be left blank\n\n  Scenario: US02TC01 user must be registered in Registration tab with current data.\n    Given user is on \"http://gmibank.com/\" page\n    And user click on User button\n    And user clicks Registration tab\n    And click on SSN TextBox\n    And user enters a valid SSN number\n    And click on First Name TextBox\n    And user enters a valid First Name\n    And click on Last Name TextBox\n    And user enters a valid Last Name\n    And click on Address TextBox\n    And user enters Valid Address\n    And click on Mobile Phone Number TextBox\n    And user enters a valid Mobile Phone Number\n    And click on Username TextBox\n    And user enters Valid Username\n    And click on Email TextBox\n    And user enters Valid Email\n    And click on New password TextBox\n    And user enters valid New password\n    And Password strength level must be strong\n    And click on New password confirmation TextBox\n    And user enters valid New password confirmation\n    And user clicks the Register button\n    Then the user should see the message \"Registration saved!\"\n\n\n  @US02TC02\n  Feature: US_002 SSN number cannot be of any chars nor spec chars except \"-\"\n\n  Scenario: US02TC02 user must enter valid data into SSN TextBox using \"-\" character.\n    Given TC02 user is on \"http://gmibank.com/\" page\n    And TC02 user click on User button\n    And TC02 user clicks Registration tab\n    And TC02 click on SSN TextBox\n    And TC02 the user must type the character \"-\" when entering a number into the current SSN TextBox.\n    Then TC02 the user should not see the text \"Your SSN is invalid\"\n\n  @US02TC03\n  Feature: US_002 Mobilephone number cannot be of any chars nor spec chars except \"-\"\n\n  Scenario: US02TC03 user must enter valid data in Mobile Phone Number TextBox using \"-\" character.\n    Given TC03 user is on \"http://gmibank.com/\" page\n    And TC03 user click on User button\n    And TC03 user clicks Registration tab\n    And TC03 click on Mobile Phone Number TexttBox\n    And TC03 user must type the character \"-\" when entering a number into the valid Mobile Phone Number TextBox\n    Then TC03 the user should not see the text \"Your mobile phone number is invalid\".\n\n  @US02TC04\n  Feature: US_002 email id cannot be created without \"@\" sign and \".com\" extension\n\n  Scenario: US02TC04 user must enter valid data in Email TextBox using \"@\" character and \".com\" expression\n    Given TC04 user is on \"http://gmibank.com/\" page\n    And TC04 user click on User button\n    And TC04 user clicks Registration tab\n    And TC04 click on Mobile Phone Number TextBox\n    And TC04 the user is entering a valid Email TextBox. Email Must use \" @ \" character and \".com\" expression in TextBox\n    Then TC04 the user should not see the text \"This field is invalid\".\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/customerRegistration.feature	(revision 2dc8a9e322802b1ad833645c9e8fc9c3662f613b)
++++ src/test/resources/features/customerRegistration.feature	(date 1605046136814)
+@@ -1,4 +1,3 @@
+-
+ @US02TC01
+   Feature: US_002 Any field on the registration page should not be left blank
+ 
+Index: target/test-classes/features/customerRegistration.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n@US02TC01\n  Feature: US_002 Any field on the registration page should not be left blank\n\n  Scenario: US02TC01 user must be registered in Registration tab with current data.\n    Given user is on \"http://gmibank.com/\" page\n    And user click on User button\n    And user clicks Registration tab\n    And click on SSN TextBox\n    And user enters a valid SSN number\n    And click on First Name TextBox\n    And user enters a valid First Name\n    And click on Last Name TextBox\n    And user enters a valid Last Name\n    And click on Address TextBox\n    And user enters Valid Address\n    And click on Mobile Phone Number TextBox\n    And user enters a valid Mobile Phone Number\n    And click on Username TextBox\n    And user enters Valid Username\n    And click on Email TextBox\n    And user enters Valid Email\n    And click on New password TextBox\n    And user enters valid New password\n    And Password strength level must be strong\n    And click on New password confirmation TextBox\n    And user enters valid New password confirmation\n    And user clicks the Register button\n    Then the user should see the message \"Registration saved!\"\n\n\n  @US02TC02\n  Feature: US_002 SSN number cannot be of any chars nor spec chars except \"-\"\n\n  Scenario: US02TC02 user must enter valid data into SSN TextBox using \"-\" character.\n    Given TC02 user is on \"http://gmibank.com/\" page\n    And TC02 user click on User button\n    And TC02 user clicks Registration tab\n    And TC02 click on SSN TextBox\n    And TC02 the user must type the character \"-\" when entering a number into the current SSN TextBox.\n    Then TC02 the user should not see the text \"Your SSN is invalid\"\n\n  @US02TC03\n  Feature: US_002 Mobilephone number cannot be of any chars nor spec chars except \"-\"\n\n  Scenario: US02TC03 user must enter valid data in Mobile Phone Number TextBox using \"-\" character.\n    Given TC03 user is on \"http://gmibank.com/\" page\n    And TC03 user click on User button\n    And TC03 user clicks Registration tab\n    And TC03 click on Mobile Phone Number TexttBox\n    And TC03 user must type the character \"-\" when entering a number into the valid Mobile Phone Number TextBox\n    Then TC03 the user should not see the text \"Your mobile phone number is invalid\".\n\n  @US02TC04\n  Feature: US_002 email id cannot be created without \"@\" sign and \".com\" extension\n\n  Scenario: US02TC04 user must enter valid data in Email TextBox using \"@\" character and \".com\" expression\n    Given TC04 user is on \"http://gmibank.com/\" page\n    And TC04 user click on User button\n    And TC04 user clicks Registration tab\n    And TC04 click on Mobile Phone Number TextBox\n    And TC04 the user is entering a valid Email TextBox. Email Must use \" @ \" character and \".com\" expression in TextBox\n    Then TC04 the user should not see the text \"This field is invalid\"\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/test-classes/features/customerRegistration.feature	(revision 2dc8a9e322802b1ad833645c9e8fc9c3662f613b)
++++ target/test-classes/features/customerRegistration.feature	(date 1605046139593)
+@@ -1,4 +1,3 @@
+-
+ @US02TC01
+   Feature: US_002 Any field on the registration page should not be left blank
+ 
+@@ -60,4 +59,4 @@
+     And TC04 user clicks Registration tab
+     And TC04 click on Mobile Phone Number TextBox
+     And TC04 the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox
+-    Then TC04 the user should not see the text "This field is invalid"
++    Then TC04 the user should not see the text "This field is invalid".

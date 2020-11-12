@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="34.978">
-<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC02 user must enter valid data into SSN TextBox using &quot;-&quot; character." time="34.364">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),'Your SSN is invalid')]&quot;}&#10;  (Session info: chrome=86.0.4240.193)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'BA-MacBook.local', ip: '2a01:e35:2e56:e070:21f6:8205:d408:2c57%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/5v/ws8hntyn367...}, goog:chromeOptions: {debuggerAddress: localhost:55071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: c5b0b31c1b92d360238adb45e5a7d3ec&#10;*** Element info: {Using=xpath, value=//*[contains(text(),'Your SSN is invalid')]}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given SSN user is on "http://gmibank.com/" page.............................passed
-And SSN user click on User button...........................................passed
-And SSN user clicks Registration tab........................................passed
-And SSN click on SSN TextBox................................................passed
-And SSN the user must type the character "-" when entering a number into the current SSN TextBox..passed
-Then SSN the user should not see the text "Your SSN is invalid".............failed
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Your SSN is invalid')]"}
-  (Session info: chrome=86.0.4240.193)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'BA-MacBook.local', ip: '2a01:e35:2e56:e070:21f6:8205:d408:2c57%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.193, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/5v/ws8hntyn367...}, goog:chromeOptions: {debuggerAddress: localhost:55071}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: c5b0b31c1b92d360238adb45e5a7d3ec
-*** Element info: {Using=xpath, value=//*[contains(text(),'Your SSN is invalid')]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
-	at stepdefinitions.CostumerRegistrationStepDef.SSN_the_user_should_not_see_the_text(CostumerRegistrationStepDef.java:198)
-	at ✽.SSN the user should not see the text "Your SSN is invalid"(file:///Users/buse/IdeaProjects/com.gmibank/src/test/resources/features/US02characterControl.feature:11)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="5" time="44.588">
+<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be user info being populated when navigating to user info &quot;firstname, lastname email and language&quot;" time="39.126">
+<system-out><![CDATA[Given Go to "https://gmibank.com/" link.....................................passed
+And Click to User drop down menu............................................passed
+And Click to Sign in........................................................passed
+And Enter the username with valid credentails...............................passed
+And Enter the password with valid credentails...............................passed
+And Click to Sign in button.................................................passed
+And Click to User drop down menu............................................passed
+And Click to User info......................................................passed
+And Assert that First Name is not empty.....................................passed
+And Assert that Last Name is not empty......................................passed
+And Assert that Email is not empty..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be 2 languages available &quot;English and Turkish&quot;" time="0.775">
+<system-out><![CDATA[And Assert that Language dropdown is have English...........................passed
+And Assert that Language dropdown is have Türkçe............................passed
+]]></system-out>
+</testcase>
+<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update firstname" time="1.117">
+<system-out><![CDATA[And Update to First Name....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update lastname" time="1.118">
+<system-out><![CDATA[And Update to Last Name.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update email id adding &quot;@&quot; sign and &quot;.com&quot; extension" time="1.133">
+<skipped><![CDATA[And Update to Email.........................................................passed
+And Assert that Email is contain mailContains...............................passed
+And Click to Save button....................................................undefined
+Then Assert that visible text saveAlertText.................................skipped
+]]></skipped>
 </testcase>
 </testsuite>

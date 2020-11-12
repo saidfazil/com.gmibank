@@ -98,6 +98,11 @@ public class UserSettingsStepDef {
         Assert.assertTrue(ConfigurationReader.getProperty("updateemployeeEmail3").contains(ConfigurationReader.getProperty("mailContains")));
         Assert.assertTrue(ConfigurationReader.getProperty("updateemployeeEmail3").contains(ConfigurationReader.getProperty("mailContains2")));
     }
+
+    @And("Click to Save button")
+    public void clickToSaveButton() {
+        userSettingsPage.saveButton.click();
+    }
 }
 
 

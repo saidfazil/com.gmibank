@@ -1,3 +1,4 @@
+@US06
 Feature:User info segment (User Settings) should be editable on Homepage
   @US06TC01
   Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
@@ -21,14 +22,17 @@ Feature:User info segment (User Settings) should be editable on Homepage
   @US06TC03
   Scenario: There should be an option to update firstname
     And Update to First Name
+
+  @US06TC04
+  Scenario: There should be an option to update lastname
+    And Update to Last Name
+
+  @US06TC05
+  Scenario: There should be an option to update email id adding "@" sign and ".com" extension
+    And Update to Email
+    And Assert that Email is contain mailContains
     And Click to Save button
     Then Assert that visible text saveAlertText.
-
-
-
-
-
-
 
 
 

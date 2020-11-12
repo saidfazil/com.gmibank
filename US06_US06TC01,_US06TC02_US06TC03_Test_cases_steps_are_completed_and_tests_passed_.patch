@@ -1,0 +1,422 @@
+Index: configuration.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- configuration.properties	(revision de7bb52f3fd04985915df8586033acd30ded968f)
++++ configuration.properties	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
+@@ -5,6 +5,171 @@
+ employeeUsername=globalemployee1
+ employeePassword=Global.123
+ 
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++employeeUsername3=globalemployee3
++employeePassword3=Global.123
++employeeEmail3=globalemployee3@gmail.com
++selectedLanguage=English
++selectedLanguage2=Türkçe
++updateFirstName=updatedglobalemployee3
++saveAlertText=Settings saved!
++
++
++
++
++
+ hb_id=GlobalEmployeeHb
+ hb_password=13071990
+ hb_SSN=190-19-1907
+Index: src/test/java/pages/UserSettingsPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/pages/UserSettingsPage.java	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
++++ src/test/java/pages/UserSettingsPage.java	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
+@@ -0,0 +1,51 @@
++package pages;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.PageFactory;
++import utilities.Driver;
++
++public class UserSettingsPage {
++    public UserSettingsPage(){
++        PageFactory.initElements(Driver.getDriver(),this);}
++    @FindBy(name = "username" )
++    public WebElement username;
++
++    @FindBy(name = "password")
++    public WebElement password;
++
++    @FindBy(id="account-menu")
++    public WebElement userDropDown;
++
++    @FindBy(name = "firstName")
++    public WebElement firstName;
++
++    @FindBy(name="lastName")
++    public WebElement lastName;
++
++    @FindBy(id="email")
++    public WebElement eMail;
++
++    @FindBy(name="langKey")
++    public WebElement languageDropDown;
++
++    @FindBy(xpath = "//span[.='Save']")
++    public WebElement saveButton;
++
++    @FindBy(xpath = "//span[.='User Info']" )
++    public WebElement userInfo;
++
++    @FindBy(xpath = "//option[.='English']")
++    public WebElement langEnglish;
++
++    @FindBy(xpath = "//option[.='Türkçe']")
++    public WebElement langTurkish;
++
++    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div")
++    public WebElement saveAlert;
++
++
++
++
++
++}
+Index: src/test/java/stepdefinitions/UserSettingsStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/UserSettingsStepDef.java	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
++++ src/test/java/stepdefinitions/UserSettingsStepDef.java	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
+@@ -0,0 +1,89 @@
++package stepdefinitions;
++
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import org.junit.Assert;
++import org.openqa.selenium.support.ui.Select;
++import org.openqa.selenium.support.ui.Wait;
++import pages.ManageCostumerPage;
++import pages.UserSettingsPage;
++import utilities.ConfigurationReader;
++import utilities.Driver;
++
++public class UserSettingsStepDef {
++    ManageCostumerPage manageCostumerPage = new ManageCostumerPage();
++    UserSettingsPage userSettingsPage = new UserSettingsPage();
++
++    @Given("Go to {string} link")
++    public void goToLink(String arg0) {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
++    }
++
++    @And("Click to User drop down menu")
++    public void clickToUserDropDownMenu() {
++        manageCostumerPage.dropDownAccount.click();
++    }
++
++    @And("Click to Sign in")
++    public void clickToSignIn() {
++        manageCostumerPage.accountSignIn.click();
++    }
++
++    @And("Enter the username with valid credentails")
++    public void enterTheUsernameWithValidCredentails() {
++        manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername3"));
++    }
++
++    @And("Enter the password with valid credentails")
++    public void enterThePasswordWithValidCredentails() {
++        manageCostumerPage.password.sendKeys(ConfigurationReader.getProperty("employeePassword3"));
++    }
++
++    @And("Click to User info")
++    public void clickToUserInfo() {
++        userSettingsPage.userInfo.click();
++    }
++
++    @And("Assert that First Name is not empty.")
++    public void assertThatFirstNameIsNotEmpty() {
++        Assert.assertTrue(userSettingsPage.firstName.isDisplayed());
++    }
++
++    @And("Assert that Last Name is not empty.")
++    public void assertThatLastNameIsNotEmpty() {
++        Assert.assertTrue(userSettingsPage.lastName.isDisplayed());
++    }
++
++    @And("Assert that Email is not empty.")
++    public void assertThatEmailIsNotEmpty() {
++        Assert.assertTrue(userSettingsPage.eMail.isDisplayed());
++    }
++
++    @And("Assert that Language dropdown is have English.")
++    public void assertThatLanguageDropdownIsHaveEnglish() {
++        Assert.assertTrue(userSettingsPage.langEnglish.getText().equals(ConfigurationReader.getProperty("selectedLanguage")));
++    }
++
++    @And("Assert that Language dropdown is have Türkçe.")
++    public void assertThatLanguageDropdownIsHaveTürkçe() {
++        Assert.assertTrue(userSettingsPage.langTurkish.getText().equals(ConfigurationReader.getProperty("selectedLanguage2")));
++
++    }
++
++    @And("Update to First Name")
++    public void updateToFirstName() {
++        userSettingsPage.firstName.clear();
++        userSettingsPage.firstName.sendKeys(ConfigurationReader.getProperty("updateFirstName"));
++    }
++
++    @And("Click to Save button")
++    public void clickToSaveButton() {
++        userSettingsPage.saveButton.click();
++    }
++
++    @Then("Assert that visible text saveAlertText.")
++    public void assertThatVisibleTextSaveAlertText() {
++        Assert.assertTrue(userSettingsPage.saveAlert.isDisplayed());
++    }
++}
+Index: src/test/resources/features/userSettings.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/features/userSettings.feature	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
++++ src/test/resources/features/userSettings.feature	(revision 64a7b49146d98869040a50c22f18278f2e6bf83d)
+@@ -0,0 +1,34 @@
++Feature:User info segment (User Settings) should be editable on Homepage
++  @US06TC01
++  Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
++    Given Go to "https://gmibank.com/" link
++    And Click to User drop down menu
++    And Click to Sign in
++    And Enter the username with valid credentails
++    And Enter the password with valid credentails
++    And Click to Sign in button
++    And Click to User drop down menu
++    And Click to User info
++    And Assert that First Name is not empty.
++    And Assert that Last Name is not empty.
++    And Assert that Email is not empty.
++
++  @US06TC02
++  Scenario: There should be 2 languages available "English and Turkish"
++    And Assert that Language dropdown is have English.
++    And Assert that Language dropdown is have Türkçe.
++
++  @US06TC03
++  Scenario: There should be an option to update firstname
++    And Update to First Name
++    And Click to Save button
++    Then Assert that visible text saveAlertText.
++
++
++
++
++
++
++
++
++
+diff --git target/test-classes/META-INF/com.gmibank.kotlin_module target/test-classes/META-INF/com.gmibank.kotlin_module
+new file mode 100644
+index 0000000000000000000000000000000000000000..a49347afef10a9b5f95305e1058ba36adec7d6dd
+GIT binary patch
+literal 16
+Rc${NkU|?ooU|@t|0RRA102TlM
+
+diff --git target/test-classes/stepdefinitions/ManageCostumerStepDef.class target/test-classes/stepdefinitions/ManageCostumerStepDef.class
+index b96e39354f469c9a1802cf8c2659af647aee226a..a37ec92b760235242f4056c0aa8f7eeb7a972dc3
+GIT binary patch
+literal 3559
+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
+RS~)wC<m@PQQ*p|V{U3PefyV#<
+

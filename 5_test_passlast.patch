@@ -1,0 +1,645 @@
+Index: target/test-classes/features/userSettings.feature
+===================================================================
+--- target/test-classes/features/userSettings.feature	(revision e27b37eb4fa0b3f8f80752bf6e4679ca402fbb5b)
++++ target/test-classes/features/userSettings.feature	(revision e27b37eb4fa0b3f8f80752bf6e4679ca402fbb5b)
+@@ -1,34 +0,0 @@
+-Feature:User info segment (User Settings) should be editable on Homepage
+-  @US06TC01
+-  Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
+-    Given Go to "https://gmibank.com/" link
+-    And Click to User drop down menu
+-    And Click to Sign in
+-    And Enter the username with valid credentails
+-    And Enter the password with valid credentails
+-    And Click to Sign in button
+-    And Click to User drop down menu
+-    And Click to User info
+-    And Assert that First Name is not empty.
+-    And Assert that Last Name is not empty.
+-    And Assert that Email is not empty.
+-
+-  @US06TC02
+-  Scenario: There should be 2 languages available "English and Turkish"
+-    And Assert that Language dropdown is have English.
+-    And Assert that Language dropdown is have Türkçe.
+-
+-  @US06TC03
+-  Scenario: There should be an option to update firstname
+-    And Update to First Name
+-    And Click to Save button
+-    Then Assert that visible text saveAlertText.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Index: debug.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- debug.log	(revision e27b37eb4fa0b3f8f80752bf6e4679ca402fbb5b)
++++ debug.log	(date 1605147515317)
+@@ -46,3 +46,203 @@
+ [1110/200227.008:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+ [1110/200812.175:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+ [1110/215349.418:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012425.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012531.915:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012425.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012531.915:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012649.301:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012425.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012531.915:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012425.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012531.915:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012649.301:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012425.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012531.915:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/222027.613:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235045.600:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1111/235230.555:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/001504.751:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/004457.639:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012425.409:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012531.915:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/012649.301:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/014337.198:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/023904.693:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/025208.928:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/030228.727:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
++[1112/031831.344:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Index: src/test/java/stepdefinitions/UserSettingsStepDef.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/stepdefinitions/UserSettingsStepDef.java	(date 1605148337773)
++++ src/test/java/stepdefinitions/UserSettingsStepDef.java	(date 1605148337773)
+@@ -0,0 +1,106 @@
++package stepdefinitions;
++
++import io.cucumber.java.en.And;
++import io.cucumber.java.en.Given;
++import io.cucumber.java.en.Then;
++import org.junit.Assert;
++import org.openqa.selenium.support.ui.Select;
++import org.openqa.selenium.support.ui.Wait;
++import pages.ManageCostumerPage;
++import pages.UserSettingsPage;
++import utilities.ConfigurationReader;
++import utilities.Driver;
++
++public class UserSettingsStepDef {
++    ManageCostumerPage manageCostumerPage = new ManageCostumerPage();
++    UserSettingsPage userSettingsPage = new UserSettingsPage();
++
++    @Given("Go to {string} link")
++    public void goToLink(String arg0) {
++        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
++    }
++
++    @And("Click to User drop down menu")
++    public void clickToUserDropDownMenu() {
++        manageCostumerPage.dropDownAccount.click();
++    }
++
++    @And("Click to Sign in")
++    public void clickToSignIn() {
++        manageCostumerPage.accountSignIn.click();
++    }
++
++    @And("Enter the username with valid credentails")
++    public void enterTheUsernameWithValidCredentails() {
++        manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername3"));
++    }
++
++    @And("Enter the password with valid credentails")
++    public void enterThePasswordWithValidCredentails() {
++        manageCostumerPage.password.sendKeys(ConfigurationReader.getProperty("employeePassword3"));
++    }
++
++    @And("Click to User info")
++    public void clickToUserInfo() {
++        userSettingsPage.userInfo.click();
++    }
++
++    @And("Assert that First Name is not empty.")
++    public void assertThatFirstNameIsNotEmpty() {
++        Assert.assertTrue(userSettingsPage.firstName.isDisplayed());
++    }
++
++    @And("Assert that Last Name is not empty.")
++    public void assertThatLastNameIsNotEmpty() {
++        Assert.assertTrue(userSettingsPage.lastName.isDisplayed());
++    }
++
++    @And("Assert that Email is not empty.")
++    public void assertThatEmailIsNotEmpty() {
++        Assert.assertTrue(userSettingsPage.eMail.isDisplayed());
++    }
++
++    @And("Assert that Language dropdown is have English.")
++    public void assertThatLanguageDropdownIsHaveEnglish() {
++        Assert.assertTrue(userSettingsPage.langEnglish.getText().equals(ConfigurationReader.getProperty("selectedLanguage")));
++    }
++
++    @And("Assert that Language dropdown is have Türkçe.")
++    public void assertThatLanguageDropdownIsHaveTürkçe() {
++        Assert.assertTrue(userSettingsPage.langTurkish.getText().equals("Türkçe"));
++    }
++
++    @And("Update to First Name")
++    public void updateToFirstName() {
++        userSettingsPage.firstName.clear();
++        userSettingsPage.firstName.sendKeys(ConfigurationReader.getProperty("updateFirstName"));
++    }
++
++    @Then("Assert that visible text saveAlertText.")
++    public void assertThatVisibleTextSaveAlertText() {
++        Assert.assertTrue(userSettingsPage.saveAlert.isDisplayed());
++    }
++
++    @And("Update to Last Name")
++    public void updateToLastName() {
++        userSettingsPage.lastName.clear();
++        userSettingsPage.lastName.sendKeys(ConfigurationReader.getProperty("updateLastName"));
++    }
++
++    @And("Update to Email")
++    public void updateToEmail() {
++        userSettingsPage.eMail.clear();
++        userSettingsPage.eMail.sendKeys(ConfigurationReader.getProperty("updateemployeeEmail3"));
++    }
++
++    @And("Assert that Email is contain mailContains")
++    public void assertThatEmailIsContain() {
++        Assert.assertTrue(ConfigurationReader.getProperty("updateemployeeEmail3").contains(ConfigurationReader.getProperty("mailContains")));
++        Assert.assertTrue(ConfigurationReader.getProperty("updateemployeeEmail3").contains(ConfigurationReader.getProperty("mailContains2")));
++    }
++}
++
++
++
++
++
+Index: src/test/resources/features/userSettings.feature
+===================================================================
+--- src/test/resources/features/userSettings.feature	(revision e27b37eb4fa0b3f8f80752bf6e4679ca402fbb5b)
++++ src/test/resources/features/US06userSettings.feature	(date 1605148495463)
+@@ -1,3 +1,4 @@
++@US06
+ Feature:User info segment (User Settings) should be editable on Homepage
+   @US06TC01
+   Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
+@@ -21,14 +22,17 @@
+   @US06TC03
+   Scenario: There should be an option to update firstname
+     And Update to First Name
++
++  @US06TC04
++  Scenario: There should be an option to update lastname
++    And Update to Last Name
++
++  @US06TC05
++  Scenario: There should be an option to update email id adding "@" sign and ".com" extension
++    And Update to Email
++    And Assert that Email is contain mailContains
+     And Click to Save button
+     Then Assert that visible text saveAlertText.
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
+Index: configuration.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- configuration.properties	(revision e27b37eb4fa0b3f8f80752bf6e4679ca402fbb5b)
++++ configuration.properties	(date 1605147554842)
+@@ -77,30 +77,15 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
++gmi_bank_url = http://gmibank.com/
++SSN = 690-45-9877
++First_Name = Celin
++Last_Name = White
++Address = 123 Rue de la Milles 45160 Orleans/France
++Mobile_Phone_Number = 980-678-4554
++Username = Celin45
++Email = celin_45@gmail.com
++New_password = Celin.w?45
+ 
+ 
+ 
+@@ -177,9 +162,17 @@
+ employeePassword3=Global.123
+ employeeEmail3=globalemployee3@gmail.com
+ selectedLanguage=English
+-selectedLanguage2=T�rk�e
++selectedLanguage2=Türkçe
+ updateFirstName=updatedglobalemployee3
++updateLastName=updatedglobalemployee3
++updateemployeeEmail3=updatedglobalemployee3@gmail.com
+ saveAlertText=Settings saved!
++mailContains=@
++mailContains2=.com
++
++
++
++
+ 
+ 
+ 
+@@ -190,80 +183,4 @@
+ hb_SSN=190-19-1907
+ hb_date=09.11.2020 11:11
+ hb_country=1
+-hb_state=New York
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-gmi_bank_url = http://gmibank.com/
+-SSN = 690-45-9877
+-First_Name = Celin
+-Last_Name = White
+-Address = 123 Rue de la Milles 45160 Orleans/France
+-Mobile_Phone_Number = 980-678-4554
+-Username = Celin45
+-Email = celin_45@gmail.com
+-New_password = Celin.w?45
+-
+-
++hb_state=New York
+\ No newline at end of file
+diff --git target/test-classes/runners/Runner.class target/test-classes/runners/Runner.class
+index aef8f72f89fbe376bc3483c4dbb7b46e3810680b..d29f55c259b9af69c52bb0b465f901f13ed0bcee
+GIT binary patch
+literal 753
+zc$|Gw+iDa+5Ivo}#ZAn{^_mzjK@k<QE$CAeQ5FPYFk;LG%v0}7XSUaw?xnjY>Sy^R
+z_}~ZlQDSxPjN*$7bahpoI#qM3fByRZ1HcpP_R+%49&Yt;o1yzmY2}|YwC+EcFto=e
+zlMI7IY5Arqr_#O`(}E(y#H6B_2&;l$2itz89K&W}E3Kt<{9Uw98TyB&vZ;Kf0&Hy=
+z9?iv>VAvwht5QysQ^fL8YvYAiMibL^Vr<Um6^+D~oPqLK`5AF`&O}iW-A<wmPpdSJ
+zSA)m3ORzitNgpg?BSLi-MU^YfaChd*V&4m!OV2ZTDyqWoHRXF&E{ydw*}b_lx`Bmz
+zlls$Y6r#izJ2uGAWl;nF;wZ+jdMbsltR(7;AGsi&$V%FU^Hz9c`Rh!Ix7N&M8hV&=
+zl$UBM^hfS&%Dr?XkaSUG#~Utwbol7;LOA!y*lcVmDo1sWmX$~K2F}X`{byMFQuMYL
+zIhoFjP)*8Y_6v#LqQ`=Dw9#SM_;<gw@vur>2%YnTX&4c^SV1fSqmQcS?2^Z$4|E=W
+z1N%ys74+!r#^4aEu}K8r9QrZ87SDB@C%aF#4ayHvY~lieh9_t_Ty(hPa2Z!lz#OjP
+PTC`i(j`lisKH$c0V>ZwW
+
+diff --git target/test-classes/pages/ManageCostumerPage.class target/test-classes/pages/ManageCostumerPage.class
+index 93db3ba8ec89bb7d315d3fb2c56f09eb15d4fc5f..fb49f2c95eb64ca5851cfee7f53011bf7a2feb35
+GIT binary patch
+literal 1922
+zc$|e)*;X4z5UmCrfe?#L92+l*u$_!V5N$AW78bK7cH||&ksow;Xw9^xCNtfW?jA6o
+zm8baRAs>*B%1QN%Fhm;L51Knu_tw%?)%xe(zy1b*75J$Lmtdm^k6^P1Td-Y#odWC<
+zm<qItch!m9@_m&^OQ76Px<ggW<?oCd9&#y?h`!?Oy^u#-+EoIxzo1e?yeW)mhkQ#)
+zWtkO98Upun-Axk5N?W=wWUzgTAuhd%ne7s|PH8Awn<7~ESXMy|lO*0DfziZpEm_0~
+zjASqxGh<Ga4hWRmiM2`|h>jGJz*R~!Lu+x}bH=ieE=DOjeI9dtR@^M5CT6MV>1p|#
+zani|%N!H;z%Gf00n!v3K;*=`yB*rS_Qhh<IlZG(ZvFXMUJ7zSoBBaiO#~X7sFq>$s
+zdby8Y`&ffFFu-L>ZCeGW2)b22q!!OS+T|?BQjVkDeK{a7(QBPc`WU-0b6)v{UKFzq
+zy%PK+ZCEO?{Ee+t*S#iMFNpR6fmv==`c%&B9adXQ_YdEVU>8qd@tAigop1R{S|+5a
+zY<4w&z2Gg^A3mT#s_?3=$=j)q%a*0+uOrKVb@;-b{u&3&g&q=k`e_^2{N4a+j(r!+
+z`5drgJ{ZkeU9@o)a&6DT%~2YN<MUcG^@5kAe2^A8lX_%l`#IsptqG3R4{-yZrOQ~1
+zRKUWT8&Ypqm+SQ<d<}*C?Ini9wROkGSzd^hRZQUaQCHNkg4aSvwX8uk`{HcD2z;_8
+zq_7(VhAY)3M%qyU=A3E>$)6=ro9mYhZytdw4dt`2$+U3aJ>!V&3f%S^jTpDq(5L@f
+z>=*cs3syW(iT3%va1Pf7C5vupOHhZ01=uUWKKxLCA4~8Up5Uc@UtFA0y6Yj69s0a|
+z#C>-?+~x}_&|_DNV|Ti-4!39TbCv4*E<`55V!aRjr?|xX%(qJ8AWE)ny^Dk`SgCv@
+zcB8-E)oK&wU<Cgy0cHRP0R?=H;@3Fh82*YTeJu?T69$dAm3hP@!c<<UX@tvp#1({@
+zJmOP?tMC~N!8Ig?;CjDc7U9N+1UC_G<%PbD@Od8b1wuKGm_xXeN8ClYmq&bw@YMj}
+z8K@vs^E~DezRn{S5NZR&q5+C<e}Gsru#E5^FZl`raodj1Z;;x+z7fRI{GUMH!qEI%
+k82%&e=C}BqgyGbE1P4A26Y!l=W_tJ@RuKuTrRw$n06~Mhm;e9(
+
+diff --git target/test-classes/stepdefinitions/CostumerRegistrationStepDef.class target/test-classes/stepdefinitions/CostumerRegistrationStepDef.class
+index 7a13bb98eb01c9c4385fbd7b404e1d899802bcad..8abe813f5e51f7f3ce48193229e2f7252b9b18c5
+GIT binary patch
+literal 9517
+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
+

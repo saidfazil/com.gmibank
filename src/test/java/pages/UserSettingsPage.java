@@ -44,6 +44,9 @@ public class UserSettingsPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div")
     public WebElement saveAlert;
 
+    @FindBy(className = "invalid-feedback")////*[@id="settings-form"]/div[3]/div
+    public WebElement invalidField;
+
 
 
 

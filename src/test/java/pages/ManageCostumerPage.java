@@ -44,7 +44,7 @@ public class ManageCostumerPage {
     @FindBy(xpath = "(//span[text()='Edit'])[10]")
     public  WebElement buttonEdit;
 
-    @FindBy(xpath = "//*[contains(@href,'2563/delete')]")
+    @FindBy(xpath = "//*[contains(@href,'3863/delete')]")
     public  WebElement buttonDelete;
 
     @FindBy(xpath = "//span[text()='Edit']")
@@ -59,14 +59,17 @@ public class ManageCostumerPage {
     @FindBy(xpath = "//div[contains(text(),'updated')]")
     public WebElement alertUpdate;
 
-    @FindBy(className ="modal-body")
+    @FindBy(xpath = "//span[text()='Confirm delete operation']")
     public WebElement alertDeleteQuestion;
 
-    @FindBy(linkText = "2563")
-    public  WebElement user2551;
+    @FindBy(linkText = "3863")
+    public  WebElement userDelete;
 
     @FindBy(id = "jhi-confirm-delete-tPCustomer")
     public WebElement alertDeleteButton;
+
+    @FindBy(xpath = "(//ul[@class='pagination'])/li[6]")
+    public WebElement lastPageButton;
 
 
 }

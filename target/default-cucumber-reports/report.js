@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US3passwordCreate.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US03passwordCreate.feature");
 formatter.feature({
   "name": "Registration page should restrict password usage to a secure and high level passcode",
   "description": "",
@@ -78,17 +78,18 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)\n\tat ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)\n",
+  "status": "failed"
 });
 formatter.step({
-  "name": "Color line must be orange or green",
+  "name": "Color line must be yellow or green",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Click on password confirmation textbox",
@@ -98,7 +99,7 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Enter to second textbox with 1 lowercase letter of at least 7 characters",
@@ -108,8 +109,9 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
+formatter.embedding("image/png", "embedded0.png", null);
 formatter.after({
   "status": "passed"
 });
@@ -182,17 +184,18 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:65)\n\tat ✽.Enter a password with 1 uppercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:20)\n",
+  "status": "failed"
 });
 formatter.step({
-  "name": "Color line must be orange or green",
+  "name": "Color line must be yellow or green",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Click on password confirmation textbox",
@@ -202,7 +205,7 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Enter to second textbox with 1 uppercase letter of at least 7 characters",
@@ -212,8 +215,9 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
+formatter.embedding("image/png", "embedded1.png", null);
 formatter.after({
   "status": "passed"
 });
@@ -286,17 +290,18 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters(PasswordCreateStepDef.java:81)\n\tat ✽.Enter a password with 1 digit of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:27)\n",
+  "status": "failed"
 });
 formatter.step({
-  "name": "Color line must be orange or green",
+  "name": "Color line must be yellow or green",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Click on password confirmation textbox",
@@ -306,7 +311,7 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Enter to second textbox with 1 digit of at least 7 characters",
@@ -316,8 +321,9 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithDigitOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
+formatter.embedding("image/png", "embedded2.png", null);
 formatter.after({
   "status": "passed"
 });
@@ -390,17 +396,18 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters(PasswordCreateStepDef.java:98)\n\tat ✽.Enter a password with 1 special char of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:34)\n",
+  "status": "failed"
 });
 formatter.step({
-  "name": "Color line must be orange or green",
+  "name": "Color line must be yellow or green",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Click on password confirmation textbox",
@@ -410,7 +417,7 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Enter to second textbox with 1 special char of at least 7 characters",
@@ -420,8 +427,9 @@ formatter.match({
   "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithSpecialCharOfAtLeastCharacters()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
+formatter.embedding("image/png", "embedded3.png", null);
 formatter.after({
   "status": "passed"
 });
@@ -497,11 +505,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Color line must be orange or green",
+  "name": "Color line must be yellow or green",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeOrangeOrGreen()"
+  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
 });
 formatter.result({
   "status": "passed"

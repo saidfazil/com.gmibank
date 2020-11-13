@@ -52,3 +52,4 @@
 [1111/200312.718:ERROR:exception_snapshot_win.cc(98)] thread ID 19104 not found in process
 [1111/200312.718:ERROR:exception_snapshot_win.cc(98)] thread ID 6112 not found in process
 [1111/200312.718:ERROR:exception_snapshot_win.cc(98)] thread ID 18088 not found in process
+[1113/011731.551:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

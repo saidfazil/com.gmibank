@@ -22,7 +22,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_is_on_page(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -32,7 +32,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_click_on_User_button()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
 });
 formatter.result({
   "status": "passed"
@@ -42,7 +42,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_clicks_Registration_tab()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
 });
 formatter.result({
   "status": "passed"
@@ -65,7 +65,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.new_click_on_SSN_TextBox()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.new_click_on_SSN_TextBox()"
 });
 formatter.result({
   "status": "passed"
@@ -75,7 +75,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -85,7 +85,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.ssn_the_user_should_not_see_the_text(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.ssn_the_user_should_not_see_the_text(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -106,7 +106,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_is_on_page(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -116,7 +116,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_click_on_User_button()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
 });
 formatter.result({
   "status": "passed"
@@ -126,7 +126,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_clicks_Registration_tab()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
 });
 formatter.result({
   "status": "passed"
@@ -149,7 +149,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.newClickOnMobilePhoneNumberTexttBox()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.newClickOnMobilePhoneNumberTexttBox()"
 });
 formatter.result({
   "status": "passed"
@@ -159,7 +159,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -169,7 +169,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.mobiltheUserShouldNotSeeTheText(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.mobiltheUserShouldNotSeeTheText(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -190,7 +190,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_is_on_page(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -200,7 +200,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_click_on_User_button()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
 });
 formatter.result({
   "status": "passed"
@@ -210,7 +210,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.user_clicks_Registration_tab()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
 });
 formatter.result({
   "status": "passed"
@@ -233,7 +233,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.new_click_on_Email_TextBox()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.new_click_on_Email_TextBox()"
 });
 formatter.result({
   "status": "passed"
@@ -243,7 +243,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox(java.lang.String,java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -253,7 +253,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationStepDef.EmailTheUserShouldNotSeeTheText(java.lang.String)"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.EmailTheUserShouldNotSeeTheText(java.lang.String)"
 });
 formatter.result({
   "status": "passed"

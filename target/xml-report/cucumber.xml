@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="123.672">
-<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC02 user must enter valid data into SSN TextBox using &quot;-&quot; character." time="117.884">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="160.701">
+<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC02 user must enter valid data into SSN TextBox using &quot;-&quot; character." time="155.496">
 <system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
 And user click on User button...............................................passed
 And user clicks Registration tab............................................passed
@@ -9,7 +9,7 @@ And the user must type the character "-" when entering a number into the current
 Then ssn the user should not see the text "Your SSN is invalid".............passed
 ]]></system-out>
 </testcase>
-<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC03 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character." time="3.005">
+<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC03 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character." time="2.303">
 <system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
 And user click on User button...............................................passed
 And user clicks Registration tab............................................passed
@@ -18,7 +18,7 @@ And user must type the character "-" when entering a number into the valid Mobil
 Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
 ]]></system-out>
 </testcase>
-<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC04 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression" time="2.28">
+<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC04 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression" time="2.374">
 <system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
 And user click on User button...............................................passed
 And user clicks Registration tab............................................passed

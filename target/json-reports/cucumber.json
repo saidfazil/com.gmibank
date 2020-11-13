@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 111227000000,
+              "duration": 148913000000,
               "status": "passed"
             },
             "line": 5,
@@ -23,38 +23,38 @@
                   "offset": 11
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_is_on_page(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 110000000,
+              "duration": 102000000,
               "status": "passed"
             },
             "line": 6,
             "name": "user click on User button",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_click_on_User_button()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 192000000,
+              "duration": 176000000,
               "status": "passed"
             },
             "line": 7,
             "name": "user clicks Registration tab",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_clicks_Registration_tab()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
             },
             "keyword": "And "
           }
         ]
       },
       {
-        "start_timestamp": "2020-11-13T19:46:31.373Z",
+        "start_timestamp": "2020-11-13T20:03:35.717Z",
         "before": [
           {
             "result": {
@@ -73,7 +73,7 @@
         "after": [
           {
             "result": {
-              "duration": 698000000,
+              "duration": 687000000,
               "status": "passed"
             },
             "match": {
@@ -86,19 +86,19 @@
         "steps": [
           {
             "result": {
-              "duration": 124000000,
+              "duration": 119000000,
               "status": "passed"
             },
             "line": 12,
             "name": "new click on SSN TextBox",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.new_click_on_SSN_TextBox()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.new_click_on_SSN_TextBox()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 253000000,
+              "duration": 228000000,
               "status": "passed"
             },
             "line": 13,
@@ -110,13 +110,13 @@
                   "offset": 33
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5078000000,
+              "duration": 5102000000,
               "status": "passed"
             },
             "line": 14,
@@ -128,7 +128,7 @@
                   "offset": 37
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.ssn_the_user_should_not_see_the_text(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.ssn_the_user_should_not_see_the_text(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -151,7 +151,7 @@
         "steps": [
           {
             "result": {
-              "duration": 923000000,
+              "duration": 770000000,
               "status": "passed"
             },
             "line": 5,
@@ -163,41 +163,42 @@
                   "offset": 11
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_is_on_page(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 254000000,
+              "duration": 162000000,
               "status": "passed"
             },
             "line": 6,
             "name": "user click on User button",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_click_on_User_button()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 285000000,
+              "duration": 198000000,
               "status": "passed"
             },
             "line": 7,
             "name": "user clicks Registration tab",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_clicks_Registration_tab()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
             },
             "keyword": "And "
           }
         ]
       },
       {
-        "start_timestamp": "2020-11-13T19:48:29.302Z",
+        "start_timestamp": "2020-11-13T20:06:11.251Z",
         "before": [
           {
             "result": {
+              "duration": 2000000,
               "status": "passed"
             },
             "match": {
@@ -212,7 +213,7 @@
         "after": [
           {
             "result": {
-              "duration": 839000000,
+              "duration": 770000000,
               "status": "passed"
             },
             "match": {
@@ -225,19 +226,19 @@
         "steps": [
           {
             "result": {
-              "duration": 219000000,
+              "duration": 106000000,
               "status": "passed"
             },
             "line": 20,
             "name": "new click on Mobile Phone Number TexttBox",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.newClickOnMobilePhoneNumberTexttBox()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.newClickOnMobilePhoneNumberTexttBox()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 297000000,
+              "duration": 175000000,
               "status": "passed"
             },
             "line": 21,
@@ -249,13 +250,13 @@
                   "offset": 29
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 176000000,
+              "duration": 112000000,
               "status": "passed"
             },
             "line": 22,
@@ -267,7 +268,7 @@
                   "offset": 39
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.mobiltheUserShouldNotSeeTheText(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.mobiltheUserShouldNotSeeTheText(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -290,7 +291,7 @@
         "steps": [
           {
             "result": {
-              "duration": 746000000,
+              "duration": 731000000,
               "status": "passed"
             },
             "line": 5,
@@ -302,38 +303,38 @@
                   "offset": 11
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_is_on_page(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 196000000,
+              "duration": 185000000,
               "status": "passed"
             },
             "line": 6,
             "name": "user click on User button",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_click_on_User_button()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 198000000,
+              "duration": 215000000,
               "status": "passed"
             },
             "line": 7,
             "name": "user clicks Registration tab",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.user_clicks_Registration_tab()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
             },
             "keyword": "And "
           }
         ]
       },
       {
-        "start_timestamp": "2020-11-13T19:48:32.333Z",
+        "start_timestamp": "2020-11-13T20:06:13.583Z",
         "before": [
           {
             "result": {
@@ -351,7 +352,7 @@
         "after": [
           {
             "result": {
-              "duration": 681000000,
+              "duration": 673000000,
               "status": "passed"
             },
             "match": {
@@ -364,19 +365,19 @@
         "steps": [
           {
             "result": {
-              "duration": 112000000,
+              "duration": 120000000,
               "status": "passed"
             },
             "line": 27,
             "name": "new click on Email TextBox",
             "match": {
-              "location": "stepdefinitions.CostumerRegistrationStepDef.new_click_on_Email_TextBox()"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.new_click_on_Email_TextBox()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 239000000,
+              "duration": 324000000,
               "status": "passed"
             },
             "line": 28,
@@ -392,13 +393,13 @@
                   "offset": 79
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox(java.lang.String,java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox(java.lang.String,java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 104000000,
+              "duration": 121000000,
               "status": "passed"
             },
             "line": 29,
@@ -410,7 +411,7 @@
                   "offset": 39
                 }
               ],
-              "location": "stepdefinitions.CostumerRegistrationStepDef.EmailTheUserShouldNotSeeTheText(java.lang.String)"
+              "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.EmailTheUserShouldNotSeeTheText(java.lang.String)"
             },
             "keyword": "Then "
           }

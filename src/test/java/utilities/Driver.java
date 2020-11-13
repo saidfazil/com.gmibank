@@ -373,50 +373,6 @@ public class Driver {
 
         return SSNNumber;
 
-    }
-    public static String getSSNCharecterControl(String string) {
-        String ssnTire = "234-45-6754";
-        boolean tire;
 
-        tire = ssnTire.contains("-");
-        if (tire == true) {
-            System.out.println("tire var");
-        }else{
-            System.out.println("yok");
-        }
-
-        return ssnTire;
-    }
-    public static String getMobilCharecterControl(String string) {
-        String mobilTire = "980-678-4554";
-        boolean tire;
-
-        tire = mobilTire.contains("-");
-        if (tire == true) {
-            System.out.println("tire var");
-        }else{
-            System.out.println("yok");
-        }
-
-        return mobilTire;
-    }
-
-
-
-    public static String getEmailCharecterControl(String Charecter) {
-        String mail = "celin_45@gmail.com";
-        boolean at;
-        boolean com;
-        at = mail.contains("@");
-        com = mail.contains(".com");
-        if (at == true) {
-            System.out.println("at var");
-        } else if (com == true){
-            System.out.println("com var");
-        }else{
-            System.out.println("yok");
-        }
-
-        return mail;
     }
 }

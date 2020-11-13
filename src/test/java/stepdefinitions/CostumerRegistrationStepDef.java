@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.Color;
 import pages.CostumerRegistrationPage;
 import utilities.ConfigurationReader;
@@ -41,9 +42,12 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters a valid SSN number")
-    public void user_enters_a_valid_SSN_number() {
-        costRegPage.SSN_Number.sendKeys(ConfigurationReader.getProperty("SSN"));
+    @And("user enters a invalid SSN number")
+    public void userEntersAInvalidSSNNumber() throws InterruptedException {
+
+        costRegPage.SSN_Number.sendKeys(ConfigurationReader.getProperty("SSN"), Keys.ENTER);
+        Thread.sleep(2000);
+            costRegPage.ssnErrorMessage.isDisplayed();
 
     }
 
@@ -53,9 +57,10 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters a valid First Name")
-    public void user_enters_a_valid_First_Name() {
+    @And("user enters a invalid First Name")
+    public void userEntersAInvalidFirstName() {
         costRegPage.First_Name.sendKeys(ConfigurationReader.getProperty("First_Name"));
+        Assert.assertTrue(costRegPage.firstNameErrorMessage.isDisplayed());
 
     }
 
@@ -65,9 +70,10 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters a valid Last Name")
-    public void user_enters_a_valid_Last_Name() {
+    @And("user enters a invalid Last Name")
+    public void userEntersAInvalidLastName() {
         costRegPage.Last_Name.sendKeys(ConfigurationReader.getProperty("Last_Name"));
+        Assert.assertTrue(costRegPage.lastNameErrorMessage.isDisplayed());
 
     }
 
@@ -76,10 +82,10 @@ public class CostumerRegistrationStepDef {
         costRegPage.Address_TextBox.click();
 
     }
-
-    @Given("user enters Valid Address")
-    public void user_enters_Valid_Address() {
-        costRegPage.Address.sendKeys(ConfigurationReader.getProperty("Address"));
+    @And("user enters invalid Address")
+    public void userEntersInvalidAddress() {
+        costRegPage.Address_TextBox.sendKeys(ConfigurationReader.getProperty("Address"));
+        Assert.assertTrue(costRegPage.Address.isDisplayed());
 
     }
 
@@ -89,9 +95,10 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters a valid Mobile Phone Number")
-    public void user_enters_a_valid_Mobile_Phone_Number() {
+    @And("user enters a invalid Mobile Phone Number")
+    public void userEntersAInvalidMobilePhoneNumber() {
         costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
+        Assert.assertTrue(costRegPage.mobilPhoneErrorMessage.isDisplayed());
 
     }
 
@@ -101,9 +108,10 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters Valid Username")
-    public void user_enters_Valid_Username() {
+    @And("user enters invalid Username")
+    public void userEntersInvalidUsername() {
         costRegPage.Username.sendKeys(ConfigurationReader.getProperty("Username"));
+        Assert.assertTrue(costRegPage.UsernameErrorMessage.isDisplayed());
 
     }
 
@@ -113,9 +121,19 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters Valid Email")
-    public void user_enters_Valid_Email() {
+    @And("user on null Email TextBox")
+    public void userOnNullEmailTextBox() {
+        costRegPage.Email.sendKeys(ConfigurationReader.getProperty("Null_Email"));
+        Assert.assertTrue(costRegPage.EmailNullErrorMessage.isDisplayed());
+
+    }
+
+    @And("user enters invalid Email")
+    public void userEntersInvalidEmail() throws InterruptedException {
+        Thread.sleep(3000);
+        costRegPage.Email_TextBox.clear();
         costRegPage.Email.sendKeys(ConfigurationReader.getProperty("Email"));
+        Assert.assertTrue(costRegPage.EmailErrorMessage.isDisplayed());
 
     }
 
@@ -123,11 +141,19 @@ public class CostumerRegistrationStepDef {
     public void click_on_New_password_TextBox() {
         costRegPage.New_password_TextBox.click();
 
+
     }
 
-    @Given("user enters valid New password")
-    public void user_enters_valid_New_password() {
+    @And("user on null New password TextBox")
+    public void userOnNullNewPasswordTextBox() {
+        costRegPage.New_password.sendKeys(ConfigurationReader.getProperty("Null_Password"));
+        Assert.assertTrue(costRegPage.firstPasswordErrorMessage.isDisplayed());
+    }
+
+    @And("user enters invalid New password")
+    public void userEntersInvalidNewPassword() {
         costRegPage.New_password.sendKeys(ConfigurationReader.getProperty("New_password"));
+        Assert.assertTrue(costRegPage.PasswordCharecterErrorMessage.isDisplayed());
 
     }
 
@@ -143,89 +169,92 @@ public class CostumerRegistrationStepDef {
 
     }
 
-    @Given("user enters valid New password confirmation")
-    public void user_enters_valid_New_password_confirmation() {
-        costRegPage.Password_Confirmation.sendKeys(ConfigurationReader.getProperty("New_password"));
-
+    @And("user on null New password confirmation TextBox")
+    public void userOnNullNewPasswordConfirmationTextBox() {
+        costRegPage.Password_Confirmation.sendKeys(ConfigurationReader.getProperty("Null_Password"));
+        Assert.assertTrue(costRegPage.secontPasswordErrorMessage.isDisplayed());
     }
 
-    @Given("user clicks the Register button")
+    @And("user enters invalid New password confirmation")
+    public void userEntersInvalidNewPasswordConfirmation() {
+        costRegPage.Password_Confirmation.sendKeys(ConfigurationReader.getProperty("New_password"));
+        Assert.assertTrue(costRegPage.secontCharecterErrorMessage.isDisplayed());
+    }
+
+    @Then("user clicks the Register button")
     public void user_clicks_the_Register_button() {
         costRegPage.Register_button.click();
 
     }
 
-    @Then("the user should see the message {string}")
-    public void the_user_should_see_the_message(String string) {
-        costRegPage.SavedMessage.isDisplayed();
 
-    }
+
+
+
 
 //    @US02TC02
 
 
-
-    @Given("click on SSN TextBox")
-    public void Click_on_SSN_TextBox() {
+    @Given("new click on SSN TextBox")
+    public void new_click_on_SSN_TextBox() {
         costRegPage.SSN_TextBox.click();
 
     }
     @Given("the user must type the character {string} when entering a number into the current SSN TextBox.")
     public void the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(String string) {
-        String ssn = ConfigurationReader.getProperty("SSN");
-
+        costRegPage.charecter_SSN_TextBox.sendKeys(ConfigurationReader.getProperty("SSN"),Keys.ENTER);
 
     }
 
-    @Then("the user should not see the text {string}")
-    public void the_user_should_not_see_the_text(String string) {
-        costRegPage.No_SSN_message.isDisplayed();
+    @Then("ssn the user should not see the text {string}")
+    public void ssn_the_user_should_not_see_the_text(String string) throws InterruptedException {
+
+        Thread.sleep(5000);
+        Assert.assertTrue(costRegPage.No_SSN_message.isDisplayed());
 
     }
 
     //    @US02TC03
 
-    @And("click on Mobile Phone Number TexttBox")
-    public void clickOnMobilePhoneNumberTexttBox() {
+    @And("new click on Mobile Phone Number TexttBox")
+    public void newClickOnMobilePhoneNumberTexttBox() {
 
-        costRegPage.Mobile_Phone_Number_TextBox.click();
+        costRegPage.charecter_Mobile_Phone_TextBox.click();
     }
 
     @And("user must type the character {string} when entering a number into the valid Mobile Phone Number TextBox")
-    public void userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String arg0) {
-        String Hypen = "-";
-        costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
+    public void userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(String string) {
+        costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"),Keys.ENTER);
+
 
     }
 
-    @Then("the user should not see the text {string}.")
-    public void theUserShouldNotSeeTheText(String arg0) {
-        costRegPage.no_see_mobile_phone_number_invalid.isDisplayed();
+    @Then("mobil the user should not see the text {string}.")
+    public void mobiltheUserShouldNotSeeTheText(String string) {
+        Assert.assertTrue(costRegPage.no_see_mobile_phone_number_invalid.isDisplayed());
 
 
     }
     //    @US02TC04
 
-    @Given("click on Email TextBox")
-    public void Click_on_Email_TextBox() {
+    @Given("new click on Email TextBox")
+    public void new_click_on_Email_TextBox() {
         costRegPage.charecter_Email_TextBox.click();
 
     }
     @And("the user is entering a valid Email TextBox. Email Must use {string} character and {string} expression in TextBox")
     public void theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox (String string, String string1){
-        costRegPage.charecter_Email_TextBox.sendKeys(ConfigurationReader.getProperty("Email"));
-        String charecter = costRegPage.charecter_Email_TextBox.getText();
-        Assert.assertFalse(charecter.contains(string));
-        Assert.assertFalse(charecter.contains(string1));
+        costRegPage.Email.sendKeys(ConfigurationReader.getProperty("Email"),Keys.ENTER);
+
     }
-    @Then("the user should not see the text {string}.")
-    public void TheUserShouldNotSeeTheText(String string) {
-
-
-        Assert.assertFalse(costRegPage.no_See_Email_Invalid_Message.isDisplayed());
+    @Then("email the user should not see the text {string}.")
+    public void EmailTheUserShouldNotSeeTheText(String string) {
+        Assert.assertTrue(costRegPage.no_See_Email_Invalid_Message.isDisplayed());
 
 
     }
+
+
 
 }
 

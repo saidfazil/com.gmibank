@@ -64,7 +64,12 @@ public class PasswordCreateStepDef {
     public void enterAPasswordWithSpecialCharOfAtLeastCharacters() {
         passCreatePage.firstPassBox.sendKeys(ConfigurationReader.getProperty("special_char"));
         String renk = passCreatePage.line1.getCssValue("background-color");
-        Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("orange")));
+        if(renk.contains(ConfigurationReader.getProperty("yellow"))){
+            Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("yellow")));
+        } else if(renk.contains(ConfigurationReader.getProperty("yellow"))){
+            Assert.assertTrue(renk.contains(ConfigurationReader.getProperty("green")));
+        }
+
         Driver.passwordReliability();
     }
 
@@ -106,7 +111,7 @@ public class PasswordCreateStepDef {
         passCreatePage.secondPassBox.sendKeys(ConfigurationReader.getProperty("full_pass"));
     }
 
-    @And("Color line must be orange or green")
+    @And("Color line must be yellow or green")
     public void colorLineMustBeOrangeOrGreen() {
     }
 }

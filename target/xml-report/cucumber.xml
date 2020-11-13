@@ -1,90 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="24.689">
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="15.958">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
-And Click on user button....................................................passed
-And You should navigate to registration page................................passed
-And Click on Password textbox...............................................passed
-And Enter a password with 1 lowercase letter of at least 7 characters.......failed
-And Color line must be yellow or green......................................skipped
-And Click on password confirmation textbox..................................skipped
-Then Enter to second textbox with 1 lowercase letter of at least 7 characters.skipped
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)
-	at ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="160.701">
+<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC02 user must enter valid data into SSN TextBox using &quot;-&quot; character." time="155.496">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And new click on SSN TextBox................................................passed
+And the user must type the character "-" when entering a number into the current SSN TextBox..passed
+Then ssn the user should not see the text "Your SSN is invalid".............passed
+]]></system-out>
 </testcase>
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 uppercase char and see the level  chart change accordingly" time="1.919">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
-And Click on user button....................................................passed
-And You should navigate to registration page................................passed
-And Click on Password textbox...............................................passed
-And Enter a password with 1 uppercase letter of at least 7 characters.......failed
-And Color line must be yellow or green......................................skipped
-And Click on password confirmation textbox..................................skipped
-Then Enter to second textbox with 1 uppercase letter of at least 7 characters.skipped
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:65)
-	at ✽.Enter a password with 1 uppercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:20)
-]]></failure>
+<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC03 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character." time="2.303">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And new click on Mobile Phone Number TexttBox...............................passed
+And user must type the character "-" when entering a number into the valid Mobile Phone Number TextBox.passed
+Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
+]]></system-out>
 </testcase>
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 digit  and see the level  chart change accordingly" time="1.946">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
-And Click on user button....................................................passed
-And You should navigate to registration page................................passed
-And Click on Password textbox...............................................passed
-And Enter a password with 1 digit of at least 7 characters..................failed
-And Color line must be yellow or green......................................skipped
-And Click on password confirmation textbox..................................skipped
-Then Enter to second textbox with 1 digit of at least 7 characters..........skipped
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters(PasswordCreateStepDef.java:81)
-	at ✽.Enter a password with 1 digit of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:27)
-]]></failure>
-</testcase>
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 special char and see the level bar change accordingly" time="1.956">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
-And Click on user button....................................................passed
-And You should navigate to registration page................................passed
-And Click on Password textbox...............................................passed
-And Enter a password with 1 special char of at least 7 characters...........failed
-And Color line must be yellow or green......................................skipped
-And Click on password confirmation textbox..................................skipped
-Then Enter to second textbox with 1 special char of at least 7 characters...skipped
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters(PasswordCreateStepDef.java:98)
-	at ✽.Enter a password with 1 special char of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:34)
-]]></failure>
-</testcase>
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 7 chars for a stronger password" time="2.34">
-<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
-And Click on user button....................................................passed
-And You should navigate to registration page................................passed
-And Click on Password textbox...............................................passed
-And Enter a password with 7 chars...........................................passed
-And Color line must be yellow or green......................................passed
-And Click on password confirmation textbox..................................passed
-Then Enter to second textbox a password with 7 chars........................passed
+<testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC04 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression" time="2.374">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And new click on Email TextBox..............................................passed
+And the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox.passed
+Then email the user should not see the text "This field is invalid".........passed
 ]]></system-out>
 </testcase>
 </testsuite>

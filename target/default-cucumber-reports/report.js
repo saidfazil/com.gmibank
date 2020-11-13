@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US03passwordCreate.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US02characterControl.feature");
 formatter.feature({
-  "name": "Registration page should restrict password usage to a secure and high level passcode",
+  "name": "US_002 SSN, Mobil Phone, Email Charecter Control test",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US03"
+      "name": "@US02_CharecterTest"
     }
   ]
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "All character tests common links",
   "description": "",
   "keyword": "Background"
 });
@@ -18,105 +18,83 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page",
+  "name": "user is on \"http://gmibank.com/\" page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on user button",
+  "name": "user click on User button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to registration page",
+  "name": "user clicks Registration tab",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on Password textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "There should be at least 1 lowercase char for stronger password and see the level chart change accordingly",
+  "name": "US02TC02 user must enter valid data into SSN TextBox using \"-\" character.",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US03"
+      "name": "@US02_CharecterTest"
     },
     {
-      "name": "@US03TC01"
+      "name": "@US02TC02"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 lowercase letter of at least 7 characters",
+  "name": "new click on SSN TextBox",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.new_click_on_SSN_TextBox()"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)\n\tat ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Color line must be yellow or green",
+  "name": "the user must type the character \"-\" when entering a number into the current SSN TextBox.",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.the_user_must_type_the_character_when_entering_a_number_into_the_current_SSN_TextBox(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click on password confirmation textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter to second textbox with 1 lowercase letter of at least 7 characters",
+  "name": "ssn the user should not see the text \"Your SSN is invalid\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.ssn_the_user_should_not_see_the_text(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", null);
 formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "All character tests common links",
   "description": "",
   "keyword": "Background"
 });
@@ -124,105 +102,83 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page",
+  "name": "user is on \"http://gmibank.com/\" page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on user button",
+  "name": "user click on User button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to registration page",
+  "name": "user clicks Registration tab",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on Password textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "There should be at least 1 uppercase char and see the level  chart change accordingly",
+  "name": "US02TC03 user must enter valid data in Mobile Phone Number TextBox using \"-\" character.",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US03"
+      "name": "@US02_CharecterTest"
     },
     {
-      "name": "@US03TC02"
+      "name": "@US02TC03"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 uppercase letter of at least 7 characters",
+  "name": "new click on Mobile Phone Number TexttBox",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.newClickOnMobilePhoneNumberTexttBox()"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:65)\n\tat ✽.Enter a password with 1 uppercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:20)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Color line must be yellow or green",
+  "name": "user must type the character \"-\" when entering a number into the valid Mobile Phone Number TextBox",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.userMustTypeTheCharacterWhenEnteringANumberIntoTheValidMobilePhoneNumberTextBox(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click on password confirmation textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter to second textbox with 1 uppercase letter of at least 7 characters",
+  "name": "mobil the user should not see the text \"Your mobile phone number is invalid\".",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithUppercaseLetterOfAtLeastCharacters()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.mobiltheUserShouldNotSeeTheText(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded1.png", null);
 formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "All character tests common links",
   "description": "",
   "keyword": "Background"
 });
@@ -230,306 +186,74 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page",
+  "name": "user is on \"http://gmibank.com/\" page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on user button",
+  "name": "user click on User button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to registration page",
+  "name": "user clicks Registration tab",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on Password textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "There should be at least 1 digit  and see the level  chart change accordingly",
+  "name": "US02TC04 user must enter valid data in Email TextBox using \"@\" character and \".com\" expression",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US03"
+      "name": "@US02_CharecterTest"
     },
     {
-      "name": "@US03TC03"
+      "name": "@US02TC04"
     }
   ]
 });
 formatter.step({
-  "name": "Enter a password with 1 digit of at least 7 characters",
+  "name": "new click on Email TextBox",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.new_click_on_Email_TextBox()"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters(PasswordCreateStepDef.java:81)\n\tat ✽.Enter a password with 1 digit of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:27)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Color line must be yellow or green",
+  "name": "the user is entering a valid Email TextBox. Email Must use \" @ \" character and \".com\" expression in TextBox",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.theUserIsEnteringAValidEmailTextBoxEmailMustUseCharacterAndExpressionInTextBox(java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click on password confirmation textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter to second textbox with 1 digit of at least 7 characters",
+  "name": "email the user should not see the text \"This field is invalid\".",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithDigitOfAtLeastCharacters()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded2.png", null);
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User go to the GMi Bank home page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on user button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "You should navigate to registration page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on Password textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "There should be at least 1 special char and see the level bar change accordingly",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US03"
-    },
-    {
-      "name": "@US03TC04"
-    }
-  ]
-});
-formatter.step({
-  "name": "Enter a password with 1 special char of at least 7 characters",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters()"
-});
-formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters(PasswordCreateStepDef.java:98)\n\tat ✽.Enter a password with 1 special char of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:34)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "Color line must be yellow or green",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click on password confirmation textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter to second textbox with 1 special char of at least 7 characters",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithSpecialCharOfAtLeastCharacters()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded3.png", null);
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User go to the GMi Bank home page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on user button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "You should navigate to registration page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on Password textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "There should be at least 7 chars for a stronger password",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US03"
-    },
-    {
-      "name": "@US03TC05"
-    }
-  ]
-});
-formatter.step({
-  "name": "Enter a password with 7 chars",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithChars()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Color line must be yellow or green",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Click on password confirmation textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Enter to second textbox a password with 7 chars",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxAPasswordWithChars()"
+  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.EmailTheUserShouldNotSeeTheText(java.lang.String)"
 });
 formatter.result({
   "status": "passed"

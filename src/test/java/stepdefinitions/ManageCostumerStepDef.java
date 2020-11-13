@@ -93,6 +93,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
 
     @And("Click to Edit button")
     public void clickToEditButton() {
+        Driver.waitForVisibility(manageCostumerPage.buttonEdit, 2);
        manageCostumerPage.buttonEdit.click();
     }
 

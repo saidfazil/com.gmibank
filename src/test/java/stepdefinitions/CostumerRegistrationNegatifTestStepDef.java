@@ -11,7 +11,7 @@ import pages.CostumerRegistrationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class CostumerRegistrationStepDef {
+public class CostumerRegistrationNegatifTestStepDef {
 
     CostumerRegistrationPage costRegPage = new CostumerRegistrationPage();
 

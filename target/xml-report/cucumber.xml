@@ -1,37 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="5" time="44.588">
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be user info being populated when navigating to user info &quot;firstname, lastname email and language&quot;" time="39.126">
-<system-out><![CDATA[Given Go to "https://gmibank.com/" link.....................................passed
-And Click to User drop down menu............................................passed
-And Click to Sign in........................................................passed
-And Enter the username with valid credentails...............................passed
-And Enter the password with valid credentails...............................passed
-And Click to Sign in button.................................................passed
-And Click to User drop down menu............................................passed
-And Click to User info......................................................passed
-And Assert that First Name is not empty.....................................passed
-And Assert that Last Name is not empty......................................passed
-And Assert that Email is not empty..........................................passed
-]]></system-out>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="24.689">
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="15.958">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 lowercase letter of at least 7 characters.......failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 lowercase letter of at least 7 characters.skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)
+	at ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)
+]]></failure>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be 2 languages available &quot;English and Turkish&quot;" time="0.775">
-<system-out><![CDATA[And Assert that Language dropdown is have English...........................passed
-And Assert that Language dropdown is have Türkçe............................passed
-]]></system-out>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 uppercase char and see the level  chart change accordingly" time="1.919">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 uppercase letter of at least 7 characters.......failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 uppercase letter of at least 7 characters.skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:65)
+	at ✽.Enter a password with 1 uppercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:20)
+]]></failure>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update firstname" time="1.117">
-<system-out><![CDATA[And Update to First Name....................................................passed
-]]></system-out>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 digit  and see the level  chart change accordingly" time="1.946">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 digit of at least 7 characters..................failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 digit of at least 7 characters..........skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters(PasswordCreateStepDef.java:81)
+	at ✽.Enter a password with 1 digit of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:27)
+]]></failure>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update lastname" time="1.118">
-<system-out><![CDATA[And Update to Last Name.....................................................passed
-]]></system-out>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 special char and see the level bar change accordingly" time="1.956">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 special char of at least 7 characters...........failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 special char of at least 7 characters...skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters(PasswordCreateStepDef.java:98)
+	at ✽.Enter a password with 1 special char of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:34)
+]]></failure>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update email id adding &quot;@&quot; sign and &quot;.com&quot; extension" time="1.133">
-<skipped><![CDATA[And Update to Email.........................................................passed
-And Assert that Email is contain mailContains...............................passed
-And Click to Save button....................................................undefined
-Then Assert that visible text saveAlertText.................................skipped
-]]></skipped>
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 7 chars for a stronger password" time="2.34">
+<system-out><![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 7 chars...........................................passed
+And Color line must be yellow or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox a password with 7 chars........................passed
+]]></system-out>
 </testcase>
 </testsuite>

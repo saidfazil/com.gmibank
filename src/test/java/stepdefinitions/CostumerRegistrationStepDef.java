@@ -187,11 +187,6 @@ public class CostumerRegistrationStepDef {
 
     }
 
-
-
-
-
-
 //    @US02TC02
 
 

@@ -130,6 +130,19 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "US02TC02 user must enter valid data into SSN TextBox using \"-\" character.",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US02_CharecterTest"
+    },
+    {
+      "name": "@US02TC02"
+    }
+  ]
+});
 formatter.step({
   "name": "user is on \"http://gmibank.com/\" page",
   "keyword": "Given "
@@ -170,6 +183,17 @@ formatter.step({
 });
 formatter.match({
   "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "All character tests common links",
+  "description": "",
+  "keyword": "Background"
 });
 formatter.result({
   "status": "passed"
@@ -273,6 +297,18 @@ formatter.background({
   "keyword": "Background"
 });
 formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on User button",
+  "keyword": "And "
+});
+formatter.background({
+  "name": "All character tests common links",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.result({
   "status": "passed"
 });
 formatter.step({

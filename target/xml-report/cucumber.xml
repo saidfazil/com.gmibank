@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="43.815">
+<testcase classname="An Employee can create a new Account" name="User should create a description for the new account and it cannot be blank" time="25.517">
+<system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
+And Click to User Account drop down menu and Click to Sign In...............passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to Sign in button.................................................passed
+And Click to My Operations drop down menu and Click to Manage Accounts then click to Create New Account.passed
+And Click to Descriptions TextBox...........................................passed
+And Click to Employee Dropdown..............................................passed
+Then Should be that message -This field is required.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can create a new Account" name="User should provide a balance for the first time account creation as Dollar" time="12.28">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[@class='invalid-feedback'])[2]&quot;}&#10;  (Session info: chrome=83.0.4103.106)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'USER-BILGISAYAR', ip: '192.168.43.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:54836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 140ca2a01b43e4170de71e670437ec30&#10;*** Element info: {Using=xpath, value=(//div[@class='invalid-feedback'])[2]}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[And Enter a number be dollar to Balance textbox.............................passed
+Then User Shouldn't be error message........................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='invalid-feedback'])[2]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-BILGISAYAR', ip: '192.168.43.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:54836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 140ca2a01b43e4170de71e670437ec30
+*** Element info: {Using=xpath, value=(//div[@class='invalid-feedback'])[2]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
+	at stepdefinitions.ManageAccountsStepdefs.userShouldnTBeErrorMessage(ManageAccountsStepdefs.java:49)
+	at ✽.User Shouldn't be error message(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US13manageAccounts.feature:19)
+]]></failure>
+</testcase>
+<testcase classname="An Employee can create a new Account" name="User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING" time="1.206">
+<system-out><![CDATA[Then User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING.passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can create a new Account" name="Account status should be defined as ACTIVE, SUSPENDED or CLOSED" time="2.394">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Then Account status should be defined as ACTIVE, SUSPENDED or CLOSED........failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.ManageAccountsStepdefs.accountStatusShouldBeDefinedAsACTIVESUSPENDEDOrCLOSED(ManageAccountsStepdefs.java:73)
+	at ✽.Account status should be defined as ACTIVE, SUSPENDED or CLOSED(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US13manageAccounts.feature:27)
+]]></failure>
+</testcase>
+<testcase classname="An Employee can create a new Account" name="User can select an employee from the drop-down" time="1.207">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Then User can select an employee from the drop-down.........................failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.ManageAccountsStepdefs.userCanSelectAnEmployeeFromTheDropDown(ManageAccountsStepdefs.java:85)
+	at ✽.User can select an employee from the drop-down(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US13manageAccounts.feature:31)
+]]></failure>
+</testcase>
+</testsuite>

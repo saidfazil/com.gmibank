@@ -78,6 +78,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
     @And("go back to manage costumers page")
     public void goBackToManageCostumersPage() {
         Driver.getDriver().navigate().back();
+        manageCostumerPage.lastPageButton.click();
     }
 
     @Then("There should be Edit button where all customer")

@@ -1,31 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="43.815">
-<testcase classname="An Employee can create a new Account" name="User should create a description for the new account and it cannot be blank" time="25.517">
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="92.689">
+<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="68.425">
 <system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
 And Click to User Account drop down menu and Click to Sign In...............passed
 And Enter the username with valid credentail................................passed
 And Enter the pasword with valid credentail.................................passed
 And Click to Sign in button.................................................passed
-And Click to My Operations drop down menu and Click to Manage Accounts then click to Create New Account.passed
-And Click to Descriptions TextBox...........................................passed
-And Click to Employee Dropdown..............................................passed
-Then Should be that message -This field is required.........................passed
+And Click to My Operations drop down menu and Click to Manage Costumers.....passed
+And click to last page button...............................................passed
+Then A customer should show up at total nine head on account information of the customer.passed
 ]]></system-out>
 </testcase>
-<testcase classname="An Employee can create a new Account" name="User should provide a balance for the first time account creation as Dollar" time="12.28">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[@class='invalid-feedback'])[2]&quot;}&#10;  (Session info: chrome=83.0.4103.106)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'USER-BILGISAYAR', ip: '192.168.43.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:54836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 140ca2a01b43e4170de71e670437ec30&#10;*** Element info: {Using=xpath, value=(//div[@class='invalid-feedback'])[2]}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[And Enter a number be dollar to Balance textbox.............................passed
-Then User Shouldn't be error message........................................failed
+<testcase classname="An Employee can manage Customer" name="There should be a View option where customer can be navigated to all customer info and see edit button there" time="2.262">
+<system-out><![CDATA[And Click to View button....................................................passed
+Then There should be Edit button............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be an Edit button where all customer information can be populated" time="2.782">
+<failure message="element click intercepted: Element &lt;a href=&quot;javascript:void(0)&quot; class=&quot;page-link&quot;&gt;...&lt;/a&gt; is not clickable at point (773, 226). Other element would receive the click: &lt;li class=&quot;page-item disabled&quot;&gt;...&lt;/li&gt;&#10;  (Session info: chrome=83.0.4103.106)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'USER-BILGISAYAR', ip: '10.255.29.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61392}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3e3e87d1e10e0376ef78b72b1c331c25" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[And go back to manage costumers page........................................failed
+Then There should be Edit button where all customer.........................skipped
 
 StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='invalid-feedback'])[2]"}
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="javascript:void(0)" class="page-link">...</a> is not clickable at point (773, 226). Other element would receive the click: <li class="page-item disabled">...</li>
   (Session info: chrome=83.0.4103.106)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USER-BILGISAYAR', ip: '192.168.43.39', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+System info: host: 'USER-BILGISAYAR', ip: '10.255.29.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:54836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 140ca2a01b43e4170de71e670437ec30
-*** Element info: {Using=xpath, value=(//div[@class='invalid-feedback'])[2]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61392}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3e3e87d1e10e0376ef78b72b1c331c25
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.ManageCostumerStepDef.goBackToManageCostumersPage(ManageCostumerStepDef.java:87)
+	at ✽.go back to manage costumers page(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US12manageCostumer.feature:22)
+]]></failure>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be Edit button where all customerThe Edit portal can allow user to create or update the user info" time="3.181">
+<failure message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//*[contains(@href,'7393/edit')]' (tried for 2 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException"><![CDATA[And Click to Edit button....................................................failed
+And City textbox is updated.................................................skipped
+And Click to Save button in the Edit Page...................................skipped
+Then The Edit portal can allow user to update the user info.................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//*[contains(@href,'7393/edit')]' (tried for 2 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at utilities.Driver.waitForVisibility(Driver.java:126)
+	at stepdefinitions.ManageCostumerStepDef.clickToEditButton(ManageCostumerStepDef.java:97)
+	at ✽.Click to Edit button(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US12manageCostumer.feature:27)
+Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression (//*[contains(@href,'7393/edit')] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//*[contains(@href,'7393/edit')]' is not a valid XPath expression.
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-BILGISAYAR', ip: '10.255.29.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61392}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3e3e87d1e10e0376ef78b72b1c331c25
+*** Element info: {Using=xpath, value=(//*[contains(@href,'7393/edit')]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -43,36 +90,86 @@ Session ID: 140ca2a01b43e4170de71e670437ec30
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
-	at stepdefinitions.ManageAccountsStepdefs.userShouldnTBeErrorMessage(ManageAccountsStepdefs.java:49)
-	at ✽.User Shouldn't be error message(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US13manageAccounts.feature:19)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at utilities.Driver.waitForVisibility(Driver.java:126)
+	at stepdefinitions.ManageCostumerStepDef.clickToEditButton(ManageCostumerStepDef.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:27)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:49)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:51)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:67)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
 ]]></failure>
 </testcase>
-<testcase classname="An Employee can create a new Account" name="User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING" time="1.206">
-<system-out><![CDATA[Then User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING.passed
-]]></system-out>
-</testcase>
-<testcase classname="An Employee can create a new Account" name="Account status should be defined as ACTIVE, SUSPENDED or CLOSED" time="2.394">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Then Account status should be defined as ACTIVE, SUSPENDED or CLOSED........failed
+<testcase classname="An Employee can manage Customer" name="User can delete a customer, but seeing a message if the user is sure about deletion" time="3.047">
+<failure message="element click intercepted: Element &lt;a class=&quot;btn btn-danger btn-sm&quot; href=&quot;/tp-customer/7393/delete?page=3&amp;amp;sort=id,asc&quot;&gt;...&lt;/a&gt; is not clickable at point (1278, 585). Other element would receive the click: &lt;div class=&quot;back-to-top&quot; style=&quot;&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=83.0.4103.106)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'USER-BILGISAYAR', ip: '10.255.29.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61392}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3e3e87d1e10e0376ef78b72b1c331c25" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[And Confirming that a customer is registered with ID number.................passed
+And Click to Delete button..................................................failed
+And seeing a message if the user is sure about deletion.....................skipped
+Then User can delete a customer.............................................skipped
 
 StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.ManageAccountsStepdefs.accountStatusShouldBeDefinedAsACTIVESUSPENDEDOrCLOSED(ManageAccountsStepdefs.java:73)
-	at ✽.Account status should be defined as ACTIVE, SUSPENDED or CLOSED(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US13manageAccounts.feature:27)
-]]></failure>
-</testcase>
-<testcase classname="An Employee can create a new Account" name="User can select an employee from the drop-down" time="1.207">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Then User can select an employee from the drop-down.........................failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.ManageAccountsStepdefs.userCanSelectAnEmployeeFromTheDropDown(ManageAccountsStepdefs.java:85)
-	at ✽.User can select an employee from the drop-down(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US13manageAccounts.feature:31)
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="btn btn-danger btn-sm" href="/tp-customer/7393/delete?page=3&amp;sort=id,asc">...</a> is not clickable at point (1278, 585). Other element would receive the click: <div class="back-to-top" style="">...</div>
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-BILGISAYAR', ip: '10.255.29.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61392}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3e3e87d1e10e0376ef78b72b1c331c25
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.ManageCostumerStepDef.clickToDeleteButton(ManageCostumerStepDef.java:126)
+	at ✽.Click to Delete button(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US12manageCostumer.feature:35)
 ]]></failure>
 </testcase>
 </testsuite>

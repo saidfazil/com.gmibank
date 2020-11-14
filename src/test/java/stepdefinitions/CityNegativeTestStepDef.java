@@ -3,11 +3,11 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import pages.NegativeTestPage;
+import pages.CityNegativeTestPage;
 
-public class NegativeTestStepDef {
+public class CityNegativeTestStepDef {
 
-    NegativeTestPage page = new NegativeTestPage();
+    CityNegativeTestPage page = new CityNegativeTestPage();
 
     @And("Click Save Button")
     public void clickSaveButton() {

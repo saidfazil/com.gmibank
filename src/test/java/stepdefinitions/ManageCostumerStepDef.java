@@ -1,18 +1,12 @@
 package stepdefinitions;
 
-import com.sun.tools.jxc.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import pages.ManageCostumerPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-
-import java.util.List;
 
 public class ManageCostumerStepDef {
     ManageCostumerPage manageCostumerPage= new ManageCostumerPage();
@@ -84,6 +78,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
     @And("go back to manage costumers page")
     public void goBackToManageCostumersPage() {
         Driver.getDriver().navigate().back();
+        manageCostumerPage.lastPageButton.click();
     }
 
     @Then("There should be Edit button where all customer")
@@ -93,6 +88,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
 
     @And("Click to Edit button")
     public void clickToEditButton() {
+        Driver.waitForVisibility(manageCostumerPage.buttonEdit, 2);
        manageCostumerPage.buttonEdit.click();
     }
 

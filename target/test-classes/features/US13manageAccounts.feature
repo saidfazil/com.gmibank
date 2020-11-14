@@ -9,27 +9,18 @@ Feature: An Employee can create a new Account
     And Enter the pasword with valid credentail
     And Click to Sign in button
     And Click to My Operations drop down menu and Click to Manage Accounts then click to Create New Account
-    And Click to Descriptions TextBox
-    And Click to Employee Dropdown
+    And Don't enter a text to descriptions and fill other all informations
+    And Click to Save button in the createAccount Page
     Then Should be that message -This field is required.
+    And  Enter a text to Descriptions TextBox
+    Then Shouldn't be error message
 
   @US13TC02
   Scenario:User should provide a balance for the first time account creation as Dollar
+    And Click to Create New Account
+    And Enter a text to descriptions textbox
     And Enter a number be dollar to Balance textbox
-    Then User Shouldn't be error message
-
-  @US13TC03
-  Scenario:User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING
-    Then User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING
-
-  @US13TC04
-  Scenario:Account status should be defined as ACTIVE, SUSPENDED or CLOSED
-    Then Account status should be defined as ACTIVE, SUSPENDED or CLOSED
-
-  @US13TC05
-  Scenario:User can select an employee from the drop-down
-    Then User can select an employee from the drop-down
-
+    Then User should provide a balance for the first time account creation as Dollar
 
 
 

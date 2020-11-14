@@ -1,18 +1,12 @@
 package stepdefinitions;
 
-import com.sun.tools.jxc.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import pages.ManageCostumerPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-
-import java.util.List;
 
 public class ManageCostumerStepDef {
     ManageCostumerPage manageCostumerPage= new ManageCostumerPage();

@@ -7,7 +7,6 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.ManageAccountsPage;
-import pages.ManageCostumerPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 

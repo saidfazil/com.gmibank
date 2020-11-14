@@ -1,6 +1,6 @@
 @US011TC09
 Feature: There user can choose an account created on manage accounts US011
-  Scenario:
+  Scenario: Nanage Account Test
     Given Go GMI Bank Adress
       When Click, SignIn Area
         And Click, SignIn Entrace Button

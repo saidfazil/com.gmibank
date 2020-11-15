@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.474"/>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="74.632">
+<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="61.59">
+<system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
+And Click to User Account Menu and Click to Sign In.........................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to Sign in button.................................................passed
+And Click to My Operations drop down menu and Click to Manage Costumers.....passed
+And click to last page button...............................................passed
+Then A customer should show up at total nine head on account information of the customer.passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be a View option where customer can be navigated to all customer info and see edit button there" time="2.179">
+<system-out><![CDATA[And Click to View button....................................................passed
+Then There should be Edit button............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be an Edit button where all customer information can be populated" time="1.69">
+<system-out><![CDATA[And go back to manage costumers page........................................passed
+Then There should be Edit button where all customer.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be Edit button where all customerThe Edit portal can allow user to create or update the user info" time="3.464">
+<system-out><![CDATA[And Click to Edit button....................................................passed
+And City textbox is updated.................................................passed
+And Click to Save button in the Edit Page...................................passed
+Then The Edit portal can allow user to update the user info.................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="User can delete a customer, but seeing a message if the user is sure about deletion" time="4.329">
+<system-out><![CDATA[And Confirming that a customer is registered with ID number.................passed
+And Click to Delete button..................................................passed
+And seeing a message if the user is sure about deletion.....................passed
+Then User can delete a customer.............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

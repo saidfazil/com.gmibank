@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="29.105">
-<testcase classname="User cannot login with invalid username validating the error message" name="US005TC06 Error message on blank screen when user signing in login page" time="28.258">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
-And the users cliks on Username.............................................passed
-And the users enter the wrong Username......................................passed
-And the users cliks on Password.............................................passed
-And thee users enter thee wrong Password....................................passed
-And the users clikson Sign in ..............................................passed
-And the eror messaage onthe screeen is confirmed............................passed
-And User clicks cancel after error message..................................passed
-And If the user gets the error message, a bug has been found................failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertFalse(Assert.java:65)
-	at org.junit.Assert.assertFalse(Assert.java:75)
-	at stepdefinitions.SignInStepDef.if_the_user_gets_the_error_message_a_bug_has_been_found(SignInStepDef.java:271)
-	at ✽.If the user gets the error message, a bug has been found.(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US05signin.feature:65)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="74.632">
+<testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="61.59">
+<system-out><![CDATA[Given Go to gmibank.com home page...........................................passed
+And Click to User Account Menu and Click to Sign In.........................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to Sign in button.................................................passed
+And Click to My Operations drop down menu and Click to Manage Costumers.....passed
+And click to last page button...............................................passed
+Then A customer should show up at total nine head on account information of the customer.passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be a View option where customer can be navigated to all customer info and see edit button there" time="2.179">
+<system-out><![CDATA[And Click to View button....................................................passed
+Then There should be Edit button............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be an Edit button where all customer information can be populated" time="1.69">
+<system-out><![CDATA[And go back to manage costumers page........................................passed
+Then There should be Edit button where all customer.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="There should be Edit button where all customerThe Edit portal can allow user to create or update the user info" time="3.464">
+<system-out><![CDATA[And Click to Edit button....................................................passed
+And City textbox is updated.................................................passed
+And Click to Save button in the Edit Page...................................passed
+Then The Edit portal can allow user to update the user info.................passed
+]]></system-out>
+</testcase>
+<testcase classname="An Employee can manage Customer" name="User can delete a customer, but seeing a message if the user is sure about deletion" time="4.329">
+<system-out><![CDATA[And Confirming that a customer is registered with ID number.................passed
+And Click to Delete button..................................................passed
+And seeing a message if the user is sure about deletion.....................passed
+Then User can delete a customer.............................................passed
+]]></system-out>
 </testcase>
 </testsuite>

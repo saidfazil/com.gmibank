@@ -1,24 +1,24 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US05signin.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US12manageCostumer.feature");
 formatter.feature({
-  "name": "User cannot login with invalid username validating the error message",
+  "name": "An Employee can manage Customer",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US005"
+      "name": "@US12"
     }
   ]
 });
 formatter.scenario({
-  "name": "US005TC06 Error message on blank screen when user signing in login page",
+  "name": "All customers should show up on manage customers module populating the account information of the customer",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US005"
+      "name": "@US12"
     },
     {
-      "name": "@US005TC06"
+      "name": "@US12TC01"
     }
   ]
 });
@@ -26,97 +26,281 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "user is on “https://gmibank.com/login” page.",
+  "name": "Go to gmibank.com home page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+  "location": "stepdefinitions.ManageCostumerStepDef.goToGmibankComHomePage()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the users cliks on Username.",
+  "name": "Click to User Account Menu and Click to Sign In",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_users_cliks_on_Username()"
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToUserAccountMenuAndClickToSignIn()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the users enter the wrong Username",
+  "name": "Enter the username with valid credentail",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_users_enter_the_wrong_Username()"
+  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the users cliks on Password..",
+  "name": "Enter the pasword with valid credentail",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_users_cliks_on_Password()"
+  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "thee users enter thee wrong Password.",
+  "name": "Click to Sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.thee_users_enter_thee_wrong_Password()"
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToSignInButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the users clikson Sign in .",
+  "name": "Click to My Operations drop down menu and Click to Manage Costumers",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_users_clikson_Sign_in()"
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToMyOperationsDropDownMenuAndClickToManageCostumers()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the eror messaage onthe screeen is confirmed.",
+  "name": "click to last page button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_eror_messaage_onthe_screeen_is_confirmed()"
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToLastPageButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User clicks cancel after error message",
+  "name": "A customer should show up at total nine head on account information of the customer",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.aCustomerShouldShowUpAtTotalNineHeadOnAccountInformationOfTheCustomer()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be a View option where customer can be navigated to all customer info and see edit button there",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US12"
+    },
+    {
+      "name": "@US12TC02"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click to View button.",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_clicks_cancel_after_error_message()"
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToViewButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "If the user gets the error message, a bug has been found.",
+  "name": "There should be Edit button.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.thereShouldBeEditButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be an Edit button where all customer information can be populated",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US12"
+    },
+    {
+      "name": "@US12TC03"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "go back to manage costumers page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.if_the_user_gets_the_error_message_a_bug_has_been_found()"
+  "location": "stepdefinitions.ManageCostumerStepDef.goBackToManageCostumersPage()"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertFalse(Assert.java:65)\n\tat org.junit.Assert.assertFalse(Assert.java:75)\n\tat stepdefinitions.SignInStepDef.if_the_user_gets_the_error_message_a_bug_has_been_found(SignInStepDef.java:271)\n\tat ✽.If the user gets the error message, a bug has been found.(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US05signin.feature:65)\n",
-  "status": "failed"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", null);
+formatter.step({
+  "name": "There should be Edit button where all customer",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.thereShouldBeEditButtonWhereAllCustomer()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "There should be Edit button where all customerThe Edit portal can allow user to create or update the user info",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US12"
+    },
+    {
+      "name": "@US12TC04"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click to Edit button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToEditButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "City textbox is updated",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.cityTextboxIsUpdated()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click to Save button in the Edit Page",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToSaveButtonInTheEditPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "The Edit portal can allow user to update the user info",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.theEditPortalCanAllowUserToUpdateTheUserInfo()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "User can delete a customer, but seeing a message if the user is sure about deletion",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US12"
+    },
+    {
+      "name": "@US12TC05"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Confirming that a customer is registered with ID number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.confirmingThatACustomerIsRegisteredWithIDNumber()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click to Delete button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.clickToDeleteButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "seeing a message if the user is sure about deletion",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.seeingAMessageIfTheUserIsSureAboutDeletion()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User can delete a customer",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.ManageCostumerStepDef.userCanDeleteACustomer()"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.after({
   "status": "passed"
 });

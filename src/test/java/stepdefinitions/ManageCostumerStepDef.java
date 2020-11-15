@@ -16,14 +16,12 @@ public class ManageCostumerStepDef {
     public void goToGmibankComHomePage() {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
-    @And("Click to User Account drop down menu and Click to Sign In")
-    public void clickToUserAccountDropDownMenuAndClickToSignInn() {
+
+    @And("Click to User Account Menu and Click to Sign In")
+    public void clickToUserAccountMenuAndClickToSignIn() {
         manageCostumerPage.dropDownAccount.click();
         manageCostumerPage.accountSignIn.click();
-        //Select select = new Select(manageCostumerPage.dropDownAccount);
-        //select.selectByIndex(0);
     }
-
     @And("Enter the username with valid credentail")
     public void enterTheUsernameWithValidCredentail() {
 manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername"));
@@ -77,19 +75,18 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
 
     @And("go back to manage costumers page")
     public void goBackToManageCostumersPage() {
-        Driver.getDriver().navigate().back();
-        manageCostumerPage.lastPageButton.click();
+        manageCostumerPage.ButtonViewBack.click();
     }
 
     @Then("There should be Edit button where all customer")
     public void thereShouldBeEditButtonWhereAllCustomer() {
+        manageCostumerPage.lastPageButton.click();
         Assert.assertTrue(manageCostumerPage.buttonEdit.isDisplayed());
     }
 
     @And("Click to Edit button")
     public void clickToEditButton() {
-        Driver.waitForVisibility(manageCostumerPage.buttonEdit, 2);
-       manageCostumerPage.buttonEdit.click();
+    Driver.doubleClick(manageCostumerPage.buttonEdit);
     }
 
     @And("City textbox is updated")
@@ -129,9 +126,10 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
     @Then("User can delete a customer")
     public void userCanDeleteACustomer() {
         manageCostumerPage.alertDeleteButton.click();
-        Driver.waitForVisibility(manageCostumerPage.userDelete,2);
-        Assert.assertFalse(manageCostumerPage.userDelete.isDisplayed());
+        Driver.waitForVisibility(manageCostumerPage.popupDeleted,2);
+        Assert.assertTrue(manageCostumerPage.popupDeleted.isDisplayed());
     }
+
 
 
 }

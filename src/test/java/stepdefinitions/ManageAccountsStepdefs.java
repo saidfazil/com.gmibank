@@ -45,7 +45,7 @@ public class ManageAccountsStepdefs {
 
     @Then("User Shouldn't be error message")
     public void userShouldnTBeErrorMessage() {
-        Assert.assertFalse(manageAccountsPage.balanceBlank.isDisplayed());
+        Assert.assertTrue(manageAccountsPage.balanceNumber.isDisplayed());
         manageAccountsPage.employeeDropdown.click();
 
     }

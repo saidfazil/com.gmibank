@@ -24,8 +24,8 @@ public class ManageAccountsPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public  WebElement descriptionsBlank;
 
-  @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
-  public  WebElement balanceBlank;
+  @FindBy(xpath = "(//div[@class='form-group'])[3]")
+  public  WebElement balanceNumber;
 
     @FindBy(id = "save-entity")
     public WebElement saveCreateAccount;

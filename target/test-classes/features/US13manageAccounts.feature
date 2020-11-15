@@ -4,7 +4,7 @@ Feature: An Employee can create a new Account
   @US13TC01
   Scenario:User should create a description for the new account and it cannot be blank
     Given Go to gmibank.com home page
-    And Click to User Account drop down menu and Click to Sign In
+    And Click to User Account Menu and Click to Sign In
     And Enter the username with valid credentail
     And Enter the pasword with valid credentail
     And Click to Sign in button

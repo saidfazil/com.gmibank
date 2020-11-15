@@ -1,10 +1,14 @@
 package stepdefinitions;
 
+import com.sun.org.apache.bcel.internal.generic.GOTO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.checkerframework.checker.units.qual.C;
+import org.codehaus.groovy.transform.tailrec.GotoRecurHereException;
 import org.junit.Assert;
+import org.junit.TestCouldNotBeSkippedException;
+import org.junit.runners.model.TestTimedOutException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.Color;
 import pages.CostumerRegistrationPage;
@@ -89,6 +93,8 @@ public class CostumerRegistrationStepDef {
 
     }
 
+//    @US02TC01_A
+
     @Given("click on Mobile Phone Number TextBox")
     public void click_on_Mobile_Phone_Number_TextBox() {
         costRegPage.Mobile_Phone_Number_TextBox.click();
@@ -97,7 +103,7 @@ public class CostumerRegistrationStepDef {
 
     @And("user enters a invalid Mobile Phone Number")
     public void userEntersAInvalidMobilePhoneNumber() {
-        costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"));
+        costRegPage.Mobile_Phone_Number.sendKeys(ConfigurationReader.getProperty("Mobile_Phone_Number"),Keys.ENTER);
         Assert.assertTrue(costRegPage.mobilPhoneErrorMessage.isDisplayed());
 
     }
@@ -110,7 +116,7 @@ public class CostumerRegistrationStepDef {
 
     @And("user enters invalid Username")
     public void userEntersInvalidUsername() {
-        costRegPage.Username.sendKeys(ConfigurationReader.getProperty("Username"));
+        costRegPage.Username.sendKeys(ConfigurationReader.getProperty("Username"),Keys.ENTER);
         Assert.assertTrue(costRegPage.UsernameErrorMessage.isDisplayed());
 
     }
@@ -132,7 +138,7 @@ public class CostumerRegistrationStepDef {
     public void userEntersInvalidEmail() throws InterruptedException {
         Thread.sleep(3000);
         costRegPage.Email_TextBox.clear();
-        costRegPage.Email.sendKeys(ConfigurationReader.getProperty("Email"));
+        costRegPage.Email.sendKeys(ConfigurationReader.getProperty("Email"),Keys.ENTER);
         Assert.assertTrue(costRegPage.EmailErrorMessage.isDisplayed());
 
     }
@@ -152,7 +158,7 @@ public class CostumerRegistrationStepDef {
 
     @And("user enters invalid New password")
     public void userEntersInvalidNewPassword() {
-        costRegPage.New_password.sendKeys(ConfigurationReader.getProperty("New_password"));
+        costRegPage.New_password.sendKeys(ConfigurationReader.getProperty("New_password"),Keys.ENTER);
         Assert.assertTrue(costRegPage.PasswordCharecterErrorMessage.isDisplayed());
 
     }
@@ -177,7 +183,7 @@ public class CostumerRegistrationStepDef {
 
     @And("user enters invalid New password confirmation")
     public void userEntersInvalidNewPasswordConfirmation() {
-        costRegPage.Password_Confirmation.sendKeys(ConfigurationReader.getProperty("New_password"));
+        costRegPage.Password_Confirmation.sendKeys(ConfigurationReader.getProperty("New_password"),Keys.ENTER);
         Assert.assertTrue(costRegPage.secontCharecterErrorMessage.isDisplayed());
     }
 

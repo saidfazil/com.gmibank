@@ -217,6 +217,60 @@ public class SignInStepDef {
 
     }
 
+    @Given("the users cliks on Username.")
+    public void the_users_cliks_on_Username() {
+      signinPage.username.click ();
+    }
+
+    @Given("the users enter the wrong Username")
+    public void the_users_enter_the_wrong_Username() {
+       signinPage.username.sendKeys (ConfigurationReader.getProperty ("signin_falseUsername")+Keys.ENTER);
+    }
+
+    @Given("the users cliks on Password..")
+    public void the_users_cliks_on_Password() {
+        signinPage.password.click ();
+    }
+
+    @Given("thee users enter thee wrong Password.")
+    public void thee_users_enter_thee_wrong_Password() {
+      signinPage.password.sendKeys (ConfigurationReader.getProperty ("signin_falsePassword")+Keys.ENTER);
+    }
+
+    @Given("the users clikson Sign in .")
+    public void the_users_clikson_Sign_in() throws InterruptedException {
+      signinPage.signButton.click ();
+        Thread.sleep (3000);
+    }
+
+    @Given("the eror messaage onthe screeen is confirmed.")
+    public void the_eror_messaage_onthe_screeen_is_confirmed() throws InterruptedException {
+      Assert.assertTrue (signinPage.errorAlert.isDisplayed ());
+        Thread.sleep (3000);
+
+
+    }
+
+    @Given("User clicks cancel after error message")
+    public void user_clicks_cancel_after_error_message() throws InterruptedException {
+        signinPage.cancel.click ();
+
+        Thread.sleep (3000);
+
+        signinPage.dropdown.click ();
+        signinPage.dropSign.click ();
+
+        Thread.sleep (2000);
+
+
+
+    }
+
+    @Given("If the user gets the error message, a bug has been found.")
+    public void if_the_user_gets_the_error_message_a_bug_has_been_found() {
+      Assert.assertFalse (signinPage.errorAlert.isDisplayed ());
+    }
+
 
 
 

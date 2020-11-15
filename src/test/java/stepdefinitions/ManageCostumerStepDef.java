@@ -17,7 +17,7 @@ public class ManageCostumerStepDef {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
     }
     @And("Click to User Account drop down menu and Click to Sign In")
-    public void clickToUserAccountDropDownMenuAndClickToSignIn() {
+    public void clickToUserAccountDropDownMenuAndClickToSignInn() {
         manageCostumerPage.dropDownAccount.click();
         manageCostumerPage.accountSignIn.click();
         //Select select = new Select(manageCostumerPage.dropDownAccount);

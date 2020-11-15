@@ -52,5 +52,17 @@ Feature: User cannot login with invalid username validating the error message
     And the error message on the skreen is confirmed.
     And If you get an error message, click the You don't have an account yet? Register a new account
     Then verify the message onthe visited page
+  @US005TC06
+  Scenario: US005TC06 Error message on blank screen when user signing in login page
+    Given user is on “https://gmibank.com/login” page.
+    And the users cliks on Username.
+    And the users enter the wrong Username
+    And the users cliks on Password..
+    And thee users enter thee wrong Password.
+    And the users clikson Sign in .
+    And the eror messaage onthe screeen is confirmed.
+    And User clicks cancel after error message
+    And If the user gets the error message, a bug has been found.
+
 
 

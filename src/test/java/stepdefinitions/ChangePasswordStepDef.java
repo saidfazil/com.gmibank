@@ -21,8 +21,8 @@ public class ChangePasswordStepDef {
 
 	}
 
-	@And("Click to User Account drop down menu and Click to Sign In")
-	public void click_to_User_Account_drop_down_menu_and_Click_to_Sign_In() {
+	@And("Click to User Account drob down menu and Click to Sign In")
+	public void Clic_to_User_Account_drob_down_menu_and_Click_to_Sign_In() {
 		changePasswordPage.accountButton.click();
 		changePasswordPage.signIn.click();
 

@@ -21,29 +21,35 @@ public class ChangePasswordStepDef {
 
 	}
 
-	@And("Click to User Account drop down menu and Click to Sign In")
-	public void click_to_User_Account_drop_down_menu_and_Click_to_Sign_In() {
+	@And("Click to User Account")
+	public void click_to_User_Account() {
 		changePasswordPage.accountButton.click();
 		changePasswordPage.signIn.click();
 
 	}
-
-	@And("Enter the password with valid credentail")
-	public void enter_the_password_with_valid_credentail() {
-		changePasswordPage.inputUserName.sendKeys(ConfigurationReader.getProperty("current_username"));
-		changePasswordPage.inputPassword.sendKeys(ConfigurationReader.getProperty("current_password"));
-		changePasswordPage.buttonSignin.click();
+	@And("Enter the username")
+	public void enter_the_username() {
+	   changePasswordPage.inputUserName.sendKeys(ConfigurationReader.getProperty("current_username"));
 	}
-
-	@And("Click to User Account drop down menu and Click to Password")
-	public void click_to_User_Account_drop_down_menu_and_Click_to_Password() {
+	@And("Enter the password")
+	public void enter_the_password() {
+		
+		changePasswordPage.inputPassword.sendKeys(ConfigurationReader.getProperty("current_password"));
+		
+	}
+	@Given("Click to Sign")
+	public void click_to_Sign() {
+	  changePasswordPage.buttonSignin.click();
+	}
+	@And("Click to User Account Password")
+	public void click_to_User_Account_Password() {
 		changePasswordPage.accountButton.click();
 		changePasswordPage.passwordButton.click();
 
 	}
 
-	@And("Enter the Current Password width credentail")
-	public void enter_the_Current_Password_width_credentail() {
+	@And("Enter the Current Password")
+	public void enter_the_Current_Password() {
 		changePasswordPage.currentPassword.sendKeys(ConfigurationReader.getProperty("current_password"));
 	}
 

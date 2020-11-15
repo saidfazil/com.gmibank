@@ -1,5 +1,5 @@
 
-@GMIBANKUS04
+@US04
 Feature: TC04_user logins with valid credentials
 
   Scenario: GMIbank Sign Up

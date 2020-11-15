@@ -8,6 +8,7 @@ import utilities.Driver;
 public class UserSettingsPage {
     public UserSettingsPage(){
         PageFactory.initElements(Driver.getDriver(),this);}
+
     @FindBy(name = "username" )
     public WebElement username;
 
@@ -38,14 +39,12 @@ public class UserSettingsPage {
     @FindBy(xpath = "//option[.='English']")
     public WebElement langEnglish;
 
-    @FindBy(xpath = "//option[.='Türkçe']")
+    @FindBy(xpath = "//*[@id=\"langKey\"]/option[2]")
     public WebElement langTurkish;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div")
     public WebElement saveAlert;
 
-
-
-
-
+    @FindBy(xpath ="//*[@id=\"settings-form\"]/div[3]/div" )
+    public WebElement invalidField;
 }

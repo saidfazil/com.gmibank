@@ -33,6 +33,3 @@ Feature:User info segment (User Settings) should be editable on Homepage
     And Assert that Email is contain mailContains
     And Click to Save button
     Then Assert that visible text saveAlertText.
-
-
-

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US02customerRegistration.feature");
 formatter.feature({
   "name": "US_002 Any field on the registration page should not be left blank",
@@ -356,3 +357,5 @@ formatter.after({
   "status": "passed"
 });
 });
+=======
+>>>>>>> selim

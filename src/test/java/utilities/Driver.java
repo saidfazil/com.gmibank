@@ -14,6 +14,9 @@ import org.openqa.selenium.support.ui.*;
 import pages.PasswordCreatePage;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -373,50 +376,33 @@ public class Driver {
 
         return SSNNumber;
 
+
     }
-    public static String getSSNCharecterControl(String string) {
-        String ssnTire = "234-45-6754";
-        boolean tire;
 
-        tire = ssnTire.contains("-");
-        if (tire == true) {
-            System.out.println("tire var");
-        }else{
-            System.out.println("yok");
-        }
+    public static String Date(){
 
-        return ssnTire;
+        LocalDate date = LocalDate.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM");
+
+        String dateNow = dtf.format(date);
+
+        return dateNow;
+
     }
-    public static String getMobilCharecterControl(String string) {
-        String mobilTire = "980-678-4554";
-        boolean tire;
 
-        tire = mobilTire.contains("-");
-        if (tire == true) {
-            System.out.println("tire var");
-        }else{
-            System.out.println("yok");
-        }
+    public static String Time(){
 
-        return mobilTire;
+        LocalTime time = LocalTime.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+
+        String timeNow = dtf.format(time);
+
+        return timeNow;
     }
 
 
 
-    public static String getEmailCharecterControl(String Charecter) {
-        String mail = "celin_45@gmail.com";
-        boolean at;
-        boolean com;
-        at = mail.contains("@");
-        com = mail.contains(".com");
-        if (at == true) {
-            System.out.println("at var");
-        } else if (com == true){
-            System.out.println("com var");
-        }else{
-            System.out.println("yok");
-        }
 
-        return mail;
-    }
 }

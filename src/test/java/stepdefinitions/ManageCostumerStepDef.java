@@ -1,18 +1,12 @@
 package stepdefinitions;
 
-import com.sun.tools.jxc.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import pages.ManageCostumerPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-
-import java.util.List;
 
 public class ManageCostumerStepDef {
     ManageCostumerPage manageCostumerPage= new ManageCostumerPage();
@@ -50,6 +44,10 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
         manageCostumerPage.myOperations.click();
         manageCostumerPage.manageCostumer.click();
     }
+    @And("click to last page button")
+    public void clickToLastPageButton() {
+        manageCostumerPage.lastPageButton.click();
+    }
     @Then("A customer should show up at total nine head on account information of the customer")
     public void aCustomerShouldShowUpAtTotalNineHeadOnAccountInformationOfTheCustomer() {
         Assert.assertTrue(manageCostumerPage.headList.get(0).getText().contains("ID"));
@@ -66,6 +64,8 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
 
     @And("Click to View button.")
     public void clickToViewButton() {
+        //Driver.waitForVisibility(manageCostumerPage.buttonWiew, 3);
+        Driver.getDriver().navigate().refresh();
         manageCostumerPage.buttonWiew.click();
     }
 
@@ -78,6 +78,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
     @And("go back to manage costumers page")
     public void goBackToManageCostumersPage() {
         Driver.getDriver().navigate().back();
+        manageCostumerPage.lastPageButton.click();
     }
 
     @Then("There should be Edit button where all customer")
@@ -87,6 +88,7 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
 
     @And("Click to Edit button")
     public void clickToEditButton() {
+        Driver.waitForVisibility(manageCostumerPage.buttonEdit, 2);
        manageCostumerPage.buttonEdit.click();
     }
 
@@ -96,34 +98,40 @@ manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUs
         manageCostumerPage.cityUpdate.sendKeys(ConfigurationReader.getProperty("cityName"));
     }
 
-    @And("Click to Save button")
-    public void clickToSaveButton() {
+    @And("Click to Save button in the Edit Page")
+    public void clickToSaveButtonInTheEditPage() {
         manageCostumerPage.ButtonEditSave.click();
     }
 
     @Then("The Edit portal can allow user to update the user info")
     public void theEditPortalCanAllowUserToUpdateTheUserInfo() {
-        Driver.getDriver().navigate().back();
+    Driver.waitForVisibility(manageCostumerPage.alertUpdate, 2);
     Assert.assertTrue(manageCostumerPage.alertUpdate.isDisplayed());
     }
+
     @And("Confirming that a customer is registered with ID number")
     public void confirmingThatACustomerIsRegisteredWithIDNumber() {
-        Assert.assertTrue(manageCostumerPage.user2551.isDisplayed());
+        Assert.assertTrue(manageCostumerPage.userDelete.isDisplayed());
     }
 
     @And("Click to Delete button")
     public void clickToDeleteButton() {
+        Driver.getDriver().navigate().refresh();
         manageCostumerPage.buttonDelete.click();
     }
 
     @And("seeing a message if the user is sure about deletion")
     public void seeingAMessageIfTheUserIsSureAboutDeletion() {
+        Driver.waitForVisibility(manageCostumerPage.alertDeleteQuestion, 2);
         Assert.assertTrue(manageCostumerPage.alertDeleteQuestion.isDisplayed());
     }
 
     @Then("User can delete a customer")
     public void userCanDeleteACustomer() {
         manageCostumerPage.alertDeleteButton.click();
-        Assert.assertFalse(manageCostumerPage.user2551.isDisplayed());
+        Driver.waitForVisibility(manageCostumerPage.userDelete,2);
+        Assert.assertFalse(manageCostumerPage.userDelete.isDisplayed());
     }
+
+
 }

@@ -32,6 +32,13 @@ public class SigninPage {
 
     @FindBy(xpath = "//*[@id=\"register-title\"]/span")
     public WebElement newRegistration;
+    @FindBy(xpath = "//*[@id=\"login-page\"]/div/form/div[3]/button[1]")
+    public  WebElement cancel;
 
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement dropdown;
+
+    @FindBy(xpath = "//*[@id=\"login-item\"]/span")
+    public WebElement dropSign;
 
 }

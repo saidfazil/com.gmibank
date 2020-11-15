@@ -3,7 +3,7 @@
     @US08TC01
       Scenario: Change Password
     Given  Go to home page link
-      And Click to User Account dropdown menu and Click to SignIn
+      And to User Account drob down menu and Click to Sign In
       And Enter the username with valid credentail
       And Enter the password with valid credentail
       And Click to Sign in button
@@ -13,3 +13,4 @@
       And check password availability
       And Enter the New Password Confirmation
       Then Click to Save in button
+

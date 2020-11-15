@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class NegativeTestPage {
+public class CityNegativeTestPage {
 
-    public NegativeTestPage(){
+    public CityNegativeTestPage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
     }

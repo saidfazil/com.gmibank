@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class InformationCheckPage {
+public class SearchSsnNumberPage {
 
-    public InformationCheckPage(){
+    public SearchSsnNumberPage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -59,8 +59,11 @@ public class InformationCheckPage {
     @FindBy(id = "tp-customer-state")
     public WebElement state;
 
-    @FindBy(id = "tp-customer-createDate")
+    @FindBy(xpath = "//input[@name='createDate']")
     public WebElement date;
+
+    @FindBy(id = "tp-customer-zelleEnrolled")
+    public WebElement zelleEnrolled;
 
 
 

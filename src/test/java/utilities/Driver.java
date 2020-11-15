@@ -14,6 +14,9 @@ import org.openqa.selenium.support.ui.*;
 import pages.PasswordCreatePage;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -375,4 +378,31 @@ public class Driver {
 
 
     }
+
+    public static String Date(){
+
+        LocalDate date = LocalDate.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM");
+
+        String dateNow = dtf.format(date);
+
+        return dateNow;
+
+    }
+
+    public static String Time(){
+
+        LocalTime time = LocalTime.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+
+        String timeNow = dtf.format(time);
+
+        return timeNow;
+    }
+
+
+
+
 }

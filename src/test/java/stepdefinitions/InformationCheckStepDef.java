@@ -5,14 +5,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
-import pages.InformationCheckPage;
+import pages.SearchSsnNumberPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class InformationCheckStepDef {
 
-    InformationCheckPage page = new InformationCheckPage();
+    SearchSsnNumberPage page = new SearchSsnNumberPage();
 
 
     @Given("Go GMI Bank Adress")
@@ -136,6 +137,23 @@ public class InformationCheckStepDef {
     public void seeDateTextBox() {
 
         Assert.assertTrue(page.date.isDisplayed());
+
+    }
+
+    @Then("See Date Today")
+    public void seeDateToday() {
+
+        page.date.sendKeys(Driver.Date()+ Keys.TAB + "2020"+ Keys.TAB + Driver.Time());
+
+        Assert.assertTrue(page.date.isEnabled());
+
+
+    }
+
+    @Then("Click Zelle Check Box")
+    public void clickZelleCheckBox() {
+
+        page.zelleEnrolled.click();
 
     }
 }

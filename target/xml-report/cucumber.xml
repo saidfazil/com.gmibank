@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="5" time="44.588">
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be user info being populated when navigating to user info &quot;firstname, lastname email and language&quot;" time="39.126">
-<system-out><![CDATA[Given Go to "https://gmibank.com/" link.....................................passed
-And Click to User drop down menu............................................passed
-And Click to Sign in........................................................passed
-And Enter the username with valid credentails...............................passed
-And Enter the password with valid credentails...............................passed
-And Click to Sign in button.................................................passed
-And Click to User drop down menu............................................passed
-And Click to User info......................................................passed
-And Assert that First Name is not empty.....................................passed
-And Assert that Last Name is not empty......................................passed
-And Assert that Email is not empty..........................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="80.477">
+<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username on Sign In." time="15.562">
+<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
+And the user clicks on Username.............................................passed
+And the user enters the wrong Username......................................passed
+And the user clicks on Password.............................................passed
+And the user enters the correct Password....................................passed
+And the user clicks on Sign in .............................................passed
+Then the error message on the screen is confirmed...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be 2 languages available &quot;English and Turkish&quot;" time="0.775">
-<system-out><![CDATA[And Assert that Language dropdown is have English...........................passed
-And Assert that Language dropdown is have Türkçe............................passed
+<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with valid username , invalid password, at Login&quot;" time="12.724">
+<system-out><![CDATA[Given user go to https://gmibank.com/login .................................passed
+And the user clickson Username..............................................passed
+And the user enters the correct Username....................................passed
+And the user clickson Password..............................................passed
+And the user enters the wrong Password......................................passed
+And the user click on Sign in...............................................passed
+Then the error message onthe screen is confirmed ...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update firstname" time="1.117">
-<system-out><![CDATA[And Update to First Name....................................................passed
+<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username and invalid password at Login" time="13.015">
+<system-out><![CDATA[Given user is on “https://gmipank.com/login” page...........................passed
+And the user click on Username..............................................passed
+And the users enter wrong username..........................................passed
+And the user click on Password..............................................passed
+And the user enters the wronk Password......................................passed
+And the user clic on sign in................................................passed
+Then the error mesage on the screeen is confirmed...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update lastname" time="1.118">
-<system-out><![CDATA[And Update to Last Name.....................................................passed
+<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username or invalid password on Sign In." time="22.844">
+<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
+And the user clikon Username................................................passed
+And the user enters the invalid Username....................................passed
+And the user clics on Password..............................................passed
+And the user enters the invalid Password....................................passed
+And the user clicon Sign in ................................................passed
+And the error message on the screeen is confirmed...........................passed
+And If you get an error message, click the Forgot your password link........passed
+Then verify the message on the visited page.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update email id adding &quot;@&quot; sign and &quot;.com&quot; extension" time="1.133">
-<skipped><![CDATA[And Update to Email.........................................................passed
-And Assert that Email is contain mailContains...............................passed
-And Click to Save button....................................................undefined
-Then Assert that visible text saveAlertText.................................skipped
-]]></skipped>
+<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username or invalid password Sign In, Register a new account" time="15.827">
+<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
+And the user clicon username................................................passed
+And the user enters the wrong username......................................passed
+And the user clcks on Password..............................................passed
+And the user enter the wrong Password.......................................passed
+And the user clics on Sign in ..............................................passed
+And the error message on the skreen is confirmed............................passed
+And If you get an error message, click the You don't have an account yet? Register a new account.passed
+Then verify the message onthe visited page..................................passed
+]]></system-out>
 </testcase>
 </testsuite>

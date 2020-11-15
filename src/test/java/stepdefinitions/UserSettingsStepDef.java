@@ -4,8 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import pages.ManageCostumerPage;
 import pages.UserSettingsPage;
 import utilities.ConfigurationReader;
@@ -103,9 +101,21 @@ public class UserSettingsStepDef {
     public void clickToSaveButton() {
         userSettingsPage.saveButton.click();
     }
+
+    @And("Update to Email with invalid credential without special characters.")
+    public void updateToEmailWithInvalidCredentialWithoutSpecialCharacters() {
+        userSettingsPage.eMail.click();
+        userSettingsPage.eMail.clear();
+        userSettingsPage.eMail.sendKeys(ConfigurationReader.getProperty("updateInvalidMail"));
+    }
+
+    @Then("Assert that visible text invalidField.")
+    public void assertThatVisibleTextInvalidField() {
+        Assert.assertTrue(userSettingsPage.invalidField.isDisplayed());
+    }
+
+    @And("Assert that Language dropdown is not have other languages")
+    public void assertThatLanguageDropdownIsNotHaveThIndex() {
+        Assert.assertFalse(userSettingsPage.languageDropDown.getText().equals(ConfigurationReader.getProperty("invalidLanguage")));
+    }
 }
-
-
-
-
-

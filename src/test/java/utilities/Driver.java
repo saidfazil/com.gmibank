@@ -14,6 +14,9 @@ import org.openqa.selenium.support.ui.*;
 import pages.PasswordCreatePage;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,19 +27,22 @@ import static org.junit.Assert.assertTrue;
 
 public class Driver {
 
-    private Driver(){
+    private Driver() {
 
     }
+
     static WebDriver driver;
-    public static WebDriver getDriver(){
-        if(driver==null){
-            switch (ConfigurationReader.getProperty("browser")){
+
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            switch (ConfigurationReader.getProperty("browser")) {
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();;
+                    WebDriverManager.chromedriver().setup();
+                    ;
                     driver = new ChromeDriver();
                     break;
 
-                case  "firefox":
+                case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
@@ -56,14 +62,16 @@ public class Driver {
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return  driver;
+        return driver;
     }
-    public static void closeDriver(){
-        if (driver!=null){
+
+    public static void closeDriver() {
+        if (driver != null) {
             driver.quit();
-            driver=null;
+            driver = null;
         }
     }
+
     public static void wait(int secs) {
         try {
             Thread.sleep(1000 * secs);
@@ -71,6 +79,7 @@ public class Driver {
             e.printStackTrace();
         }
     }
+
     /*
      * switches to new window by the exact title
      * returns to original window if windows with given title not found
@@ -85,10 +94,12 @@ public class Driver {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
+
     /**
      * return a list of string from a list of elements ignores any element with no
      * text
@@ -103,6 +114,7 @@ public class Driver {
         }
         return elemTexts;
     }
+
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
@@ -111,26 +123,32 @@ public class Driver {
         }
         return elemTexts;
     }
+
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static Boolean waitForInVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -144,6 +162,7 @@ public class Driver {
             error.printStackTrace();
         }
     }
+
     public static WebElement fluentWait(final WebElement webElement, int timeinsec) {
         FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
                 .withTimeout(Duration.ofSeconds(timeinsec))
@@ -156,6 +175,7 @@ public class Driver {
         });
         return element;
     }
+
     /**
      * Verifies whether the element matching the provided locator is displayed on page
      * fails if the element matching the provided locator is not found or not displayed
@@ -169,6 +189,7 @@ public class Driver {
             Assert.fail("Element not found: " + by);
         }
     }
+
     /**
      * Verifies whether the element matching the provided locator is NOT displayed on page
      * fails if the element matching the provided locator is not found or not displayed
@@ -182,6 +203,7 @@ public class Driver {
             e.printStackTrace();
         }
     }
+
     /**
      * Verifies whether the element is displayed on page
      * fails if the element is not found or not displayed
@@ -195,6 +217,7 @@ public class Driver {
             Assert.fail("Element not found: " + element);
         }
     }
+
     /**
      * Waits for element to be not stale
      *
@@ -224,6 +247,7 @@ public class Driver {
                 }
         }
     }
+
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
      *
@@ -237,6 +261,7 @@ public class Driver {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+
     /**
      * Clicks on an element using JavaScript
      *
@@ -246,6 +271,7 @@ public class Driver {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
+
     /**
      * Scrolls down to an element using JavaScript
      *
@@ -254,6 +280,7 @@ public class Driver {
     public static void scrollToElement(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
     /**
      * Performs double click action on an element
      *
@@ -262,6 +289,7 @@ public class Driver {
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
+
     /**
      * Changes the HTML attribute of a Web Element to the given value using JavaScript
      *
@@ -272,6 +300,7 @@ public class Driver {
     public static void setAttribute(WebElement element, String attributeName, String attributeValue) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
     }
+
     /**
      * @param element
      * @param check
@@ -287,6 +316,7 @@ public class Driver {
             }
         }
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -297,6 +327,7 @@ public class Driver {
             }
         }
     }
+
     /**
      * executes the given JavaScript command on given web element
      *
@@ -306,6 +337,7 @@ public class Driver {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command, element);
     }
+
     /**
      * executes the given JavaScript command on given web element
      *
@@ -316,19 +348,61 @@ public class Driver {
         jse.executeScript(command);
     }
 
-    public static void passwordReliability(){
+    public static void passwordReliability() {
         PasswordCreatePage passCreatePage = new PasswordCreatePage();
         String renk = passCreatePage.line1.getCssValue("background-color");
-        if(renk.contains(ConfigurationReader.getProperty("red"))){
+        if (renk.contains(ConfigurationReader.getProperty("red"))) {
             System.out.println("Password is Very Weak...");
-        }else if(renk.contains(ConfigurationReader.getProperty("orange"))){
+        } else if (renk.contains(ConfigurationReader.getProperty("orange"))) {
             System.out.println("Password is Fair...");
-        }else if(renk.contains(ConfigurationReader.getProperty("yellow"))){
+        } else if (renk.contains(ConfigurationReader.getProperty("yellow"))) {
             System.out.println("Password is Weak...");
-        }else if(renk.contains(ConfigurationReader.getProperty("green"))){
+        } else if (renk.contains(ConfigurationReader.getProperty("green"))) {
             System.out.println("Password is Good...");
-        }else if(renk.contains(ConfigurationReader.getProperty("dark_green"))){
+        } else if (renk.contains(ConfigurationReader.getProperty("dark_green"))) {
             System.out.println("Password is Strong...");
         }
     }
+
+    public static String getNewSSNNumber(String SSNNumber) {
+        String[] data = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String numberFirstPart = SSNNumber.substring(0, SSNNumber.length() - 4);
+        String numberSecondPart = "";
+        for (int i = 0; i < 4; i++) {
+            int random = (int) (Math.random() * data.length);
+            numberSecondPart += data[random];
+        }
+        SSNNumber = numberFirstPart + numberSecondPart;
+
+        return SSNNumber;
+
+
+    }
+
+    public static String Date(){
+
+        LocalDate date = LocalDate.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM");
+
+        String dateNow = dtf.format(date);
+
+        return dateNow;
+
+    }
+
+    public static String Time(){
+
+        LocalTime time = LocalTime.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+
+        String timeNow = dtf.format(time);
+
+        return timeNow;
+    }
+
+
+
+
 }

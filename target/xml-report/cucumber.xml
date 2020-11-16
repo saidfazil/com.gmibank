@@ -1,244 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="81.849">
-<testcase classname="Manage Customers" name="City should be provided and cannot be left as blank US010" time="18.976">
-<system-out><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................passed
-And Click Password TextBox, Write Available Password........................passed
-And Click SignIn Button.....................................................passed
-And Click My Operations Area................................................passed
-And Click Manage Customers..................................................passed
-And Click Create A New Customer.............................................passed
-And Click SSN TextBox, Write Available SSN Number...........................passed
-And Click Search Button.....................................................passed
-And Click Save Button.......................................................passed
-Then See This field is required.............................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="71.211">
+<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 SSN Text Box Test" time="45.965">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And click on SSN TextBox....................................................passed
+Then user enters a invalid SSN number "123-567856"..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Manage Customers" name="Country should be typed and cannot be blank US010" time="12.738">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................failed
-And Click Password TextBox, Write Available Password........................skipped
-And Click SignIn Button.....................................................skipped
-And Click My Operations Area................................................skipped
-And Click Manage Customers..................................................skipped
-And Click Create A New Customer.............................................skipped
-And Click SSN TextBox, Write Available SSN Number...........................skipped
-And Click Search Button.....................................................skipped
-Then Select Country.........................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 3ed7a591cf247167749ee9aa09a572fc
-*** Element info: {Using=xpath, value=//input[@name='username']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
-	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
-]]></failure>
+<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 SSN Text Box Test 2" time="12.273">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And click on SSN TextBox....................................................passed
+Then user enters a invalid SSN number "76856-9877"..........................passed
+]]></system-out>
 </testcase>
-<testcase classname="Manage Customers" name="State should be provided as US state and cannot be blank US010" time="12.337">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................failed
-And Click Password TextBox, Write Available Password........................skipped
-And Click SignIn Button.....................................................skipped
-And Click My Operations Area................................................skipped
-And Click Manage Customers..................................................skipped
-And Click Create A New Customer.............................................skipped
-And Click SSN TextBox, Write Available SSN Number...........................skipped
-And Click Search Button.....................................................skipped
-Then Write a State..........................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 3ed7a591cf247167749ee9aa09a572fc
-*** Element info: {Using=xpath, value=//input[@name='username']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
-	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
-]]></failure>
-</testcase>
-<testcase classname="Manage Customers" name="The date cannot be typed earlier, in the past, at the time of creation a customer US011" time="12.2">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................failed
-And Click Password TextBox, Write Available Password........................skipped
-And Click SignIn Button.....................................................skipped
-And Click My Operations Area................................................skipped
-And Click Manage Customers..................................................skipped
-And Click Create A New Customer.............................................skipped
-And Click SSN TextBox, Write Available SSN Number...........................skipped
-And Click Search Button.....................................................skipped
-Then See Date TextBox.......................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 3ed7a591cf247167749ee9aa09a572fc
-*** Element info: {Using=xpath, value=//input[@name='username']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
-	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
-]]></failure>
-</testcase>
-<testcase classname="Manage Customers" name="The date should be created as month, day, year, hour and minute US011" time="12.131">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................failed
-And Click Password TextBox, Write Available Password........................skipped
-And Click SignIn Button.....................................................skipped
-And Click My Operations Area................................................skipped
-And Click Manage Customers..................................................skipped
-And Click Create A New Customer.............................................skipped
-And Click SSN TextBox, Write Available SSN Number...........................skipped
-And Click Search Button.....................................................skipped
-Then See Date Today.........................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 3ed7a591cf247167749ee9aa09a572fc
-*** Element info: {Using=xpath, value=//input[@name='username']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
-	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
-]]></failure>
-</testcase>
-<testcase classname="Manage Customers" name="User can select Zelle Enrolled optionally and save it. US011" time="12.549">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
-When Click, SignIn Area.....................................................passed
-And Click, SignIn Entrace Button............................................passed
-And Click UserName TextBox, Write Available UseName.........................failed
-And Click Password TextBox, Write Available Password........................skipped
-And Click SignIn Button.....................................................skipped
-And Click My Operations Area................................................skipped
-And Click Manage Customers..................................................skipped
-And Click Create A New Customer.............................................skipped
-And Click SSN TextBox, Write Available SSN Number...........................skipped
-And Click Search Button.....................................................skipped
-Then Click Zelle Check Box..................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 3ed7a591cf247167749ee9aa09a572fc
-*** Element info: {Using=xpath, value=//input[@name='username']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
-	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
-]]></failure>
+<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 SSN Text Box Test 3" time="12.096">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And click on SSN TextBox....................................................passed
+Then user enters a invalid SSN number "538474998"...........................passed
+]]></system-out>
 </testcase>
 </testsuite>

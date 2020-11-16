@@ -21,8 +21,9 @@ public class ChangePasswordStepDef {
 
 	}
 
-	@And("Click to User Account drob down menu and Click to Sign In")
-	public void Clic_to_User_Account_drob_down_menu_and_Click_to_Sign_In() {
+	@And("to User Account drob down menu and Click to Sign In")
+	public void toUserAccountDrobDownMenuAndClickToSignIn() {
+
 		changePasswordPage.accountButton.click();
 		changePasswordPage.signIn.click();
 
@@ -80,5 +81,6 @@ public class ChangePasswordStepDef {
 	public void click_to_Save_in_button() {
 		changePasswordPage.saveButton.click();
 	}
+
 
 }

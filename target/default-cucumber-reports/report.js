@@ -1,76 +1,161 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US05signin.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US10manageCustomers.feature");
 formatter.feature({
-  "name": "User cannot login with invalid username validating the error message",
+  "name": "Manage Customers",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US005"
+      "name": "@managecustomersUS10US11"
     }
   ]
 });
-formatter.scenario({
-  "name": "User wants to login with invalid username on Sign In.",
+formatter.background({
+  "name": "Employee is Working On The Manage Customers.",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US005"
-    },
-    {
-      "name": "@US005TC01"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "user is on “https://gmibank.com/login”.",
+  "name": "Go GMI Bank Adress",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login()"
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user enters the wrong Username",
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user enters the correct Password.",
+  "name": "Click UserName TextBox, Write Available UseName",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_correct_Password()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user clicks on Sign in .",
+  "name": "Click Password TextBox, Write Available Password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_clicks_on_Sign_in()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the error message on the screen is confirmed.",
+  "name": "Click SignIn Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click My Operations Area",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "City should be provided and cannot be left as blank US010",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@managecustomersUS10US11"
+    },
+    {
+      "name": "@US010TC02"
+    }
+  ]
+});
+formatter.step({
+  "name": "Click Save Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CityNegativeTestStepDef.clickSaveButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "See This field is required.",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()"
+  "location": "stepdefinitions.CityNegativeTestStepDef.seeThisFieldIsRequired()"
 });
 formatter.result({
   "status": "passed"
@@ -78,410 +163,733 @@ formatter.result({
 formatter.after({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "User wants to login with valid username , invalid password, at Login\"",
+formatter.background({
+  "name": "Employee is Working On The Manage Customers.",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US005"
-    },
-    {
-      "name": "@US005TC02"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "user is on “https://gmibank.com/login”.",
+  "name": "Go GMI Bank Adress",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login()"
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user enters the correct Username",
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_correct_Username()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user enters the wrong Password.",
+  "name": "Click UserName TextBox, Write Available UseName",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()"
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
 });
 formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user click on Sign in.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_click_on_Sign_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the error message onthe screen is confirmed .",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_error_message_onthe_screen_is_confirmed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "User wants to login with invalid username and invalid password at Login",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US005"
-    },
-    {
-      "name": "@US005TC03"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on “https://gmibank.com/login”.",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the users enter wrong username",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_users_enter_wrong_username()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user enters the wronk Password..",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wronk_Password()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user clic on sign in.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_clic_on_sign_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the error mesage on the screeen is confirmed.",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_error_mesage_on_the_screeen_is_confirmed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "User wants to login with invalid username or invalid password on Sign In.",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US005"
-    },
-    {
-      "name": "@US005TC04"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on “https://gmibank.com/login”.",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user enters the invalid Username",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_invalid_Username()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user enters the invalid Password.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_invalid_Password()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user clicon Sign in .",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_clicon_Sign_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the error message on the screeen is confirmed.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screeen_is_confirmed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "If you get an error message, click the Forgot your password link.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.if_you_get_an_error_message_click_the_Forgot_your_password_link()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "verify the message on the visited page",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.verify_the_message_on_the_visited_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "User wants to login with invalid username or invalid password Sign In, Register a new account",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US005"
-    },
-    {
-      "name": "@US005TC05"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on “https://gmibank.com/login”.",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user enters the wrong username",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_username()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user enter the wrong Password.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_user_enter_the_wrong_Password()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user clics on Sign in .",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_clics_on_Sign_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the error message on the skreen is confirmed.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_skreen_is_confirmed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "If you get an error message, click the You don\u0027t have an account yet? Register a new account",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.if_you_get_an_error_message_click_the_You_don_t_have_an_account_yet_Register_a_new_account()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "verify the message onthe visited page",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.verify_the_message_onthe_visited_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "US005TC06 Error message on blank screen when user signing in login page",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US005"
-    },
-    {
-      "name": "@US005TC06"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on “https://gmibank.com/login”.",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the users enter the wrong Username",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_users_enter_the_wrong_Username()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "thee users enter thee wrong Password.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.thee_users_enter_thee_wrong_Password()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "users clikson Sign in .",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.users_clikson_Sign_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the eror messaage onthe screeen is confirmed.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.the_eror_messaage_onthe_screeen_is_confirmed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User clicks cancel after error message",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.user_clicks_cancel_after_error_message()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "If the user gets the error message, a bug has been found.",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.SignInStepDef.if_the_user_gets_the_error_message_a_bug_has_been_found()"
-});
-formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertFalse(Assert.java:65)\n\tat org.junit.Assert.assertFalse(Assert.java:75)\n\tat stepdefinitions.SignInStepDef.if_the_user_gets_the_error_message_a_bug_has_been_found(SignInStepDef.java:211)\n\tat ✽.If the user gets the error message, a bug has been found.(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US05signin.feature:56)\n",
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@name\u003d\u0027username\u0027]\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:999:204:31ce:547b:1765:cae5:e904%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 3ed7a591cf247167749ee9aa09a572fc\n*** Element info: {Using\u003dxpath, value\u003d//input[@name\u003d\u0027username\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.sendKeys(Unknown Source)\n\tat stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)\n\tat ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)\n",
   "status": "failed"
 });
+formatter.step({
+  "name": "Click Password TextBox, Write Available Password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SignIn Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click My Operations Area",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.scenario({
+  "name": "Country should be typed and cannot be blank US010",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@managecustomersUS10US11"
+    },
+    {
+      "name": "@US010TC03"
+    }
+  ]
+});
+formatter.step({
+  "name": "Select Country.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.selectCountry()"
+});
+formatter.result({
+  "status": "skipped"
+});
 formatter.embedding("image/png", "embedded0.png", null);
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "Employee is Working On The Manage Customers.",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Go GMI Bank Adress",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click UserName TextBox, Write Available UseName",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@name\u003d\u0027username\u0027]\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:999:204:31ce:547b:1765:cae5:e904%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 3ed7a591cf247167749ee9aa09a572fc\n*** Element info: {Using\u003dxpath, value\u003d//input[@name\u003d\u0027username\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.sendKeys(Unknown Source)\n\tat stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)\n\tat ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "Click Password TextBox, Write Available Password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SignIn Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click My Operations Area",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.scenario({
+  "name": "State should be provided as US state and cannot be blank US010",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@managecustomersUS10US11"
+    },
+    {
+      "name": "@US010TC04"
+    }
+  ]
+});
+formatter.step({
+  "name": "Write a State.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.writeAState()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded1.png", null);
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "Employee is Working On The Manage Customers.",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Go GMI Bank Adress",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click UserName TextBox, Write Available UseName",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@name\u003d\u0027username\u0027]\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:999:204:31ce:547b:1765:cae5:e904%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 3ed7a591cf247167749ee9aa09a572fc\n*** Element info: {Using\u003dxpath, value\u003d//input[@name\u003d\u0027username\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.sendKeys(Unknown Source)\n\tat stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)\n\tat ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "Click Password TextBox, Write Available Password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SignIn Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click My Operations Area",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.scenario({
+  "name": "The date cannot be typed earlier, in the past, at the time of creation a customer US011",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@managecustomersUS10US11"
+    },
+    {
+      "name": "@US011TC05"
+    }
+  ]
+});
+formatter.step({
+  "name": "See Date TextBox",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.seeDateTextBox()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded2.png", null);
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "Employee is Working On The Manage Customers.",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Go GMI Bank Adress",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click UserName TextBox, Write Available UseName",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@name\u003d\u0027username\u0027]\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:999:204:31ce:547b:1765:cae5:e904%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 3ed7a591cf247167749ee9aa09a572fc\n*** Element info: {Using\u003dxpath, value\u003d//input[@name\u003d\u0027username\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.sendKeys(Unknown Source)\n\tat stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)\n\tat ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "Click Password TextBox, Write Available Password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SignIn Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click My Operations Area",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.scenario({
+  "name": "The date should be created as month, day, year, hour and minute US011",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@managecustomersUS10US11"
+    },
+    {
+      "name": "@US011TC06"
+    }
+  ]
+});
+formatter.step({
+  "name": "See Date Today",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.seeDateToday()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded3.png", null);
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "Employee is Working On The Manage Customers.",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Go GMI Bank Adress",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.goGMIBankAdress()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Area",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInArea()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click, SignIn Entrace Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInEntraceButton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click UserName TextBox, Write Available UseName",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@name\u003d\u0027username\u0027]\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:999:204:31ce:547b:1765:cae5:e904%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 3ed7a591cf247167749ee9aa09a572fc\n*** Element info: {Using\u003dxpath, value\u003d//input[@name\u003d\u0027username\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.sendKeys(Unknown Source)\n\tat stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)\n\tat ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "Click Password TextBox, Write Available Password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickPasswordTextBoxWriteAvailablePassword()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SignIn Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSignInButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click My Operations Area",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickMyOperationsArea()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Manage Customers",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickManageCustomers()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Create A New Customer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickCreateANewCustomer()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click SSN TextBox, Write Available SSN Number",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSSNTextBoxWriteAvailableSSNNumber()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "Click Search Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickSearchButton()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.scenario({
+  "name": "User can select Zelle Enrolled optionally and save it. US011",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@managecustomersUS10US11"
+    },
+    {
+      "name": "@US011TC07"
+    }
+  ]
+});
+formatter.step({
+  "name": "Click Zelle Check Box",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.InformationCheckStepDef.clickZelleCheckBox()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded4.png", null);
 formatter.after({
   "status": "passed"
 });

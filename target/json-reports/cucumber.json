@@ -1,12 +1,20 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
+<<<<<<< HEAD
         "start_timestamp": "2020-11-15T00:55:17.747Z",
+=======
+        "start_timestamp": "2020-11-14T12:14:53.559Z",
+>>>>>>> refs/heads/master
         "before": [
           {
             "result": {
+<<<<<<< HEAD
+=======
+              "duration": 3000000,
+>>>>>>> refs/heads/master
               "status": "passed"
             },
             "match": {
@@ -14,14 +22,27 @@
             }
           }
         ],
+<<<<<<< HEAD
         "line": 4,
         "name": "Change Password",
+=======
+        "line": 5,
+        "name": "User wants to login with invalid username on Sign In.",
+>>>>>>> refs/heads/master
         "description": "",
+<<<<<<< HEAD
         "id": "password-segment-on-homepage-should-be-editable;change-password",
+=======
+        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;user-wants-to-login-with-invalid-username-on-sign-in.",
+>>>>>>> refs/heads/master
         "after": [
           {
             "result": {
+<<<<<<< HEAD
               "duration": 492517500,
+=======
+              "duration": 627000000,
+>>>>>>> refs/heads/master
               "status": "passed"
             },
             "match": {
@@ -34,72 +55,371 @@
         "steps": [
           {
             "result": {
+<<<<<<< HEAD
               "duration": 16923281800,
+=======
+              "duration": 10986000000,
               "status": "passed"
             },
-            "line": 5,
-            "name": "Go to home page link",
+            "line": 6,
+            "name": "user is on “https://gmibank.com/login” page.",
             "match": {
-              "location": "stepdefinitions.ChangePasswordStepDef.go_to_home_page_link()"
+              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 257543600,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "Click to User Account",
-            "match": {
-              "location": "stepdefinitions.ChangePasswordStepDef.click_to_User_Account()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 121269300,
+              "duration": 88000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "Enter the username",
+            "name": "the user clicks on Username.",
             "match": {
-              "location": "stepdefinitions.ChangePasswordStepDef.enter_the_username()"
+              "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Username()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 159712400,
+              "duration": 193000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "Enter the password",
+            "name": "the user enters the wrong Username",
             "match": {
-              "location": "stepdefinitions.ChangePasswordStepDef.enter_the_password()"
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Username()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 102457000,
+              "duration": 83000000,
               "status": "passed"
             },
             "line": 9,
-            "name": "Click to Sign",
+            "name": "the user clicks on Password..",
             "match": {
-              "location": "stepdefinitions.ChangePasswordStepDef.click_to_Sign()"
+              "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Password()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 645581000,
+              "duration": 270000000,
               "status": "passed"
             },
             "line": 10,
-            "name": "Click to User Account Password",
+            "name": "the user enters the correct Password.",
             "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_correct_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3105000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user clicks on Sign in .",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clicks_on_Sign_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the error message on the screen is confirmed.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screen_is_confirmed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US005"
+          },
+          {
+            "name": "@US005TC01"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-14T12:15:09.150Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "User wants to login with valid username , invalid password, at Login\"",
+        "description": "",
+        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;user-wants-to-login-with-valid-username---invalid-password--at-login\"",
+        "after": [
+          {
+            "result": {
+              "duration": 578000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6513000000,
+>>>>>>> refs/heads/master
+              "status": "passed"
+            },
+<<<<<<< HEAD
+            "line": 5,
+            "name": "Go to home page link",
+=======
+            "line": 16,
+            "name": "user go to https://gmibank.com/login .",
+>>>>>>> refs/heads/master
+            "match": {
+<<<<<<< HEAD
+              "location": "stepdefinitions.ChangePasswordStepDef.go_to_home_page_link()"
+=======
+              "location": "stepdefinitions.SignInStepDef.user_go_to_https_gmibank_com_login()"
+>>>>>>> refs/heads/master
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+<<<<<<< HEAD
+              "duration": 257543600,
+=======
+              "duration": 76000000,
+>>>>>>> refs/heads/master
+              "status": "passed"
+            },
+<<<<<<< HEAD
+            "line": 6,
+            "name": "Click to User Account",
+=======
+            "line": 17,
+            "name": "the user clickson Username.",
+>>>>>>> refs/heads/master
+            "match": {
+<<<<<<< HEAD
+              "location": "stepdefinitions.ChangePasswordStepDef.click_to_User_Account()"
+=======
+              "location": "stepdefinitions.SignInStepDef.the_user_clickson_Username()"
+>>>>>>> refs/heads/master
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+<<<<<<< HEAD
+              "duration": 121269300,
+=======
+              "duration": 130000000,
+>>>>>>> refs/heads/master
+              "status": "passed"
+            },
+<<<<<<< HEAD
+            "line": 7,
+            "name": "Enter the username",
+=======
+            "line": 18,
+            "name": "the user enters the correct Username",
+>>>>>>> refs/heads/master
+            "match": {
+<<<<<<< HEAD
+              "location": "stepdefinitions.ChangePasswordStepDef.enter_the_username()"
+=======
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_correct_Username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 70000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user clickson Password..",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clickson_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 109000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user enters the wrong Password.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5199000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user click on Sign in.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_click_on_Sign_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 39000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "the error message onthe screen is confirmed .",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_error_message_onthe_screen_is_confirmed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US005"
+          },
+          {
+            "name": "@US005TC02"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-14T12:15:21.899Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 25,
+        "name": "User wants to login with invalid username and invalid password at Login",
+        "description": "",
+        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;user-wants-to-login-with-invalid-username-and-invalid-password-at-login",
+        "after": [
+          {
+            "result": {
+              "duration": 567000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6773000000,
+              "status": "passed"
+>>>>>>> refs/heads/master
+            },
+            "line": 26,
+            "name": "user is on “https://gmipank.com/login” page.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmipank_com_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+<<<<<<< HEAD
+              "duration": 159712400,
+=======
+              "duration": 81000000,
+>>>>>>> refs/heads/master
+              "status": "passed"
+            },
+<<<<<<< HEAD
+            "line": 8,
+            "name": "Enter the password",
+=======
+            "line": 27,
+            "name": "the user click on Username.",
+>>>>>>> refs/heads/master
+            "match": {
+<<<<<<< HEAD
+              "location": "stepdefinitions.ChangePasswordStepDef.enter_the_password()"
+=======
+              "location": "stepdefinitions.SignInStepDef.the_user_click_on_Username()"
+>>>>>>> refs/heads/master
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+<<<<<<< HEAD
+              "duration": 102457000,
+=======
+              "duration": 156000000,
+>>>>>>> refs/heads/master
+              "status": "passed"
+            },
+<<<<<<< HEAD
+            "line": 9,
+            "name": "Click to Sign",
+=======
+            "line": 28,
+            "name": "the users enter wrong username",
+>>>>>>> refs/heads/master
+            "match": {
+<<<<<<< HEAD
+              "location": "stepdefinitions.ChangePasswordStepDef.click_to_Sign()"
+=======
+              "location": "stepdefinitions.SignInStepDef.the_users_enter_wrong_username()"
+>>>>>>> refs/heads/master
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+<<<<<<< HEAD
+              "duration": 645581000,
+=======
+              "duration": 76000000,
+>>>>>>> refs/heads/master
+              "status": "passed"
+            },
+<<<<<<< HEAD
+            "line": 10,
+            "name": "Click to User Account Password",
+=======
+            "line": 29,
+            "name": "the user click on Password.",
+>>>>>>> refs/heads/master
+            "match": {
+<<<<<<< HEAD
               "location": "stepdefinitions.ChangePasswordStepDef.click_to_User_Account_Password()"
             },
             "keyword": "And "
@@ -161,31 +481,391 @@
             "name": "Click to Save in button",
             "match": {
               "location": "stepdefinitions.ChangePasswordStepDef.click_to_Save_in_button()"
+=======
+              "location": "stepdefinitions.SignInStepDef.the_user_click_on_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 241000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "the user enters the wronk Password..",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wronk_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5074000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "the user clic on sign in.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clic_on_sign_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 40000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "the error mesage on the screeen is confirmed.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_error_mesage_on_the_screeen_is_confirmed()"
+>>>>>>> refs/heads/master
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
+<<<<<<< HEAD
             "name": "@US08"
+=======
+            "name": "@US005"
+>>>>>>> refs/heads/master
           },
           {
+<<<<<<< HEAD
             "name": "@US08TC01"
+=======
+            "name": "@US005TC03"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-14T12:15:34.929Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 34,
+        "name": "User wants to login with invalid username or invalid password on Sign In.",
+        "description": "",
+        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;user-wants-to-login-with-invalid-username-or-invalid-password-on-sign-in.",
+        "after": [
+          {
+            "result": {
+              "duration": 498000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6527000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "user is on “https://gmibank.com/login” page.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 75000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "the user clikon Username.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clikon_Username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 158000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "the user enters the invalid Username",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_invalid_Username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 81000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "the user clics on Password..",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clics_on_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 130000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "the user enters the invalid Password.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_invalid_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5202000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "the user clicon Sign in .",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clicon_Sign_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5037000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "the error message on the screeen is confirmed.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_screeen_is_confirmed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5097000000,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "If you get an error message, click the Forgot your password link.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.if_you_get_an_error_message_click_the_Forgot_your_password_link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "verify the message on the visited page",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.verify_the_message_on_the_visited_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US005"
+          },
+          {
+            "name": "@US005TC04"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-14T12:15:57.794Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 45,
+        "name": "User wants to login with invalid username or invalid password Sign In, Register a new account",
+        "description": "",
+        "id": "user-cannot-login-with-invalid-username-validating-the-error-message;user-wants-to-login-with-invalid-username-or-invalid-password-sign-in--register-a-new-account",
+        "after": [
+          {
+            "result": {
+              "duration": 506000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6515000000,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "user is on “https://gmibank.com/login” page.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.user_is_on_https_gmibank_com_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 77000000,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "the user clicon username.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clicon_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 140000000,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "the user enters the wrong username",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enters_the_wrong_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "the user clcks on Password..",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clcks_on_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 105000000,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "the user enter the wrong Password.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_enter_the_wrong_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5231000000,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "the user clics on Sign in .",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_user_clics_on_Sign_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36000000,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "the error message on the skreen is confirmed.",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.the_error_message_on_the_skreen_is_confirmed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3112000000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "If you get an error message, click the You don\u0027t have an account yet? Register a new account",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.if_you_get_an_error_message_click_the_You_don_t_have_an_account_yet_Register_a_new_account()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 35000000,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "verify the message onthe visited page",
+            "match": {
+              "location": "stepdefinitions.SignInStepDef.verify_the_message_onthe_visited_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US005"
+          },
+          {
+            "name": "@US005TC05"
+>>>>>>> refs/heads/master
           }
         ]
       }
     ],
+<<<<<<< HEAD
     "name": "Password segment on Homepage should be editable",
+=======
+    "name": "User cannot login with invalid username validating the error message",
+>>>>>>> refs/heads/master
     "description": "",
+<<<<<<< HEAD
     "id": "password-segment-on-homepage-should-be-editable",
+=======
+    "id": "user-cannot-login-with-invalid-username-validating-the-error-message",
+>>>>>>> refs/heads/master
     "keyword": "Feature",
+<<<<<<< HEAD
     "uri": "file:src/test/resources/features/US08ChangePassword.feature",
+=======
+    "uri": "file:src/test/resources/features/US05signin.feature",
+>>>>>>> refs/heads/master
     "tags": [
       {
+<<<<<<< HEAD
         "name": "@US08",
+=======
+        "name": "@US005",
+>>>>>>> refs/heads/master
         "type": "Tag",
         "location": {
-          "line": 1,
+          "line": 2,
           "column": 1
         }
       }

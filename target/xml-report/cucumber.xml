@@ -1,62 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="38" time="306.895">
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 SSN Text Box Test" time="29.335">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on SSN TextBox....................................................passed
-Then user enters a invalid SSN number "123-567856"..........................passed
+<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="81.849">
+<testcase classname="Manage Customers" name="City should be provided and cannot be left as blank US010" time="18.976">
+<system-out><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+And Click Save Button.......................................................passed
+Then See This field is required.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 SSN Text Box Test 2" time="12.272">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on SSN TextBox....................................................passed
-Then user enters a invalid SSN number "76856-9877"..........................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 SSN Text Box Test 3" time="12.08">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on SSN TextBox....................................................passed
-Then user enters a invalid SSN number "538474998"...........................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC02 First Name TextBox Test" time="2.033">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on First Name TextBox.............................................passed
-Then user enters a invalid First Name ""....................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC03 Last Name TextBox Test" time="1.914">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Last Name TextBox..............................................passed
-Then user enters a invalid Last Name "".....................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC04 Address TextBox Test" time="11.869">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),'Your Address is required')]&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'BA-MacBook.local', ip: '2a01:e35:2e56:e070:7cc3:17b:f350:4adb%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/5v/ws8hntyn367...}, goog:chromeOptions: {debuggerAddress: localhost:58007}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 6872ff4999bd0610ab180aade417954f&#10;*** Element info: {Using=xpath, value=//*[contains(text(),'Your Address is required')]}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Address TextBox................................................passed
-Then user enters invalid Address "".........................................failed
+<testcase classname="Manage Customers" name="Country should be typed and cannot be blank US010" time="12.738">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................failed
+And Click Password TextBox, Write Available Password........................skipped
+And Click SignIn Button.....................................................skipped
+And Click My Operations Area................................................skipped
+And Click Manage Customers..................................................skipped
+And Click Create A New Customer.............................................skipped
+And Click SSN TextBox, Write Available SSN Number...........................skipped
+And Click Search Button.....................................................skipped
+Then Select Country.........................................................skipped
 
 StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Your Address is required')]"}
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
   (Session info: chrome=86.0.4240.198)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'BA-MacBook.local', ip: '2a01:e35:2e56:e070:7cc3:17b:f350:4adb%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_241'
+System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/5v/ws8hntyn367...}, goog:chromeOptions: {debuggerAddress: localhost:58007}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 6872ff4999bd0610ab180aade417954f
-*** Element info: {Using=xpath, value=//*[contains(text(),'Your Address is required')]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3ed7a591cf247167749ee9aa09a572fc
+*** Element info: {Using=xpath, value=//input[@name='username']}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -73,277 +56,189 @@ Session ID: 6872ff4999bd0610ab180aade417954f
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
-	at stepdefinitions.CostumerRegistrationNegatifTestStepDef.userEntersInvalidAddress(CostumerRegistrationNegatifTestStepDef.java:97)
-	at ✽.user enters invalid Address ""(file:///Users/buse/IdeaProjects/com.gmibank/src/test/resources/features/US02customerRegistrationNegatifTest.feature:39)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
+	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
 ]]></failure>
 </testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC05 Mobile Phone Number TextBox Test" time="12.046">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Mobile Phone Number TextBox....................................passed
-Then user enters a invalid Mobil Phone Number ""............................passed
-]]></system-out>
+<testcase classname="Manage Customers" name="State should be provided as US state and cannot be blank US010" time="12.337">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................failed
+And Click Password TextBox, Write Available Password........................skipped
+And Click SignIn Button.....................................................skipped
+And Click My Operations Area................................................skipped
+And Click Manage Customers..................................................skipped
+And Click Create A New Customer.............................................skipped
+And Click SSN TextBox, Write Available SSN Number...........................skipped
+And Click Search Button.....................................................skipped
+Then Write a State..........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3ed7a591cf247167749ee9aa09a572fc
+*** Element info: {Using=xpath, value=//input[@name='username']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
+	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
+]]></failure>
 </testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC05 Mobile Phone Number TextBox Test 2" time="12.204">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Mobile Phone Number TextBox....................................passed
-Then user enters a invalid Mobil Phone Number "5673938393"..................passed
-]]></system-out>
+<testcase classname="Manage Customers" name="The date cannot be typed earlier, in the past, at the time of creation a customer US011" time="12.2">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................failed
+And Click Password TextBox, Write Available Password........................skipped
+And Click SignIn Button.....................................................skipped
+And Click My Operations Area................................................skipped
+And Click Manage Customers..................................................skipped
+And Click Create A New Customer.............................................skipped
+And Click SSN TextBox, Write Available SSN Number...........................skipped
+And Click Search Button.....................................................skipped
+Then See Date TextBox.......................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3ed7a591cf247167749ee9aa09a572fc
+*** Element info: {Using=xpath, value=//input[@name='username']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
+	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
+]]></failure>
 </testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC05 Mobile Phone Number TextBox Test 3" time="12.306">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Mobile Phone Number TextBox....................................passed
-Then user enters a invalid Mobil Phone Number "567-3938393".................passed
-]]></system-out>
+<testcase classname="Manage Customers" name="The date should be created as month, day, year, hour and minute US011" time="12.131">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................failed
+And Click Password TextBox, Write Available Password........................skipped
+And Click SignIn Button.....................................................skipped
+And Click My Operations Area................................................skipped
+And Click Manage Customers..................................................skipped
+And Click Create A New Customer.............................................skipped
+And Click SSN TextBox, Write Available SSN Number...........................skipped
+And Click Search Button.....................................................skipped
+Then See Date Today.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3ed7a591cf247167749ee9aa09a572fc
+*** Element info: {Using=xpath, value=//input[@name='username']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
+	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
+]]></failure>
 </testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC05 Mobile Phone Number TextBox Test 4" time="12.197">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Mobile Phone Number TextBox....................................passed
-Then user enters a invalid Mobil Phone Number "567393-3938".................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC05 Mobile Phone Number TextBox Test 5" time="12.702">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Mobile Phone Number TextBox....................................passed
-Then user enters a invalid Mobil Phone Number "567-393-3938"................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC06 Username TextBox Test" time="1.978">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Username TextBox...............................................passed
-Then user enters invalid username ""........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC07 Email TextBox Test" time="14.999">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Email TextBox..................................................passed
-Then user enters invalid Email "haldili@"...................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC07 Email TextBox Test 2" time="15.336">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on Email TextBox..................................................passed
-Then user enters invalid Email "haldili.com"................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC08 New password TextBox Test" time="12.34">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password TextBox...........................................passed
-Then user enters invalid New password ""....................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC08 New password TextBox Test 2" time="12.144">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password TextBox...........................................passed
-Then user enters invalid New password "123".................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC08 New password TextBox Test 3" time="12.308">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password TextBox...........................................passed
-Then user enters invalid New password "1"...................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC08 New password TextBox Test 4" time="12.068">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password TextBox...........................................passed
-Then user enters invalid New password "12"..................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC09 Password strength level must be strong test" time="1.726">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And Password strength level must be strong..................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC010 New password confirmation TextBox Test" time="12.038">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password confirmation TextBox..............................passed
-Then user enters invalid New password confirmation "".......................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC010 New password confirmation TextBox Test 2" time="2.254">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password confirmation TextBox..............................passed
-Then user enters invalid New password confirmation "123"....................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC010 New password confirmation TextBox Test 3" time="2.939">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password confirmation TextBox..............................passed
-Then user enters invalid New password confirmation "1"......................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC010 New password confirmation TextBox Test 4" time="2.051">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And click on New password confirmation TextBox..............................passed
-Then user enters invalid New password confirmation "12".....................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC011 New password confirmation TextBox Test" time="2.007">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-Then user clicks the Register button........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC012 user must enter valid data into SSN TextBox using &quot;-&quot; character." time="5.482">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on SSN TextBox................................................passed
-And the user must type the character "876-765423" - when entering a number into the current SSN TextBox..passed
-Then ssn the user should not see the text "Your SSN is invalid".............passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC012 user must enter valid data into SSN TextBox using &quot;-&quot; character. 2" time="4.9">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on SSN TextBox................................................passed
-And the user must type the character "60045-2347" - when entering a number into the current SSN TextBox..passed
-Then ssn the user should not see the text "Your SSN is invalid".............passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC012 user must enter valid data into SSN TextBox using &quot;-&quot; character. 3" time="4.92">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on SSN TextBox................................................passed
-And the user must type the character "129876450" - when entering a number into the current SSN TextBox..passed
-Then ssn the user should not see the text "Your SSN is invalid".............passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC012 user must enter valid data into SSN TextBox using &quot;-&quot; character. 4" time="14.918">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on SSN TextBox................................................passed
-And the user must type the character "456-55-7896" - when entering a number into the current SSN TextBox..passed
-Then ssn the user should not see the text "Your SSN is invalid".............passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC013 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character." time="2.229">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Mobile Phone Number TexttBox...............................passed
-And user must type the"980678-4554" character - when entering a number into the valid Mobile Phone Number TextBox.passed
-Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC013 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character. 2" time="2.054">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Mobile Phone Number TexttBox...............................passed
-And user must type the"980-6784554" character - when entering a number into the valid Mobile Phone Number TextBox.passed
-Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC013 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character. 3" time="1.925">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Mobile Phone Number TexttBox...............................passed
-And user must type the"9806784554" character - when entering a number into the valid Mobile Phone Number TextBox.passed
-Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC013 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character. 4" time="1.943">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Mobile Phone Number TexttBox...............................passed
-And user must type the"98-678-4554" character - when entering a number into the valid Mobile Phone Number TextBox.passed
-Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC013 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character. 5" time="1.987">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Mobile Phone Number TexttBox...............................passed
-And user must type the"980-67-4554" character - when entering a number into the valid Mobile Phone Number TextBox.passed
-Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC013 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character. 6" time="11.959">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Mobile Phone Number TexttBox...............................passed
-And user must type the"980-678-4554" character - when entering a number into the valid Mobile Phone Number TextBox.passed
-Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC014 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression" time="2.056">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Email TextBox..............................................passed
-And the user is entering a valid Email TextBox Email Must use"celin_45gmail.com" @  character and .com expression in TextBox.passed
-Then email the user should not see the text "This field is invalid".........passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC014 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression 2" time="1.959">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Email TextBox..............................................passed
-And the user is entering a valid Email TextBox Email Must use"celin_45@gmail" @  character and .com expression in TextBox.passed
-Then email the user should not see the text "This field is invalid".........passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC014 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression 3" time="1.988">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Email TextBox..............................................passed
-And the user is entering a valid Email TextBox Email Must use"celin_45mail" @  character and .com expression in TextBox.passed
-Then email the user should not see the text "This field is invalid".........passed
-]]></system-out>
-</testcase>
-<testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC014 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression 4" time="12.087">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User button...............................................passed
-And user clicks Registration tab............................................passed
-And new click on Email TextBox..............................................passed
-And the user is entering a valid Email TextBox Email Must use"celin_45@gmail.com" @  character and .com expression in TextBox.passed
-Then email the user should not see the text "This field is invalid".........passed
-]]></system-out>
+<testcase classname="Manage Customers" name="User can select Zelle Enrolled optionally and save it. US011" time="12.549">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name='username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 3ed7a591cf247167749ee9aa09a572fc&#10;*** Element info: {Using=xpath, value=//input[@name='username']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................failed
+And Click Password TextBox, Write Available Password........................skipped
+And Click SignIn Button.....................................................skipped
+And Click My Operations Area................................................skipped
+And Click Manage Customers..................................................skipped
+And Click Create A New Customer.............................................skipped
+And Click SSN TextBox, Write Available SSN Number...........................skipped
+And Click Search Button.....................................................skipped
+Then Click Zelle Check Box..................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Air-MacBook-Air.local', ip: '2001:999:204:31ce:547b:1765:cae5:e904%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3ed7a591cf247167749ee9aa09a572fc
+*** Element info: {Using=xpath, value=//input[@name='username']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at stepdefinitions.InformationCheckStepDef.clickUserNameTextBoxWriteAvailableUseName(InformationCheckStepDef.java:42)
+	at ✽.Click UserName TextBox, Write Available UseName(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US10manageCustomers.feature:8)
+]]></failure>
 </testcase>
 </testsuite>

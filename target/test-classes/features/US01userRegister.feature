@@ -1,4 +1,4 @@
-@US01 @smoketest
+@US01
 Feature:  System should allow any user to register with valid credentials validating the success message
 
   @US01TC01

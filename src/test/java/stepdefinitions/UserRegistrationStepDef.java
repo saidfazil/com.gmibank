@@ -7,10 +7,6 @@ import org.openqa.selenium.NoSuchElementException;
 import pages.UserRegistrationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-import utilities.ExcelUtil;
-
-import java.util.List;
-import java.util.Map;
 
 public class UserRegistrationStepDef  {
 
@@ -24,20 +20,15 @@ public class UserRegistrationStepDef  {
 
     @Given("Click to User Account menu and Click to Register")
     public void click_to_User_Account_menu_and_Click_to_Register() {
-
-
         userRegPage.userMenu.click();
         userRegPage.userRegistrationButton.click();
     }
 
 
-    @Given("Enter the SSN {string} with valid credential")
-    public void enter_the_SSN_with_valid_credential(String string) {
-        userRegPage.user_SSN.sendKeys(string);
+    @Given("Enter the SSN with valid credential")
+    public void enter_the_SSN_with_valid_credential() {
+        userRegPage.user_SSN.sendKeys(ConfigurationReader.getProperty("SSN01"));
     }
-
-
-
 
     @Given("Click on first name box")
     public void click_first_name_box(){
@@ -57,16 +48,15 @@ public class UserRegistrationStepDef  {
 
     //US01TC02
 
-    @Given("Enter the name {string} with valid credential")
-    public void enter_the_First_Name_with_valid_credential(String string) {
-        userRegPage.userFirstName.clear();
-        userRegPage.userFirstName.sendKeys(string);
+    @Given("Enter the First Name with valid credential")
+    public void enter_the_First_Name_with_valid_credential() {
+
+        userRegPage.userFirstName.sendKeys(ConfigurationReader.getProperty("first_name"));
     }
 
     @Given("click on last name box")
     public void click_on_last_name_box() {
         userRegPage.userLastName.click();
-
     }
 
     @Then("There should be a valid name respecting")
@@ -80,10 +70,10 @@ public class UserRegistrationStepDef  {
 
     //US01TC03
 
-    @Given("Enter the last name {string} with valid credential")
-    public void enter_the_Last_Name_with_valid_credential(String string) {
-        userRegPage.userLastName.clear();
-        userRegPage.userLastName.sendKeys(string);
+    @Given("Enter the Last Name with valid credential")
+    public void enter_the_Last_Name_with_valid_credential() {
+
+        userRegPage.userLastName.sendKeys(ConfigurationReader.getProperty("last_name"));
     }
 
     @Given("click on Address box")
@@ -117,10 +107,9 @@ public class UserRegistrationStepDef  {
 
     //US01TC05
 
-    @Given("Enter the GSM {string} with valid credential")
-    public void enter_the_Mobile_Phone_Number_with_valid_credential(String string) {
-        userRegPage.userMobilePhoneNumber.clear();
-        userRegPage.userMobilePhoneNumber.sendKeys(string);
+    @Given("Enter the Mobile Phone Number with valid credential")
+    public void enter_the_Mobile_Phone_Number_with_valid_credential() {
+        userRegPage.userMobilePhoneNumber.sendKeys(ConfigurationReader.getProperty("mobile_phone_number"));
     }
 
     @Given("click on username box")
@@ -139,10 +128,9 @@ public class UserRegistrationStepDef  {
 
     //US01TC06
 
-    @Given("Enter the valid username {string} with valid credentail")
-    public void enter_the_username_with_valid_credentail(String string){
-        userRegPage.userName.clear();
-        userRegPage.userName.sendKeys(string);
+    @Given("Enter the valid username with valid credentail")
+    public void enter_the_username_with_valid_credentail(){
+        userRegPage.userName.sendKeys(ConfigurationReader.getProperty("username01"));
     }
 
     @Given("click on email box")
@@ -161,10 +149,9 @@ public class UserRegistrationStepDef  {
 
     //US01TC07
 
-    @Given("Enter the e-mail {string} with valid credential")
-    public void enter_the_e_mail_with_valid_credential(String string) {
-        userRegPage.userEmail.clear();
-        userRegPage.userEmail.sendKeys(string);
+    @Given("Enter the e-mail with valid credential")
+    public void enter_the_e_mail_with_valid_credential() {
+        userRegPage.userEmail.sendKeys(ConfigurationReader.getProperty("email01"));
     }
 
     @Given("click on new password box")
@@ -183,10 +170,9 @@ public class UserRegistrationStepDef  {
 
     //US01TC08
 
-    @Given("Enter the new {string} with valid credential")
-    public void enter_the_new_password_with_valid_credential(String string) {
-        userRegPage.userFirstPassword.clear();
-        userRegPage.userFirstPassword.sendKeys(string);
+    @Given("Enter the new password with valid credential")
+    public void enter_the_new_password_with_valid_credential() {
+        userRegPage.userFirstPassword.sendKeys(ConfigurationReader.getProperty("new_password"));
     }
 
     @Given("click on new password confirmation box")
@@ -205,9 +191,9 @@ public class UserRegistrationStepDef  {
 
     //US01TC09
 
-    @Given("Enter the same password with valid credential {string}")
-    public void enter_the_same_password_with_valid_credential(String string) {
-        userRegPage.userSecondPassword.sendKeys(string);
+    @Given("Enter the same password with valid credential")
+    public void enter_the_same_password_with_valid_credential() {
+        userRegPage.userSecondPassword.sendKeys(ConfigurationReader.getProperty("new_password"));
     }
 
     @Given("click on new password box02")

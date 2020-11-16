@@ -22,6 +22,9 @@ public class CostumerRegistrationPage {
     @FindBy(xpath = "//input[@name='ssn']")
     public WebElement SSN_Number;
 
+    @FindBy(xpath = "//*[.='translation-not-found[Your SSN is required]']")
+    public WebElement ssnNullErrorMessage;
+
     @FindBy(xpath = "//*[contains(text(),'Your SSN is invalid')]")
     public WebElement ssnErrorMessage;
 
@@ -58,6 +61,10 @@ public class CostumerRegistrationPage {
     @FindBy(xpath = "//*[contains(text(),'Your mobile phone number is invalid')]")
     public WebElement mobilPhoneErrorMessage;
 
+    @FindBy(xpath = "//*[contains(text(),'Your mobile phone number is required')]")
+    public WebElement nullmobilPhoneMessage;
+
+
     @FindBy(id = "username")
     public WebElement Username_TextBox;
 
@@ -91,7 +98,7 @@ public class CostumerRegistrationPage {
     @FindBy(xpath = "//*[contains(text(),'Your password is required to be at least 4 characters.')]")
     public WebElement PasswordCharecterErrorMessage;
 
-    @FindBy(xpath = "//li[@class='point'][5]")
+    @FindBy(xpath = "//*[@id=\"strengthBar\"]/li[1]")
     public WebElement Password_strength;
 
     @FindBy(id = "secondPassword")
@@ -103,7 +110,7 @@ public class CostumerRegistrationPage {
     @FindBy(xpath = "//*[contains(text(),'Your confirmation password is required')]")
     public WebElement secontPasswordErrorMessage;
 
-    @FindBy(xpath = "//*[contains(text(),'Your confirmation password is required to be at least 4 characters.')]")
+    @FindBy(xpath = "//*[.='Your confirmation password is required to be at least 4 characters.']")
     public WebElement secontCharecterErrorMessage;
 
     @FindBy(id = "register-submit")

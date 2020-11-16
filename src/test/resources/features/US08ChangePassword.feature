@@ -1,3 +1,4 @@
+@smoketest
 @US08
   Feature: Password segment on Homepage should be editable
     @US08TC01

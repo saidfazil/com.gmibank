@@ -1,3 +1,4 @@
+@smoketest
 @US011TC08
 Feature: User can choose a user from the registration and it cannot be blank US011
   Scenario: User Information Control Test

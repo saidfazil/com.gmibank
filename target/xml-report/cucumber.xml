@@ -1,58 +1,586 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="20.097">
-    <testcase classname="Password segment on Homepage should be editable" name="Change Password" time="19.731">
+<testsuite errors="0" failures="28" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="51" time="1,124.495">
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="There should be a valid SSN respecting the &quot;-&quot; where necessary, it should be 9 digits long" time="37.126">
         <system-out>
-            <![CDATA[Given Go to home page link..................................................passed
-And Click to User Account...................................................passed
-And Enter the username......................................................passed
-And Enter the password......................................................passed
-And Click to Sign...........................................................passed
-And Click to User Account Password..........................................passed
-And Enter the Current Password..............................................passed
-And Enter the New Password..................................................passed
-And check password availability.............................................passed
-And Enter the New Password Confirmation.....................................passed
-Then Click to Save in button................................................passed
+            <![CDATA[Given Go to gmibank.com home page us01......................................passed
+And Click to User Account menu and Click to Register........................passed
+And Enter the SSN with valid credential.....................................passed
+And Click on first name box.................................................passed
+Then There should be a valid SSN respecting.................................passed
 ]]>
         </system-out>
     </testcase>
-</testsuite>
-=======
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="80.477">
-<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username on Sign In." time="15.562">
-<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="There should be a valid name that contains chars and cannot be blank" time="16.663">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'firstname']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49679}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 2b0fe8e3440b7127b889b8405c9d52f1&#10;*** Element info: {Using=xpath, value=//input[@name = 'firstname']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the First Name with valid credential..............................failed
+And click on last name box..................................................skipped
+Then There should be a valid name respecting................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'firstname']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49679}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2b0fe8e3440b7127b889b8405c9d52f1
+*** Element info: {Using=xpath, value=//input[@name = 'firstname']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_First_Name_with_valid_credential(UserRegistrationStepDef.java:54)
+	at ✽.Enter the First Name with valid credential(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="There should be a valid last name that contains chars and cannot be blank" time="16.714">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'lastname']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49696}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 4b3555eba24c24ddf282be4dec64bfde&#10;*** Element info: {Using=xpath, value=//input[@name = 'lastname']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the Last Name with valid credential...............................failed
+And click on Address box....................................................skipped
+Then There should be a valid last name respecting...........................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'lastname']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49696}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 4b3555eba24c24ddf282be4dec64bfde
+*** Element info: {Using=xpath, value=//input[@name = 'lastname']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_Last_Name_with_valid_credential(UserRegistrationStepDef.java:76)
+	at ✽.Enter the Last Name with valid credential(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:23)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="We can provide chars and digits to describe a valid address along with zip code" time="16.621">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'address']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 48b151de6069a721d758949b840a90a0&#10;*** Element info: {Using=xpath, value=//input[@name = 'address']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the Address.......................................................failed
+And click on mobile phone number box........................................skipped
+Then There should be a valid address respecting.............................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'address']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 48b151de6069a721d758949b840a90a0
+*** Element info: {Using=xpath, value=//input[@name = 'address']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_Address(UserRegistrationStepDef.java:96)
+	at ✽.Enter the Address(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:29)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="User should provide 10 digit-long mobilephone number as a required field respecting the &quot;-&quot;" time="16.735">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'mobilephone']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: b356f5d7bcede3a0f3f90b8a08e2d84d&#10;*** Element info: {Using=xpath, value=//input[@name = 'mobilephone']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the Mobile Phone Number with valid credential.....................failed
+And click on username box...................................................skipped
+Then There should be a valid mobile phone number respecting.................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'mobilephone']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: b356f5d7bcede3a0f3f90b8a08e2d84d
+*** Element info: {Using=xpath, value=//input[@name = 'mobilephone']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_Mobile_Phone_Number_with_valid_credential(UserRegistrationStepDef.java:112)
+	at ✽.Enter the Mobile Phone Number with valid credential(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:36)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="User cannot use just digits for username, but can use any chars and digits along with them and of any length" time="16.608">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'username']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49752}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 6f6345ce64e03a7ae70569e2b8a6fc14&#10;*** Element info: {Using=xpath, value=//input[@name = 'username']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the valid username with valid credentail..........................failed
+And click on email box......................................................skipped
+Then There should be a valid username respecting............................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'username']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49752}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 6f6345ce64e03a7ae70569e2b8a6fc14
+*** Element info: {Using=xpath, value=//input[@name = 'username']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_username_with_valid_credentail(UserRegistrationStepDef.java:133)
+	at ✽.Enter the valid username with valid credentail(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:42)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="We should provide a valid email format that contains &quot;@&quot;, &quot;.com&quot; extensions" time="16.657">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'email']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49767}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 0cd50fea04163934389e2e97d026f358&#10;*** Element info: {Using=xpath, value=//input[@name = 'email']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the e-mail with valid credential..................................failed
+And click on new password box...............................................skipped
+Then There should be a valid email respecting...............................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'email']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49767}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0cd50fea04163934389e2e97d026f358
+*** Element info: {Using=xpath, value=//input[@name = 'email']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_e_mail_with_valid_credential(UserRegistrationStepDef.java:154)
+	at ✽.Enter the e-mail with valid credential(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:48)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="Password is required to be at least 4 characters" time="16.689">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'firstPassword']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49782}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 922398cbadbe2a878086c57e2c53d727&#10;*** Element info: {Using=xpath, value=//input[@name = 'firstPassword']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the new password with valid credential............................failed
+And click on new password confirmation box..................................skipped
+Then There should be a valid password respecting............................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'firstPassword']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49782}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 922398cbadbe2a878086c57e2c53d727
+*** Element info: {Using=xpath, value=//input[@name = 'firstPassword']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_new_password_with_valid_credential(UserRegistrationStepDef.java:175)
+	at ✽.Enter the new password with valid credential(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:55)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="Password confirmation entry should be same with password" time="16.555">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name = 'secondPassword']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49797}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 17fb28bc107f64520817da9fcba444f9&#10;*** Element info: {Using=xpath, value=//input[@name = 'secondPassword']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter the same password with valid credential...........................failed
+And click on new password box02.............................................skipped
+Then entry should be same with password.....................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name = 'secondPassword']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49797}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 17fb28bc107f64520817da9fcba444f9
+*** Element info: {Using=xpath, value=//input[@name = 'secondPassword']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.enter_the_same_password_with_valid_credential(UserRegistrationStepDef.java:196)
+	at ✽.Enter the same password with valid credential(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:62)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow any user to register with valid credentials validating the success message" name="System should allow any user to register with valid credentials validating the success message" time="16.658">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#register\-submit&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49812}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 4f2f70f34a9fed502ba50f6b6d18a65e&#10;*** Element info: {Using=id, value=register-submit}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Click to Register button................................................failed
+Then There should be Succes message.........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#register\-submit"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49812}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 4f2f70f34a9fed502ba50f6b6d18a65e
+*** Element info: {Using=id, value=register-submit}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.submit(Unknown Source)
+	at stepdefinitions.UserRegistrationStepDef.click_to_Register_button(UserRegistrationStepDef.java:217)
+	at ✽.Click to Register button(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US01userRegister.feature:70)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC02 user must enter valid data into SSN TextBox using &quot;-&quot; character." time="26.603">
+        <system-out>
+            <![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And new click on SSN TextBox................................................passed
+And the user must type the character "-" when entering a number into the current SSN TextBox..passed
+Then ssn the user should not see the text "Your SSN is invalid".............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC03 user must enter valid data in Mobile Phone Number TextBox using &quot;-&quot; character." time="20.937">
+        <system-out>
+            <![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And new click on Mobile Phone Number TexttBox...............................passed
+And user must type the character "-" when entering a number into the valid Mobile Phone Number TextBox.passed
+Then mobil the user should not see the text "Your mobile phone number is invalid"..passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US_002 SSN, Mobil Phone, Email Charecter Control test" name="US02TC04 user must enter valid data in Email TextBox using &quot;@&quot; character and &quot;.com&quot; expression" time="18.285">
+        <system-out>
+            <![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And new click on Email TextBox..............................................passed
+And the user is entering a valid Email TextBox. Email Must use " @ " character and ".com" expression in TextBox.passed
+Then email the user should not see the text "This field is invalid".........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US_002 Any field on the registration page should not be left blank" name="US02TC01 user must be registered in Registration tab with current data." time="53.109">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),'Your Address is required')]&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49904}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: d90a3958dad3c44adea4e0a73506fa0e&#10;*** Element info: {Using=xpath, value=//*[contains(text(),'Your Address is required')]}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User button...............................................passed
+And user clicks Registration tab............................................passed
+And click on SSN TextBox....................................................passed
+And user enters a invalid SSN number........................................passed
+And click on First Name TextBox.............................................passed
+And user enters a invalid First Name........................................passed
+And click on Last Name TextBox..............................................passed
+And user enters a invalid Last Name.........................................passed
+And click on Address TextBox................................................passed
+And user enters invalid Address.............................................failed
+And click on Mobile Phone Number TextBox....................................skipped
+And user enters a invalid Mobile Phone Number...............................skipped
+And click on Username TextBox...............................................skipped
+And user enters invalid Username............................................skipped
+And click on Email TextBox..................................................skipped
+And user on null Email TextBox..............................................skipped
+And user enters invalid Email...............................................skipped
+And click on New password TextBox...........................................skipped
+And user on null New password TextBox.......................................skipped
+And user enters invalid New password........................................skipped
+And Password strength level must be strong..................................skipped
+And click on New password confirmation TextBox..............................skipped
+And user on null New password confirmation TextBox..........................skipped
+And user enters invalid New password confirmation...........................skipped
+Then user clicks the Register button........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Your Address is required')]"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49904}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d90a3958dad3c44adea4e0a73506fa0e
+*** Element info: {Using=xpath, value=//*[contains(text(),'Your Address is required')]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
+	at stepdefinitions.CostumerRegistrationNegatifTestStepDef.userEntersInvalidAddress(CostumerRegistrationNegatifTestStepDef.java:88)
+	at ✽.user enters invalid Address(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US02customerRegistrationNegatifTest.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="18.989">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 lowercase letter of at least 7 characters.......failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 lowercase letter of at least 7 characters.skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)
+	at ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 uppercase char and see the level  chart change accordingly" time="20.942">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 uppercase letter of at least 7 characters.......failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 uppercase letter of at least 7 characters.skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithUppercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:65)
+	at ✽.Enter a password with 1 uppercase letter of at least 7 characters(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US03passwordCreate.feature:20)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 digit  and see the level  chart change accordingly" time="19.96">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 digit of at least 7 characters..................failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 digit of at least 7 characters..........skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithDigitOfAtLeastCharacters(PasswordCreateStepDef.java:81)
+	at ✽.Enter a password with 1 digit of at least 7 characters(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US03passwordCreate.feature:27)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 special char and see the level bar change accordingly" time="22.844">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 1 special char of at least 7 characters...........failed
+And Color line must be yellow or green......................................skipped
+And Click on password confirmation textbox..................................skipped
+Then Enter to second textbox with 1 special char of at least 7 characters...skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithSpecialCharOfAtLeastCharacters(PasswordCreateStepDef.java:98)
+	at ✽.Enter a password with 1 special char of at least 7 characters(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US03passwordCreate.feature:34)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 7 chars for a stronger password" time="17.845">
+        <system-out>
+            <![CDATA[Given User go to the GMi Bank home page.....................................passed
+And Click on user button....................................................passed
+And You should navigate to registration page................................passed
+And Click on Password textbox...............................................passed
+And Enter a password with 7 chars...........................................passed
+And Color line must be yellow or green......................................passed
+And Click on password confirmation textbox..................................passed
+Then Enter to second textbox a password with 7 chars........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username on Sign In." time="15.879">
+        <system-out>
+            <![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
 And the user clicks on Username.............................................passed
 And the user enters the wrong Username......................................passed
 And the user clicks on Password.............................................passed
 And the user enters the correct Password....................................passed
 And the user clicks on Sign in .............................................passed
 Then the error message on the screen is confirmed...........................passed
-]]></system-out>
-</testcase>
-<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with valid username , invalid password, at Login&quot;" time="12.724">
-<system-out><![CDATA[Given user go to https://gmibank.com/login .................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with valid username , invalid password, at Login&quot;" time="16.804">
+        <system-out>
+            <![CDATA[Given user go to https://gmibank.com/login .................................passed
 And the user clickson Username..............................................passed
 And the user enters the correct Username....................................passed
 And the user clickson Password..............................................passed
 And the user enters the wrong Password......................................passed
 And the user click on Sign in...............................................passed
 Then the error message onthe screen is confirmed ...........................passed
-]]></system-out>
-</testcase>
-<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username and invalid password at Login" time="13.015">
-<system-out><![CDATA[Given user is on “https://gmipank.com/login” page...........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username and invalid password at Login" time="25.688">
+        <system-out>
+            <![CDATA[Given user is on “https://gmipank.com/login” page...........................passed
 And the user click on Username..............................................passed
 And the users enter wrong username..........................................passed
 And the user click on Password..............................................passed
 And the user enters the wronk Password......................................passed
 And the user clic on sign in................................................passed
 Then the error mesage on the screeen is confirmed...........................passed
-]]></system-out>
-</testcase>
-<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username or invalid password on Sign In." time="22.844">
-<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username or invalid password on Sign In." time="29.413">
+        <system-out>
+            <![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
 And the user clikon Username................................................passed
 And the user enters the invalid Username....................................passed
 And the user clics on Password..............................................passed
@@ -61,10 +589,12 @@ And the user clicon Sign in ................................................pass
 And the error message on the screeen is confirmed...........................passed
 And If you get an error message, click the Forgot your password link........passed
 Then verify the message on the visited page.................................passed
-]]></system-out>
-</testcase>
-<testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username or invalid password Sign In, Register a new account" time="15.827">
-<system-out><![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User cannot login with invalid username validating the error message" name="User wants to login with invalid username or invalid password Sign In, Register a new account" time="24.634">
+        <system-out>
+            <![CDATA[Given user is on “https://gmibank.com/login” page...........................passed
 And the user clicon username................................................passed
 And the user enters the wrong username......................................passed
 And the user clcks on Password..............................................passed
@@ -73,7 +603,802 @@ And the user clics on Sign in ..............................................pass
 And the error message on the skreen is confirmed............................passed
 And If you get an error message, click the You don't have an account yet? Register a new account.passed
 Then verify the message onthe visited page..................................passed
-]]></system-out>
-</testcase>
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be user info being populated when navigating to user info &quot;firstname, lastname email and language&quot;" time="34.405">
+        <system-out>
+            <![CDATA[Given Go to "https://gmibank.com/" link.....................................passed
+And Click to User drop down menu............................................passed
+And Click to Sign in........................................................passed
+And Enter the username with valid credentails...............................passed
+And Enter the password with valid credentails...............................passed
+And Click to Sign in button.................................................passed
+And Click to User drop down menu............................................passed
+And Click to User info......................................................passed
+And Assert that First Name is not empty.....................................passed
+And Assert that Last Name is not empty......................................passed
+And Assert that Email is not empty..........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be 2 languages available &quot;English and Turkish&quot;" time="16.565">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//option[.='English']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50197}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: ed97ace808fdb8eb255f04051c228615&#10;*** Element info: {Using=xpath, value=//option[.='English']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Assert that Language dropdown is have English...........................failed
+And Assert that Language dropdown is have Türkçe............................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//option[.='English']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50197}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ed97ace808fdb8eb255f04051c228615
+*** Element info: {Using=xpath, value=//option[.='English']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.getText(Unknown Source)
+	at stepdefinitions.UserSettingsStepDef.assertThatLanguageDropdownIsHaveEnglish(UserSettingsStepDef.java:63)
+	at ✽.Assert that Language dropdown is have English.(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US06userSettings.feature:20)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update firstname" time="16.699">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name='firstName']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50212}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 8592fd1a45e2b6d209a0e4423d4fd27a&#10;*** Element info: {Using=name, value=firstName}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Update to First Name....................................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='firstName']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50212}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 8592fd1a45e2b6d209a0e4423d4fd27a
+*** Element info: {Using=name, value=firstName}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.clear(Unknown Source)
+	at stepdefinitions.UserSettingsStepDef.updateToFirstName(UserSettingsStepDef.java:73)
+	at ✽.Update to First Name(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US06userSettings.feature:25)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update lastname" time="16.585">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name='lastName']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50227}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 16029a080ac9c3b1efac3b3982ee7f46&#10;*** Element info: {Using=name, value=lastName}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Update to Last Name.....................................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='lastName']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50227}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 16029a080ac9c3b1efac3b3982ee7f46
+*** Element info: {Using=name, value=lastName}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.clear(Unknown Source)
+	at stepdefinitions.UserSettingsStepDef.updateToLastName(UserSettingsStepDef.java:84)
+	at ✽.Update to Last Name(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US06userSettings.feature:29)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="User info segment (User Settings) should be editable on Homepage" name="There should be an option to update email id adding &quot;@&quot; sign and &quot;.com&quot; extension" time="16.589">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#email&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50242}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 9d199ba3018e12689d54ea688a272d80&#10;*** Element info: {Using=id, value=email}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Update to Email.........................................................failed
+And Assert that Email is contain mailContains...............................skipped
+And Click to Save button....................................................skipped
+Then Assert that visible text saveAlertText.................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#email"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50242}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9d199ba3018e12689d54ea688a272d80
+*** Element info: {Using=id, value=email}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.clear(Unknown Source)
+	at stepdefinitions.UserSettingsStepDef.updateToEmail(UserSettingsStepDef.java:90)
+	at ✽.Update to Email(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US06userSettings.feature:33)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should not allow to make updates with invalid credentials." name="Email id cannot contain just digits or chars without &quot;@&quot; sign or &quot;.com&quot; extension" time="25.703">
+        <system-out>
+            <![CDATA[Given Go to "https://gmibank.com/" link.....................................passed
+And Click to User drop down menu............................................passed
+And Click to Sign in........................................................passed
+And Enter the username with valid credentails...............................passed
+And Enter the password with valid credentails...............................passed
+And Click to Sign in button.................................................passed
+And Click to User drop down menu............................................passed
+And Click to User info......................................................passed
+And Update to Email with invalid credential without special characters......passed
+And Click to Save button....................................................passed
+Then Assert that visible text invalidField..................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="System should not allow to make updates with invalid credentials." name="There should not be an option of any other language other than English or Turkish" time="16.664">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//option[.='English']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50283}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: c0d9fda471a3e781cd55f4243c367d6c&#10;*** Element info: {Using=xpath, value=//option[.='English']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Assert that Language dropdown is have English...........................failed
+And Assert that Language dropdown is have Türkçe............................skipped
+And Assert that Language dropdown is not have other languages...............skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//option[.='English']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50283}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c0d9fda471a3e781cd55f4243c367d6c
+*** Element info: {Using=xpath, value=//option[.='English']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.getText(Unknown Source)
+	at stepdefinitions.UserSettingsStepDef.assertThatLanguageDropdownIsHaveEnglish(UserSettingsStepDef.java:63)
+	at ✽.Assert that Language dropdown is have English.(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US07invalidMailandLang.feature:20)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Password segment on Homepage should be editable" name="Change Password" time="19.72">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given Go to home page link..................................................passed
+And Click to User Account...................................................passed
+And Enter the username......................................................passed
+And Enter the password......................................................passed
+And Click to Sign...........................................................passed
+And Click to User Account Password..........................................passed
+And Enter the Current Password..............................................passed
+And Enter the New Password..................................................passed
+And check password availability.............................................failed
+And Enter the New Password Confirmation.....................................skipped
+Then Click to Save in button................................................skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertFalse(Assert.java:65)
+	at org.junit.Assert.assertFalse(Assert.java:75)
+	at stepdefinitions.ChangePasswordStepDef.check_password_availability(ChangePasswordStepDef.java:75)
+	at ✽.check password availability(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US08ChangePassword.feature:14)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="User can search for a new applicant by their SSN and see all their registration info populated US009" name="User Information Ceheck Test" time="29.117">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+And See First Name..........................................................passed
+And See Last Name...........................................................passed
+Then See Mail Adress........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Manage Customers" name="City should be provided and cannot be left as blank US010" time="28.449">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+And Click Save Button.......................................................passed
+Then See This field is required.............................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Manage Customers" name="Country should be typed and cannot be blank US010" time="20.722">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then Select Country.........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Manage Customers" name="State should be provided as US state and cannot be blank US010" time="24.685">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then Write a State..........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Manage Customers" name="The date cannot be typed earlier, in the past, at the time of creation a customer US011" time="26.79">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then See Date TextBox.......................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Manage Customers" name="The date should be created as month, day, year, hour and minute US011" time="24.824">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then See Date Today.........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Manage Customers" name="User can select Zelle Enrolled optionally and save it. US011" time="28.708">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click Create A New Customer.............................................passed
+And Click SSN TextBox, Write Available SSN Number...........................passed
+And Click Search Button.....................................................passed
+Then Click Zelle Check Box..................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="User can choose a user from the registration and it cannot be blank US011" name="User Information Control Test" time="30.474">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Customers..................................................passed
+And Click First ID..........................................................passed
+And See FirstName...........................................................passed
+And See LastName............................................................passed
+And See Middle Initial......................................................passed
+And See Email...............................................................passed
+And See Mobile Phone Number.................................................passed
+And See Phone Number........................................................passed
+And See Zip Code............................................................passed
+And See Address.............................................................passed
+And See City................................................................passed
+And See SSN.................................................................passed
+And See Create Date.........................................................passed
+And See Zelle Enrolled......................................................passed
+And See Country.............................................................passed
+And See User................................................................passed
+And See Account.............................................................passed
+Then See All Titles.........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="There user can choose an account created on manage accounts US011" name="Nanage Account Test" time="39.047">
+        <system-out>
+            <![CDATA[Given Go GMI Bank Adress....................................................passed
+When Click, SignIn Area.....................................................passed
+And Click, SignIn Entrace Button............................................passed
+And Click UserName TextBox, Write Available UseName.........................passed
+And Click Password TextBox, Write Available Password........................passed
+And Click SignIn Button.....................................................passed
+And Click My Operations Area................................................passed
+And Click Manage Accounts...................................................passed
+And Click FirstID...........................................................passed
+And See Description.........................................................passed
+And See Balance.............................................................passed
+And See Account Type........................................................passed
+And See Account Status Type.................................................passed
+And See CreateDate..........................................................passed
+And See ClosedDate..........................................................passed
+Then See Employee...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="An Employee can manage Customer" name="All customers should show up on manage customers module populating the account information of the customer" time="33.832">
+        <system-out>
+            <![CDATA[Given Go to gmibank.com home page...........................................passed
+And Click to User Account drop down menu and Click to Sign In...............passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to Sign in button.................................................passed
+And Click to My Operations drop down menu and Click to Manage Costumers.....passed
+And click to last page button...............................................passed
+Then A customer should show up at total nine head on account information of the customer.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="An Employee can manage Customer" name="There should be a View option where customer can be navigated to all customer info and see edit button there" time="16.79">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()='View']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50581}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 9f43d719c29921d95de16857ef0ca5d0&#10;*** Element info: {Using=xpath, value=//span[text()='View']}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Click to View button....................................................failed
+Then There should be Edit button............................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='View']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50581}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9f43d719c29921d95de16857ef0ca5d0
+*** Element info: {Using=xpath, value=//span[text()='View']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at stepdefinitions.ManageCostumerStepDef.clickToViewButton(ManageCostumerStepDef.java:69)
+	at ✽.Click to View button.(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US12manageCostumer.feature:18)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can manage Customer" name="There should be an Edit button where all customer information can be populated" time="16.851">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;»»&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50596}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: c31e64a6e6c5b9b795fd2a6cc4d54c70&#10;*** Element info: {Using=link text, value=»»}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And go back to manage costumers page........................................failed
+Then There should be Edit button where all customer.........................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"»»"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50596}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c31e64a6e6c5b9b795fd2a6cc4d54c70
+*** Element info: {Using=link text, value=»»}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at stepdefinitions.ManageCostumerStepDef.goBackToManageCostumersPage(ManageCostumerStepDef.java:81)
+	at ✽.go back to manage costumers page(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US12manageCostumer.feature:23)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can manage Customer" name="There should be Edit button where all customerThe Edit portal can allow user to create or update the user info" time="8.819">
+        <failure message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//*[contains(@href,'7393/edit')]' (tried for 2 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">
+            <![CDATA[And Click to Edit button....................................................failed
+And City textbox is updated.................................................skipped
+And Click to Save button in the Edit Page...................................skipped
+Then The Edit portal can allow user to update the user info.................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//*[contains(@href,'7393/edit')]' (tried for 2 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at utilities.Driver.waitForVisibility(Driver.java:129)
+	at stepdefinitions.ManageCostumerStepDef.clickToEditButton(ManageCostumerStepDef.java:91)
+	at ✽.Click to Edit button(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US12manageCostumer.feature:28)
+Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression (//*[contains(@href,'7393/edit')] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//*[contains(@href,'7393/edit')]' is not a valid XPath expression.
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50615}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 82b203755e14a58110fcdc74a0f4abfb
+*** Element info: {Using=xpath, value=(//*[contains(@href,'7393/edit')]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at utilities.Driver.waitForVisibility(Driver.java:129)
+	at stepdefinitions.ManageCostumerStepDef.clickToEditButton(ManageCostumerStepDef.java:91)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:27)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:49)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:51)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:67)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can manage Customer" name="User can delete a customer, but seeing a message if the user is sure about deletion" time="16.672">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;7393&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50630}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 5d598eef9a09722e37117227015c8f0d&#10;*** Element info: {Using=link text, value=7393}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Confirming that a customer is registered with ID number.................failed
+And Click to Delete button..................................................skipped
+And seeing a message if the user is sure about deletion.....................skipped
+Then User can delete a customer.............................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"7393"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50630}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5d598eef9a09722e37117227015c8f0d
+*** Element info: {Using=link text, value=7393}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.isDisplayed(Unknown Source)
+	at stepdefinitions.ManageCostumerStepDef.confirmingThatACustomerIsRegisteredWithIDNumber(ManageCostumerStepDef.java:114)
+	at ✽.Confirming that a customer is registered with ID number(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US12manageCostumer.feature:35)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can create a new Account" name="User should create a description for the new account and it cannot be blank" time="28.633">
+        <system-out>
+            <![CDATA[Given Go to gmibank.com home page...........................................passed
+And Click to User Account drop down menu and Click to Sign In...............passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to Sign in button.................................................passed
+And Click to My Operations drop down menu and Click to Manage Accounts then click to Create New Account.passed
+And Click to Descriptions TextBox...........................................passed
+And Click to Employee Dropdown..............................................passed
+Then Should be that message -This field is required.........................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="An Employee can create a new Account" name="User should provide a balance for the first time account creation as Dollar" time="16.706">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#tp\-account\-balance&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50672}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 69eba33a4fae93f5ed677f5ef3d1fe59&#10;*** Element info: {Using=id, value=tp-account-balance}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Enter a number be dollar to Balance textbox.............................failed
+Then User Shouldn't be error message........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#tp\-account\-balance"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50672}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 69eba33a4fae93f5ed677f5ef3d1fe59
+*** Element info: {Using=id, value=tp-account-balance}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at stepdefinitions.ManageAccountsStepdefs.enterANumberBeDollarToBalanceTextbox(ManageAccountsStepdefs.java:43)
+	at ✽.Enter a number be dollar to Balance textbox(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US13manageAccounts.feature:19)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can create a new Account" name="User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING" time="16.607">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name='accountType']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50687}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 2f0be2870b7994228853fae764f871b6&#10;*** Element info: {Using=name, value=accountType}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Then User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING.failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='accountType']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50687}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2f0be2870b7994228853fae764f871b6
+*** Element info: {Using=name, value=accountType}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:45)
+	at stepdefinitions.ManageAccountsStepdefs.userCanSelectAnAccountTypeAsCHECKINGSAVINGCREDIT_CARDOrINVESTING(ManageAccountsStepdefs.java:55)
+	at ✽.User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US13manageAccounts.feature:24)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can create a new Account" name="Account status should be defined as ACTIVE, SUSPENDED or CLOSED" time="16.666">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name='accountStatusType']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50702}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 6235e42362b97013a6a4957fe3094667&#10;*** Element info: {Using=name, value=accountStatusType}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Then Account status should be defined as ACTIVE, SUSPENDED or CLOSED........failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='accountStatusType']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50702}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 6235e42362b97013a6a4957fe3094667
+*** Element info: {Using=name, value=accountStatusType}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:45)
+	at stepdefinitions.ManageAccountsStepdefs.accountStatusShouldBeDefinedAsACTIVESUSPENDEDOrCLOSED(ManageAccountsStepdefs.java:67)
+	at ✽.Account status should be defined as ACTIVE, SUSPENDED or CLOSED(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US13manageAccounts.feature:28)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="An Employee can create a new Account" name="User can select an employee from the drop-down" time="16.852">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name='accountStatusType']&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50722}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: fa76cb3ddf2fdcc788a7ab512b8bb42f&#10;*** Element info: {Using=name, value=accountStatusType}" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Then User can select an employee from the drop-down.........................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='accountStatusType']"}
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D24GNPG', ip: '192.168.1.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Efekan\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50722}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: fa76cb3ddf2fdcc788a7ab512b8bb42f
+*** Element info: {Using=name, value=accountStatusType}
+	at jdk.internal.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at utilities.Driver.scrollToElement(Driver.java:281)
+	at stepdefinitions.ManageAccountsStepdefs.userCanSelectAnEmployeeFromTheDropDown(ManageAccountsStepdefs.java:81)
+	at ✽.User can select an employee from the drop-down(file:///C:/Users/Efekan/git/com.gmibank/src/test/resources/features/US13manageAccounts.feature:32)
+]]>
+        </failure>
+    </testcase>
 </testsuite>
->>>>>>> refs/heads/master

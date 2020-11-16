@@ -1,4 +1,5 @@
-  @US12
+@smoketest
+ @US12
 Feature: An Employee can manage Customer
 
   @US12TC01

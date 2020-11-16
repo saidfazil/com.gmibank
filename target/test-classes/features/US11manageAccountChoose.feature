@@ -1,3 +1,4 @@
+@smoketest
 @US011TC09
 Feature: There user can choose an account created on manage accounts US011
   Scenario: Nanage Account Test

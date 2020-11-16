@@ -1,5 +1,5 @@
 @US03
-
+@smoketest
 Feature: Registration page should restrict password usage to a secure and high level passcode
 
   Background: User go to the GMi Bank home page (https://gmibank.com/)

@@ -1,3 +1,4 @@
+@smoketest
 @managecustomersUS10US11
   Feature: Manage Customers
 

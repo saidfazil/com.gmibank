@@ -1,4 +1,4 @@
-
+@smoketest
 @US005
 Feature: User cannot login with invalid username validating the error message
   @US005TC01

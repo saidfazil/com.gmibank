@@ -1,3 +1,4 @@
+@smoketest
 @US_002
 @US02TC01
   Feature: US_002 Any field on the registration page should not be left blank

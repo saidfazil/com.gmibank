@@ -1,3 +1,4 @@
+@smoketest
 @US07
 Feature:System should not allow to make updates with invalid credentials.
   @US07TC01

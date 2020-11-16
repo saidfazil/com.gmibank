@@ -1,4 +1,5 @@
 @US06
+@smoketest
 Feature:User info segment (User Settings) should be editable on Homepage
   @US06TC01
   Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"

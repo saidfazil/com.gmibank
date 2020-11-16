@@ -1,4 +1,5 @@
 @US02_CharecterTest
+@smoketest
 Feature:US_002 SSN, Mobil Phone, Email Charecter Control test
   Background: All character tests common links
 

@@ -1,41 +1,145 @@
-@US02TC01AllTest
-@US02TC01
-  Feature: US_002 Any field on the registration page should not be left blank
-    Background: All custumer registration tests common links
-      Given user is on "http://gmibank.com/" page
-      And user click on User button
-      And user clicks Registration tab
+@US002
 
-  Scenario: US02TC01 user must be registered in Registration tab with current data.
+Feature: US_002 Any field on the registration page should not be left blank
 
+  Background: All custumer registration tests common links
+    Given user is on "http://gmibank.com/" page
+    And user click on User button
+    And user clicks Registration tab
+
+  @US02TC01
+  Scenario Outline: US02TC01 SSN Text Box Test
     And click on SSN TextBox
-    And user enters a invalid SSN number
+    Then user enters a invalid SSN number "<SSNnumber>"
+    Examples: Test data for data tables
+      | SSNnumber  |
+      | 123-567856 |
+      | 76856-9877 |
+      | 538474998  |
+
+  @US02TC02
+  Scenario Outline: US02TC02 First Name TextBox Test
     And click on First Name TextBox
-    And user enters a invalid First Name
+    Then user enters a invalid First Name "<First Name>"
+    Examples: Test data for data tables
+      | First Name |
+      |            |
+
+  @US02TC03
+  Scenario Outline: US02TC03 Last Name TextBox Test
     And click on Last Name TextBox
-    And user enters a invalid Last Name
+    Then user enters a invalid Last Name "<Last Name>"
+    Examples: Test data for data tables
+      | Last Name |
+      |           |
+
+  @US02TC04
+  Scenario Outline: US02TC04 Address TextBox Test
     And click on Address TextBox
-    And user enters invalid Address
+    Then user enters invalid Address "<Address>"
+    Examples: Test data for data tables
+      | Address |
+      |         |
 
-  @US02TC01_A
-  Scenario: US02TC01 Part2 user must be registered in Registration tab with current data.
-
+  @US02TC05
+  Scenario Outline: US02TC05 Mobile Phone Number TextBox Test
     And click on Mobile Phone Number TextBox
-    And user enters a invalid Mobile Phone Number
+    Then user enters a invalid Mobil Phone Number "<Mobile Phone Number>"
+    Examples: Test data for data tables
+      | Mobile Phone Number |
+      |                     |
+      | 5673938393          |
+      | 567-3938393         |
+      | 567393-3938         |
+      | 567-393-3938        |
+
+  @US02TC06
+  Scenario Outline:US02TC06 Username TextBox Test
     And click on Username TextBox
-    And user enters invalid Username
+    Then user enters invalid username "<Username>"
+    Examples: Test data for data tables
+      | Username |
+      |          |
+
+  @US02TC07
+  Scenario Outline:US02TC07 Email TextBox Test
     And click on Email TextBox
-    And user on null Email TextBox
-    And user enters invalid Email
+    Then user enters invalid Email "<Email>"
+    Examples: Test data for data tables
+      | Email       |
+      | haldili@    |
+      | haldili.com |
+
+  @US02TC08
+  Scenario Outline: US02TC08 New password TextBox Test
     And click on New password TextBox
-    And user on null New password TextBox
-    And user enters invalid New password
+    Then user enters invalid New password "<New password>"
+    Examples: Test data for data tables
+      | New password |
+      |              |
+      | 123          |
+      | 1            |
+      | 12           |
+
+  @US02TC09
+  Scenario: US02TC09 Password strength level must be strong test
     And Password strength level must be strong
+
+  @US02TC010
+  Scenario Outline: US02TC010 New password confirmation TextBox Test
     And click on New password confirmation TextBox
-    And user on null New password confirmation TextBox
-    And user enters invalid New password confirmation
+    Then user enters invalid New password confirmation "<New password confirmation>"
+    Examples: Test data for data tables
+      | New password confirmation |
+      |                           |
+      | 123                       |
+      | 1                         |
+      | 12                        |
+
+  @US02TC011
+  Scenario: US02TC011 New password confirmation TextBox Test
     Then user clicks the Register button
 
+  @US02TC012
+  Scenario Outline: US02TC012 user must enter valid data into SSN TextBox using "-" character.
+
+    And new click on SSN TextBox
+    And the user must type the character "<Tire>" - when entering a number into the current SSN TextBox.
+    Then ssn the user should not see the text "Your SSN is invalid"
+    Examples: Test data for data tables
+      | Tire        |
+      | 876-765423  |
+      | 60045-2347  |
+      | 129876450   |
+      | 456-55-7896 |
 
 
+  @US02TC013
+  Scenario Outline: US02TC013 user must enter valid data in Mobile Phone Number TextBox using "-" character.
+
+    And new click on Mobile Phone Number TexttBox
+    And user must type the"<Tire>" character - when entering a number into the valid Mobile Phone Number TextBox
+    Then mobil the user should not see the text "Your mobile phone number is invalid".
+    Examples: Test data for data tables
+      | Tire         |
+      | 980678-4554  |
+      | 980-6784554  |
+      | 9806784554   |
+      | 98-678-4554  |
+      | 980-67-4554  |
+      | 980-678-4554 |
+
+
+  @US02TC014
+  Scenario Outline: US02TC014 user must enter valid data in Email TextBox using "@" character and ".com" expression
+
+    And new click on Email TextBox
+    And the user is entering a valid Email TextBox Email Must use"<email charecter>" @  character and .com expression in TextBox
+    Then email the user should not see the text "This field is invalid".
+    Examples:Test data for data tables
+      | email charecter    |
+      | celin_45gmail.com  |
+      | celin_45@gmail     |
+      | celin_45mail       |
+      | celin_45@gmail.com |
 

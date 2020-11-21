@@ -1,279 +1,43 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US02customerRegistrationNegatifTest.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US27ApiDeleteStates.feature");
 formatter.feature({
-  "name": "US_002 Any field on the registration page should not be left blank",
+  "name": "API Test",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US002"
+      "name": "@US27"
     }
   ]
 });
-formatter.scenarioOutline({
-  "name": "US02TC01 SSN Text Box Test",
+formatter.scenario({
+  "name": "System should allow to delete states using api end point",
   "description": "",
-  "keyword": "Scenario Outline",
+  "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US02TC01"
+      "name": "@US27"
     }
   ]
 });
 formatter.step({
-  "name": "click on SSN TextBox",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "user enters a invalid SSN number \"\u003cSSNnumber\u003e\"",
-  "keyword": "Then "
-});
-formatter.examples({
-  "name": "Test data for data tables",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "SSNnumber"
-      ]
-    },
-    {
-      "cells": [
-        "123-567856"
-      ]
-    },
-    {
-      "cells": [
-        "76856-9877"
-      ]
-    },
-    {
-      "cells": [
-        "538474998"
-      ]
-    }
-  ]
-});
-formatter.background({
-  "name": "All custumer registration tests common links",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on \"http://gmibank.com/\" page",
+  "name": "The user connects to the API with the token given to her",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
+  "location": "stepdefinitions.US27ApiStepdefs.the_user_connects_to_the_API_with_the_token_given_to_her()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user click on User button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user clicks Registration tab",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "US02TC01 SSN Text Box Test",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@US002"
-    },
-    {
-      "name": "@US02TC01"
-    }
-  ]
-});
-formatter.step({
-  "name": "click on SSN TextBox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.click_on_SSN_TextBox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user enters a invalid SSN number \"123-567856\"",
+  "name": "The user should be delete a state",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.userEntersAInvalidSSNNumber(java.lang.String)"
+  "location": "stepdefinitions.US27ApiStepdefs.theUserShouldBeDeleteAState()"
 });
 formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "All custumer registration tests common links",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on \"http://gmibank.com/\" page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user click on User button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user clicks Registration tab",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "US02TC01 SSN Text Box Test",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@US002"
-    },
-    {
-      "name": "@US02TC01"
-    }
-  ]
-});
-formatter.step({
-  "name": "click on SSN TextBox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.click_on_SSN_TextBox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user enters a invalid SSN number \"76856-9877\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.userEntersAInvalidSSNNumber(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "All custumer registration tests common links",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on \"http://gmibank.com/\" page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_is_on_page(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user click on User button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_click_on_User_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user clicks Registration tab",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.user_clicks_Registration_tab()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "US02TC01 SSN Text Box Test",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@US002"
-    },
-    {
-      "name": "@US02TC01"
-    }
-  ]
-});
-formatter.step({
-  "name": "click on SSN TextBox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.click_on_SSN_TextBox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user enters a invalid SSN number \"538474998\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.CostumerRegistrationNegatifTestStepDef.userEntersAInvalidSSNNumber(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c404\u003e but was \u003c204\u003e.\n\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)\r\n\tat io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)\r\n\tat io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)\r\n\tat io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)\r\n\tat org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)\r\n\tat io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)\r\n\tat io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)\r\n\tat stepdefinitions.US27ApiStepdefs.theUserShouldBeDeleteAState(US27ApiStepdefs.java:54)\r\n\tat ✽.The user should be delete a state(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US27ApiDeleteStates.feature:5)\r\n",
+  "status": "failed"
 });
 });

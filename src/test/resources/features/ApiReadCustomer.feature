@@ -1,4 +1,4 @@
-@US20
+@ApiRead
 
 Feature: System should allow to read all customers info using api end point
 Background: api end point is being set in response

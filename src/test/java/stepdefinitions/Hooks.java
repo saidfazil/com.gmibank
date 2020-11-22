@@ -10,11 +10,11 @@ public class Hooks {
     //@Before TestNg'deki @BeforeMethod gibi calisir.
     //Her scenario'dan once calisir
     //GLOBAL Hooks annotation
-    @Before
+    //@Before
     public void setUp(){
         System.out.println("Hooks Class- Setup Method");}
     //her scenario'dan sonra calisir
-    @After
+    //@After
     public void tearDown(Scenario scenario){
         System.out.println("Hooks Class - tearDown Method");
         //screenshot almak icin

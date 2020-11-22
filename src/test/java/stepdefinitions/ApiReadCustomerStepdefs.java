@@ -12,6 +12,7 @@ import utilities.ConfigurationReader;
 import utilities.ReadTxt;
 import utilities.WriteToTxt;
 
+import java.io.IOException;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -38,7 +39,7 @@ public class ApiReadCustomerStepdefs {
     }
 
     @Given("manipulate all customers' data")
-    public void manipulateAllCustomersData() throws JsonProcessingException {
+    public void manipulateAllCustomersData() throws IOException {
         ObjectMapper obj = new ObjectMapper();
          customers = obj.readValue(response.asString(),Customer[].class);
 

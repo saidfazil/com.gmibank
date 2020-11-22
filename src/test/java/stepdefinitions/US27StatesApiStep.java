@@ -12,6 +12,8 @@ import pojos.States;
 import utilities.ConfigurationReader;
 import utilities.WriteToTxt;
 
+import java.io.IOException;
+
 import static io.restassured.RestAssured.given;
 
 public class US27StatesApiStep {
@@ -37,7 +39,7 @@ public class US27StatesApiStep {
     }
 
     @Given("user deserializes all states to pojo")
-    public void userDeserializesAllStatesToPojo() throws JsonProcessingException {
+    public void userDeserializesAllStatesToPojo() throws IOException {
         ObjectMapper obj = new ObjectMapper();
         states = obj.readValue(response.asString(), States[].class);
     }

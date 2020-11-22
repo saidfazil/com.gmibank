@@ -32,6 +32,15 @@ public class DateCreatePage {
     @FindBy(xpath = "//span[.='Manage Customers']")
     public WebElement manageCostumer;
 
+    @FindBy(id = "jh-create-entity")
+    public WebElement creNewCustomer;
+
+    @FindBy(id = "search-ssn")
+    public WebElement searchSSN;
+
+    @FindBy(className = "btn btn-secondary")
+    public WebElement searchButton;
+
     @FindBy(id = "tp-customer-middleInitial")
     public WebElement middleInit;
 

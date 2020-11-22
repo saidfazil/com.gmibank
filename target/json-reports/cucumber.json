@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11305000000,
+              "duration": 21852000000,
               "status": "passed"
             },
             "line": 6,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 96000000,
+              "duration": 121000000,
               "status": "passed"
             },
             "line": 7,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 179000000,
+              "duration": 189000000,
               "status": "passed"
             },
             "line": 8,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 103000000,
+              "duration": 114000000,
               "status": "passed"
             },
             "line": 9,
@@ -60,7 +60,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-11-22T13:09:31.967Z",
+        "start_timestamp": "2020-11-22T13:38:56.136Z",
         "line": 12,
         "name": "There should be at least 1 lowercase char for stronger password and see the level chart change accordingly",
         "description": "",
@@ -70,8 +70,8 @@
         "steps": [
           {
             "result": {
-              "error_message": "java.lang.NullPointerException\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:40)\n\tat ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)\n",
-              "duration": 280000000,
+              "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:87)\n\tat org.junit.Assert.assertTrue(Assert.java:42)\n\tat org.junit.Assert.assertTrue(Assert.java:53)\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)\n\tat ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)\n",
+              "duration": 219000000,
               "status": "failed"
             },
             "line": 13,

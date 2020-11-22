@@ -16,7 +16,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class US20ApiReadCustomerStepdefs {
+public class ApiReadCustomerStepdefs {
     Customer[] customers;
     Response response;
     @Given("user provides the ap end point to set response using {string}")

@@ -3,7 +3,9 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.eo.Se;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.Select;
 import pages.ManageCostumerPage;
 import pages.UserSettingsPage;
 import utilities.ConfigurationReader;
@@ -117,5 +119,62 @@ public class UserSettingsStepDef {
     @And("Assert that Language dropdown is not have other languages")
     public void assertThatLanguageDropdownIsNotHaveThIndex() {
         Assert.assertFalse(userSettingsPage.languageDropDown.getText().equals(ConfigurationReader.getProperty("invalidLanguage")));
+    }
+
+    @And("Enter the username with customer valid credentail for transaction.")
+    public void enterTheUsernameWithCustomerValidCredentailForTransaction() {
+        userSettingsPage.username.sendKeys(ConfigurationReader.getProperty("TransferUsername"));
+    }
+
+
+    @And("Enter the password with customer valid credentail for transaction.")
+    public void enterThePasswordWithCustomerValidCredentailForTransaction() {
+        userSettingsPage.password.sendKeys(ConfigurationReader.getProperty("TransferPassword"));
+    }
+
+    @And("Click to My Operation drop down menu")
+    public void clickToMyOperationDropDownMenu() {
+        userSettingsPage.MyOperationDropDown.click();
+    }
+
+    @And("Click to Transfer Money")
+    public void clickToTransferMoney() {
+        userSettingsPage.TransferMoney.click();
+    }
+
+    @And("Chosee first account from first dropdown")
+    public void choseeFirstAccountFromFirstDropdown() {
+        userSettingsPage.TransferFromBox.click();
+        Select select = new Select(userSettingsPage.TransferFromBox);
+        select.selectByIndex(1);
+    }
+
+    @And("Chosee second account from second dropdown")
+    public void choseeSecondAccountFromSecondDropdown() {
+        userSettingsPage.TransferToBox.click();
+        Select select = new Select(userSettingsPage.TransferToBox);
+        select.selectByIndex(1);
+    }
+
+
+    @And("Enter a value for transaction")
+    public void enterAValueForTransaction() {
+        userSettingsPage.BalanceBox.sendKeys(ConfigurationReader.getProperty("TransactionVaue"));
+    }
+
+    @And("Enter the some information to description box.")
+    public void enterTheSomeInformationToDescriptionBox() {
+        userSettingsPage.DescriptionBox.sendKeys(ConfigurationReader.getProperty("TextDescriptionBox"));
+    }
+
+
+    @And("Click to Make Transfer Button")
+    public void clickToMakeTransferButton() {
+        userSettingsPage.MakeTransferButton.click();
+    }
+
+    @Then("Assert that visible text")
+    public void assertThatVisibleText() {
+        Assert.assertTrue(userSettingsPage.TransactionSuccesfullAlert.isDisplayed());
     }
 }

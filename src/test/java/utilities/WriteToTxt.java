@@ -1,6 +1,7 @@
 package utilities;
 
 import pojos.Customer;
+import pojos.States;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -39,4 +40,15 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+    public static void saveAllStates2(String fileName, States[] states)  {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            for (int i=0; i<states.length; i++){
+                writer.append(states[i].getName()+","+states[i].getCountry()+"\n");
+            }
+            writer.close();
+        } catch(Exception e){
+        }
+    }
+
 }

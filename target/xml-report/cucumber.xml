@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="12.688">
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="12.117">
-<failure message="" type="java.lang.NullPointerException"><![CDATA[Given User go to the GMi Bank home page.....................................passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.29">
+<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="22.654">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
 And Click on user button....................................................passed
 And You should navigate to registration page................................passed
 And Click on Password textbox...............................................passed
@@ -11,8 +11,11 @@ And Click on password confirmation textbox..................................skip
 Then Enter to second textbox with 1 lowercase letter of at least 7 characters.skipped
 
 StackTrace:
-java.lang.NullPointerException
-	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:40)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)
 	at ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)
 ]]></failure>
 </testcase>

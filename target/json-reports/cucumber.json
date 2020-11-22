@@ -1,57 +1,141 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-11-20T10:32:54.736Z",
-        "line": 3,
-        "name": "System should allow to delete states using api end point",
+        "line": 5,
+        "name": "User go to the GMi Bank home page (https://gmibank.com/)",
         "description": "",
-        "id": "api-test;system-should-allow-to-delete-states-using-api-end-point",
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 4744000000,
+              "duration": 11305000000,
               "status": "passed"
             },
-            "line": 4,
-            "name": "The user connects to the API with the token given to her",
+            "line": 6,
+            "name": "User go to the GMi Bank home page",
             "match": {
-              "location": "stepdefinitions.US27ApiStepdefs.the_user_connects_to_the_API_with_the_token_given_to_her()"
+              "location": "stepdefinitions.PasswordCreateStepDef.userGoToTheGMiBankHomePage()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c404\u003e but was \u003c204\u003e.\n\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)\r\n\tat io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)\r\n\tat io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)\r\n\tat io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)\r\n\tat org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)\r\n\tat io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)\r\n\tat io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)\r\n\tat stepdefinitions.US27ApiStepdefs.theUserShouldBeDeleteAState(US27ApiStepdefs.java:54)\r\n\tat ✽.The user should be delete a state(file:///C:/Users/user/IdeaProjects/com.gmibank/src/test/resources/features/US27ApiDeleteStates.feature:5)\r\n",
-              "duration": 522000000,
+              "duration": 96000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on user button",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnUserButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 179000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "You should navigate to registration page",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.youShouldNavigateToRegistrationPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 103000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Password textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordTextbox()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-22T13:09:31.967Z",
+        "line": 12,
+        "name": "There should be at least 1 lowercase char for stronger password and see the level chart change accordingly",
+        "description": "",
+        "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode;there-should-be-at-least-1-lowercase-char-for-stronger-password-and-see-the-level-chart-change-accordingly",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\n\tat stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:40)\n\tat ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)\n",
+              "duration": 280000000,
               "status": "failed"
             },
-            "line": 5,
-            "name": "The user should be delete a state",
+            "line": 13,
+            "name": "Enter a password with 1 lowercase letter of at least 7 characters",
             "match": {
-              "location": "stepdefinitions.US27ApiStepdefs.theUserShouldBeDeleteAState()"
+              "location": "stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Color line must be yellow or green",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.colorLineMustBeYelloweOrGreen()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Click on password confirmation textbox",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.clickOnPasswordConfirmationTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Enter to second textbox with 1 lowercase letter of at least 7 characters",
+            "match": {
+              "location": "stepdefinitions.PasswordCreateStepDef.enterToSecondTextboxWithLowercaseLetterOfAtLeastCharacters()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@US27"
+            "name": "@US03"
+          },
+          {
+            "name": "@US03TC01"
           }
         ]
       }
     ],
-    "name": "API Test",
+    "name": "Registration page should restrict password usage to a secure and high level passcode",
     "description": "",
-    "id": "api-test",
+    "id": "registration-page-should-restrict-password-usage-to-a-secure-and-high-level-passcode",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/US27ApiDeleteStates.feature",
+    "uri": "file:src/test/resources/features/US03passwordCreate.feature",
     "tags": [
       {
-        "name": "@US27",
+        "name": "@US03",
         "type": "Tag",
         "location": {
           "line": 1,

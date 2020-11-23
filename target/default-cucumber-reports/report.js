@@ -1,892 +1,767 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US14dateCreate.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US19adminCreateNewAccount.feature");
 formatter.feature({
-  "name": "Date should be created on the time of account creation",
+  "name": "System should allow Admin to create a new Account",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US19"
     }
   ]
 });
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+formatter.scenario({
+  "name": "The New Account.",
   "description": "",
-  "keyword": "Background"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US19"
+    },
+    {
+      "name": "@US19TC01"
+    }
+  ]
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "gmibank.com address goes",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
+  "name": "enter a clicks dropdown menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "sign in",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "the username enters i",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "the user password enters u",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "user clicks sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "click the `` My Operations \u0027\u0027 drop-down menu at one click.",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.click_the_My_Operations_drop_down_menu_at_one_click(java.lang.String)"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64425}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: ddfc41c0570dd8005fde9dc94d227d79\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
+  "status": "passed"
+});
+formatter.step({
+  "name": "Managing Accounts is safe",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "create a new Account and more",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#jh\\-create\\-entity\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n*** Element info: {Using\u003did, value\u003djh-create-entity}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more(CreateNewAccountStepDef.java:60)\n\tat ✽.create a new Account and more(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:14)\n",
   "status": "failed"
 });
 formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
+  "name": "The User Descrition field is clicked but left blank.",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_User_Descrition_field_is_clicked_but_left_blank()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
+  "name": "hen the user enters a number in the \u0027Banalce\u0027 field",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_the_user_enters_a_number_in_the_field(java.lang.String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
+  "name": "hen clicks Account Type dropdown",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Type_dropdown()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
+  "name": "hen clicks Account Status Type dropdown",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Status_Type_dropdown()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "hen User Employee clicks dropdown",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_User_Employee_clicks_dropdown()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "hen clicks Save button.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Save_button()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.scenario({
-  "name": "The date cannot be typed earlier, in the past, at the time of creation an account",
+  "name": "User should provide a balance for the first time account creation as Dollar",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US19"
     },
     {
-      "name": "@US14TC01"
+      "name": "@US19TC02"
     }
   ]
-});
-formatter.step({
-  "name": "Enter the user 1 SSN number to SSN textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser1SSNNumber1ToSSNTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the date and time for the past provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheDateAndTimeForThePastProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be error message.",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeErrorMessage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded0.png", null);
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
-  "description": "",
-  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "The User sign out",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
-  "keyword": "And "
+  "name": "gmibank.com address goes",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "enter a clicks dropdown menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "sign in",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "the username enters i",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "the user password enters u",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user clicks sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64555}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 8fa28c80793556f247a3c5b6557990a4\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
+  "status": "passed"
+});
+formatter.step({
+  "name": "click the My Operations drop-down menu at one click.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.click_the_My_Operations_drop_down_menu_at_one_click()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Managing Accounts is safe",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d86.0.4240.198)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe(CreateNewAccountStepDef.java:55)\n\tat ✽.Managing Accounts is safe(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:32)\n",
   "status": "failed"
 });
 formatter.step({
-  "name": "Enter the Middle initial provided",
+  "name": "create a new Account and more",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
+  "name": "The User Descrition field is clicked but left blank.",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_User_Descrition_field_is_clicked_but_left_blank()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
+  "name": "hen the user enters a number in the \u0027Banalce\u0027 field",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_the_user_enters_a_number_in_the_field(java.lang.String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
+  "name": "hen clicks Account Type dropdown",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Type_dropdown()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "hen clicks Account Status Type dropdown",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Status_Type_dropdown()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "hen User Employee clicks dropdown",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_User_Employee_clicks_dropdown()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "hen clicks Save button.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Save_button()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.scenario({
-  "name": "The date should be created as month, day, year, hour and minute",
+  "name": "User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US19"
     },
     {
-      "name": "@US14TC02"
+      "name": "@US19TC03"
     }
   ]
-});
-formatter.step({
-  "name": "Enter the user 2 SSN number to SSN textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser2SSNNumber1ToSSNTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the date and time with valid credential",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheDateAndTimeWithValidCredential()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded1.png", null);
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
-  "description": "",
-  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "The User sign out",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
-  "keyword": "And "
+  "name": "gmibank.com address goes",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "enter a clicks dropdown menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "sign in",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "the username enters i",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "the user password enters u",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user clicks sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 8dd7322d01c467e84356d1d9a980c5ab\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
+  "status": "passed"
+});
+formatter.step({
+  "name": "click the \u0027My Operations\u0027 dropdown menu at one click.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.click_the_dropdown_menu_at_one_click(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Managing Accounts is safe",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d86.0.4240.198)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe(CreateNewAccountStepDef.java:55)\n\tat ✽.Managing Accounts is safe(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:50)\n",
   "status": "failed"
 });
 formatter.step({
-  "name": "Enter the Middle initial provided",
+  "name": "create a new Account and more",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
+  "name": "Click User Account Status Type dropdown",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.click_User_Account_Status_Type_dropdown()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
+  "name": "confirms that the \"Checking\" option can be selected from the drop down select menu",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_can_be_selected_from_the_drop_down_select_menu(java.lang.String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
+  "name": "confirms that the \"Saving\" option can be selected from the select menu that opens.",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_can_be_selected_from_the_select_menu_that_opens(java.lang.String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "it verifies that the \"Credit_Card\" option is selectable from the select menu that opens.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.it_verifies_that_the_option_is_selectable_from_the_select_menu_that_opens(java.lang.String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "confirms that the \"Investing\" option can be selected from the opened seleck menu.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_can_be_selected_from_the_opened_seleck_menu(java.lang.String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.scenario({
-  "name": "User can choose a user from the registration and it cannot be blank",
+  "name": "Account status should be defined as ACTIVE, SUSPENDED or CLOSED",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US19"
     },
     {
-      "name": "@US14TC03"
+      "name": "@US19TC04"
     }
   ]
-});
-formatter.step({
-  "name": "Enter the user 3 SSN number to SSN textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser3SSNNumber1ToSSNTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click on the user box and select a user",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnTheUserBoxAndSelectAUser()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded2.png", null);
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
-  "description": "",
-  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "The User sign out",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
-  "keyword": "And "
+  "name": "gmibank.com address goes",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "enter a clicks dropdown menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "sign in",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "the username enters i",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "the user password enters u",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user clicks sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64804}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 4c049f05ba810d048bdcc3695600196f\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
+  "status": "passed"
+});
+formatter.step({
+  "name": "click the \u0027My Operations\u0027 droppdown menu at one click.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.click_the_droppdown_menu_at_one_click(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "An Account Type dropdown menu",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.an_Account_Type_dropdown_menu()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#tp\\-account\\-accountType\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n*** Element info: {Using\u003did, value\u003dtp-account-accountType}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.an_Account_Type_dropdown_menu(CreateNewAccountStepDef.java:150)\n\tat ✽.An Account Type dropdown menu(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:68)\n",
   "status": "failed"
 });
 formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
+  "name": "confirms that the \"Suespended\" option is selectable from the select menu that opens.",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_is_selectable_from_the_select_menu_that_opens(java.lang.String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
+  "name": "confirm that the \"Off\" option is selectable from the drop-down menu.",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.confirm_that_the_option_is_selectable_from_the_drop_down_menu(java.lang.String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.scenario({
-  "name": "There user can choose an account created on manage accounts",
+  "name": "User can select an employee from the drop-down",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US19"
     },
     {
-      "name": "@US14TC04"
+      "name": "@US19TC05"
     }
   ]
-});
-formatter.step({
-  "name": "Enter the user 4 SSN number to SSN textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser4SSNNumber1ToSSNTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User can choose an account",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userCanChooseAnAccount()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.embedding("image/png", "embedded3.png", null);
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
-  "description": "",
-  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "The User sign out",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
-  "keyword": "And "
+  "name": "gmibank.com address goes",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "enter a clicks dropdown menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "sign in",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "the username enters i",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "the user password enters u",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user clicks sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64932}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 1c8a8ff0e6f6fd34992fc96241cff472\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Enter the Middle initial provided",
+  "name": "click the \u0027MyOperations\u0027 dropdown menu att one click.",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.click_the_dropdown_menu_att_one_click(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.scenario({
-  "name": "User can select Zelle Enrolled optionally and save it",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US14"
-    },
-    {
-      "name": "@US14TC05"
-    }
-  ]
-});
-formatter.step({
-  "name": "Enter the user 5 SSN number to SSN textbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser5SSNNumber1ToSSNTextbox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click zelle check box",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickZelleCheckBox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
+  "name": "User Employee clicks dropdown",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
+  "location": "stepdefinitions.CreateNewAccountStepDef.user_Employee_clicks_dropdown()"
+});
+formatter.result({
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#tp\\-account\\-employee\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n*** Element info: {Using\u003did, value\u003dtp-account-employee}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.user_Employee_clicks_dropdown(CreateNewAccountStepDef.java:174)\n\tat ✽.User Employee clicks dropdown(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:83)\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "confirms that an employee can be selected from the select drop-down menu.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_an_employee_can_be_selected_from_the_select_drop_down_menu()"
 });
 formatter.result({
   "status": "skipped"
-});
-formatter.embedding("image/png", "embedded4.png", null);
-formatter.after({
-  "status": "passed"
 });
 });

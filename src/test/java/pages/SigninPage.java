@@ -40,5 +40,32 @@ public class SigninPage {
 
     @FindBy(xpath = "//*[@id=\"login-item\"]/span")
     public WebElement dropSign;
+    @FindBy(xpath = "//span[.='My Operations']")
+    public WebElement myOperations;
+    @FindBy(xpath = "//*[@id=\"entity-menu\"]/div/a[2]")
+    public WebElement manangeAccount;
+    @FindBy(id="jh-create-entity")
+    public WebElement createNewAccount;
+    @FindBy(id="tp-account-description")
+    public WebElement discription;
+    @FindBy(id="tp-account-balance")
+    public WebElement balance;
+    @FindBy(id="tp-account-accountType")
+    public WebElement dropDownAccountType ;
+    @FindBy(xpath = "//*[@id=\"tp-account-accountStatusType\"]/option[1]")
+    public WebElement active;
+    @FindBy(xpath = "//*[@id=\"tp-account-accountType\"]/option[2]")
+    public WebElement saving;
+    @FindBy(id="tp-account-accountStatusType")
+    public WebElement dropDownAccountStatus;
+    @FindBy(id="tp-account-employee")
+    public WebElement employe;
+    @FindBy(xpath = "//*[@id=\"save-entity\"]/svg")
+    public WebElement saveButton;
+    @FindBy(xpath = "//*[@id=\"account-menu\"]/a")
+    public WebElement refresh;
+    @FindBy(xpath = "//*[@id=\"account-menu\"]/div/a[3]/span")
+    public WebElement signOut;
+
 
 }

@@ -2,6 +2,6 @@ package jsonModels;
 
 public class CountryJson {
 
-final public static String CREATE_COUNTRY =  "{\"id\":\"21354\",\"name\":\"Deutschland\" }";
+final public static String CREATE_COUNTRY =  "{\"name\":\"Deutschland\"}";
 
 }

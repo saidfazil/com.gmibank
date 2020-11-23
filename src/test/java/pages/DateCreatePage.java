@@ -14,8 +14,8 @@ public class DateCreatePage {
     @FindBy(id = "account-menu")
     public WebElement userButton;
 
-    @FindBy(id = "login-item")
-    public WebElement signIn;
+    @FindBy(xpath = "//*[.='Sign in']")
+    public WebElement signInPage;
 
     @FindBy(id = "username")
     public WebElement usernameTextbox;
@@ -38,7 +38,7 @@ public class DateCreatePage {
     @FindBy(id = "search-ssn")
     public WebElement searchSSN;
 
-    @FindBy(className = "btn btn-secondary")
+    @FindBy(xpath = "//button[@class='btn btn-secondary']")
     public WebElement searchButton;
 
     @FindBy(id = "tp-customer-middleInitial")
@@ -75,7 +75,7 @@ public class DateCreatePage {
     public WebElement errorMessage;
 
     @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast--success toastify-toast']")
-    public WebElement successMessage;
+    public WebElement succesMessage;
 
 
 

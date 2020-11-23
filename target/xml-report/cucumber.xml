@@ -1,22 +1,243 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.29">
-<testcase classname="Registration page should restrict password usage to a secure and high level passcode" name="There should be at least 1 lowercase char for stronger password and see the level chart change accordingly" time="22.654">
-<failure message="" type="java.lang.AssertionError"><![CDATA[Given User go to the GMi Bank home page.....................................passed
-And Click on user button....................................................passed
-And You should navigate to registration page................................passed
-And Click on Password textbox...............................................passed
-And Enter a password with 1 lowercase letter of at least 7 characters.......failed
-And Color line must be yellow or green......................................skipped
-And Click on password confirmation textbox..................................skipped
-Then Enter to second textbox with 1 lowercase letter of at least 7 characters.skipped
+<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="128.042">
+<testcase classname="Date should be created on the time of account creation" name="The date cannot be typed earlier, in the past, at the time of creation an account" time="29.641">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='btn btn-secondary']&quot;}&#10;  (Session info: chrome=87.0.4280.67)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64425}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: ddfc41c0570dd8005fde9dc94d227d79&#10;*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User go to the GMi Bank home page "https://gmibank.com/"..............passed
+And Click on the home page user button......................................passed
+And You should navigate to sign-in page.....................................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to My Operations menu and Click to Manage Costumers...............passed
+And Click to search Button..................................................failed
+And Enter the Middle initial provided.......................................skipped
+And Enter the Phone number provided.........................................skipped
+And Enter the Zip Code provided.............................................skipped
+And Enter the City provided.................................................skipped
+And Enter the user 1 SSN number to SSN textbox..............................skipped
+And Enter the date and time for the past provided...........................skipped
+And Click the save button...................................................skipped
+Then There should be error message..........................................skipped
 
 StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.PasswordCreateStepDef.enterAPasswordWithLowercaseLetterOfAtLeastCharacters(PasswordCreateStepDef.java:47)
-	at ✽.Enter a password with 1 lowercase letter of at least 7 characters(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US03passwordCreate.feature:13)
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-secondary']"}
+  (Session info: chrome=87.0.4280.67)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64425}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ddfc41c0570dd8005fde9dc94d227d79
+*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)
+	at ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)
+]]></failure>
+</testcase>
+<testcase classname="Date should be created on the time of account creation" name="The date should be created as month, day, year, hour and minute" time="23.717">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='btn btn-secondary']&quot;}&#10;  (Session info: chrome=87.0.4280.67)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64555}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 8fa28c80793556f247a3c5b6557990a4&#10;*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User go to the GMi Bank home page "https://gmibank.com/"..............passed
+And Click on the home page user button......................................passed
+And You should navigate to sign-in page.....................................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to My Operations menu and Click to Manage Costumers...............passed
+And Click to search Button..................................................failed
+And Enter the Middle initial provided.......................................skipped
+And Enter the Phone number provided.........................................skipped
+And Enter the Zip Code provided.............................................skipped
+And Enter the City provided.................................................skipped
+And Enter the user 2 SSN number to SSN textbox..............................skipped
+And Enter the date and time with valid credential...........................skipped
+And Click the save button...................................................skipped
+Then There should be succes message.........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-secondary']"}
+  (Session info: chrome=87.0.4280.67)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64555}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 8fa28c80793556f247a3c5b6557990a4
+*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)
+	at ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)
+]]></failure>
+</testcase>
+<testcase classname="Date should be created on the time of account creation" name="User can choose a user from the registration and it cannot be blank" time="24.831">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='btn btn-secondary']&quot;}&#10;  (Session info: chrome=87.0.4280.67)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 8dd7322d01c467e84356d1d9a980c5ab&#10;*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User go to the GMi Bank home page "https://gmibank.com/"..............passed
+And Click on the home page user button......................................passed
+And You should navigate to sign-in page.....................................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to My Operations menu and Click to Manage Costumers...............passed
+And Click to search Button..................................................failed
+And Enter the Middle initial provided.......................................skipped
+And Enter the Phone number provided.........................................skipped
+And Enter the Zip Code provided.............................................skipped
+And Enter the City provided.................................................skipped
+And Enter the user 3 SSN number to SSN textbox..............................skipped
+And Click on the user box and select a user.................................skipped
+And Click the save button...................................................skipped
+Then There should be succes message.........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-secondary']"}
+  (Session info: chrome=87.0.4280.67)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 8dd7322d01c467e84356d1d9a980c5ab
+*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)
+	at ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)
+]]></failure>
+</testcase>
+<testcase classname="Date should be created on the time of account creation" name="There user can choose an account created on manage accounts" time="24.201">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='btn btn-secondary']&quot;}&#10;  (Session info: chrome=87.0.4280.67)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64804}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 4c049f05ba810d048bdcc3695600196f&#10;*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User go to the GMi Bank home page "https://gmibank.com/"..............passed
+And Click on the home page user button......................................passed
+And You should navigate to sign-in page.....................................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to My Operations menu and Click to Manage Costumers...............passed
+And Click to search Button..................................................failed
+And Enter the Middle initial provided.......................................skipped
+And Enter the Phone number provided.........................................skipped
+And Enter the Zip Code provided.............................................skipped
+And Enter the City provided.................................................skipped
+And Enter the user 4 SSN number to SSN textbox..............................skipped
+And User can choose an account..............................................skipped
+And Click the save button...................................................skipped
+Then There should be succes message.........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-secondary']"}
+  (Session info: chrome=87.0.4280.67)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64804}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 4c049f05ba810d048bdcc3695600196f
+*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)
+	at ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)
+]]></failure>
+</testcase>
+<testcase classname="Date should be created on the time of account creation" name="User can select Zelle Enrolled optionally and save it" time="23.53">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='btn btn-secondary']&quot;}&#10;  (Session info: chrome=87.0.4280.67)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64932}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 1c8a8ff0e6f6fd34992fc96241cff472&#10;*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User go to the GMi Bank home page "https://gmibank.com/"..............passed
+And Click on the home page user button......................................passed
+And You should navigate to sign-in page.....................................passed
+And Enter the username with valid credentail................................passed
+And Enter the pasword with valid credentail.................................passed
+And Click to My Operations menu and Click to Manage Costumers...............passed
+And Click to search Button..................................................failed
+And Enter the Middle initial provided.......................................skipped
+And Enter the Phone number provided.........................................skipped
+And Enter the Zip Code provided.............................................skipped
+And Enter the City provided.................................................skipped
+And Enter the user 5 SSN number to SSN textbox..............................skipped
+And Click zelle check box...................................................skipped
+And Click the save button...................................................skipped
+Then There should be succes message.........................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn btn-secondary']"}
+  (Session info: chrome=87.0.4280.67)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ishak-Mac.local', ip: '192.168.1.49', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64932}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 1c8a8ff0e6f6fd34992fc96241cff472
+*** Element info: {Using=xpath, value=//button[@class='btn btn-secondary']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)
+	at ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)
 ]]></failure>
 </testcase>
 </testsuite>

@@ -14,7 +14,7 @@ public class Hooks {
     public void setUp(){
         System.out.println("Hooks Class- Setup Method");}
     //her scenario'dan sonra calisir
-    //@After
+    @After
     public void tearDown(Scenario scenario){
         System.out.println("Hooks Class - tearDown Method");
         //screenshot almak icin
@@ -24,6 +24,6 @@ public class Hooks {
         if(scenario.isFailed()){
             scenario.embed(screenshot,"image/png");
         }
-       //Driver.closeDriver();
+       Driver.closeDriver();
     }
 }

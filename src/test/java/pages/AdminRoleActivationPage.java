@@ -70,9 +70,9 @@ public class AdminRoleActivationPage {
     @FindBy(xpath= "(//*[.='Confirm delete operation'])[2]")
     public WebElement confirm_delete_message;
 
-    @FindBy(xpath= "(//*[@class='btn btn-danger'])[3]")
+    @FindBy(xpath= "/html/body/div[2]/div/div[1]/div/div/div[3]/button[2]")
     public WebElement confirm_delete_button;
 
-    @FindBy(xpath= "//*[.='Internal server error.']")
+    @FindBy(xpath= "//button[@class='Toastify__close-button Toastify__close-button--error']")
     public WebElement delete_message;
 }

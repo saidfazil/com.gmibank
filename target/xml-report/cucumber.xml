@@ -1,232 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="84.197">
-<testcase classname="System should allow Admin to create a new Account" name="The New Account." time="21.712">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#jh\-create\-entity&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55&#10;*** Element info: {Using=id, value=jh-create-entity}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given gmibank.com address goes..............................................passed
-And enter a clicks dropdown menu............................................passed
-And sign in.................................................................passed
-And the username enters i...................................................passed
-And the user password enters u..............................................passed
-And user clicks sign in button..............................................passed
-And click the `` My Operations '' drop-down menu at one click...............passed
-And Managing Accounts is safe...............................................passed
-And create a new Account and more...........................................failed
-Then The User Descrition field is clicked but left blank....................skipped
-Then hen the user enters a number in the 'Banalce' field....................skipped
-Then hen clicks Account Type dropdown.......................................skipped
-Then hen clicks Account Status Type dropdown................................skipped
-Then hen User Employee clicks dropdown......................................skipped
-Then hen clicks Save button.................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#jh\-create\-entity"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55
-*** Element info: {Using=id, value=jh-create-entity}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more(CreateNewAccountStepDef.java:60)
-	at ✽.create a new Account and more(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:14)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="162.829">
+<testcase classname="Admin all role activation" name="US017TC01 Admin can activate a role as user" time="26.979">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the Edit putton TCOne...................................passed
+And user should be able to assign Role as User from Profiles dropdown.......passed
+And user click on the Save button...........................................passed
+Then Confirmation user message should be displayed..........................passed
+]]></system-out>
 </testcase>
-<testcase classname="System should allow Admin to create a new Account" name="User should provide a balance for the first time account creation as Dollar" time="15.374">
-<failure message="element not interactable&#10;  (Session info: chrome=86.0.4240.198)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given The User sign out.....................................................passed
-Given gmibank.com address goes..............................................passed
-And enter a clicks dropdown menu............................................passed
-And sign in.................................................................passed
-And the username enters i...................................................passed
-And the user password enters u..............................................passed
-And user clicks sign in button..............................................passed
-And click the My Operations drop-down menu at one click.....................passed
-And Managing Accounts is safe...............................................failed
-And create a new Account and more...........................................skipped
-Then The User Descrition field is clicked but left blank....................skipped
-Then hen the user enters a number in the 'Banalce' field....................skipped
-Then hen clicks Account Type dropdown.......................................skipped
-Then hen clicks Account Status Type dropdown................................skipped
-Then hen User Employee clicks dropdown......................................skipped
-Then hen clicks Save button.................................................skipped
-
-StackTrace:
-org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=86.0.4240.198)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe(CreateNewAccountStepDef.java:55)
-	at ✽.Managing Accounts is safe(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:32)
-]]></failure>
+<testcase classname="Admin all role activation" name="US017TC02 Admin can activate a role as employee" time="22.152">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the Edit putton TCtwo...................................passed
+And user should be able to assign Role as Employee from Profiles dropdown...passed
+And user click on the Save button2..........................................passed
+Then Confirmation employee message should be displayed......................passed
+]]></system-out>
 </testcase>
-<testcase classname="System should allow Admin to create a new Account" name="User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING" time="15.314">
-<failure message="element not interactable&#10;  (Session info: chrome=86.0.4240.198)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given The User sign out.....................................................passed
-Given gmibank.com address goes..............................................passed
-And enter a clicks dropdown menu............................................passed
-And sign in.................................................................passed
-And the username enters i...................................................passed
-And the user password enters u..............................................passed
-And user clicks sign in button..............................................passed
-And click the 'My Operations' dropdown menu at one click....................passed
-And Managing Accounts is safe...............................................failed
-And create a new Account and more...........................................skipped
-Then Click User Account Status Type dropdown................................skipped
-Then confirms that the "Checking" option can be selected from the drop down select menu.skipped
-Then confirms that the "Saving" option can be selected from the select menu that opens..skipped
-Then it verifies that the "Credit_Card" option is selectable from the select menu that opens..skipped
-Then confirms that the "Investing" option can be selected from the opened seleck menu..skipped
-
-StackTrace:
-org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=86.0.4240.198)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe(CreateNewAccountStepDef.java:55)
-	at ✽.Managing Accounts is safe(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:50)
-]]></failure>
+<testcase classname="Admin all role activation" name="US017TC03 Admin can activate a role as manager" time="23.957">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the Edit putton TCthree.................................passed
+And user should be able to assign Role as Maneger from Profiles dropdown....passed
+And user click on the Save button3..........................................passed
+Then Confirmation manager message should be displayed.......................passed
+]]></system-out>
 </testcase>
-<testcase classname="System should allow Admin to create a new Account" name="Account status should be defined as ACTIVE, SUSPENDED or CLOSED" time="15.537">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#tp\-account\-accountType&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55&#10;*** Element info: {Using=id, value=tp-account-accountType}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given The User sign out.....................................................passed
-Given gmibank.com address goes..............................................passed
-And enter a clicks dropdown menu............................................passed
-And sign in.................................................................passed
-And the username enters i...................................................passed
-And the user password enters u..............................................passed
-And user clicks sign in button..............................................passed
-And click the 'My Operations' droppdown menu at one click...................passed
-Then An Account Type dropdown menu..........................................failed
-Then confirms that the "Suespended" option is selectable from the select menu that opens..skipped
-Then confirm that the "Off" option is selectable from the drop-down menu....skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#tp\-account\-accountType"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55
-*** Element info: {Using=id, value=tp-account-accountType}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at stepdefinitions.CreateNewAccountStepDef.an_Account_Type_dropdown_menu(CreateNewAccountStepDef.java:150)
-	at ✽.An Account Type dropdown menu(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:68)
-]]></failure>
+<testcase classname="Admin all role activation" name="US017TC04 Admin can activate a role as admin" time="21.982">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the Edit putton TCfour..................................passed
+And user should be able to assign Role as Admin from Profiles dropdown......passed
+And user click on the Save button4..........................................passed
+Then Confirmation admin message should be displayed.........................passed
+]]></system-out>
 </testcase>
-<testcase classname="System should allow Admin to create a new Account" name="User can select an employee from the drop-down" time="15.308">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#tp\-account\-employee&quot;}&#10;  (Session info: chrome=86.0.4240.198)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55&#10;*** Element info: {Using=id, value=tp-account-employee}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given The User sign out.....................................................passed
-Given gmibank.com address goes..............................................passed
-And enter a clicks dropdown menu............................................passed
-And sign in.................................................................passed
-And the username enters i...................................................passed
-And the user password enters u..............................................passed
-And user clicks sign in button..............................................passed
-And click the 'MyOperations' dropdown menu att one click....................passed
-Then User Employee clicks dropdown..........................................failed
-Then confirms that an employee can be selected from the select drop-down menu..skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#tp\-account\-employee"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Air-MacBook-Air.local', ip: '2001:14ba:3fb:5800:0:0:0:3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 61022d60d9a7e9fd7aee2afb15bfbe55
-*** Element info: {Using=id, value=tp-account-employee}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at stepdefinitions.CreateNewAccountStepDef.user_Employee_clicks_dropdown(CreateNewAccountStepDef.java:174)
-	at ✽.User Employee clicks dropdown(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:83)
-]]></failure>
+<testcase classname="Admin all role activation" name="US017TC05 Admin can view all user info (admin, manager, employee and user)" time="23.728">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the View putton.........................................passed
+Then user should be able to see the message User............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admin all role activation" name="US017TC06 Admin can edit all user info  (admin, manager, employee and user)" time="22.776">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the Edit putton TCfive..................................passed
+And user click on the Save button Edit......................................passed
+Then user should be able to see the message Create or edit a user...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Admin all role activation" name="US017TC07 Admin can delete all user info (admin, manager, employee and user)" time="20.175">
+<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
+And user click on User Button...............................................passed
+And user click on Sign in menu..............................................passed
+And user enters username and password.......................................passed
+And user click on Sign in button............................................passed
+And user click on the  Administration menu..................................passed
+And user click on the User Management putton................................passed
+Given user click on the Delete putton.......................................passed
+And user should be able to see the message Confirm delete operation.........passed
+And user click on the Delete................................................passed
+Then user should be able to see the confirmation message....................passed
+]]></system-out>
 </testcase>
 </testsuite>

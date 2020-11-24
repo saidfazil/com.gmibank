@@ -1,315 +1,41 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
-        "start_timestamp": "2020-11-23T23:29:58.757Z",
-        "before": [
-          {
-            "result": {
-              "duration": 2000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepdefinitions.Hooks.setUp()"
-            }
-          }
-        ],
         "line": 5,
-        "name": "The New Account.",
+        "name": "User common uses",
         "description": "",
-        "id": "system-should-allow-admin-to-create-a-new-account;the-new-account.",
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 9753000000,
+              "duration": 19004000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "gmibank.com address goes",
+            "name": "user is on \"http://gmibank.com/\" page.",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 153000000,
+              "duration": 111000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "enter a clicks dropdown menu",
+            "name": "user click on User Button",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 181000000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "sign in",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 233000000,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "the username enters i",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 238000000,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "the user password enters u",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 235000000,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "user clicks sign in button",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 472000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "click the `` My Operations \u0027\u0027 drop-down menu at one click.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\u0027\u0027",
-                  "offset": 27
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.click_the_My_Operations_drop_down_menu_at_one_click(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 139000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "Managing Accounts is safe",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#jh\\-create\\-entity\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n*** Element info: {Using\u003did, value\u003djh-create-entity}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more(CreateNewAccountStepDef.java:60)\n\tat ✽.create a new Account and more(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:14)\n",
-              "duration": 10067000000,
-              "status": "failed"
-            },
-            "line": 14,
-            "name": "create a new Account and more",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 15,
-            "name": "The User Descrition field is clicked but left blank.",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_User_Descrition_field_is_clicked_but_left_blank()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "hen the user enters a number in the \u0027Banalce\u0027 field",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\u0027Banalce\u0027",
-                  "offset": 36
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_the_user_enters_a_number_in_the_field(java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "hen clicks Account Type dropdown",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Type_dropdown()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "hen clicks Account Status Type dropdown",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Status_Type_dropdown()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 19,
-            "name": "hen User Employee clicks dropdown",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_User_Employee_clicks_dropdown()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 20,
-            "name": "hen clicks Save button.",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Save_button()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@US19"
-          },
-          {
-            "name": "@US19TC01"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-11-23T23:30:20.531Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepdefinitions.Hooks.setUp()"
-            }
-          }
-        ],
-        "line": 23,
-        "name": "User should provide a balance for the first time account creation as Dollar",
-        "description": "",
-        "id": "system-should-allow-admin-to-create-a-new-account;user-should-provide-a-balance-for-the-first-time-account-creation-as-dollar",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 3283000000,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "The User sign out",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 555000000,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "gmibank.com address goes",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 198000000,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "enter a clicks dropdown menu",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 146000000,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "sign in",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 131000000,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "the username enters i",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 160000000,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "the user password enters u",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
             },
             "keyword": "And "
           },
@@ -318,137 +44,253 @@
               "duration": 183000000,
               "status": "passed"
             },
-            "line": 30,
-            "name": "user clicks sign in button",
+            "line": 8,
+            "name": "user click on Sign in menu",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 618000000,
+              "duration": 443000000,
               "status": "passed"
             },
-            "line": 31,
-            "name": "click the My Operations drop-down menu at one click.",
+            "line": 9,
+            "name": "user enters username and password",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.click_the_My_Operations_drop_down_menu_at_one_click()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d86.0.4240.198)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe(CreateNewAccountStepDef.java:55)\n\tat ✽.Managing Accounts is safe(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:32)\n",
-              "duration": 10087000000,
-              "status": "failed"
+              "duration": 152000000,
+              "status": "passed"
             },
-            "line": 32,
-            "name": "Managing Accounts is safe",
+            "line": 10,
+            "name": "user click on Sign in button",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 726000000,
+              "status": "passed"
             },
-            "line": 33,
-            "name": "create a new Account and more",
+            "line": 11,
+            "name": "user click on the  Administration menu",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 132000000,
+              "status": "passed"
             },
-            "line": 34,
-            "name": "The User Descrition field is clicked but left blank.",
+            "line": 12,
+            "name": "user click on the User Management putton",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_User_Descrition_field_is_clicked_but_left_blank()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
             },
-            "keyword": "Then "
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:48:04.107Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "US017TC01 Admin can activate a role as user",
+        "description": "",
+        "id": "admin-all-role-activation;us017tc01-admin-can-activate-a-role-as-user",
+        "after": [
+          {
+            "result": {
+              "duration": 3766000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 869000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user click on the Edit putton TCOne",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCone()"
+            },
+            "keyword": "Given "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 166000000,
+              "status": "passed"
             },
-            "line": 35,
-            "name": "hen the user enters a number in the \u0027Banalce\u0027 field",
+            "line": 17,
+            "name": "user should be able to assign Role as User from Profiles dropdown",
             "match": {
-              "arguments": [
-                {
-                  "val": "\u0027Banalce\u0027",
-                  "offset": 36
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_the_user_enters_a_number_in_the_field(java.lang.String)"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_User_from_Profiles_dropdown()"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 301000000,
+              "status": "passed"
             },
-            "line": 36,
-            "name": "hen clicks Account Type dropdown",
+            "line": 18,
+            "name": "user click on the Save button",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Type_dropdown()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button()"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 863000000,
+              "status": "passed"
             },
-            "line": 37,
-            "name": "hen clicks Account Status Type dropdown",
+            "line": 19,
+            "name": "Confirmation user message should be displayed",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Account_Status_Type_dropdown()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 38,
-            "name": "hen User Employee clicks dropdown",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_User_Employee_clicks_dropdown()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 39,
-            "name": "hen clicks Save button.",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.hen_clicks_Save_button()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_user_message_should_be_displayed()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@US19"
+            "name": "@US017"
           },
           {
-            "name": "@US19TC02"
+            "name": "@US017TC01"
           }
         ]
       },
       {
-        "start_timestamp": "2020-11-23T23:30:35.938Z",
+        "line": 5,
+        "name": "User common uses",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14970000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on \"http://gmibank.com/\" page.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 115000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on User Button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 212000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on Sign in menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 377000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters username and password",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 108000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user click on Sign in button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 633000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user click on the  Administration menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 122000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on the User Management putton",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:48:31.191Z",
         "before": [
           {
             "result": {
@@ -459,58 +301,515 @@
             }
           }
         ],
-        "line": 41,
-        "name": "User can select an account type as CHECKING, SAVING, CREDIT_CARD or INVESTING",
+        "line": 22,
+        "name": "US017TC02 Admin can activate a role as employee",
         "description": "",
-        "id": "system-should-allow-admin-to-create-a-new-account;user-can-select-an-account-type-as-checking--saving--credit-card-or-investing",
+        "id": "admin-all-role-activation;us017tc02-admin-can-activate-a-role-as-employee",
+        "after": [
+          {
+            "result": {
+              "duration": 3500000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 3269000000,
+              "duration": 783000000,
               "status": "passed"
             },
-            "line": 42,
-            "name": "The User sign out",
+            "line": 23,
+            "name": "user click on the Edit putton TCtwo",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCtwo()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 555000000,
+              "duration": 247000000,
               "status": "passed"
             },
-            "line": 43,
-            "name": "gmibank.com address goes",
+            "line": 24,
+            "name": "user should be able to assign Role as Employee from Profiles dropdown",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 177000000,
-              "status": "passed"
-            },
-            "line": 44,
-            "name": "enter a clicks dropdown menu",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_Employee_from_Profiles_dropdown()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 139000000,
+              "duration": 297000000,
               "status": "passed"
             },
-            "line": 45,
-            "name": "sign in",
+            "line": 25,
+            "name": "user click on the Save button2",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button2()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 772000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Confirmation employee message should be displayed",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_employee_message_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US017"
+          },
+          {
+            "name": "@US017TC02"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User common uses",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 16585000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on \"http://gmibank.com/\" page.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 102000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on User Button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 180000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on Sign in menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 379000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters username and password",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 101000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user click on Sign in button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 634000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user click on the  Administration menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 118000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on the User Management putton",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:48:53.376Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 29,
+        "name": "US017TC03 Admin can activate a role as manager",
+        "description": "",
+        "id": "admin-all-role-activation;us017tc03-admin-can-activate-a-role-as-manager",
+        "after": [
+          {
+            "result": {
+              "duration": 3549000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 750000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "user click on the Edit putton TCthree",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCthree()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 212000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "user should be able to assign Role as Maneger from Profiles dropdown",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_Maneger_from_Profiles_dropdown()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 306000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "user click on the Save button3",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button3()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1029000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Confirmation manager message should be displayed",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_manager_message_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US017"
+          },
+          {
+            "name": "@US017TC03"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User common uses",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14608000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on \"http://gmibank.com/\" page.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 104000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on User Button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 161000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on Sign in menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 331000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters username and password",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 152000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user click on Sign in button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 648000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user click on the  Administration menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 141000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on the User Management putton",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:49:17.374Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 36,
+        "name": "US017TC04 Admin can activate a role as admin",
+        "description": "",
+        "id": "admin-all-role-activation;us017tc04-admin-can-activate-a-role-as-admin",
+        "after": [
+          {
+            "result": {
+              "duration": 3655000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 748000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "user click on the Edit putton TCfour",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCfour()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 244000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "user should be able to assign Role as Admin from Profiles dropdown",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_Admin_from_Profiles_dropdown()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 283000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "user click on the Save button4",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button4()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 895000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "Confirmation admin message should be displayed",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_admin_message_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US017"
+          },
+          {
+            "name": "@US017TC04"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User common uses",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 17920000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on \"http://gmibank.com/\" page.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 108000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on User Button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 158000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on Sign in menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 333000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters username and password",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
             },
             "keyword": "And "
           },
@@ -519,514 +818,474 @@
               "duration": 133000000,
               "status": "passed"
             },
-            "line": 46,
-            "name": "the username enters i",
+            "line": 10,
+            "name": "user click on Sign in button",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 197000000,
+              "duration": 651000000,
               "status": "passed"
             },
-            "line": 47,
-            "name": "the user password enters u",
+            "line": 11,
+            "name": "user click on the  Administration menu",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 140000000,
+              "duration": 121000000,
               "status": "passed"
             },
-            "line": 48,
-            "name": "user clicks sign in button",
+            "line": 12,
+            "name": "user click on the User Management putton",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:49:39.383Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 43,
+        "name": "US017TC05 Admin can view all user info (admin, manager, employee and user)",
+        "description": "",
+        "id": "admin-all-role-activation;us017tc05-admin-can-view-all-user-info-(admin--manager--employee-and-user)",
+        "after": [
+          {
+            "result": {
+              "duration": 3186000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 771000000,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "user click on the View putton",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_View_putton()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 335000000,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "user should be able to see the message User",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_message_User()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US017"
+          },
+          {
+            "name": "@US017TC05"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User common uses",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15699000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on \"http://gmibank.com/\" page.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 115000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on User Button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 642000000,
+              "duration": 171000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on Sign in menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 370000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters username and password",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 113000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user click on Sign in button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 643000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user click on the  Administration menu",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 122000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on the User Management putton",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:50:03.166Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 48,
+        "name": "US017TC06 Admin can edit all user info  (admin, manager, employee and user)",
+        "description": "",
+        "id": "admin-all-role-activation;us017tc06-admin-can-edit-all-user-info--(admin--manager--employee-and-user)",
+        "after": [
+          {
+            "result": {
+              "duration": 3401000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 871000000,
               "status": "passed"
             },
             "line": 49,
-            "name": "click the \u0027My Operations\u0027 dropdown menu at one click.",
+            "name": "user click on the Edit putton TCfive",
             "match": {
-              "arguments": [
-                {
-                  "val": "\u0027My Operations\u0027",
-                  "offset": 10
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.click_the_dropdown_menu_at_one_click(java.lang.String)"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCfive()"
             },
-            "keyword": "And "
+            "keyword": "Given "
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d86.0.4240.198)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe(CreateNewAccountStepDef.java:55)\n\tat ✽.Managing Accounts is safe(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:50)\n",
-              "duration": 10051000000,
-              "status": "failed"
+              "duration": 360000000,
+              "status": "passed"
             },
             "line": 50,
-            "name": "Managing Accounts is safe",
+            "name": "user click on the Save button Edit",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.managing_Accounts_is_safe()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button_edit()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 896000000,
+              "status": "passed"
             },
             "line": 51,
-            "name": "create a new Account and more",
+            "name": "user should be able to see the message Create or edit a user.",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.create_a_new_Account_and_more()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_message_Create_or_edit_a_user()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US017"
+          },
+          {
+            "name": "@US017TC06"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "User common uses",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 15696000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on \"http://gmibank.com/\" page.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"http://gmibank.com/\"",
+                  "offset": 11
+                }
+              ],
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 112000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on User Button",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 168000000,
+              "status": "passed"
             },
-            "line": 52,
-            "name": "Click User Account Status Type dropdown",
+            "line": 8,
+            "name": "user click on Sign in menu",
             "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.click_User_Account_Status_Type_dropdown()"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 363000000,
+              "status": "passed"
             },
-            "line": 53,
-            "name": "confirms that the \"Checking\" option can be selected from the drop down select menu",
+            "line": 9,
+            "name": "user enters username and password",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Checking\"",
-                  "offset": 18
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_can_be_selected_from_the_drop_down_select_menu(java.lang.String)"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 106000000,
+              "status": "passed"
             },
-            "line": 54,
-            "name": "confirms that the \"Saving\" option can be selected from the select menu that opens.",
+            "line": 10,
+            "name": "user click on Sign in button",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Saving\"",
-                  "offset": 18
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_can_be_selected_from_the_select_menu_that_opens(java.lang.String)"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 639000000,
+              "status": "passed"
             },
-            "line": 55,
-            "name": "it verifies that the \"Credit_Card\" option is selectable from the select menu that opens.",
+            "line": 11,
+            "name": "user click on the  Administration menu",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Credit_Card\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.it_verifies_that_the_option_is_selectable_from_the_select_menu_that_opens(java.lang.String)"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
             },
-            "keyword": "Then "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 123000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on the User Management putton",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-23T15:50:25.977Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 54,
+        "name": "US017TC07 Admin can delete all user info (admin, manager, employee and user)",
+        "description": "",
+        "id": "admin-all-role-activation;us017tc07-admin-can-delete-all-user-info-(admin--manager--employee-and-user)",
+        "after": [
+          {
+            "result": {
+              "duration": 1246000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 905000000,
+              "status": "passed"
             },
             "line": 56,
-            "name": "confirms that the \"Investing\" option can be selected from the opened seleck menu.",
+            "name": "user click on the Delete putton",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Investing\"",
-                  "offset": 18
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_can_be_selected_from_the_opened_seleck_menu(java.lang.String)"
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Delete_putton()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 75000000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "user should be able to see the message Confirm delete operation.",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_message_Confirm_delete_operation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 246000000,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "user click on the Delete",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Delete()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 484000000,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "user should be able to see the confirmation message",
+            "match": {
+              "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_confirmation_message()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@US19"
+            "name": "@US017"
           },
           {
-            "name": "@US19TC03"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-11-23T23:30:51.276Z",
-        "before": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepdefinitions.Hooks.setUp()"
-            }
-          }
-        ],
-        "line": 59,
-        "name": "Account status should be defined as ACTIVE, SUSPENDED or CLOSED",
-        "description": "",
-        "id": "system-should-allow-admin-to-create-a-new-account;account-status-should-be-defined-as-active--suspended-or-closed",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 3289000000,
-              "status": "passed"
-            },
-            "line": 60,
-            "name": "The User sign out",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 559000000,
-              "status": "passed"
-            },
-            "line": 61,
-            "name": "gmibank.com address goes",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 206000000,
-              "status": "passed"
-            },
-            "line": 62,
-            "name": "enter a clicks dropdown menu",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 221000000,
-              "status": "passed"
-            },
-            "line": 63,
-            "name": "sign in",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 144000000,
-              "status": "passed"
-            },
-            "line": 64,
-            "name": "the username enters i",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 213000000,
-              "status": "passed"
-            },
-            "line": 65,
-            "name": "the user password enters u",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 164000000,
-              "status": "passed"
-            },
-            "line": 66,
-            "name": "user clicks sign in button",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 689000000,
-              "status": "passed"
-            },
-            "line": 67,
-            "name": "click the \u0027My Operations\u0027 droppdown menu at one click.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\u0027My Operations\u0027",
-                  "offset": 10
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.click_the_droppdown_menu_at_one_click(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#tp\\-account\\-accountType\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n*** Element info: {Using\u003did, value\u003dtp-account-accountType}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.an_Account_Type_dropdown_menu(CreateNewAccountStepDef.java:150)\n\tat ✽.An Account Type dropdown menu(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:68)\n",
-              "duration": 10044000000,
-              "status": "failed"
-            },
-            "line": 68,
-            "name": "An Account Type dropdown menu",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.an_Account_Type_dropdown_menu()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 69,
-            "name": "confirms that the \"Suespended\" option is selectable from the select menu that opens.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Suespended\"",
-                  "offset": 18
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_the_option_is_selectable_from_the_select_menu_that_opens(java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 70,
-            "name": "confirm that the \"Off\" option is selectable from the drop-down menu.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Off\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.confirm_that_the_option_is_selectable_from_the_drop_down_menu(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@US19"
-          },
-          {
-            "name": "@US19TC04"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-11-23T23:31:06.840Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepdefinitions.Hooks.setUp()"
-            }
-          }
-        ],
-        "line": 74,
-        "name": "User can select an employee from the drop-down",
-        "description": "",
-        "id": "system-should-allow-admin-to-create-a-new-account;user-can-select-an-employee-from-the-drop-down",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 3254000000,
-              "status": "passed"
-            },
-            "line": 75,
-            "name": "The User sign out",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_User_sign_out()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 678000000,
-              "status": "passed"
-            },
-            "line": 76,
-            "name": "gmibank.com address goes",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.gmibank_com_address_goes()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 146000000,
-              "status": "passed"
-            },
-            "line": 77,
-            "name": "enter a clicks dropdown menu",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.enter_a_clicks_dropdown_menu()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 223000000,
-              "status": "passed"
-            },
-            "line": 78,
-            "name": "sign in",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.sign_in()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 129000000,
-              "status": "passed"
-            },
-            "line": 79,
-            "name": "the username enters i",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_username_enters_i()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 210000000,
-              "status": "passed"
-            },
-            "line": 80,
-            "name": "the user password enters u",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.the_user_password_enters_u()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 170000000,
-              "status": "passed"
-            },
-            "line": 81,
-            "name": "user clicks sign in button",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.user_clicks_sign_in_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 467000000,
-              "status": "passed"
-            },
-            "line": 82,
-            "name": "click the \u0027MyOperations\u0027 dropdown menu att one click.",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\u0027MyOperations\u0027",
-                  "offset": 10
-                }
-              ],
-              "location": "stepdefinitions.CreateNewAccountStepDef.click_the_dropdown_menu_att_one_click(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#tp\\-account\\-employee\"}\n  (Session info: chrome\u003d86.0.4240.198)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Air-MacBook-Air.local\u0027, ip: \u00272001:14ba:3fb:5800:0:0:0:3%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/t_/rz3t8_b5221...}, goog:chromeOptions: {debuggerAddress: localhost:61520}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 61022d60d9a7e9fd7aee2afb15bfbe55\n*** Element info: {Using\u003did, value\u003dtp-account-employee}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat stepdefinitions.CreateNewAccountStepDef.user_Employee_clicks_dropdown(CreateNewAccountStepDef.java:174)\n\tat ✽.User Employee clicks dropdown(file:///Users/air/IdeaProjects/com.gmibank/src/test/resources/features/US19adminCreateNewAccount.feature:83)\n",
-              "duration": 10024000000,
-              "status": "failed"
-            },
-            "line": 83,
-            "name": "User Employee clicks dropdown",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.user_Employee_clicks_dropdown()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "skipped"
-            },
-            "line": 84,
-            "name": "confirms that an employee can be selected from the select drop-down menu.",
-            "match": {
-              "location": "stepdefinitions.CreateNewAccountStepDef.confirms_that_an_employee_can_be_selected_from_the_select_drop_down_menu()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@US19"
-          },
-          {
-            "name": "@US19TC05"
+            "name": "@US017TC07"
           }
         ]
       }
     ],
-    "name": "System should allow Admin to create a new Account",
+    "name": "Admin all role activation",
     "description": "",
-    "id": "system-should-allow-admin-to-create-a-new-account",
+    "id": "admin-all-role-activation",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/US19adminCreateNewAccount.feature",
+    "uri": "file:src/test/resources/features/US17AdminRoleActivation.feature",
     "tags": [
       {
-        "name": "@US19",
+        "name": "@US017",
         "type": "Tag",
         "location": {
           "line": 1,

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -29,10 +30,10 @@ public class US17AdminRoleActivationStepDef {
 
     }
 
-    @Given("user enters username and password")
-    public void user_enters_username_and_password() {
-        roleActivationPage.username.sendKeys(ConfigurationReader.getProperty("UsernameUS17"));
-        roleActivationPage.password.sendKeys(ConfigurationReader.getProperty("PasswordUS17"));
+    @And("user enters {string} and {string}")
+    public void userEntersAnd(String username, String password) {
+        roleActivationPage.username.sendKeys(username);
+        roleActivationPage.password.sendKeys(password);
 
     }
 
@@ -79,7 +80,7 @@ public class US17AdminRoleActivationStepDef {
     public void confirmation_user_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
-Driver.closeDriver();
+
 
     }
 
@@ -106,7 +107,7 @@ Driver.closeDriver();
     public void confirmation_employee_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
-        Driver.closeDriver();
+
     }
 
     //      @US017TC03
@@ -132,7 +133,6 @@ Driver.closeDriver();
     public void confirmation_manager_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
-        Driver.closeDriver();
     }
 
     //      @US017TC04
@@ -158,7 +158,6 @@ Driver.closeDriver();
     public void confirmation_admin_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
-        Driver.closeDriver();
     }
 
     //      @US017TC05
@@ -172,7 +171,6 @@ Driver.closeDriver();
     public void user_should_be_able_to_see_the_message_User() {
         roleActivationPage.view_user_Title.isDisplayed();
 
-        Driver.closeDriver();
 
     }
     //      @US017TC06
@@ -191,7 +189,6 @@ Driver.closeDriver();
     public void user_should_be_able_to_see_the_message_Create_or_edit_a_user() {
         roleActivationPage.edit_created_message.isDisplayed();
 
-        Driver.closeDriver();
     }
 
     //      @US017TC07
@@ -219,6 +216,7 @@ Driver.closeDriver();
             Assert.assertFalse(roleActivationPage.delete_message.isDisplayed());
 
     }
+
 
 
 }

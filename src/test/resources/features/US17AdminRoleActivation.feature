@@ -3,13 +3,18 @@
 Feature: Admin all role activation
 
   Background: User common uses
+    Scenario Outline: User common uses
     Given user is on "http://gmibank.com/" page.
     And user click on User Button
     And user click on Sign in menu
-    And user enters username and password
+    And user enters "<username>" and "<password>"
     And user click on Sign in button
     And user click on the  Administration menu
     And user click on the User Management putton
+      Examples:
+      | username   |  password|
+      | Selim      |  SelimA? |
+
 
   @US017TC01
   Scenario: US017TC01 Admin can activate a role as user

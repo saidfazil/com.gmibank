@@ -23,84 +23,51 @@ formatter.scenario({
   ]
 });
 formatter.before({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "user provites the api ent point to set the response using \"https://www.gmibank.com/api/tp-countries\"",
+  "name": "user provites the api ent point to set the response using countries \"https://www.gmibank.com/api/tp-countries\"",
   "keyword": "Given "
 });
-formatter.match({});
+formatter.match({
+  "location": "stepdefinitions.US23CountriesAndCustomersApiStepDef.user_provites_the_api_ent_point_to_set_the_response_using_countries(java.lang.String)"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 formatter.step({
   "name": "user deserializes all countries to pojo",
   "keyword": "And "
 });
-formatter.match({});
+formatter.match({
+  "location": "stepdefinitions.US23CountriesAndCustomersApiStepDef.user_deserializes_all_countries_to_pojo()"
+});
 formatter.result({
-  "status": "undefined"
+  "error_message": "java.lang.NullPointerException\n\tat stepdefinitions.US23CountriesAndCustomersApiStepDef.user_deserializes_all_countries_to_pojo(US23CountriesAndCustomersApiStepDef.java:51)\n\tat ✽.user deserializes all countries to pojo(file:///Users/buse/IdeaProjects/com.gmibank/src/test/resources/features/US23CountriesAndCustomersControl.feature:8)\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "user generates all countries data in correspondent files",
   "keyword": "And "
 });
-formatter.match({});
+formatter.match({
+  "location": "stepdefinitions.US23CountriesAndCustomersApiStepDef.user_generates_all_countries_data_in_correspondent_files()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
 });
 formatter.step({
   "name": "user validates data for all countries",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "stepdefinitions.US23CountriesAndCustomersApiStepDef.user_validates_data_for_all_countries()"
 });
+formatter.result({
+  "status": "skipped"
+});
+formatter.embedding("image/png", "embedded0.png", null);
 formatter.after({
-  "status": "skipped"
-});
-formatter.scenario({
-  "name": "US023TC02 verify all customer data",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@US023"
-    },
-    {
-      "name": "@US023TC02"
-    }
-  ]
-});
-formatter.before({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "user provites the api ent point to set the response using \"https://www.gmibank.com/api/tp-customers\"",
-  "keyword": "Given "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "Read all customer data provided",
-  "keyword": "And "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "the user verifies all the data",
-  "keyword": "Then "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.after({
-  "status": "skipped"
+  "status": "passed"
 });
 });

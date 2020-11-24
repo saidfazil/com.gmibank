@@ -1,21 +1,15 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import pages.AdminRoleActivationPage;
+import pages.US17AdminRoleActivationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class US17AdminRoleActivationStepDef {
 
-    AdminRoleActivationPage roleActivationPage = new AdminRoleActivationPage();
+    US17AdminRoleActivationPage roleActivationPage = new US17AdminRoleActivationPage();
 
     @Given("user is on {string} page.")
     public void user_is_on_page(String gmi_bank_url) {

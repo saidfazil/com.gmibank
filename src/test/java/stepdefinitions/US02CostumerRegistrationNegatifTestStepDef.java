@@ -1,25 +1,18 @@
 package stepdefinitions;
 
-import com.sun.org.apache.bcel.internal.generic.GOTO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
-import org.checkerframework.checker.units.qual.C;
-import org.codehaus.groovy.transform.tailrec.GotoRecurHereException;
 import org.junit.Assert;
-import org.junit.TestCouldNotBeSkippedException;
-import org.junit.runners.model.TestTimedOutException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.support.Color;
-import pages.CostumerRegistrationPage;
+import pages.US02CostumerRegistrationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class CostumerRegistrationNegatifTestStepDef {
+public class US02CostumerRegistrationNegatifTestStepDef {
 
-    CostumerRegistrationPage costRegPage = new CostumerRegistrationPage();
+    US02CostumerRegistrationPage costRegPage = new US02CostumerRegistrationPage();
 
 
 //    @US02TC01

@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class CostumerRegistrationPage {
-    public CostumerRegistrationPage(){
+public class US02CostumerRegistrationPage {
+    public US02CostumerRegistrationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }

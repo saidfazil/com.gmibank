@@ -1,98 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="162.829">
-<testcase classname="Admin all role activation" name="US017TC01 Admin can activate a role as user" time="26.979">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the Edit putton TCOne...................................passed
-And user should be able to assign Role as User from Profiles dropdown.......passed
-And user click on the Save button...........................................passed
-Then Confirmation user message should be displayed..........................passed
-]]></system-out>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="2" tests="2" time="1.47">
+<testcase classname="Read all countries" name="US023TC01 Read all countries" time="0.303">
+<skipped><![CDATA[Given user provites the api ent point to set the response using "https://www.gmibank.com/api/tp-countries".undefined
+And user deserializes all countries to pojo.................................undefined
+And user generates all countries data in correspondent files................undefined
+Then user validates data for all countries..................................undefined
+]]></skipped>
 </testcase>
-<testcase classname="Admin all role activation" name="US017TC02 Admin can activate a role as employee" time="22.152">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the Edit putton TCtwo...................................passed
-And user should be able to assign Role as Employee from Profiles dropdown...passed
-And user click on the Save button2..........................................passed
-Then Confirmation employee message should be displayed......................passed
-]]></system-out>
-</testcase>
-<testcase classname="Admin all role activation" name="US017TC03 Admin can activate a role as manager" time="23.957">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the Edit putton TCthree.................................passed
-And user should be able to assign Role as Maneger from Profiles dropdown....passed
-And user click on the Save button3..........................................passed
-Then Confirmation manager message should be displayed.......................passed
-]]></system-out>
-</testcase>
-<testcase classname="Admin all role activation" name="US017TC04 Admin can activate a role as admin" time="21.982">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the Edit putton TCfour..................................passed
-And user should be able to assign Role as Admin from Profiles dropdown......passed
-And user click on the Save button4..........................................passed
-Then Confirmation admin message should be displayed.........................passed
-]]></system-out>
-</testcase>
-<testcase classname="Admin all role activation" name="US017TC05 Admin can view all user info (admin, manager, employee and user)" time="23.728">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the View putton.........................................passed
-Then user should be able to see the message User............................passed
-]]></system-out>
-</testcase>
-<testcase classname="Admin all role activation" name="US017TC06 Admin can edit all user info  (admin, manager, employee and user)" time="22.776">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the Edit putton TCfive..................................passed
-And user click on the Save button Edit......................................passed
-Then user should be able to see the message Create or edit a user...........passed
-]]></system-out>
-</testcase>
-<testcase classname="Admin all role activation" name="US017TC07 Admin can delete all user info (admin, manager, employee and user)" time="20.175">
-<system-out><![CDATA[Given user is on "http://gmibank.com/" page.................................passed
-And user click on User Button...............................................passed
-And user click on Sign in menu..............................................passed
-And user enters username and password.......................................passed
-And user click on Sign in button............................................passed
-And user click on the  Administration menu..................................passed
-And user click on the User Management putton................................passed
-Given user click on the Delete putton.......................................passed
-And user should be able to see the message Confirm delete operation.........passed
-And user click on the Delete................................................passed
-Then user should be able to see the confirmation message....................passed
-]]></system-out>
+<testcase classname="Read all countries" name="US023TC02 verify all customer data" time="0.013">
+<skipped><![CDATA[Given user provites the api ent point to set the response using "https://www.gmibank.com/api/tp-customers".undefined
+And Read all customer data provided.........................................undefined
+Then the user verifies all the data.........................................undefined
+]]></skipped>
 </testcase>
 </testsuite>

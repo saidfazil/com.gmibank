@@ -2,10 +2,10 @@ package pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown =true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Customer {
 
-    private  int id;
+    private int id;
     private String firstName;
     private String lastName;
     private String middleInitial;
@@ -159,7 +159,6 @@ public class Customer {
     }
 
     private Accounts accounts;
-
 
 
 }

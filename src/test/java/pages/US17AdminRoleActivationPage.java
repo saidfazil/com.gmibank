@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AdminRoleActivationPage {
-    public AdminRoleActivationPage(){
+public class US17AdminRoleActivationPage {
+    public US17AdminRoleActivationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }

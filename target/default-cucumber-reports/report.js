@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US14dateCreate.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/US17AdminRoleActivation.feature");
 formatter.feature({
-  "name": "Date should be created on the time of account creation",
+  "name": "Admin all role activation",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US017"
     }
   ]
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "User common uses",
   "description": "",
   "keyword": "Background"
 });
@@ -18,175 +18,133 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "user is on \"http://gmibank.com/\" page.",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
+  "name": "user click on User Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "user click on Sign in menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "user enters username and password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "user click on Sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "user click on the  Administration menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user click on the User Management putton",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64425}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: ddfc41c0570dd8005fde9dc94d227d79\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "The date cannot be typed earlier, in the past, at the time of creation an account",
+  "name": "US017TC01 Admin can activate a role as user",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US017"
     },
     {
-      "name": "@US14TC01"
+      "name": "@US017TC01"
     }
   ]
 });
 formatter.step({
-  "name": "Enter the user 1 SSN number to SSN textbox",
+  "name": "user click on the Edit putton TCOne",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCone()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to assign Role as User from Profiles dropdown",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser1SSNNumber1ToSSNTextbox()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_User_from_Profiles_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Enter the date and time for the past provided",
+  "name": "user click on the Save button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheDateAndTimeForThePastProvided()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be error message.",
+  "name": "Confirmation user message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeErrorMessage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_user_message_should_be_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", null);
 formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "User common uses",
   "description": "",
   "keyword": "Background"
 });
@@ -194,175 +152,133 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "user is on \"http://gmibank.com/\" page.",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
+  "name": "user click on User Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "user click on Sign in menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "user enters username and password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "user click on Sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "user click on the  Administration menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user click on the User Management putton",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64555}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 8fa28c80793556f247a3c5b6557990a4\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "The date should be created as month, day, year, hour and minute",
+  "name": "US017TC02 Admin can activate a role as employee",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US017"
     },
     {
-      "name": "@US14TC02"
+      "name": "@US017TC02"
     }
   ]
 });
 formatter.step({
-  "name": "Enter the user 2 SSN number to SSN textbox",
+  "name": "user click on the Edit putton TCtwo",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCtwo()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to assign Role as Employee from Profiles dropdown",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser2SSNNumber1ToSSNTextbox()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_Employee_from_Profiles_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Enter the date and time with valid credential",
+  "name": "user click on the Save button2",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheDateAndTimeWithValidCredential()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button2()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
+  "name": "Confirmation employee message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_employee_message_should_be_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded1.png", null);
 formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "User common uses",
   "description": "",
   "keyword": "Background"
 });
@@ -370,175 +286,133 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "user is on \"http://gmibank.com/\" page.",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
+  "name": "user click on User Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "user click on Sign in menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "user enters username and password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "user click on Sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "user click on the  Administration menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user click on the User Management putton",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 8dd7322d01c467e84356d1d9a980c5ab\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "User can choose a user from the registration and it cannot be blank",
+  "name": "US017TC03 Admin can activate a role as manager",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US017"
     },
     {
-      "name": "@US14TC03"
+      "name": "@US017TC03"
     }
   ]
 });
 formatter.step({
-  "name": "Enter the user 3 SSN number to SSN textbox",
+  "name": "user click on the Edit putton TCthree",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCthree()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to assign Role as Maneger from Profiles dropdown",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser3SSNNumber1ToSSNTextbox()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_Maneger_from_Profiles_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click on the user box and select a user",
+  "name": "user click on the Save button3",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnTheUserBoxAndSelectAUser()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button3()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
+  "name": "Confirmation manager message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_manager_message_should_be_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded2.png", null);
 formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "User common uses",
   "description": "",
   "keyword": "Background"
 });
@@ -546,175 +420,133 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "user is on \"http://gmibank.com/\" page.",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
+  "name": "user click on User Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "user click on Sign in menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "user enters username and password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "user click on Sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "user click on the  Administration menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user click on the User Management putton",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64804}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 4c049f05ba810d048bdcc3695600196f\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "There user can choose an account created on manage accounts",
+  "name": "US017TC04 Admin can activate a role as admin",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US017"
     },
     {
-      "name": "@US14TC04"
+      "name": "@US017TC04"
     }
   ]
 });
 formatter.step({
-  "name": "Enter the user 4 SSN number to SSN textbox",
+  "name": "user click on the Edit putton TCfour",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCfour()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to assign Role as Admin from Profiles dropdown",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser4SSNNumber1ToSSNTextbox()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_assign_Role_as_Admin_from_Profiles_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "User can choose an account",
+  "name": "user click on the Save button4",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userCanChooseAnAccount()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button4()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
+  "name": "Confirmation admin message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.confirmation_admin_message_should_be_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded3.png", null);
 formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "User go to the GMi Bank home page (https://gmibank.com/)",
+  "name": "User common uses",
   "description": "",
   "keyword": "Background"
 });
@@ -722,170 +554,366 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User go to the GMi Bank home page \"https://gmibank.com/\"",
+  "name": "user is on \"http://gmibank.com/\" page.",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.userGoToTheGMiBankHomePage(java.lang.String)"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click on the home page user button",
+  "name": "user click on User Button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickOnUserButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "You should navigate to sign-in page",
+  "name": "user click on Sign in menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.youShouldNavigateToSignInPage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the username with valid credentail",
+  "name": "user enters username and password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterTheUsernameWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Enter the pasword with valid credentail",
+  "name": "user click on Sign in button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.ManageCostumerStepDef.enterThePaswordWithValidCredentail()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to My Operations menu and Click to Manage Costumers",
+  "name": "user click on the  Administration menu",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToMyOperationsMenuAndClickToManageCostumers()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Click to search Button",
+  "name": "user click on the User Management putton",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickToSearchButton()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@class\u003d\u0027btn btn-secondary\u0027]\"}\n  (Session info: chrome\u003d87.0.4280.67)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ishak-Mac.local\u0027, ip: \u0027192.168.1.49\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.67, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: /var/folders/hd/6p641nnj0wb...}, goog:chromeOptions: {debuggerAddress: localhost:64932}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 1c8a8ff0e6f6fd34992fc96241cff472\n*** Element info: {Using\u003dxpath, value\u003d//button[@class\u003d\u0027btn btn-secondary\u0027]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\n\tat stepdefinitions.DateCreateStepDef.clickToSearchButton(DateCreateStepDef.java:93)\n\tat ✽.Click to search Button(file:///Users/administrator/IdeaProjects/com.gmibank/src/test/resources/features/US14dateCreate.feature:12)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "Enter the Middle initial provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheMiddleInitialProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Phone number provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterThePhoneNumberProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the Zip Code provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheZipCodeProvided()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Enter the City provided",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheCityProvided()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "User can select Zelle Enrolled optionally and save it",
+  "name": "US017TC05 Admin can view all user info (admin, manager, employee and user)",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@US14"
+      "name": "@US017"
     },
     {
-      "name": "@US14TC05"
+      "name": "@US017TC05"
     }
   ]
 });
 formatter.step({
-  "name": "Enter the user 5 SSN number to SSN textbox",
-  "keyword": "And "
+  "name": "user click on the View putton",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.enterTheUser5SSNNumber1ToSSNTextbox()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_View_putton()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "Click zelle check box",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickZelleCheckBox()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Click the save button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.clickTheSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "There should be succes message.",
+  "name": "user should be able to see the message User",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "stepdefinitions.DateCreateStepDef.thereShouldBeSuccesMessage()"
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_message_User()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded4.png", null);
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "User common uses",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user is on \"http://gmibank.com/\" page.",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on User Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on Sign in menu",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user enters username and password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on Sign in button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on the  Administration menu",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on the User Management putton",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "US017TC06 Admin can edit all user info  (admin, manager, employee and user)",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US017"
+    },
+    {
+      "name": "@US017TC06"
+    }
+  ]
+});
+formatter.step({
+  "name": "user click on the Edit putton TCfive",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Edit_putton_TCfive()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on the Save button Edit",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Save_button_edit()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to see the message Create or edit a user.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_message_Create_or_edit_a_user()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "User common uses",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user is on \"http://gmibank.com/\" page.",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_is_on_page(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on User Button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_User_Button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on Sign in menu",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_menu()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user enters username and password",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_enters_username_and_password()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on Sign in button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_Sign_in_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on the  Administration menu",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Administration_menu()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on the User Management putton",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_User_Management_putton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "US017TC07 Admin can delete all user info (admin, manager, employee and user)",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@US017"
+    },
+    {
+      "name": "@US017TC07"
+    }
+  ]
+});
+formatter.step({
+  "name": "user click on the Delete putton",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Delete_putton()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to see the message Confirm delete operation.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_message_Confirm_delete_operation()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click on the Delete",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_click_on_the_Delete()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to see the confirmation message",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.US17AdminRoleActivationStepDef.user_should_be_able_to_see_the_confirmation_message()"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.after({
   "status": "passed"
 });

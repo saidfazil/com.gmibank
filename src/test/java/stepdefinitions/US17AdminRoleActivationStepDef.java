@@ -85,7 +85,7 @@ public class US17AdminRoleActivationStepDef {
     public void confirmation_user_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
-
+Driver.closeDriver();
 
     }
 
@@ -112,6 +112,7 @@ public class US17AdminRoleActivationStepDef {
     public void confirmation_employee_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
+        Driver.closeDriver();
     }
 
     //      @US017TC03
@@ -137,7 +138,7 @@ public class US17AdminRoleActivationStepDef {
     public void confirmation_manager_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
-
+        Driver.closeDriver();
     }
 
     //      @US017TC04
@@ -163,6 +164,7 @@ public class US17AdminRoleActivationStepDef {
     public void confirmation_admin_message_should_be_displayed() {
         roleActivationPage.save_message.isDisplayed();
 
+        Driver.closeDriver();
     }
 
     //      @US017TC05
@@ -176,7 +178,7 @@ public class US17AdminRoleActivationStepDef {
     public void user_should_be_able_to_see_the_message_User() {
         roleActivationPage.view_user_Title.isDisplayed();
 
-
+        Driver.closeDriver();
 
     }
     //      @US017TC06
@@ -195,7 +197,7 @@ public class US17AdminRoleActivationStepDef {
     public void user_should_be_able_to_see_the_message_Create_or_edit_a_user() {
         roleActivationPage.edit_created_message.isDisplayed();
 
-
+        Driver.closeDriver();
     }
 
     //      @US017TC07
@@ -206,34 +208,21 @@ public class US17AdminRoleActivationStepDef {
     }
 
     @Given("user should be able to see the message Confirm delete operation.")
-    public void user_should_be_able_to_see_the_message_Confirm_delete_operation() throws InterruptedException {
-        Thread.sleep(3000);
+    public void user_should_be_able_to_see_the_message_Confirm_delete_operation() {
         roleActivationPage.confirm_delete_message.isDisplayed();
 
     }
 
     @Given("user click on the Delete")
-    public void user_click_on_the_Delete() throws InterruptedException {
+    public void user_click_on_the_Delete() {
         roleActivationPage.confirm_delete_button.click();
-        Thread.sleep(3000);
 
     }
 
     @Then("user should be able to see the confirmation message")
     public void user_should_be_able_to_see_the_confirmation_message() {
 
-        String expectedResult = "Successfully deleted";
-
-        try{
-//            roleActivationPage.delete_message.isDisplayed();
-            String actualResult = roleActivationPage.delete_message.getText();
-            System.out.println("Delete Mesaji "+ roleActivationPage.delete_message.getText());
-            Assert.assertFalse(expectedResult.contains(actualResult));
-
-        }catch (Exception e){
-            boolean bl = false;
-
-        }
+            Assert.assertFalse(roleActivationPage.delete_message.isDisplayed());
 
     }
 

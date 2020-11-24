@@ -61,8 +61,6 @@ public class SigninPage {
     @FindBy(id="tp-account-employee")
     public WebElement employe;
     @FindBy(xpath = "//*[@id=\"save-entity\"]/svg")
-    public WebElement saveButton;
-    @FindBy(xpath = "//*[@id=\"account-menu\"]/a")
     public WebElement refresh;
     @FindBy(xpath = "//*[@id=\"account-menu\"]/div/a[3]/span")
     public WebElement signOut;

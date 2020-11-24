@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 public class ReadTxt {
-    public static List<Customer> returnCustomer(String filePath){
+    public static List<Customer> returnCustomer(String filePath, Customer[] customers){
         List<Customer>all = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(ConfigurationReader.getProperty(filePath)))) {
             StringBuilder sb = new StringBuilder();
@@ -171,6 +171,28 @@ public class ReadTxt {
                 System.out.println(i++);
                 all.add(country);
             }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return all;
+    }
+    public static List<Customer> returnAllCustomer(String filePath2, Customer[] customers){
+        List<Customer>all = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(ConfigurationReader.getProperty(filePath2)))) {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            while (line != null) {
+                Customer customer = new Customer();
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+                String [] each = line.split(",");
+                customer.setFirstName(each[0]);
+                customer.setLastName(each[1]);
+                customer.setSsn(each[2]);
+                all.add(customer);
+            }
+            String everything = sb.toString();
         }catch (Exception e){
             e.printStackTrace();
         }

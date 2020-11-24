@@ -19,13 +19,13 @@ Feature: Read all countries
 
   @US023TC02
   Scenario Outline: US023TC02 verify all customer data
-    Given user provites the api ent point to set the response using customers "https://www.gmibank.com/api/tp-customers"
-    And creates customer using "<idJson>"and "<firstNameJson>" and "<lastNameJson>"
+    Given user provites the api ent point to set the response using customers "https://www.gmibank.com/api/tp-customers" creates customer using "<idJson>"and "<firstNameJson>" and "<lastNameJson>"
     Examples: cread customer
       | idJson | firstNameJson | lastNameJson |
       | 76853  | Selim1        | Asd          |
       | 54273  | Selim2        | Asdfg        |
       | 98712  | Selim3        | Azsdcfv      |
 
+  Scenario: Read all customer
     And Read all customer data provided
     Then the user verifies all the data

@@ -46,24 +46,10 @@ public class SigninPage {
     public WebElement manangeAccount;
     @FindBy(id="jh-create-entity")
     public WebElement createNewAccount;
-    @FindBy(id="tp-account-description")
-    public WebElement discription;
-    @FindBy(id="tp-account-balance")
-    public WebElement balance;
-    @FindBy(id="tp-account-accountType")
-    public WebElement dropDownAccountType ;
-    @FindBy(xpath = "//*[@id=\"tp-account-accountStatusType\"]/option[1]")
-    public WebElement active;
-    @FindBy(xpath = "//*[@id=\"tp-account-accountType\"]/option[2]")
-    public WebElement saving;
-    @FindBy(id="tp-account-accountStatusType")
-    public WebElement dropDownAccountStatus;
+
     @FindBy(id="tp-account-employee")
     public WebElement employe;
-    @FindBy(xpath = "//*[@id=\"save-entity\"]/svg")
-    public WebElement refresh;
-    @FindBy(xpath = "//*[@id=\"account-menu\"]/div/a[3]/span")
-    public WebElement signOut;
+
 
 
 }

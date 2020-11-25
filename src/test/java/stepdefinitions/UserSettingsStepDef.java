@@ -16,8 +16,8 @@ public class UserSettingsStepDef {
     UserSettingsPage userSettingsPage = new UserSettingsPage();
 
     @Given("Go to {string} link")
-    public void goToLink(String arg0) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
+    public void goToLink(String url) {
+        Driver.getDriver().get(url);
     }
 
     @And("Click to User drop down menu")
@@ -30,13 +30,13 @@ public class UserSettingsStepDef {
         manageCostumerPage.accountSignIn.click();
     }
 
-    @And("Enter the username with valid credentails")
-    public void enterTheUsernameWithValidCredentails() {
+    @And("Enter the username with valid credentials")
+    public void enterTheUsernameWithValidCredentials() {
         manageCostumerPage.username.sendKeys(ConfigurationReader.getProperty("employeeUsername3"));
     }
 
-    @And("Enter the password with valid credentails")
-    public void enterThePasswordWithValidCredentails() {
+    @And("Enter the password with valid credentials")
+    public void enterThePasswordWithValidCredentials() {
         manageCostumerPage.password.sendKeys(ConfigurationReader.getProperty("employeePassword3"));
     }
 
@@ -62,12 +62,12 @@ public class UserSettingsStepDef {
 
     @And("Assert that Language dropdown is have English.")
     public void assertThatLanguageDropdownIsHaveEnglish() {
-        Assert.assertTrue(userSettingsPage.langEnglish.getText().equals(ConfigurationReader.getProperty("selectedLanguage")));
+       Assert.assertEquals(userSettingsPage.langEnglish.getText(),ConfigurationReader.getProperty("selectedLanguage"));
     }
 
-    @And("Assert that Language dropdown is have Türkçe.")
-    public void assertThatLanguageDropdownIsHaveTürkçe() {
-        Assert.assertTrue(userSettingsPage.langTurkish.getText().equals("Türkçe"));
+    @And("Assert that Language dropdown is have Turkish.")
+    public void assertThatLanguageDropdownIsHaveTurkish() {
+       Assert.assertEquals(userSettingsPage.langTurkish.getText(),ConfigurationReader.getProperty("selectedLanguage2"));
     }
 
     @And("Update to First Name")
@@ -90,13 +90,13 @@ public class UserSettingsStepDef {
     @And("Update to Email")
     public void updateToEmail() {
         userSettingsPage.eMail.clear();
-        userSettingsPage.eMail.sendKeys(ConfigurationReader.getProperty("updateemployeeEmail3"));
+        userSettingsPage.eMail.sendKeys(ConfigurationReader.getProperty("updateEmployeeEmail3"));
     }
 
     @And("Assert that Email is contain mailContains")
     public void assertThatEmailIsContain() {
-        Assert.assertTrue(ConfigurationReader.getProperty("updateemployeeEmail3").contains(ConfigurationReader.getProperty("mailContains")));
-        Assert.assertTrue(ConfigurationReader.getProperty("updateemployeeEmail3").contains(ConfigurationReader.getProperty("mailContains2")));
+        Assert.assertTrue(ConfigurationReader.getProperty("updateEmployeeEmail3").contains(ConfigurationReader.getProperty("mailContains")));
+        Assert.assertTrue(ConfigurationReader.getProperty("updateEmployeeEmail3").contains(ConfigurationReader.getProperty("mailContains2")));
     }
 
     @And("Click to Save button")
@@ -117,18 +117,17 @@ public class UserSettingsStepDef {
     }
 
     @And("Assert that Language dropdown is not have other languages")
-    public void assertThatLanguageDropdownIsNotHaveThIndex() {
-        Assert.assertFalse(userSettingsPage.languageDropDown.getText().equals(ConfigurationReader.getProperty("invalidLanguage")));
+    public void assertThatLanguageDropdownIsNotHaveOtherLanguages() {
+        Assert.assertFalse(userSettingsPage.languageDropDown.getText().contains(ConfigurationReader.getProperty("invalidLanguage")));
     }
 
-    @And("Enter the username with customer valid credentail for transaction.")
-    public void enterTheUsernameWithCustomerValidCredentailForTransaction() {
+    @And("Enter the username with customer valid credential for transaction.")
+    public void enterTheUsernameWithCustomerValidCredentialForTransaction() {
         userSettingsPage.username.sendKeys(ConfigurationReader.getProperty("TransferUsername"));
     }
 
-
-    @And("Enter the password with customer valid credentail for transaction.")
-    public void enterThePasswordWithCustomerValidCredentailForTransaction() {
+    @And("Enter the password with customer valid credential for transaction.")
+    public void enterThePasswordWithCustomerValidCredentialForTransaction() {
         userSettingsPage.password.sendKeys(ConfigurationReader.getProperty("TransferPassword"));
     }
 
@@ -142,31 +141,29 @@ public class UserSettingsStepDef {
         userSettingsPage.TransferMoney.click();
     }
 
-    @And("Chosee first account from first dropdown")
+    @And("Choose first account from first dropdown")
     public void choseeFirstAccountFromFirstDropdown() {
         userSettingsPage.TransferFromBox.click();
         Select select = new Select(userSettingsPage.TransferFromBox);
         select.selectByIndex(1);
     }
 
-    @And("Chosee second account from second dropdown")
+    @And("Choose second account from second dropdown")
     public void choseeSecondAccountFromSecondDropdown() {
         userSettingsPage.TransferToBox.click();
         Select select = new Select(userSettingsPage.TransferToBox);
         select.selectByIndex(1);
     }
 
-
     @And("Enter a value for transaction")
     public void enterAValueForTransaction() {
-        userSettingsPage.BalanceBox.sendKeys(ConfigurationReader.getProperty("TransactionVaue"));
+        userSettingsPage.BalanceBox.sendKeys(ConfigurationReader.getProperty("TransactionValue"));
     }
 
     @And("Enter the some information to description box.")
     public void enterTheSomeInformationToDescriptionBox() {
         userSettingsPage.DescriptionBox.sendKeys(ConfigurationReader.getProperty("TextDescriptionBox"));
     }
-
 
     @And("Click to Make Transfer Button")
     public void clickToMakeTransferButton() {

@@ -40,5 +40,16 @@ public class SigninPage {
 
     @FindBy(xpath = "//*[@id=\"login-item\"]/span")
     public WebElement dropSign;
+    @FindBy(xpath = "//span[.='My Operations']")
+    public WebElement myOperations;
+    @FindBy(xpath = "//*[@id=\"entity-menu\"]/div/a[2]")
+    public WebElement manangeAccount;
+    @FindBy(id="jh-create-entity")
+    public WebElement createNewAccount;
+
+    @FindBy(id="tp-account-employee")
+    public WebElement employe;
+
+
 
 }

@@ -14,7 +14,6 @@ import utilities.Driver;
 
 public class CreateNewAccountStepDef {
     SigninPage signinPage = new SigninPage ();
-
     @Given("gmibank.com address goes")
     public void gmibank_com_address_goes() {
         Driver.getDriver ().get (ConfigurationReader.getProperty ("gmi_url"));
@@ -42,13 +41,13 @@ public class CreateNewAccountStepDef {
 
     @Given("user clicks sign in button")
     public void user_clicks_sign_in_button() {
-        // Write code here that turns the phrase above into concrete actions
         signinPage.signButton.click ();
     }
 
     @Given("click the `` My Operations {string} drop-down menu at one click.")
     public void click_the_My_Operations_drop_down_menu_at_one_click(String string) {
         signinPage.myOperations.click ();
+
     }
 
     @Given("Managing Accounts is safe")
@@ -58,18 +57,10 @@ public class CreateNewAccountStepDef {
 
     @Then("create new account")
     public void create_new_account() {
-       signinPage.createNewAccount.click ();
+        signinPage.createNewAccount.click ();
     }
-
-    @Then("User Employee clicks dropdown")
-    public void user_Employee_clicks_dropdown() {
-       signinPage.employe.click ();
-    }
-
-
 
 }
-
 
 
 

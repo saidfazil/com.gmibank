@@ -1,23 +1,22 @@
 package stepdefinitions;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import jsonModels.CountryJson;
 import jsonModels.CustomersJson;
-import jsonModels.StateJson;
 import org.junit.Assert;
 import pojos.Country;
 import pojos.Customer;
 import utilities.ConfigurationReader;
 import utilities.ReadTxt;
 import utilities.WriteToTxt;
+
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class US23CountriesAndCustomersApiStepDef {
@@ -87,17 +86,23 @@ public class US23CountriesAndCustomersApiStepDef {
 
     @Then("user validates data for all countries")
     public void user_validates_data_for_all_countries() {
-        List<Country> list = ReadTxt.returnAllCountry(filePath);
-        String expected = "Malta";
-        System.out.println(list.get(2).getName());
-        Assert.assertEquals(expected, list.get(2).getName());
+//        List<Country> list = ReadTxt.returnAllCountry(filePath);
+//        String expected = "Korsika";
+//        System.out.println(list.get(174).getName());
+//        Assert.assertEquals(expected, list.get(174).getName());
+        List<Country> allCountryList = ReadTxt.returnAllCountry("filePath");
+        List<String> expectedCountryList= new ArrayList<>();
+        expectedCountryList.add("Malta");
+        expectedCountryList.add("Korsika");
+        Assert.assertTrue(allCountryList.containsAll(expectedCountryList));
+
 
 
     }
 
     //    @US023TC02
-    @Given("user provites the api ent point to set the response using customers {string} creates customer using {string}and {string} and {string}")
-    public void userProvitesTheApiEntPointToSetTheResponseUsingCustomersCreatesCustomerUsingAndAnd(String customer_api_url, String id, String firstName, String lastName) {
+    @Given("user provites the api ent point to set the response using customers {string} creates customer using {string} {string} {string}{string} {string}{string}{string}{string}{string}{string}{string}{string}{string}{string}{string}")
+    public void userProvitesTheApiEntPointToSetTheResponseUsingCustomersCreatesCustomerUsing(String customer_api_url, String id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, String country, String state, String user) {
 
         response = given().headers(
                 "Authorization",
@@ -107,7 +112,7 @@ public class US23CountriesAndCustomersApiStepDef {
                 "Accept",
                 ContentType.JSON)
                 .when()
-                .body(CustomersJson.CREATE_CUSTOMERS1+CustomersJson.CREATE_CUSTOMERS2+CustomersJson.CREATE_CUSTOMERS3)
+                .body(CustomersJson.CREATE_CUSTOMERS1+CustomersJson.CREATE_CUSTOMERS2)
                 .post(customer_api_url)
                 .then()
                 .contentType(ContentType.JSON)
@@ -126,10 +131,12 @@ public class US23CountriesAndCustomersApiStepDef {
 
     @Then("the user verifies all the data")
     public void the_user_verifies_all_the_data() {
-        List<Country> list = ReadTxt.returnAllCountry(filePath);
-        String expected = "Malta";
-        System.out.println(list.get(2).getName());
-        Assert.assertEquals(expected, list.get(2).getName());
+        List<Customer> allCustomerlist = ReadTxt.returnAllCustomer(filePath2,customers);
+        List<String> expectedCustomerList = new ArrayList<>();
+        expectedCustomerList.add("Selim1");
+        expectedCustomerList.add("Selim2");
+        System.out.println(allCustomerlist);
+        Assert.assertTrue(allCustomerlist.containsAll(expectedCustomerList));
 
     }
 

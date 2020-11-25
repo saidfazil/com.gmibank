@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="10.789">
-<testcase classname="Read all countries" name="US023TC01 Read all countries" time="10.014">
-<failure message="" type="java.lang.NullPointerException"><![CDATA[Given user provites the api ent point to set the response using countries "https://www.gmibank.com/api/tp-countries".passed
-And user deserializes all countries to pojo.................................failed
-And user generates all countries data in correspondent files................skipped
-Then user validates data for all countries..................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at stepdefinitions.US23CountriesAndCustomersApiStepDef.user_deserializes_all_countries_to_pojo(US23CountriesAndCustomersApiStepDef.java:51)
-	at ✽.user deserializes all countries to pojo(file:///Users/buse/IdeaProjects/com.gmibank/src/test/resources/features/US23CountriesAndCustomersControl.feature:8)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="19.888">
+<testcase classname="Read all countries" name="US023TC02 verify all customer data" time="13.695">
+<system-out><![CDATA[Given user provites the api ent point to set the response using customers "https://www.gmibank.com/api/tp-customers" creates customer using "76853" "Selim1" "Asd""sa" "sakal@gmail.com ""678-987-1234""678-987-1234 ""45100""rue de orleans ""Orleans""456-78-4321 ""2020-11-23""France""Centre ""selim45".passed
+]]></system-out>
+</testcase>
+<testcase classname="Read all countries" name="US023TC02 verify all customer data 2" time="5.151">
+<system-out><![CDATA[Given user provites the api ent point to set the response using customers "https://www.gmibank.com/api/tp-customers" creates customer using "54273" "Selim2" "Asdfg""Slm" "sakal2@gmail.com ""678-987-1237""678-987-1237 ""45100""rue de orleans ""Orleans""456-78-4322 ""2020-11-23""France""Centre ""selim45".passed
+]]></system-out>
 </testcase>
 </testsuite>

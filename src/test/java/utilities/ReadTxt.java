@@ -181,15 +181,17 @@ public class ReadTxt {
         try(BufferedReader br = new BufferedReader(new FileReader(ConfigurationReader.getProperty(filePath2)))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
+            int i = 0;
             while (line != null) {
                 Customer customer = new Customer();
                 sb.append(line);
                 sb.append(System.lineSeparator());
                 line = br.readLine();
+                int id = (Integer.parseInt(line.split(",")[1].trim()));
                 String [] each = line.split(",");
                 customer.setFirstName(each[0]);
                 customer.setLastName(each[1]);
-                customer.setSsn(each[2]);
+                customer.setId(id);
                 all.add(customer);
             }
             String everything = sb.toString();
@@ -198,5 +200,7 @@ public class ReadTxt {
         }
         return all;
     }
+
+
 }
 

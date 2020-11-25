@@ -19,12 +19,12 @@ Feature: Read all countries
 
   @US023TC02
   Scenario Outline: US023TC02 verify all customer data
-    Given user provites the api ent point to set the response using customers "https://www.gmibank.com/api/tp-customers" creates customer using "<idJson>"and "<firstNameJson>" and "<lastNameJson>"
-    Examples: cread customer
-      | idJson | firstNameJson | lastNameJson |
-      | 76853  | Selim1        | Asd          |
-      | 54273  | Selim2        | Asdfg        |
-      | 98712  | Selim3        | Azsdcfv      |
+    Given user provites the api ent point to set the response using customers "https://www.gmibank.com/api/tp-customers" creates customer using "<idJson>" "<firstNameJson>" "<lastNameJson>""<middleInitial>" "<email> ""<mobilePhoneNumber>""<phoneNumber> ""<zipCode>""<address> ""<city>""<ssn> ""<createDate>""<country>""<state> ""<user>"
+    Examples:
+      | idJson | firstNameJson | lastNameJson | middleInitial | email            | mobilePhoneNumber | phoneNumber  | zipCode | address        | city    | ssn         | createDate | country | state  | user    |
+      | 76853  | Selim1        | Asd          | sa            | sakal@gmail.com  | 678-987-1234      | 678-987-1234 | 45100   | rue de orleans | Orleans | 456-78-4321 | 2020-11-23 | France  | Centre | selim45 |
+      | 54273  | Selim2        | Asdfg        | Slm           | sakal2@gmail.com | 678-987-1237      | 678-987-1237 | 45100   | rue de orleans | Orleans | 456-78-4322 | 2020-11-23 | France  | Centre | selim45 |
+
 
   Scenario: Read all customer
     And Read all customer data provided

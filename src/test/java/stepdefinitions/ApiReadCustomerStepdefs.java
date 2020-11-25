@@ -21,9 +21,10 @@ import static io.restassured.RestAssured.given;
 public class ApiReadCustomerStepdefs {
     Customer[] customers;
     Response response;
+
     @Given("user provides the ap end point to set response using {string}")
     public void userProvidesTheApEndPointToSetResponseUsing(String url) {
-        response= given().headers(
+        response = given().headers(
                 "Authorization",
                 "Bearer " + ConfigurationReader.getProperty("token"),
                 "Content-Type",
@@ -42,20 +43,20 @@ public class ApiReadCustomerStepdefs {
     @Given("manipulate all customers' data")
     public void manipulateAllCustomersData() throws JsonProcessingException {
         ObjectMapper obj = new ObjectMapper();
-         customers = obj.readValue(response.asString(),Customer[].class);
+        customers = obj.readValue(response.asString(), Customer[].class);
 
     }
 
     @And("user set the data in correspondent files")
     public void userSetTheDataInCorrespondentFiles() {
-       // WriteToTxt.saveDataInFileWithAllCustomerInfo("AllCostumer.txt", customers);
-       WriteToTxt.saveDataInFile("AllCustomerSSN.txt",customers);
+        // WriteToTxt.saveDataInFileWithAllCustomerInfo("AllCostumer.txt", customers);
+        WriteToTxt.saveDataInFile("AllCustomerSSN.txt", customers);
     }
 
     @Then("user validate all data")
     public void userValidateAllData() throws Exception {
         List<String> AllCustomerSSN = ReadTxt.returnCustomerSNNList("AllCustomerSSN.txt");
-        List<String> expectedStateList= new ArrayList<>();
+        List<String> expectedStateList = new ArrayList<>();
         expectedStateList.add("246-53-4555");
         Assert.assertTrue(AllCustomerSSN.containsAll(expectedStateList));
 /*List<Customer> allCustomerList=ReadTxt.returnCustomer("AllCostumer.txt");

@@ -1,15 +1,17 @@
 @US06
 Feature:User info segment (User Settings) should be editable on Homepage
-  @US06TC01
-  Scenario: There should be user info being populated when navigating to user info "firstname, lastname email and language"
-    Given Go to "https://gmibank.com/" link
+  Background:
+    Given Go to "http://gmibank.com/" link
     And Click to User drop down menu
     And Click to Sign in
-    And Enter the username with valid credentails
-    And Enter the password with valid credentails
+    And Enter the username with valid credentials
+    And Enter the password with valid credentials
     And Click to Sign in button
     And Click to User drop down menu
     And Click to User info
+
+  @US06TC01
+  Scenario: There should be user info being populated when navigating to user info "firstName, lastName email and language"
     And Assert that First Name is not empty.
     And Assert that Last Name is not empty.
     And Assert that Email is not empty.
@@ -17,14 +19,14 @@ Feature:User info segment (User Settings) should be editable on Homepage
   @US06TC02
   Scenario: There should be 2 languages available "English and Turkish"
     And Assert that Language dropdown is have English.
-    And Assert that Language dropdown is have Türkçe.
+    And Assert that Language dropdown is have Turkish.
 
   @US06TC03
-  Scenario: There should be an option to update firstname
+  Scenario: There should be an option to update firstName
     And Update to First Name
 
   @US06TC04
-  Scenario: There should be an option to update lastname
+  Scenario: There should be an option to update lastName
     And Update to Last Name
 
   @US06TC05
